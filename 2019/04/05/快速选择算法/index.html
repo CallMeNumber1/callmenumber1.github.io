@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>第一篇个人博文 | Find everything about tech</title>
+  <title>快速选择算法 | Find everything about tech</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="如何新建博文生成本地预览：hexo s -g  生成并上传：hexo d -g">
-<meta name="keywords" content="Hexo使用">
+  <meta name="description" content="对快速排序的一趟划分 有几种不同的方法，如左右指针法、挖坑法、前后指针法等，这里选取左右指针法进行讨论。  基准元素的选取：一般选取第一个或最后一个元素（假设数组是随机分布的），下面会在优化中给出关于基准元素选取的技巧。  左右游标扫描和元素交换：左右游标开始分别向右/左移动。 左游标向右直到遇到一个大于等于基准元素的数组元素，停下。 右游标向左直到遇到一个小于等于基准元素的数组元素，停下。 必须">
+<meta name="keywords" content="sort">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第一篇个人博文">
-<meta property="og:url" content="http://yoursite.com/2019/03/25/第一篇个人博文/index.html">
+<meta property="og:title" content="快速选择算法">
+<meta property="og:url" content="http://yoursite.com/2019/04/05/快速选择算法/index.html">
 <meta property="og:site_name" content="Find everything about tech">
-<meta property="og:description" content="如何新建博文生成本地预览：hexo s -g  生成并上传：hexo d -g">
+<meta property="og:description" content="对快速排序的一趟划分 有几种不同的方法，如左右指针法、挖坑法、前后指针法等，这里选取左右指针法进行讨论。  基准元素的选取：一般选取第一个或最后一个元素（假设数组是随机分布的），下面会在优化中给出关于基准元素选取的技巧。  左右游标扫描和元素交换：左右游标开始分别向右/左移动。 左游标向右直到遇到一个大于等于基准元素的数组元素，停下。 右游标向左直到遇到一个小于等于基准元素的数组元素，停下。 必须">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-25T11:10:55.977Z">
+<meta property="og:updated_time" content="2019-04-05T03:03:22.673Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第一篇个人博文">
-<meta name="twitter:description" content="如何新建博文生成本地预览：hexo s -g  生成并上传：hexo d -g">
+<meta name="twitter:title" content="快速选择算法">
+<meta name="twitter:description" content="对快速排序的一趟划分 有几种不同的方法，如左右指针法、挖坑法、前后指针法等，这里选取左右指针法进行讨论。  基准元素的选取：一般选取第一个或最后一个元素（假设数组是随机分布的），下面会在优化中给出关于基准元素选取的技巧。  左右游标扫描和元素交换：左右游标开始分别向右/左移动。 左游标向右直到遇到一个大于等于基准元素的数组元素，停下。 右游标向左直到遇到一个小于等于基准元素的数组元素，停下。 必须">
   
     <link rel="alternative" href="/atom.xml" title="Find everything about tech" type="application/atom+xml">
   
@@ -151,28 +151,50 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-第一篇个人博文" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-快速选择算法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      第一篇个人博文
+      快速选择算法
     </h1>
   
 
         
-        <a href="/2019/03/25/第一篇个人博文/" class="archive-article-date">
-  	<time datetime="2019-03-25T11:07:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-25</time>
+        <a href="/2019/04/05/快速选择算法/" class="archive-article-date">
+  	<time datetime="2019-04-05T02:02:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="如何新建博文"><a href="#如何新建博文" class="headerlink" title="如何新建博文"></a>如何新建博文</h4><p>生成本地预览：<code>hexo s -g</code> </p>
-<p>生成并上传：<code>hexo d -g</code></p>
+        <p><strong>对快速排序的一趟划分</strong></p>
+<p>有几种不同的方法，如左右指针法、挖坑法、前后指针法等，这里选取左右指针法进行讨论。</p>
+<ul>
+<li><p>基准元素的选取：一般选取第一个或最后一个元素（假设数组是<code>随机分布</code>的），下面会在优化中给出关于基准元素选取的技巧。</p>
+</li>
+<li><p>左右游标扫描和元素交换：左右游标开始分别向右/左移动。</p>
+<p>左游标向右直到遇到一个大于等于基准元素的数组元素，停下。</p>
+<p>右游标向左直到遇到一个小于等于基准元素的数组元素，停下。</p>
+<p>必须等一个游标先走完，另一个游标才能走，不能每人轮流走一步（哪一个游标先走对结果没有影响）。</p>
+<p>左右游标相遇时遵循的规则：<strong><code>只相遇，不交叉</code></strong>。</p>
+</li>
+<li><p>基准元素归位。</p>
+</li>
+</ul>
+<p>之后数组的组成就变为：小数值数组+基准元素+大数值数组，即一趟划分结束。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> []a, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = a[i];</span><br><span class="line">    a[i] = a[j];</span><br><span class="line">    a[j] = t;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">partition</span><span class="params">(<span class="keyword">int</span> []a, <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// j为何取high+1，看下面代码即明白</span></span><br><span class="line">    <span class="comment">// i取low，是因为左游标扫描时忽略了头元素的比较</span></span><br><span class="line">    <span class="keyword">int</span> i = low, j = high + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> pivot = a[low];				<span class="comment">// pivot为选取的基准元素(头元素)</span></span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="keyword">while</span> (a[++i] &lt; pivot &amp;&amp; i &lt; high);</span><br><span class="line">        <span class="keyword">while</span> (a[--j] &gt; pivot &amp;&amp; j &gt; low);</span><br><span class="line">        <span class="keyword">if</span> (i &gt;= j) <span class="keyword">break</span>;			<span class="comment">// 左右游标相遇时停止，交换所指元素，跳出循环</span></span><br><span class="line">        swap(a, i, j);</span><br><span class="line">    &#125;</span><br><span class="line">    swap(a, low, j);				<span class="comment">// 基准元素和游标相遇时所指元素交换</span></span><br><span class="line">    <span class="keyword">return</span> j;						<span class="comment">// 一趟排序完成，返回基准元素位置</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 	!!!</span></span><br><span class="line"><span class="comment">	注意，内层的while循环一定要限制i,j的取值,来避免指针交叉情况的发生</span></span><br><span class="line"><span class="comment">	* 有四种序列情况：</span></span><br><span class="line"><span class="comment">	* 1. 一般情况：i和j在序列中间的某个元素交叉</span></span><br><span class="line"><span class="comment">	* 2. a[low]是最大值情况：i移动到high+1,j在high</span></span><br><span class="line"><span class="comment">	* 3. a[low]是最小值情况：i在low，j移动到low-1</span></span><br><span class="line"><span class="comment">	* 4. a数组所有元素为同一个值：i移动到high+1，j在high</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span> []a, <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (high &lt;= low) <span class="keyword">return</span> ;				<span class="comment">// 单元素，自然有序</span></span><br><span class="line">    <span class="keyword">int</span> j = partition(a, low, high)</span><br><span class="line">    sort(a, low, j - <span class="number">1</span>);</span><br><span class="line">    sort(a, j + <span class="number">1</span>, high);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>实例</strong>：Kth Element（找到第k大的元素）</p>
+<p>使用快速选择算法，可在O（N）的复杂度解决此问题。而快排需要O(NlogN)，堆排序需要O(NlogK)</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findKthLargest</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 转化成求解第length-k小的元素，即令k = length - k</span></span><br><span class="line">    k = nums.length - k;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>, h = nums.length - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; h) &#123;</span><br><span class="line">        <span class="keyword">int</span> j = partition(nums, l, h);</span><br><span class="line">        <span class="comment">// 当划分的轴恰好为第k个元素时，即为答案，否则用二分的思想继续找</span></span><br><span class="line">        <span class="keyword">if</span> (j == k) &#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (j &lt; k) &#123;</span><br><span class="line">            l = j + <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            h = j - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nums[k];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>时间复杂度分析</strong>（粗略）</p>
+<p>每次选一部分，扔掉另一部分，所以是O(N)<br>假设每次扔掉一半.<br>（2^k=N)<br>T(N) =n +n/2+n/4+n/8+n/2^k = n*(1-2^-k)/(1-2^-1) =2N </p>
+<p>具体看算法导论</p>
+<p><strong>优化点</strong>：基准元素选取的随机化</p>
+<p>三数取中法得到基准元素</p>
 
       
 
@@ -207,7 +229,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Hexo使用</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">sort</a>
         		</li>
       		
 		</ul>
@@ -263,7 +285,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/03/25/第一篇个人博文/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/05/快速选择算法/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -277,18 +299,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/03/25/c/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          c++
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/03/25/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
+    <a href="/2019/03/25/c/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">c++</div>
       <i class="icon-circle-right"></i>
     </a>
   
