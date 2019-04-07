@@ -173,19 +173,7 @@
 </ul>
 <p>先计算最多能组成的不重叠区间数，然后用区间总个数减去不重叠区间的个数</p>
 <p>每次选择中区间的结尾最为重要，选择的区间结尾越小，留给后面区间的空间越大，则能选择的个数也越多，因此按区间的结尾小的在前进行排序，<code>每次选择结尾最小，并且和前一个区间不重叠的区间</code></p>
-<ul>
-<li>Leetcode<a href="https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/" target="_blank" rel="noopener">452. Minimum Number of Arrows to Burst Balloons (Medium)</a></li>
-</ul>
-<p>也是计算不重叠的区间个数</p>
-<blockquote>
-<p>比自己的思路简单的做法：按区间右端点排序，记录第一个区间的右端点为end，cnt为1；之后从第2个区间开始遍历所有区间，如果该区间的左端点比end大，则cnt++，同时更新end为该区间的右端点</p>
-</blockquote>
-<p>:question:比较cmp函数要声明在类外（即静态的），为何</p>
-<ul>
-<li><strong>Leetcode</strong><a href="https://leetcode.com/problems/queue-reconstruction-by-height/description/" target="_blank" rel="noopener">406. Queue Reconstruction by Height(Medium)</a></li>
-</ul>
-<p>为了使插入操作不影响后续的操作，身高较高的学生应该先做插入操作，否则身高较小的学生原先正确插入的第 k 个位置可能会变成第 k+1 个位置。</p>
-
+        
       
 
       
@@ -263,15 +251,7 @@
 <p>把数都放到桶之后，从后向前遍历桶，最先得到的k个数就是出现频率最多的k个数</p>
 <p>统计每个数的频率，可以借助map实现</p>
 <p>Leetcode <a href="https://leetcode.com/problems/top-k-frequent-elements/description/" target="_blank" rel="noopener">347. Top K Frequent Elements (Medium)</a></p>
-<p><strong>荷兰国旗问题</strong></p>
-<p>Leetcode <a href="https://leetcode.com/problems/sort-colors/description/" target="_blank" rel="noopener">75. Sort Colors (Medium)</a></p>
-<p>荷兰国旗包含三种颜色：红、白、蓝。</p>
-<p>有三种颜色的球，算法的目标是将这三种球按颜色顺序正确地排列。</p>
-<p>它其实是<code>三向切分快速排序</code>的一种变种，在三向切分快速排序中，每次切分都将数组分成三个区间：小于切分元素、等于切分元素、大于切分元素，而该算法是将数组分成三个区间：等于红色、等于白色、等于蓝色。</p>
-<blockquote>
-<p>另一种解法：统计每个颜色出现的次数，然后重写数组</p>
-</blockquote>
-
+        
       
 
       
@@ -359,16 +339,7 @@
 </li>
 </ul>
 <p>之后数组的组成就变为：小数值数组+基准元素+大数值数组，即一趟划分结束。</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> []a, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = a[i];</span><br><span class="line">    a[i] = a[j];</span><br><span class="line">    a[j] = t;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">partition</span><span class="params">(<span class="keyword">int</span> []a, <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// j为何取high+1，看下面代码即明白</span></span><br><span class="line">    <span class="comment">// i取low，是因为左游标扫描时忽略了头元素的比较</span></span><br><span class="line">    <span class="keyword">int</span> i = low, j = high + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> pivot = a[low];				<span class="comment">// pivot为选取的基准元素(头元素)</span></span><br><span class="line">    <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="keyword">while</span> (a[++i] &lt; pivot &amp;&amp; i &lt; high);</span><br><span class="line">        <span class="keyword">while</span> (a[--j] &gt; pivot &amp;&amp; j &gt; low);</span><br><span class="line">        <span class="keyword">if</span> (i &gt;= j) <span class="keyword">break</span>;			<span class="comment">// 左右游标相遇时停止，交换所指元素，跳出循环</span></span><br><span class="line">        swap(a, i, j);</span><br><span class="line">    &#125;</span><br><span class="line">    swap(a, low, j);				<span class="comment">// 基准元素和游标相遇时所指元素交换</span></span><br><span class="line">    <span class="keyword">return</span> j;						<span class="comment">// 一趟排序完成，返回基准元素位置</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 	!!!</span></span><br><span class="line"><span class="comment">	注意，内层的while循环一定要限制i,j的取值,来避免指针交叉情况的发生</span></span><br><span class="line"><span class="comment">	* 有四种序列情况：</span></span><br><span class="line"><span class="comment">	* 1. 一般情况：i和j在序列中间的某个元素交叉</span></span><br><span class="line"><span class="comment">	* 2. a[low]是最大值情况：i移动到high+1,j在high</span></span><br><span class="line"><span class="comment">	* 3. a[low]是最小值情况：i在low，j移动到low-1</span></span><br><span class="line"><span class="comment">	* 4. a数组所有元素为同一个值：i移动到high+1，j在high</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span> []a, <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (high &lt;= low) <span class="keyword">return</span> ;				<span class="comment">// 单元素，自然有序</span></span><br><span class="line">    <span class="keyword">int</span> j = partition(a, low, high)</span><br><span class="line">    sort(a, low, j - <span class="number">1</span>);</span><br><span class="line">    sort(a, j + <span class="number">1</span>, high);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>实例</strong>：Kth Element（找到第k大的元素）</p>
-<p>使用快速选择算法，可在O（N）的复杂度解决此问题。而快排需要O(NlogN)，堆排序需要O(NlogK)</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findKthLargest</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 转化成求解第length-k小的元素，即令k = length - k</span></span><br><span class="line">    k = nums.length - k;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>, h = nums.length - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; h) &#123;</span><br><span class="line">        <span class="keyword">int</span> j = partition(nums, l, h);</span><br><span class="line">        <span class="comment">// 当划分的轴恰好为第k个元素时，即为答案，否则用二分的思想继续找</span></span><br><span class="line">        <span class="keyword">if</span> (j == k) &#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (j &lt; k) &#123;</span><br><span class="line">            l = j + <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            h = j - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nums[k];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>时间复杂度分析</strong>（粗略）</p>
-<p>每次选一部分，扔掉另一部分，所以是O(N)<br>假设每次扔掉一半.<br>（2^k=N)<br>T(N) =n +n/2+n/4+n/8+n/2^k = n*(1-2^-k)/(1-2^-1) =2N </p>
-<p>具体看算法导论</p>
-<p><strong>优化点</strong>：基准元素选取的随机化</p>
-<p>三数取中法得到基准元素</p>
-
+        
       
 
       
