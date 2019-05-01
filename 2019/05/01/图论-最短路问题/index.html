@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>回文子串个数 | Find everything about tech</title>
+  <title>图论-最短路问题详解 | Find everything about tech</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="leetcode 647 从字符串的每一位开始，向两边扩展字符串，要分为两种情况：  奇数长度（从中间1位开始扩展）  偶数长度（从中间2位开始扩展）">
-<meta name="keywords" content="字符串算法">
+  <meta name="description" content="最短路径 第一类：单一源点到其他点的最短路径 第二类：所有点之间的最短路径  1234题目中有重边时的处理过程：选择已经存储的边和当前重边中的较小值自环：起点终点是同一个点的边负环：环上边权都是负数">
+<meta name="keywords" content="Graph">
 <meta property="og:type" content="article">
-<meta property="og:title" content="回文子串个数">
-<meta property="og:url" content="http://yoursite.com/2019/04/26/回文子串个数/index.html">
+<meta property="og:title" content="图论-最短路问题详解">
+<meta property="og:url" content="http://yoursite.com/2019/05/01/图论-最短路问题/index.html">
 <meta property="og:site_name" content="Find everything about tech">
-<meta property="og:description" content="leetcode 647 从字符串的每一位开始，向两边扩展字符串，要分为两种情况：  奇数长度（从中间1位开始扩展）  偶数长度（从中间2位开始扩展）">
+<meta property="og:description" content="最短路径 第一类：单一源点到其他点的最短路径 第二类：所有点之间的最短路径  1234题目中有重边时的处理过程：选择已经存储的边和当前重边中的较小值自环：起点终点是同一个点的边负环：环上边权都是负数">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-26T14:58:16.137Z">
+<meta property="og:updated_time" content="2019-05-01T08:37:03.304Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="回文子串个数">
-<meta name="twitter:description" content="leetcode 647 从字符串的每一位开始，向两边扩展字符串，要分为两种情况：  奇数长度（从中间1位开始扩展）  偶数长度（从中间2位开始扩展）">
+<meta name="twitter:title" content="图论-最短路问题详解">
+<meta name="twitter:description" content="最短路径 第一类：单一源点到其他点的最短路径 第二类：所有点之间的最短路径  1234题目中有重边时的处理过程：选择已经存储的边和当前重边中的较小值自环：起点终点是同一个点的边负环：环上边权都是负数">
   
     <link rel="alternative" href="/atom.xml" title="Find everything about tech" type="application/atom+xml">
   
@@ -151,37 +151,136 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-回文子串个数" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-图论-最短路问题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      回文子串个数
+      图论-最短路问题详解
     </h1>
   
 
         
-        <a href="/2019/04/26/回文子串个数/" class="archive-article-date">
-  	<time datetime="2019-04-26T14:49:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-26</time>
+        <a href="/2019/05/01/图论-最短路问题/" class="archive-article-date">
+  	<time datetime="2019-05-01T00:30:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="https://leetcode.com/problems/palindromic-substrings/" target="_blank" rel="noopener">leetcode 647</a></p>
-<p>从字符串的每一位开始，向两边扩展字符串，要分为两种情况：</p>
-<ol>
-<li><p>奇数长度（从中间1位开始扩展）</p>
-</li>
-<li><p>偶数长度（从中间2位开始扩展）</p>
-</li>
-</ol>
+        <h4 id="最短路径"><a href="#最短路径" class="headerlink" title="最短路径"></a>最短路径</h4><ul>
+<li>第一类：单一源点到其他点的最短路径</li>
+<li>第二类：所有点之间的最短路径</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">题目中有重边时的处理过程：</span><br><span class="line">选择已经存储的边和当前重边中的较小值</span><br><span class="line">自环：起点终点是同一个点的边</span><br><span class="line">负环：环上边权都是负数</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="keyword">int</span> cnt;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">countSubstrings</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        cnt = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.size(); i++) &#123;</span><br><span class="line">            expand(s, i, i);        <span class="comment">// 奇数长度</span></span><br><span class="line">            expand(s, i, i + <span class="number">1</span>);    <span class="comment">// 偶数长度</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> cnt;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">expand</span><span class="params">(<span class="built_in">string</span> &amp;s, <span class="keyword">int</span> start, <span class="keyword">int</span> end)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (start &gt;= <span class="number">0</span> &amp;&amp; end &lt; s.size() &amp;&amp; s[start] == s[end]) &#123;</span><br><span class="line">            start--;</span><br><span class="line">            end++;</span><br><span class="line">            cnt++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-<p>PS：本来要翻船长的代码，结果找了半个小时也没找到。。。先给自己提个醒，这几天在ubuntu用find<code>expand</code>命令找一找。</p>
+<p><strong>Dijkstra算法</strong></p>
+<ul>
+<li>同时使用于有向图和无向图</li>
+</ul>
+<blockquote>
+<p>dis数组：用来记录每个点到源点的最短距离</p>
+</blockquote>
+<blockquote>
+<p>vis数组：用来标记，某个点是否扩展过了</p>
+</blockquote>
+<blockquote>
+<p>第一步将源点的dis置为0，其他dis[i]=INF</p>
+<p>循环n次：1.在所有未扩展节点中，选出dis[i]最小的结点；2.给结点x标记；3.对于从x出发的所有边，更新<code>dis[y] =min(dis[y], dis[x] + w[x][y])</code></p>
+</blockquote>
+<ul>
+<li>缺点：处理不了带负权的图</li>
+</ul>
+<p>​    原因是扩展过的点可能被后来的点扩展时所更新，而这个被扩展的点已经不能再被扩展了（vis已经为1了）</p>
+<p>​    改进：当点被更新时，将其vis置0，即可以被扩展</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 船长模板代码</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dij</span><span class="params">(<span class="keyword">int</span> s, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dis, <span class="number">0x3f</span>, <span class="keyword">sizeof</span>(dis));</span><br><span class="line">    <span class="comment">// 初始化</span></span><br><span class="line">    dis[s] = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">// n - 1次</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> ind = <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (vis[j]) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span> (ind == <span class="number">-1</span> || dis[j] &lt; dis[ind]) ind = j;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = head[ind]; j; j = g[j].next) &#123;</span><br><span class="line">            <span class="keyword">if</span> (dis[g[j].to] &gt; dis[ind] + g[j].c) &#123;</span><br><span class="line">                dis[g[j].to] = dis[ind] + g[j].c;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        vis[ind] = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Dijkstra算法堆优化</strong></p>
+<ul>
+<li><p>时间复杂度优化</p>
+<p>原来时间复杂度为$O(n^2)$，实际上，内层循环里每次只需要取出最小的值，因此可以借助<code>优先队列</code>，队列里存储的是pair（记录了距离和点的编号，按距离排序），时间复杂度可降为$O(nlogn)$</p>
+</li>
+</ul>
+<blockquote>
+<p>除了要找到<code>最小的dis值</code>外（因为要按这个出队），还要找到这个最小值对应的结点编号(为了松弛操作)，因此要把两者捆绑到一起放到优先队列中，使得取出最小dis值的同时也会取出对应的结点编号</p>
+<p>为了简单起见，这里不使用pair，而是显示定义一个结构体作为优先队列中的元素类型</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">priority_queue&lt;<span class="keyword">int</span>, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;, greater&lt;<span class="keyword">int</span>&gt;&gt; q；来声明一个小整数优先出队的优先队列</span><br><span class="line"><span class="comment">// first为编号，second为距离</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Data</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> first, second;</span><br><span class="line">    Data(<span class="keyword">int</span> a, <span class="keyword">int</span> b) : first(a), second(b) &#123;&#125;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> Data &amp;obj) <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>-&gt;second &gt; obj.second;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dij</span><span class="params">(<span class="keyword">int</span> s, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(dis, <span class="number">0x3f</span>, <span class="keyword">sizeof</span>(dis));</span><br><span class="line">    <span class="comment">// 初始化</span></span><br><span class="line">    dis[s] = <span class="number">0</span>;</span><br><span class="line">    priority_queue&lt;Data&gt; q;</span><br><span class="line">    q.push(Data(s, <span class="number">0</span>));</span><br><span class="line">    <span class="comment">// n - 1次</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n &amp;&amp; !q.empty(); i++) &#123;</span><br><span class="line">        <span class="comment">// 因为优先队列是基于堆实现的，因此方法为top()</span></span><br><span class="line">        <span class="keyword">int</span> ind = q.top().first;</span><br><span class="line">        q.pop();</span><br><span class="line">        <span class="comment">// 如果这个点扩展过，则找下一个点</span></span><br><span class="line">        <span class="comment">// 不能用if(vis[ind]) continue;来替换，因为外层循环要找出n个最小的点（进行n次）</span></span><br><span class="line">        <span class="keyword">while</span> (vis[ind] &amp;&amp; !q.empty()) &#123;</span><br><span class="line">            ind = q.top().first;</span><br><span class="line">            q.pop();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = head[ind]; j; j = g[j].next) &#123;</span><br><span class="line">            <span class="keyword">if</span> (dis[g[j].to] &gt; dis[ind] + g[j].c) &#123;</span><br><span class="line">                dis[g[j].to] = dis[ind] + g[j].c;</span><br><span class="line">                <span class="comment">// 优化1(解决负权图的问题)</span></span><br><span class="line">                vis[g[j].to] = <span class="number">0</span>;</span><br><span class="line">                q.push(Data(g[j].to, dis[g[j].to]));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        vis[ind] = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>除了求出最短路的长度外，也能很方便的打印出路径本身，原理和动态规划中的方案打印一样</li>
+</ul>
+<blockquote>
+<p>从终点出发，不断顺着<code>dis[i]+w[i][j] = dis[j]</code>的边从结点<code>j</code>退回结点<code>i</code>，直到回到起点。</p>
+<p>只需要将扩展时的代码改成：</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (dis[y] &gt; dis[x] + w[x][y]) &#123;</span><br><span class="line">    d[y] = d[x] + w[x][y];</span><br><span class="line">    fa[y] = x;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 待填坑</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">()</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="基于动态规划的最短路径算法"><a href="#基于动态规划的最短路径算法" class="headerlink" title="基于动态规划的最短路径算法"></a>基于动态规划的最短路径算法</h4><p><strong>Floyd算法</strong></p>
+<ol>
+<li>动归状态 <code>dp[k][i][j]</code>从i点到j点，允许经过前k个点，所能得到的最短路径的长度</li>
+<li>状态转移方程</li>
+</ol>
+<p>$$<br>dp[k][i][j] = min \begin{cases}dp[k-1][i][j] \ dp[k-1][i][k] + dp[k-1][k][j] \end{cases}<br>$$</p>
+<ul>
+<li>因此也可以去掉k这一维度</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 调用之前要进行一些简单的初始化，d[i][i]=0，其他为INF</span></span><br><span class="line"><span class="comment">// 允许经过前k个点</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt;= n; k++) &#123;</span><br><span class="line">    <span class="comment">// 求解i到j的最短路</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= n; j++) &#123;</span><br><span class="line">            dp[i][j] = min(dp[i][j], dp[i][k] + dp[k][j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>Floyd算法判断连通性</p>
+<p>在有向图中，有时不必关心路径的长度，而只关心每两点间是否有通路，则可以用1和0分别表示“连通”和“不连通”。这样，除了预处理做些许调整外，主算法只需改成</p>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dp[i][j] = dp[i][j] || (dp[i][k] &amp;&amp; dp[k][j])</span><br></pre></td></tr></table></figure>
+<p><strong>Bellman-ford算法</strong>（单源）</p>
+<ul>
+<li>使用于有向图和无向图，边权可正可负</li>
+</ul>
+<blockquote>
+<p>初始化：将除源点外的所有顶点的最短距离估计值 d[v] ←+∞, d[s] ←0</p>
+</blockquote>
+<ol>
+<li>动归状态 <code>dp[k][j]</code>代表从源点到j点，最多走k步的最短路径长度</li>
+</ol>
+<p>$$<br>dp(k, j) = \begin{cases} dp(k-1, j) \ dp(k - 1, i) + e(i, j) | e(i, j)为i到j的边长<br>\end{cases}<br>$$</p>
+<p>:question:并且可以推断出，当由第二个状态转移过来时，一定走了k-1步到i，而非最多走了k-1步到i</p>
+<p>最短路最多只经过n-1个结点（起点不算），可以通过n-1轮松弛操作得到</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 自己到自己的距离</span></span><br><span class="line">dp[s] = <span class="number">0</span>;</span><br><span class="line"><span class="comment">// 总时间复杂度为O(n*m)</span></span><br><span class="line"><span class="comment">// 外层循环时间复杂度O(n)，内两层遍历所有点的所有边，复杂度为O(m)</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">1</span>; k &lt; n; k++) &#123;       <span class="comment">// 迭代n-1次</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;  <span class="comment">// 检查每条边（进行松弛操作）</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = head[i]; j; j = g[j].next) &#123;</span><br><span class="line">            <span class="comment">// 能否更新到达点</span></span><br><span class="line">            <span class="keyword">int</span> to = g[j].to, c = g[j].c;</span><br><span class="line">            <span class="keyword">if</span> (dp[to] &gt; dp[i] + c) &#123;</span><br><span class="line">                dp[to] = dp[i] + c;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>BF算法有很多无谓的松弛操作，SPFA即是用来优化它的</p>
+<p><strong>SPFA算法</strong></p>
+<ul>
+<li>时间复杂度：$O(KE)$，K是常数，平均为2，E是边数(和边有关，因此不适合稠密图)</li>
+</ul>
+<p>相当于队列优化的Bellman-Ford，SPFA中的一个点可能在出队列之后再次被放入队列，也就是说一个点修改过其他的点之后，过了一段时间可能会获得更短的路径，于是再次用来修改其他的点，这样反复进行下去</p>
+<p>对BF算法优化的关键之处在于意识到：只有那些在前一遍松弛中改变了距离估计值的点，才可能引起他们的邻接点的距离估计值的改变。</p>
+<blockquote>
+<p>初始化： dis数组全部赋值为Inf，然后dis[s]=0；表示源点不用求最短路径，或者说最短路就是0。将源点入队；另外记住在整个算法中有顶点入队了要记得标记vis数组，有顶点出队了记得消除那个标记</p>
+<p>即此算法中vis数组用来标记是否在队列中</p>
+<p>核心：</p>
+<p>1.读取队头顶点u，并将队头顶点u出队（记得消除标记）；</p>
+<p>2.将与点u相连的所有点v进行松弛操作，如果能更新估计值（即令d[v]变小），那么就更新，另外，如果点v没有在队列中，那么要将点v入队（记得标记），如果已经在队列中了，那么就不用入队以此循环，直到队空为止就完成了单源最短路的求解。</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">spfa</span><span class="params">(<span class="keyword">int</span> s)</span> </span>&#123;</span><br><span class="line">    <span class="built_in">queue</span>&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line">    <span class="built_in">memset</span>(dis, <span class="number">0x3f</span>, <span class="keyword">sizeof</span>(dis));</span><br><span class="line">    dis[s] = <span class="number">0</span>;</span><br><span class="line">    vis[s] = <span class="number">1</span>;</span><br><span class="line">    q.push(s);</span><br><span class="line">    <span class="keyword">while</span> (!q.empty()) &#123;</span><br><span class="line">        <span class="keyword">int</span> ind = q.front();</span><br><span class="line">        q.pop();</span><br><span class="line">        vis[ind] = <span class="number">0</span>;       <span class="comment">// 影响算法的执行效率</span></span><br><span class="line">        <span class="comment">// 那些点的最短距离可以被更新</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = head[ind]; i; i = g[i].next) &#123;</span><br><span class="line">            <span class="keyword">int</span> to = g[i].to, c = g[i].c;</span><br><span class="line">            <span class="keyword">if</span> (dis[to] &lt;= dis[ind] + c) <span class="keyword">continue</span>;</span><br><span class="line">            dis[to] = dis[ind] + c;</span><br><span class="line">            <span class="keyword">if</span> (vis[to] == <span class="number">0</span>) &#123;</span><br><span class="line">                q.push(to);</span><br><span class="line">                vis[to] = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>可以处理负权边的图，但无法处理带负环的图</p>
+</li>
+<li><p>检测负权回路：如果某个点进入队列的次数大于等于n，则存在负权回路，其中n为图的顶点数</p>
+</li>
+<li><p>判断负权回路，详细参见下文</p>
+<p><a href="http://www.cnblogs.com/hxsyl/p/3248391.html" target="_blank" rel="noopener">SPFA学习笔记</a></p>
+</li>
+</ul>
+<p><strong>个人总结</strong></p>
+<p>Dijkstra和BF算法，外层循环均进行n-1次，然而内层一个是枚举未标记的点，一个是枚举所有边</p>
+<p><strong>代码实现</strong></p>
+<p>上述算法的实现均使用了<strong><code>链式前向星</code></strong>来存图，代码如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX_M 500000</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX_N 10000</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x3f3f3f3f</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Edge</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> to, next, c;</span><br><span class="line">&#125; g[MAX_M + <span class="number">5</span>];</span><br><span class="line"><span class="comment">// 以这条边作为起始点的第一条边的编号</span></span><br><span class="line"><span class="keyword">int</span> head[MAX_N + <span class="number">5</span>], cnt = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> dis[MAX_N + <span class="number">5</span>], vis[MAX_N + <span class="number">5</span>];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 0编号不存边</span></span><br><span class="line">    g[++cnt].to = b;</span><br><span class="line">    g[cnt].next = head[a];</span><br><span class="line">    g[cnt].c = c;</span><br><span class="line">    head[a] = cnt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>算法的代码实现均来自胡船长(Hug)，其中一些思想来自《算法竞赛入门经典》以及网上博客</p>
+</blockquote>
+<blockquote>
+<p>参阅如下：<a href="https://blog.csdn.net/mashiro_ylb/article/details/78289790" target="_blank" rel="noopener">四种最短路算法</a> <a href="https://www.cnblogs.com/five20/p/7782931.html" target="_blank" rel="noopener">彻底搞懂最短路算法</a></p>
+</blockquote>
 
       
 
@@ -216,7 +315,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">字符串算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Graph</a>
         		</li>
       		
 		</ul>
@@ -272,7 +371,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/26/回文子串个数/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/05/01/图论-最短路问题/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -286,18 +385,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/05/01/图论-最短路问题/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          图论-最短路问题详解
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/04/25/Leetcode/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Leetcode</div>
+    <a href="/2019/04/26/回文子串个数/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">回文子串个数</div>
       <i class="icon-circle-right"></i>
     </a>
   
