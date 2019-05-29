@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Find everything about tech">
 <meta property="og:description" content="关于课程的思考 我们何处涉及到了微服务呢？ springboot约定大于配置的理解？">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-29T03:28:02.692Z">
+<meta property="og:updated_time" content="2019-05-29T08:00:50.036Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="系统程序设计课程复习">
 <meta name="twitter:description" content="关于课程的思考 我们何处涉及到了微服务呢？ springboot约定大于配置的理解？">
@@ -380,7 +380,24 @@
 <li><code>&amp;&amp; ||</code></li>
 </ul>
 <p><strong>五、对被拦截对象的操作的接口</strong></p>
-<p><strong>六、Spring事务与JPA事务</strong></p>
+<p><code>JoinPoint</code>接口，仅可以获取信息，无法改变连接点的执行</p>
+<ul>
+<li><code>Object getTarget()</code>，获取连接点对象</li>
+<li><code>Object[] getArgs()</code>，获取方法参数</li>
+<li><code>Object getThis()</code>，获取代理对象</li>
+</ul>
+<p><code>ProceedingJointPoint</code>接口，继承上面的，<strong><code>仅可注入around通知</code></strong></p>
+<ul>
+<li><code>Object proceed()</code>，执行连接点方法，并返回执行结果，不执行则不会调用连接点方法</li>
+<li><code>Object proceed(Object[] args)</code>，基于参数执行连接点对象方法</li>
+<li><strong><code>Around通知可改变连接点方法的执行，修改原参数，修改返回结果等等</code></strong></li>
+<li><strong><code>接口对象可直接作为通知方法参数，注入使用</code></strong></li>
+</ul>
+<blockquote>
+<p>关于AOP使用的个人理解：自己写个切面类<code>MyAspect</code>，定义好切入点，写好通知；之后在调用<code>AOPService</code>中的方法时，根据切入点表达式的定义，织入相应通知，创建代理对象，执行方法。</p>
+</blockquote>
+<p>:question:<code>Lecture09 P21-25 Advice Parameters</code>权限这一部分，还需要看吗</p>
+<p><strong>六、Spring事务与JPA事务==？==</strong></p>
 <p>:question:<code>Lecture09-P26什么意思呢; P28还考吗</code></p>
 <ul>
 <li>全局事务，事务处理过程中涉及多个资源管理者，基于JTA实现</li>
@@ -407,7 +424,7 @@
 </ul>
 <p>在业务逻辑组件，事务中捕获受检异常，转抛为自定义非受检异常</p>
 <p>:question: 受检与非受检异常</p>
-<p><strong>七、面向接口编程，面向切面编程，面向服务编程的意义</strong></p>
+<p><strong>七、面向接口编程，面向切面编程，面向服务编程的意义==？==</strong></p>
 <ol>
 <li>面向接口程序设计+Java默认动态代理模式+依赖注入+Spring容器，使接口调用者无需关心接口的具体实现。实现类、代理类、位置、创建方式均与调用者无关</li>
 </ol>
@@ -514,6 +531,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/05/29/系统程序设计复习之SpringMVC/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          系统程序设计复习之SpringMVC
+        
+      </div>
+    </a>
   
   
     <a href="/2019/05/17/夏令营信息/" id="article-nav-older" class="article-nav-link-wrap">
@@ -647,15 +673,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">sort</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">字符串算法</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">review</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hexo使用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">sort</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -664,10 +694,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Graph</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">review</a>
               </li>
              
               <li class="article-tag-list-item">
