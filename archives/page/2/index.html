@@ -6,20 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Leetcode | Find everything about tech</title>
+  <title>Archives | Find everything about tech</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="排序Kth Element 问题 题目描述：找到第k大的元素  排序。时间复杂度$O(NlogN)$，空间复杂度$O(1)$  堆排序。时间复杂度$O(NlogK)$，空间复杂度$O(K)$ 维护一个最多有k个元素的小顶堆（最后队列里剩下的是最大的k个元素）  快速选择 使用快速排序的partition()实现   TopK Elements 问题">
-<meta name="keywords" content="leetcode">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode">
-<meta property="og:url" content="http://yoursite.com/2019/04/25/Leetcode/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Find everything about tech">
+<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
 <meta property="og:site_name" content="Find everything about tech">
-<meta property="og:description" content="排序Kth Element 问题 题目描述：找到第k大的元素  排序。时间复杂度$O(NlogN)$，空间复杂度$O(1)$  堆排序。时间复杂度$O(NlogK)$，空间复杂度$O(K)$ 维护一个最多有k个元素的小顶堆（最后队列里剩下的是最大的k个元素）  快速选择 使用快速排序的partition()实现   TopK Elements 问题">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-25T14:40:52.062Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode">
-<meta name="twitter:description" content="排序Kth Element 问题 题目描述：找到第k大的元素  排序。时间复杂度$O(NlogN)$，空间复杂度$O(1)$  堆排序。时间复杂度$O(NlogK)$，空间复杂度$O(K)$ 维护一个最多有k个元素的小顶堆（最后队列里剩下的是最大的k个元素）  快速选择 使用快速排序的partition()实现   TopK Elements 问题">
+<meta name="twitter:title" content="Find everything about tech">
   
     <link rel="alternative" href="/atom.xml" title="Find everything about tech" type="application/atom+xml">
   
@@ -151,221 +146,63 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Leetcode" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      Leetcode
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/03/25/第一篇个人博文/" class="archive-article-date">
+  	<time datetime="2019-03-25T11:07:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-25</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2019/03/25/第一篇个人博文/">第一篇个人博文</a>
     </h1>
   
 
-        
-        <a href="/2019/04/25/Leetcode/" class="archive-article-date">
-  	<time datetime="2019-04-25T14:40:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h4><p><strong>Kth Element 问题</strong></p>
-<p>题目描述：找到第k大的元素</p>
-<ol>
-<li><p>排序。时间复杂度$O(NlogN)$，空间复杂度$O(1)$</p>
-</li>
-<li><p>堆排序。时间复杂度$O(NlogK)$，空间复杂度$O(K)$</p>
-<p>维护一个最多有k个元素的小顶堆（最后队列里剩下的是最大的k个元素）</p>
-</li>
-<li><p>快速选择</p>
-<p>使用快速排序的partition()实现</p>
-</li>
-</ol>
-<p>TopK Elements 问题</p>
-<a id="more"></a>
-<h4 id="贪心思想"><a href="#贪心思想" class="headerlink" title="贪心思想"></a>贪心思想</h4><p>Leetcode<a href="https://leetcode.com/problems/non-overlapping-intervals/description/" target="_blank" rel="noopener">435. Non-overlapping Intervals (Medium)</a></p>
-<blockquote>
-<p>先计算最多能组成的不重叠区间数，然后用区间总个数减去不重叠区间的个数</p>
-<p>每次选择中区间的结尾最为重要，选择的区间结尾越小，留给后面区间的空间越大，则能选择的个数也越多，因此按区间的结尾小的在前进行排序，<code>每次选择结尾最小，并且和前一个区间不重叠的区间</code></p>
-</blockquote>
-<p>Leetcode<a href="https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/" target="_blank" rel="noopener">452. Minimum Number of Arrows to Burst Balloons (Medium)</a></p>
-<blockquote>
-<p>也是计算不重叠的区间个数</p>
-</blockquote>
-<blockquote>
-<p>比自己的思路简单的做法：按区间右端点排序，记录第一个区间的右端点为end，cnt为1；之后从第2个区间开始遍历所有区间，如果该区间的左端点比end大，则cnt++，同时更新end为该区间的右端点</p>
-</blockquote>
-<p>:question:比较cmp函数要声明在类外（即静态的），为何</p>
-<p><strong>Leetcode</strong><a href="https://leetcode.com/problems/queue-reconstruction-by-height/description/" target="_blank" rel="noopener">406. Queue Reconstruction by Height(Medium)</a></p>
-<blockquote>
-<p>为了使插入操作不影响后续的操作，身高较高的学生应该先做插入操作，否则身高较小的学生原先正确插入的第 k 个位置可能会变成第 k+1 个位置。</p>
-</blockquote>
-<p><strong>Leetcode</strong><a href="https://leetcode.com/problems/non-decreasing-array/description/" target="_blank" rel="noopener">665. Non-decreasing Array (Easy)</a>修改一个数成为非递减数组</p>
-<blockquote>
-<p>在出现 nums[i] &lt; nums[i - 1] 时，需要考虑的是应该修改数组的哪个数，使得本次修改能使 i 之前的数组成为非递减数组，并且 <strong>不影响后续的操作</strong> 。优先考虑令 nums[i - 1] = nums[i]，因为如果修改 nums[i] = nums[i - 1] 的话，那么 nums[i] 这个数会变大，就有可能比 nums[i + 1] 大，从而影响了后续操作。还有一个比较特别的情况就是 nums[i] &lt; nums[i - 2]，只修改 nums[i - 1] = nums[i] 不能使数组成为非递减数组，只能修改 nums[i] = nums[i - 1]。</p>
-</blockquote>
-<p><strong>Leetcode</strong><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/" target="_blank" rel="noopener">122. Best Time to Buy and Sell Stock II (Easy)</a></p>
-<h4 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h4><p><code>mid = head + (tail - head)  / 2</code>; 可防止两数相加时溢出</p>
-<p><strong>Leetcode</strong><a href="https://leetcode.com/problems/search-for-a-range/description/" target="_blank" rel="noopener">34. Search for a Range (Medium)</a> 查找区间</p>
-<p>前0后1问题，注意初始时设置<code>head = 0, tail = nums.size()（可能有全0的情况发生）</code></p>
-<p>先查找第一个大于等于target的数的位置作为first，再查找第一个大于target的数的位置减1作为last</p>
-<p>注意边界条件的判断！</p>
-<h4 id="分治"><a href="#分治" class="headerlink" title="分治"></a>分治</h4><p><strong>Leetcode</strong><a href="https://leetcode.com/problems/unique-binary-search-trees-ii/description/" target="_blank" rel="noopener">95. Unique Binary Search Trees II (Medium)</a> :boom:</p>
-<p>递归构造左右子树</p>
-<h4 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h4><p>强盗抢劫<a href="https://leetcode.com/problems/house-robber/description/" target="_blank" rel="noopener">198. House Robber (Easy)</a></p>
-<blockquote>
-<p>定义dp[i]为抢到第i个住户时的最大抢劫量，分两种情况，抢劫第i个住户，不抢劫第i个住户</p>
-</blockquote>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Hexo使用</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/25/Leetcode/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/04/26/回文子串个数/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          回文子串个数
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/04/22/Vue/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Vue</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
+    
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
+    </nav>
   
 
 
@@ -389,8 +226,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

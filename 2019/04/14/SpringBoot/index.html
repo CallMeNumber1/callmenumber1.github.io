@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>SprngBoot | Find everything about tech</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="项目容器建一个空的项目作为项目容器，里面新建Module作为子项目即可，只需要对项目容器做版本控制即可。 每新建一个项目，将有关maven版本的文件删除（用不到） Q&amp;amp;A实验二  持久化组件中  12345678910public List&amp;lt;Address&amp;gt; listAddresses(int uid) &amp;#123;        User user = em.find(Use">
+  <meta name="description" content="前后端整合:date:04-29 后端初始时没有用户，使用InitService创建一个超级管理员，再完成教师、学生等信息的添加（一般通过Excel表格导入） 用户的权限（角色）像token一样，会被保存到sessionStroage 后端的权限不再是简单的1和2，而是一个字符串（哈希生成的），这样可以防止伪造权限 :date:05-20 后端中的一些疑问：  service和repository">
 <meta name="keywords" content="spring">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SprngBoot">
 <meta property="og:url" content="http://yoursite.com/2019/04/14/SpringBoot/index.html">
 <meta property="og:site_name" content="Find everything about tech">
-<meta property="og:description" content="项目容器建一个空的项目作为项目容器，里面新建Module作为子项目即可，只需要对项目容器做版本控制即可。 每新建一个项目，将有关maven版本的文件删除（用不到） Q&amp;amp;A实验二  持久化组件中  12345678910public List&amp;lt;Address&amp;gt; listAddresses(int uid) &amp;#123;        User user = em.find(Use">
+<meta property="og:description" content="前后端整合:date:04-29 后端初始时没有用户，使用InitService创建一个超级管理员，再完成教师、学生等信息的添加（一般通过Excel表格导入） 用户的权限（角色）像token一样，会被保存到sessionStroage 后端的权限不再是简单的1和2，而是一个字符串（哈希生成的），这样可以防止伪造权限 :date:05-20 后端中的一些疑问：  service和repository">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-22T11:41:18.608Z">
+<meta property="og:updated_time" content="2019-05-29T02:33:03.864Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SprngBoot">
-<meta name="twitter:description" content="项目容器建一个空的项目作为项目容器，里面新建Module作为子项目即可，只需要对项目容器做版本控制即可。 每新建一个项目，将有关maven版本的文件删除（用不到） Q&amp;amp;A实验二  持久化组件中  12345678910public List&amp;lt;Address&amp;gt; listAddresses(int uid) &amp;#123;        User user = em.find(Use">
+<meta name="twitter:description" content="前后端整合:date:04-29 后端初始时没有用户，使用InitService创建一个超级管理员，再完成教师、学生等信息的添加（一般通过Excel表格导入） 用户的权限（角色）像token一样，会被保存到sessionStroage 后端的权限不再是简单的1和2，而是一个字符串（哈希生成的），这样可以防止伪造权限 :date:05-20 后端中的一些疑问：  service和repository">
   
     <link rel="alternative" href="/atom.xml" title="Find everything about tech" type="application/atom+xml">
   
@@ -171,7 +171,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="项目容器"><a href="#项目容器" class="headerlink" title="项目容器"></a>项目容器</h2><p>建一个空的项目作为项目容器，里面新建Module作为子项目即可，只需要对项目容器做版本控制即可。</p>
+        <h2 id="前后端整合"><a href="#前后端整合" class="headerlink" title="前后端整合"></a>前后端整合</h2><p>:date:04-29</p>
+<p>后端初始时没有用户，使用InitService创建一个超级管理员，再完成教师、学生等信息的添加（一般通过Excel表格导入）</p>
+<p>用户的权限（角色）像token一样，会被保存到sessionStroage</p>
+<p>后端的权限不再是简单的1和2，而是一个字符串（哈希生成的），这样可以防止伪造权限</p>
+<p>:date:05-20</p>
+<p>后端中的一些疑问：</p>
+<ol>
+<li><p>service和repository区别，还有controller</p>
+<p>实现的功能貌似重叠？个人理解是repository实现增删改查，service实现业务逻辑，然而在我们的后端中，<code>homeworkservice</code>下有两个list—Homeworks的方法，其中直接调用了repository中的查询方法，那这个service有何存在的必要呢？直接注入repository岂不更简单</p>
+</li>
+<li><p>本项目中有两个拦截器，如何判断先经过哪一个呢，是按声明的顺序吗</p>
+</li>
+<li><p><code>LoginController</code>中为何在response头部塞入token之后，要设置一个role呢，记录的权限对应的哈希值</p>
+</li>
+<li><p>将student和teacher用一个<code>User</code>类型表示，有何好处？</p>
+</li>
+<li><p>应用刚开始启动时为何要设置时区呢</p>
+</li>
+</ol>
+<p>注意事项：</p>
+<ol>
+<li>Map.of()方法，中的值不能为null</li>
+<li>test已编写完毕，执行顺序<code>logincontroller.http</code>得到token，再用<code>admincontroller</code>添加课程后添加作业，再用<code>usercontroller</code>查看课程和作业信息</li>
+</ol>
+<h2 id="项目容器"><a href="#项目容器" class="headerlink" title="项目容器"></a>项目容器</h2><p>建一个空的项目作为项目容器，里面新建Module作为子项目即可，只需要对项目容器做版本控制即可。</p>
 <p>每新建一个项目，将有关maven版本的文件删除（用不到）</p>
 <h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><p><strong>实验二</strong></p>
 <ol>
@@ -230,6 +254,38 @@
 <p>对于服务器出现的异常，默认返回的格式即满足要求</p>
 <p>对于客户端信息输入导致的异常，要经过校验，并且写ExceptionController进行处理，统一返回message</p>
 <p>​    并且不同类型的异常有不同类型的处理方法</p>
+<p>:date:5-28查缺补漏：</p>
+<p><strong>Entity relationship model</strong></p>
+<p>关系维护端与关系被维护端，以双向one-to-many为例，one端（关系被维护端）使用mappedBy放弃对关系的维护，并指定在另一端映射的属性名称，由关系维护端建立与关系被维护端的关系，在数据库中映射的结果：关系被维护端表主键映射为关系维护端表的外键。</p>
+<p>这就导致，试图通过one端建立关联关系，数据可以保存，但关系无效，详见，<code>Lecture05-P8</code></p>
+<p><strong>级联</strong></p>
+<p>级联操作与关系维护无关，即，即使设置PERSIST级联也无法完成从关系被维护端建立与关系维护端的关系</p>
+<p><strong>JPQL API</strong></p>
+<p>同一事务中，find()与JPQL查询使用相同的持久化上下文，不会因为查询方法不同而改变</p>
+<p><strong>spring-data-JPA</strong></p>
+<ul>
+<li><p>简化了基于JPA/Hibernate的开发，与spring容器无缝整合</p>
+</li>
+<li><p>封装了基于JPA规范的Hibernate框架，提供了更简洁的开发接口</p>
+<p>包括：通用的持久化接口，查询注解</p>
+</li>
+</ul>
+<p><code>jpaRepository</code>接口中的常用方法：<code>count(), delete(), deleteAll(), deleteById(), findAll(), findById(), save(),flush()</code>，不提供refresh方法</p>
+<ul>
+<li><code>save()</code>方法，持久化保存；无法获取数据库时间戳；默认基于主键更新，与是否为脱管状态无关；与merge()方法相同，全部属性更新，而且仅执行update更新语句，不会从数据库拉取数据；</li>
+<li><code>Optional findById()</code>，返回对象封装在optional容器（通过get()获得对象）</li>
+</ul>
+<p>直接在接口中声明抽象查询方法，无需通过em手动查询</p>
+<ul>
+<li>@Query注解：声明JPQL查询语句</li>
+<li>@Param注解：声明方法参数对于的JPQL语句参数</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Query</span>(<span class="string">"SELECT u FROM User u WHERE u.address=:address"</span>)</span><br><span class="line"><span class="function">List&lt;User&gt; <span class="title">list</span><span class="params">(@Param(<span class="string">"address"</span>)</span> String address)</span>;</span><br></pre></td></tr></table></figure>
+<p>spring-data支持基于属性名称自动创建查询，即仅按约定编写查询方法，无需编写JPQL语句</p>
+<p><strong>DI</strong></p>
+<p>Spring容器启动时，扫描并创建指定路径下全部组件的实例</p>
+<p>以<strong><code>键值对</code></strong>保存实例，键为类名首字母小写，值为容器创建的对象</p>
+<p>当不同路径下包含相同类名组件时，容器无法启动并抛出异常</p>
 <h2 id="JPQL"><a href="#JPQL" class="headerlink" title="JPQL"></a>JPQL</h2><p>查询语句何时能够省略<code>select</code></p>
 <p>jpql语句，<strong>类、属性区分大小写</strong></p>
 <p>jpa jpql：基于实体类和属性查询，结果直接封装在<code>受管状态对象</code>中。</p>
@@ -264,10 +320,8 @@
 <p><code>@Service</code> 声明为业务逻辑组件</p>
 <p><code>@Controller</code> 声明为逻辑控制组件</p>
 <p><code>@Bean</code> 方法级，声明方法返回的对象，由spring容器管理。当需注入非自定义组件时</p>
-<blockquote>
-<p>组件注解，仅用于区分组件功能</p>
-<p>注解本身，不实现任何特殊功能</p>
-</blockquote>
+<p><strong>组件注解，仅用于区分组件功能</strong></p>
+<p><strong>注解本身，不实现任何特殊功能</strong></p>
 <p>:interrobang:bean是什么</p>
 <h4 id="Bean-Scopes"><a href="#Bean-Scopes" class="headerlink" title="Bean Scopes"></a>Bean Scopes</h4><p><code>Scope</code>：Spring容器中bean相对于其他bean请求的可访问范围</p>
 <ul>
@@ -319,7 +373,7 @@
 <li><p>动态代理</p>
 <ol>
 <li>基于标准JDK的动态代理：运行时基于反射动态生成指定接口的代理类</li>
-<li>基于CGLB的动态代理：通过CGLIB工具，基于底层字节码技术动态创建连接点类的子类。运行时，基于子类重写父类方法的实现</li>
+<li>基于CGLIB的动态代理：通过CGLIB工具，基于底层字节码技术动态创建连接点类的子类。运行时，基于子类重写父类方法的实现</li>
 </ol>
 </li>
 </ul>
@@ -831,11 +885,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">字符串算法</a>
+                <a href="javascript:void(0)" class="js-tag color5">sort</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">sort</a>
+                <a href="javascript:void(0)" class="js-tag color1">字符串算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -851,11 +905,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">spring</a>
+                <a href="javascript:void(0)" class="js-tag color2">review</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">spring</a>
               </li>
             
             <div class="clearfix"></div>

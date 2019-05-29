@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Leetcode | Find everything about tech</title>
+  <title>系统程序设计课程复习 | Find everything about tech</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="排序Kth Element 问题 题目描述：找到第k大的元素  排序。时间复杂度$O(NlogN)$，空间复杂度$O(1)$  堆排序。时间复杂度$O(NlogK)$，空间复杂度$O(K)$ 维护一个最多有k个元素的小顶堆（最后队列里剩下的是最大的k个元素）  快速选择 使用快速排序的partition()实现   TopK Elements 问题">
-<meta name="keywords" content="leetcode">
+  <meta name="description" content="关于课程的思考 我们何处涉及到了微服务呢？ springboot约定大于配置的理解？">
+<meta name="keywords" content="review">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Leetcode">
-<meta property="og:url" content="http://yoursite.com/2019/04/25/Leetcode/index.html">
+<meta property="og:title" content="系统程序设计课程复习">
+<meta property="og:url" content="http://yoursite.com/2019/05/27/系统程序设计课程复习/index.html">
 <meta property="og:site_name" content="Find everything about tech">
-<meta property="og:description" content="排序Kth Element 问题 题目描述：找到第k大的元素  排序。时间复杂度$O(NlogN)$，空间复杂度$O(1)$  堆排序。时间复杂度$O(NlogK)$，空间复杂度$O(K)$ 维护一个最多有k个元素的小顶堆（最后队列里剩下的是最大的k个元素）  快速选择 使用快速排序的partition()实现   TopK Elements 问题">
+<meta property="og:description" content="关于课程的思考 我们何处涉及到了微服务呢？ springboot约定大于配置的理解？">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-25T14:40:52.062Z">
+<meta property="og:updated_time" content="2019-05-29T03:28:02.692Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Leetcode">
-<meta name="twitter:description" content="排序Kth Element 问题 题目描述：找到第k大的元素  排序。时间复杂度$O(NlogN)$，空间复杂度$O(1)$  堆排序。时间复杂度$O(NlogK)$，空间复杂度$O(K)$ 维护一个最多有k个元素的小顶堆（最后队列里剩下的是最大的k个元素）  快速选择 使用快速排序的partition()实现   TopK Elements 问题">
+<meta name="twitter:title" content="系统程序设计课程复习">
+<meta name="twitter:description" content="关于课程的思考 我们何处涉及到了微服务呢？ springboot约定大于配置的理解？">
   
     <link rel="alternative" href="/atom.xml" title="Find everything about tech" type="application/atom+xml">
   
@@ -151,73 +151,266 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Leetcode" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-系统程序设计课程复习" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Leetcode
+      系统程序设计课程复习
     </h1>
   
 
         
-        <a href="/2019/04/25/Leetcode/" class="archive-article-date">
-  	<time datetime="2019-04-25T14:40:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-25</time>
+        <a href="/2019/05/27/系统程序设计课程复习/" class="archive-article-date">
+  	<time datetime="2019-05-27T14:35:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h4><p><strong>Kth Element 问题</strong></p>
-<p>题目描述：找到第k大的元素</p>
+        <p><strong>关于课程的思考</strong></p>
+<p>我们何处涉及到了微服务呢？</p>
+<p>springboot约定大于配置的理解？</p>
+<a id="more"></a>
+<h4 id="JPA"><a href="#JPA" class="headerlink" title="JPA"></a>JPA</h4><p><strong>一、ORM</strong></p>
+<p>概念：对象关系映射是一种为了解决面向对象与关系数据库存在的互不匹配的现象的技术。</p>
+<p>作用：通过使用描述对象和数据库之间映射的元数据，将面向对象程序语言中的对象自动持久化到关系数据库中</p>
+<p>优点：</p>
 <ol>
-<li><p>排序。时间复杂度$O(NlogN)$，空间复杂度$O(1)$</p>
+<li>业务逻辑访问、操作对象而非数据库记录；</li>
+<li>无需关系底层数据库，通过面向对象逻辑隐藏具体SQL实现细节；</li>
+<li>实现基于业务关系而非数据表结构关系；适应应用的快速开发与迭代。</li>
+</ol>
+<p><strong>二、基本ORM映射关系</strong></p>
+<ol>
+<li>一个实体类映射为一张数据表；</li>
+<li>实体类的一个对象，映射为数据表中的一条记录；</li>
+<li>实体类中的一个属性，映射为数据表中的一个字段</li>
+</ol>
+<p><strong>三、关联对象的延迟加载策略</strong></p>
+<p>fetch：指定对关联实体对象的抓取/加载策略</p>
+<ul>
+<li>FetchType.EAGER：即时加载/抓取，对One端默认值；即使事务关闭，也可直接获取one端数据</li>
+<li>FetchTYpe.LAZY：延迟加载/抓取，对Many端默认值；<strong><code>在事务关闭后，延迟加载异常</code></strong></li>
+</ul>
+<p><strong>四、实体对象的状态，以及主要的改变对象状态的方法</strong></p>
+<ol>
+<li><p>New，新建状态</p>
+<p>对象无持久化标识；尚未受EntityManager管理；当新建状态失去引用时销毁</p>
 </li>
-<li><p>堆排序。时间复杂度$O(NlogK)$，空间复杂度$O(K)$</p>
-<p>维护一个最多有k个元素的小顶堆（最后队列里剩下的是最大的k个元素）</p>
+<li><p>Managed，受管状态</p>
+<p>对象有持久化标识；受EntityManager管理；<strong><code>对象做出的修改，将在事务结束时自动同步到数据库</code></strong></p>
 </li>
-<li><p>快速选择</p>
-<p>使用快速排序的partition()实现</p>
+<li><p>Detached，脱管状态</p>
+<p>对象有持久化标识；曾经是受管状态，但已不再受EM管理（==事务结束==）；对象引用依然有效，对象依然可被修改；重新被EM管理后仍可将修改数据同步到数据库</p>
+</li>
+<li><p>Removed，删除状态</p>
+<p>曾经是持久化状态，被EM修改为Removed状态；仍受EM管理；事务结束后，同步到数据库删除</p>
 </li>
 </ol>
-<p>TopK Elements 问题</p>
-<a id="more"></a>
-<h4 id="贪心思想"><a href="#贪心思想" class="headerlink" title="贪心思想"></a>贪心思想</h4><p>Leetcode<a href="https://leetcode.com/problems/non-overlapping-intervals/description/" target="_blank" rel="noopener">435. Non-overlapping Intervals (Medium)</a></p>
-<blockquote>
-<p>先计算最多能组成的不重叠区间数，然后用区间总个数减去不重叠区间的个数</p>
-<p>每次选择中区间的结尾最为重要，选择的区间结尾越小，留给后面区间的空间越大，则能选择的个数也越多，因此按区间的结尾小的在前进行排序，<code>每次选择结尾最小，并且和前一个区间不重叠的区间</code></p>
-</blockquote>
-<p>Leetcode<a href="https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/" target="_blank" rel="noopener">452. Minimum Number of Arrows to Burst Balloons (Medium)</a></p>
-<blockquote>
-<p>也是计算不重叠的区间个数</p>
-</blockquote>
-<blockquote>
-<p>比自己的思路简单的做法：按区间右端点排序，记录第一个区间的右端点为end，cnt为1；之后从第2个区间开始遍历所有区间，如果该区间的左端点比end大，则cnt++，同时更新end为该区间的右端点</p>
-</blockquote>
-<p>:question:比较cmp函数要声明在类外（即静态的），为何</p>
-<p><strong>Leetcode</strong><a href="https://leetcode.com/problems/queue-reconstruction-by-height/description/" target="_blank" rel="noopener">406. Queue Reconstruction by Height(Medium)</a></p>
-<blockquote>
-<p>为了使插入操作不影响后续的操作，身高较高的学生应该先做插入操作，否则身高较小的学生原先正确插入的第 k 个位置可能会变成第 k+1 个位置。</p>
-</blockquote>
-<p><strong>Leetcode</strong><a href="https://leetcode.com/problems/non-decreasing-array/description/" target="_blank" rel="noopener">665. Non-decreasing Array (Easy)</a>修改一个数成为非递减数组</p>
-<blockquote>
-<p>在出现 nums[i] &lt; nums[i - 1] 时，需要考虑的是应该修改数组的哪个数，使得本次修改能使 i 之前的数组成为非递减数组，并且 <strong>不影响后续的操作</strong> 。优先考虑令 nums[i - 1] = nums[i]，因为如果修改 nums[i] = nums[i - 1] 的话，那么 nums[i] 这个数会变大，就有可能比 nums[i + 1] 大，从而影响了后续操作。还有一个比较特别的情况就是 nums[i] &lt; nums[i - 2]，只修改 nums[i - 1] = nums[i] 不能使数组成为非递减数组，只能修改 nums[i] = nums[i - 1]。</p>
-</blockquote>
-<p><strong>Leetcode</strong><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/description/" target="_blank" rel="noopener">122. Best Time to Buy and Sell Stock II (Easy)</a></p>
-<h4 id="二分查找"><a href="#二分查找" class="headerlink" title="二分查找"></a>二分查找</h4><p><code>mid = head + (tail - head)  / 2</code>; 可防止两数相加时溢出</p>
-<p><strong>Leetcode</strong><a href="https://leetcode.com/problems/search-for-a-range/description/" target="_blank" rel="noopener">34. Search for a Range (Medium)</a> 查找区间</p>
-<p>前0后1问题，注意初始时设置<code>head = 0, tail = nums.size()（可能有全0的情况发生）</code></p>
-<p>先查找第一个大于等于target的数的位置作为first，再查找第一个大于target的数的位置减1作为last</p>
-<p>注意边界条件的判断！</p>
-<h4 id="分治"><a href="#分治" class="headerlink" title="分治"></a>分治</h4><p><strong>Leetcode</strong><a href="https://leetcode.com/problems/unique-binary-search-trees-ii/description/" target="_blank" rel="noopener">95. Unique Binary Search Trees II (Medium)</a> :boom:</p>
-<p>递归构造左右子树</p>
-<h4 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h4><p>强盗抢劫<a href="https://leetcode.com/problems/house-robber/description/" target="_blank" rel="noopener">198. House Robber (Easy)</a></p>
-<blockquote>
-<p>定义dp[i]为抢到第i个住户时的最大抢劫量，分两种情况，抢劫第i个住户，不抢劫第i个住户</p>
-</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">persist</span><span class="params">(Object entity)</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>将新建状态对象转为持久化状态</li>
+<li>对象是持久化状态，该方法被忽略</li>
+</ul>
+<p>:question: <code>Lecture05 P25</code>：persist()后，是事务结束后统一执行update语句吗，为何新建状态到受管状态时执行了insert语句</p>
+<ul>
+<li>对象是脱管状态，将抛出异常</li>
+<li>对象是删除状态，将重新转化为持久化状态</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Object <span class="title">find</span><span class="params">(Class entityClass, Object primaryKey)</span></span></span><br></pre></td></tr></table></figure>
+<p>基于实体类型与对象标识，加载受管对象；没有匹配记录，返回null</p>
+<p>加载顺序：在持久化上下文PC中，查询相同类型相同主键受管对象；在数据库中查询</p>
+<p>:question: 返回的对象的状态—受管状态</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">flush</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>强制当前所有受管状态对象，同步到数据库</li>
+<li>强制执行SQL更新语句以同步</li>
+<li>事务提交时自动执行此方法</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">refresh</span><span class="params">(Object entity)</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>强制数据库数据，同步到受管对象（基于主键）</li>
+<li>强制执行SQL查询语句以同步</li>
+<li>对象是<strong><code>新建</code>、<code>脱管</code>、<code>删除</code></strong>状态，则抛出异常；</li>
+</ul>
+<p>新建状态到受管状态，在事务结束前，默认无法获取除主键外的其他数据库生成数据（例如时间戳），因此需要手动同步受管对象。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Object <span class="title">merge</span><span class="params">(Object entity)</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>对象为新建状态时，相当于执行persist()</li>
+<li>对象为脱管状态时，基于脱管对象中的主键，从数据库查询数据，并封装到<strong>新对象</strong>；将原脱管对象的修改合并至新对象；原脱管对象依然为脱管状态；返回的新对象为受管状态。<code>即并非将脱管状态对象变为受管状态</code></li>
+<li>对象为受管状态时，忽略执行</li>
+</ul>
+<p>有主键即判断为脱管对象（即新建一个对象，使用setId()），merge()方法将同步更新对象的<strong><code>全部属性</code></strong>，而非基于修改动态更新。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">(Object entity)</span></span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>对象是受管状态，则转为删除状态</li>
+<li>对象是删除状态，将忽略</li>
+<li>对象是脱管状态，抛出异常</li>
+<li>仍然持有被删除对象的引用，persist()方法可将对象重置为受管状态</li>
+</ul>
+<p>对于脱管对象，需要通过merge()方法获取受管状态对象，再删除</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">detach</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<p>将指定受管状态对象变为脱管状态，即从该PC中移除</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
+<p>将PC中的全部受管对象置为脱管状态</p>
+<p><strong>五、JPQL查询语言</strong></p>
+<p>数据库无关的，基于实体类的，面向对象的查询语句；通过操作<code>类</code>、<code>对象</code>、<code>属性</code>等获得数据结果集。</p>
+<ul>
+<li>包、类、属性等区分大小写；关键字不区分大小写（建议全部大写）</li>
+<li>内置函数，字符串处理函数、数学函数、时间函数等</li>
+<li>底层依然使用SQL语句；支持原生SQL语句</li>
+</ul>
+<p><strong>基本查询语句</strong></p>
+<p>:question: 何时可以省略<code>select</code></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> u.id, u.name <span class="keyword">FROM</span> <span class="keyword">User</span> u</span><br></pre></td></tr></table></figure>
+<ul>
+<li>SELECT子句选择将哪些对象与属性返回到查询结果集</li>
+<li>别名，as关键字可以省略（别名建议使用小写）</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- Count</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(u.name) <span class="keyword">FROM</span> <span class="keyword">User</span> u</span><br><span class="line"><span class="comment">-- Orber by，基于关联集合对象个数</span></span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">User</span> u <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">SIZE</span>(u.addresses)</span><br></pre></td></tr></table></figure>
+<p><strong>关联对象的隐式查询方法</strong></p>
+<p>使用”点“引用关联属性对象，默认使用SQL语句<code>inner join</code>实现</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FROM Address a WHERE a.user.id=1</span><br></pre></td></tr></table></figure>
+<p>例题：</p>
+<p><strong>六、数据库事务的作用及意义==？==</strong></p>
+<p>:question: 作用、意义说的不是同一回事吗。。</p>
+<p>概念：是指作为单个逻辑工作单元执行的一系列操作。一个逻辑工作单元要成为事务，必须满足ACID（原子性、一致性、隔离性、持久性）。</p>
+<p>数据库事务并发操作带来的数据不一致性现象：</p>
+<ol>
+<li>幻读：一个事务执行2次查询，记录结果数不一致</li>
+<li>脏读：一个事务读取到另一事务修改但未提的更新的数据</li>
+<li>重复读：一个事务2次读取同一数据得到不同结果</li>
+</ol>
+<p>:question: <code>Lecture07-P16</code>不懂</p>
+<p><strong>七、乐观锁、悲观锁的作用、意义及区别==?==</strong></p>
+<ol>
+<li>乐观锁：能够同时保证高并发和高伸缩性；应用级别的版本检查</li>
+</ol>
+<ul>
+<li>在实体中定义数据版本属性</li>
+</ul>
+<ol start="2">
+<li>悲观锁：指定执行底层数据库事务隔离级别</li>
+</ol>
+<ul>
+<li><p>底层数据库实现锁操作，确保访问的排他性</p>
+</li>
+<li><p><code>LockModeType</code>：</p>
+<ul>
+<li><code>PESSIMISTIC_READ</code>：其他事务可以读取数据，但无法更新或删除记录，相当于底层数据库执行<code>lock in share mode</code>共享锁语句</li>
+<li><code>PESSIMISTIC_WRITE</code>：其他事务无法读取、更新、删除记录，直至锁释放，相当于底层数据库执行<code>for update</code>排他锁语句</li>
+<li>通过<code>fnd()/getReference()</code>方法设置</li>
+<li>通过Query接口<code>setLockMode()</code>方法设置</li>
+</ul>
+</li>
+<li>缺点：限制并发性</li>
+</ul>
+<h4 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a>Spring</h4><p><strong>一、依赖注入设计思想</strong></p>
+<ul>
+<li><p>IoC：控制反转。控制：创建所需对象的控制权；反转：将主动、被动关系掉转</p>
+<p>控制反转：由程序主动创建所需对象，变为程序被动接受所需对象</p>
+</li>
+<li><p>DI：依赖注入，组件由容器管理，在需要时由容器动态注入组件所需的其他组件</p>
+</li>
+<li><p>Ioc容器：可以实现依赖关系注入的容器，负责实例化、定位、配置应用程序所需对象，建立对象间的依赖关系，组装应用程序组件</p>
+</li>
+</ul>
+<p><code>@Autowired</code>，基于类型注入：构造函数级、方法级、属性级</p>
+<p><strong>二、Bean的作用范围</strong></p>
+<p>Scope：Spring容器中</p>
+<p>bean相对应其他bean请求的可访问范围</p>
+<ol>
+<li>单例Singleton：容器中仅存在bean的一个实例。生命周期由容器管理；即容器对所有注入请求使用相同实例</li>
+<li>原型Protorype：容器不保存bean的实例，每次请求容器均创建一个实例</li>
+</ol>
+<p>:question:<code>Request, Session, Application, Custom</code>这些需要记忆吗</p>
+<p><strong>三、AOP的作用与意义</strong></p>
+<p><code>AOP</code>：<code>OOP</code>编程模式的扩展，一种程序设计思想，使调用者与被调用者之间解耦</p>
+<ul>
+<li><code>Aspect</code>：切面，一个横跨多个模块的关注点，如事务处理切面、日志管理切面、权限管理切面<ul>
+<li>切面包含了切入点表达式与通知</li>
+</ul>
+</li>
+<li><code>Joinpoint</code>：连接点，程序运行时，能够插入切面的点，一个连接点代表一个方法的执行</li>
+<li><code>Advice</code>：通知，对某个特定连接点采取的切面行为<ul>
+<li>通知的类型：<code>@Before，@AfterReturing, @AfterThrowing, @After, @Around</code></li>
+</ul>
+</li>
+<li><code>Pointcut</code>：切入点，定义一组相关连接点的集合</li>
+<li><code>Weaving</code>：织入，将通知连接到连接点，创建代理对象的过程</li>
+<li><code>Target Object</code>：目标对象，被织入通知后产生的，包含了连接点对象的对象。<code>Spring AOP</code>通过运行时代理实现，因此该对象只能是一个代理对象</li>
+</ul>
+<p><code>Spring AOP Proxies</code></p>
+<ul>
+<li>基于JDK的动态代理 <strong><code>默认代理模式</code></strong><ul>
+<li>连接点方法必须为接口中的方法</li>
+</ul>
+</li>
+<li>基于CGLIB的动态代理<ul>
+<li>当连接点方法为非接口中方法时，使用CGLIB代理模式</li>
+</ul>
+</li>
+<li>由Spring容器负责生成、管理AOP代理，并管理其依赖关系</li>
+<li>Spring基于连接点类型，自动实现切换<ul>
+<li>即，当项目中引入CGLIB，普通类中的连接点方法被执行，即使未声明使用CGLIB模式，Spring仍会自动切换到CGLIB模式（<code>约定大于配置</code>）</li>
+</ul>
+</li>
+</ul>
+<p><strong><code>对AOP Proxies的理解</code></strong></p>
+<ul>
+<li>启动切面，调用一个对象中的方法，首先调用的是代理对象的方法，之后是对象的实际方法</li>
+</ul>
+<p><strong>四、切入点表达式==？==</strong></p>
+<p>:question: <code>Lecture09-P13~P14</code></p>
+<ul>
+<li>Execution：首要指示器，可声明切入点：路径、类型、方法、方法参数类型、参数个数等的匹配表达式</li>
+</ul>
+<p>:question:<code>Lecture09-P15最后一条如何理解</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Excecution Expression</span></span><br><span class="line">切任意公共方法：</span><br><span class="line">execution(<span class="keyword">public</span> * *(..));</span><br><span class="line">切所有以set为前缀的方法：</span><br><span class="line">execution(*set*(..));</span><br><span class="line">切指定类型中定义的任意方法</span><br><span class="line">execution(*com.xyz.service.AccountService.*(..));</span><br><span class="line">切指定包下所有类型的任意方法</span><br><span class="line">execution(*com.xyz.service.*.*(..))</span><br><span class="line">切指定包下及其子包下所有类型的任意方法：</span><br><span class="line">execution(*com.xyz.service..*.*(..));</span><br><span class="line">切指定包下所有名为service子包下所有类型的任意方法：</span><br><span class="line">execution(*com..service..*.*(..))</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Within：仅支持声明切入点路径及切入点类型</li>
+<li>args：参数类型，参数个数</li>
+<li>@annotation，连接点方法包含指定注解</li>
+<li>@args，连接点方法内==参数类型==包含指定注解，而不是参数的注解</li>
+<li>@within，连接点类型包含指定注解</li>
+<li><code>&amp;&amp; ||</code></li>
+</ul>
+<p><strong>五、对被拦截对象的操作的接口</strong></p>
+<p><strong>六、Spring事务与JPA事务</strong></p>
+<p>:question:<code>Lecture09-P26什么意思呢; P28还考吗</code></p>
+<ul>
+<li>全局事务，事务处理过程中涉及多个资源管理者，基于JTA实现</li>
+<li>局部事务，事务处理过程中仅涉及单一资源管理者，基于JDBC实现</li>
+<li>一致的事务模型，基于Spring框架配置，编写一次即可在不同的事务管理策略中切换，解决全局事务与局部事务的局限性</li>
+<li>Spring事务基于AOP实现</li>
+<li><strong><code>基于注解使用事务</code></strong></li>
+</ul>
+<p>Propagation</p>
+<p>Isolation</p>
+<p><code>@Transaction</code>：事务注解，类型级方法级</p>
+<ul>
+<li><p>Rolling Back</p>
+<ul>
+<li><p>一个业务逻辑可能需要调用多个持久化组件业务逻辑处理，因此，事务应支持在业务逻辑层</p>
+</li>
+<li><p>默认Spring事务在捕获<code>RuntimeException</code>异常时回滚</p>
+</li>
+<li><p>基于ORM框架的事务回滚</p>
+<p>框架已将<code>SQLException</code>异常封装为自定义<code>RuntimeException</code>异常，转抛</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>在业务逻辑组件，事务中捕获受检异常，转抛为自定义非受检异常</p>
+<p>:question: 受检与非受检异常</p>
+<p><strong>七、面向接口编程，面向切面编程，面向服务编程的意义</strong></p>
+<ol>
+<li>面向接口程序设计+Java默认动态代理模式+依赖注入+Spring容器，使接口调用者无需关心接口的具体实现。实现类、代理类、位置、创建方式均与调用者无关</li>
+</ol>
 
       
 
@@ -252,7 +445,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">review</a>
         		</li>
       		
 		</ul>
@@ -308,7 +501,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/25/Leetcode/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/05/27/系统程序设计课程复习/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -322,18 +515,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/04/26/回文子串个数/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          回文子串个数
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/04/22/Vue/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Vue</div>
+    <a href="/2019/05/17/夏令营信息/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">夏令营信息</div>
       <i class="icon-circle-right"></i>
     </a>
   
