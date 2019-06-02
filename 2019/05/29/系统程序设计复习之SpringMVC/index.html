@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>系统程序设计复习之SpringMVC | Find everything about tech</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="SpringMVC一、MVC的作用与意义==？== MVC：软件设计模型，实现一种动态的程序设计，简化后续程序的维护和扩展，使程序组件化，结构更加直观。">
+  <meta name="description" content="SpringMVC一、MVC的作用与意义==？== MVC：软件设计模型，实现一种动态的程序设计，简化后续程序的维护和扩展，使程序组件化，结构更加直观。 controller：响应用户输入和执行数据模型对象的相互作用 view：显示由controller请求显示的数据 model：管理应用程序的数据，响应请求">
 <meta name="keywords" content="review">
 <meta property="og:type" content="article">
 <meta property="og:title" content="系统程序设计复习之SpringMVC">
 <meta property="og:url" content="http://yoursite.com/2019/05/29/系统程序设计复习之SpringMVC/index.html">
 <meta property="og:site_name" content="Find everything about tech">
-<meta property="og:description" content="SpringMVC一、MVC的作用与意义==？== MVC：软件设计模型，实现一种动态的程序设计，简化后续程序的维护和扩展，使程序组件化，结构更加直观。">
+<meta property="og:description" content="SpringMVC一、MVC的作用与意义==？== MVC：软件设计模型，实现一种动态的程序设计，简化后续程序的维护和扩展，使程序组件化，结构更加直观。 controller：响应用户输入和执行数据模型对象的相互作用 view：显示由controller请求显示的数据 model：管理应用程序的数据，响应请求">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-29T13:07:04.090Z">
+<meta property="og:updated_time" content="2019-06-02T12:50:29.919Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="系统程序设计复习之SpringMVC">
-<meta name="twitter:description" content="SpringMVC一、MVC的作用与意义==？== MVC：软件设计模型，实现一种动态的程序设计，简化后续程序的维护和扩展，使程序组件化，结构更加直观。">
+<meta name="twitter:description" content="SpringMVC一、MVC的作用与意义==？== MVC：软件设计模型，实现一种动态的程序设计，简化后续程序的维护和扩展，使程序组件化，结构更加直观。 controller：响应用户输入和执行数据模型对象的相互作用 view：显示由controller请求显示的数据 model：管理应用程序的数据，响应请求">
   
     <link rel="alternative" href="/atom.xml" title="Find everything about tech" type="application/atom+xml">
   
@@ -173,12 +173,15 @@
       
         <h4 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h4><p><strong>一、MVC的作用与意义==？==</strong></p>
 <p>MVC：软件设计模型，实现一种动态的程序设计，简化后续程序的维护和扩展，使程序组件化，结构更加直观。</p>
+<p><code>controller</code>：响应用户输入和执行数据模型对象的相互作用</p>
+<p><code>view</code>：显示由controller请求显示的数据</p>
+<p><code>model</code>：管理应用程序的数据，响应请求</p>
 <a id="more"></a>
 <p><strong>二、请求处理Controller方法的定义声明</strong></p>
 <ul>
 <li><p><code>@Controller</code>，声明为控制组件</p>
 </li>
-<li><p>每一个Controller方法即可处理一个请求</p>
+<li><p>每一个Controller方法即可处理一个请求；因此，两个controller方法即可完成一个传统Servlet类提供的功能</p>
 </li>
 <li><code>@ResponseBody</code>，将controller方法返回的对象序列化为json数据</li>
 <li><strong><code>RestController，声明为支持REST的控制组件</code></strong><ul>
@@ -194,11 +197,11 @@
 <li><code>GetMapping, @PostMapping, @PatchMapping, @PutMapping, @DeleteMapping</code></li>
 </ul>
 <p>默认约定，返回json的RESTful接口，全部以<code>/api</code>为basepath基本路径，以区分返回的视图资源</p>
-<p>建议全部以Map键值对封装到对象里返回，便于后期变更维护</p>
+<p><strong><code>建议全部以Map键值对封装到对象里返回，便于后期变更维护</code></strong></p>
 <ul>
 <li><code>@RequestBody</code>，指定controller方法参数绑定到请求体，自动基于jackson将请求数据反序列化为java对象。<ul>
 <li>请求体数据类型必须是<code>application/json</code></li>
-<li>没声明次注解的时候不会进行反序列化</li>
+<li>没声明此注解的时候不会进行反序列化</li>
 </ul>
 </li>
 </ul>
@@ -217,7 +220,7 @@
 </li>
 <li>可声明多个拦截器，按顺序拦截</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 声明一个拦截器</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyInterceptor</span> <span class="keyword">extends</span> <span class="title">HandlerInterceptorAdapter</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">preHandle</span><span class="params">(HttpServletRequest request, response, Object handler)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        log.debug(<span class="string">"preHandle()"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 2.注册拦截器</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WebMvcConfig</span> <span class="keyword">implements</span> <span class="title">WebMvcConfigurer</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> Myinterceptor myinterceptor;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addInterceptors</span><span class="params">(InterceptorRegistry registry)</span> </span>&#123;</span><br><span class="line">        registry.addInterceptor(myinterceptor)</span><br><span class="line">            .addPathPatterns(<span class="string">"/api/example/**"</span>)</span><br><span class="line">            .excludePathPatterns(<span class="string">"/api/example/login"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>四、RESTful风格参数传递/获取的方法</strong></p>
 <ul>
 <li>REST规范要求请求中包含状态，而非服务器端维护状态</li>
@@ -225,7 +228,7 @@
 <li><strong><code>默认浏览器Form表单仅支持POST/GET请求</code></strong></li>
 </ul>
 <p>带请求体的请求类型<code>POST,PATCH</code>，请求体数据类型必须为：<code>application/json</code></p>
-<p>URI模板模式</p>
+<p><code>URI模板模式</code></p>
 <ul>
 <li>支持在请求地址中使用参数，从而实现符合RESTful风格的请求</li>
 <li>在处理请求地址，通过<code>{}</code>大括号声明地址参数</li>
@@ -238,21 +241,30 @@
 <p>:question:<code>Lecture10-P27</code> 第二个例子，如何实现的</p>
 <p>实际开发时，往往一个参数即可确定资源；但详细的资源地址，可作为资源的描述，而非仅仅定位资源的一部分</p>
 <p><strong>五、Controller全局统一异常处理的==作用==与声明方法</strong></p>
-<p>:question:数据校验考不考</p>
+<p>:question:数据校验考不考，即Bean Validation</p>
+<p>@Valid注解，修饰需要检验的，包含校验规则的对象</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/api/example03"</span>)</span><br><span class="line"><span class="meta">@Validated</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Example03Controller</span> </span>&#123;</span><br><span class="line">    <span class="meta">@PostMappping</span>(<span class="string">"/users"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Map <span class="title">getbea</span><span class="params">(@Valid @RequstBody User user)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Map.of();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p><code>ControllerAdvice</code>，用于同一处理所有controller组件的相关操作</p>
 </li>
 <li><p><strong><code>RestControllerAdvice，整合@ControllerAdvice和@ResponseBody，直接返回json数据</code></strong></p>
 </li>
 <li><p><strong><code>@ExceptionHandler，修饰声明在@ControllerAdvice类中的方法，处理Spring容器捕获的指定异常</code></strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ExceptionHandler</span>(MethodArgumentNotValidException.class)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><code>@ResponseStatus</code>，声明返回指定的HTTP状态码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ReponseStatus</span>(HttpStatus.BAD_REQUEST)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <ol>
 <li><code>MethodArgumentNotValidException</code>异常，校验失败，springmvc将抛出异常，封装校验失败异常信息。</li>
-<li><code>MethodArgumentTypeMismatchException</code>异常，请求地址中，参数转换异常</li>
-<li><code>InvalidFormatException</code>异常，Jackson类型转换错误异常</li>
+</ol>
+<p>==？？== 此异常下面的方法如<code>getBindingResult()</code>还用记吗</p>
+<ol start="2">
+<li><p><code>MethodArgumentTypeMismatchException</code>异常，请求地址中，参数转换异常</p>
+</li>
+<li><p><code>InvalidFormatException</code>异常，Jackson类型转换错误异常</p>
+</li>
 </ol>
 <blockquote>
 <p>个人理解：2和3异常的区别，一个是地址参数，一个是请求体中的参数</p>
@@ -267,7 +279,11 @@
 </ul>
 </li>
 </ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Size</span>(min = <span class="number">2</span>, max = <span class="number">6</span>, message = <span class="string">"您输入的值$&#123;validatedValue&#125;，用户名长度必须大于&#123;min&#125;,小于&#123;max&#125;"</span>)</span><br></pre></td></tr></table></figure>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestControllerAdvice</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExceptionController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@ExceptionHandler</span>(MethodArgumentNotValidException.class)</span><br><span class="line">    <span class="meta">@ResponseStauts</span>(HttpStatus.BAD_REQUEST)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Map <span class="title">handleValidException</span><span class="params">(MethodArgumentNotValidException exception)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>在方法上以及方法参数使用校验约束</li>
+</ol>
 <p>:question: <code>Lecture11 P24</code>方法级校验，考不考</p>
 <p><strong>六、常用密码编码/文本加密接口，及主要算法</strong></p>
 <ul>
@@ -295,7 +311,7 @@
 <ul>
 <li>Spring-Security提供基于256-bit PBKDF2对称算法的实现</li>
 <li>提供不可泄露的加密密钥<code>SecretKey</code></li>
-<li>基于不可泄漏的16-byte的盐值</li>
+<li>基于不可泄漏的16-byte的盐值<code>salt</code></li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 基于指定密钥和盐值创建文本加密器</span></span><br><span class="line">TextEncryptor Encryptors.text(secretKey, salt);</span><br><span class="line"><span class="comment">// 加密指定字符串</span></span><br><span class="line"><span class="function">String <span class="title">encrypt</span><span class="params">(payload)</span></span>;</span><br><span class="line"><span class="comment">// 解密指定字符串</span></span><br><span class="line"><span class="function">String <span class="title">decrypt</span><span class="params">(encryptString)</span></span></span><br></pre></td></tr></table></figure>
 <h4 id="Timer"><a href="#Timer" class="headerlink" title="Timer"></a>Timer</h4><ul>
@@ -317,6 +333,11 @@
 </li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// MyTimer.java</span></span><br><span class="line"><span class="meta">@Slf</span>4j</span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTimer</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Scheduled</span>(cron = <span class="string">"0 0 8 10 * ?"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">paySalary</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        log.debug(<span class="string">"Your salary has been paid!"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Timer编程题做法</p>
+<p>1.在应用上加上注解<code>@EnableScheduling</code></p>
+<p>2.写MyTimer类，声明为组件，同时声明使用日志框架，即<code>@Slf4j，@Component</code>，之后在类中写一个无返回值的方法<code>public void test() {}</code>，方法上声明定时任务方法<code>@Scheduled(cron = &quot;6项&quot;)</code>:question:（7项会报错）</p>
+</blockquote>
 
       
 

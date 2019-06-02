@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Find everything about tech">
 <meta property="og:description" content="前后端整合:date:04-29 后端初始时没有用户，使用InitService创建一个超级管理员，再完成教师、学生等信息的添加（一般通过Excel表格导入） 用户的权限（角色）像token一样，会被保存到sessionStroage 后端的权限不再是简单的1和2，而是一个字符串（哈希生成的），这样可以防止伪造权限 :date:05-20 后端中的一些疑问：  service和repository">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-29T02:33:03.864Z">
+<meta property="og:updated_time" content="2019-06-02T12:42:15.941Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SprngBoot">
 <meta name="twitter:description" content="前后端整合:date:04-29 后端初始时没有用户，使用InitService创建一个超级管理员，再完成教师、学生等信息的添加（一般通过Excel表格导入） 用户的权限（角色）像token一样，会被保存到sessionStroage 后端的权限不再是简单的1和2，而是一个字符串（哈希生成的），这样可以防止伪造权限 :date:05-20 后端中的一些疑问：  service和repository">
@@ -254,31 +254,46 @@
 <p>对于服务器出现的异常，默认返回的格式即满足要求</p>
 <p>对于客户端信息输入导致的异常，要经过校验，并且写ExceptionController进行处理，统一返回message</p>
 <p>​    并且不同类型的异常有不同类型的处理方法</p>
-<p>:date:5-28查缺补漏：</p>
-<p><strong>Entity relationship model</strong></p>
+<h4 id="date-5-28查缺补漏："><a href="#date-5-28查缺补漏：" class="headerlink" title=":date:5-28查缺补漏："></a>:date:5-28查缺补漏：</h4><p><strong>Entity relationship model</strong></p>
 <p>关系维护端与关系被维护端，以双向one-to-many为例，one端（关系被维护端）使用mappedBy放弃对关系的维护，并指定在另一端映射的属性名称，由关系维护端建立与关系被维护端的关系，在数据库中映射的结果：关系被维护端表主键映射为关系维护端表的外键。</p>
 <p>这就导致，试图通过one端建立关联关系，数据可以保存，但关系无效，详见，<code>Lecture05-P8</code></p>
 <p><strong>级联</strong></p>
 <p>级联操作与关系维护无关，即，即使设置PERSIST级联也无法完成从关系被维护端建立与关系维护端的关系</p>
 <p><strong>JPQL API</strong></p>
 <p>同一事务中，find()与JPQL查询使用相同的持久化上下文，不会因为查询方法不同而改变</p>
-<p><strong>spring-data-JPA</strong></p>
+<p><strong>==spring-data-JPA==</strong></p>
 <ul>
 <li><p>简化了基于JPA/Hibernate的开发，与spring容器无缝整合</p>
 </li>
 <li><p>封装了基于JPA规范的Hibernate框架，提供了更简洁的开发接口</p>
 <p>包括：通用的持久化接口，查询注解</p>
 </li>
+<li><p><code>JpaRepository</code>接口，封装了改变实体对象状态的JPA方法，简化了基于实体对象的CURD操作（无需关心实体对象状态）</p>
+<ul>
+<li>使用：为每一个实体类创建继承了<code>JpaRepository</code>的接口</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Repository</span></span><br><span class="line"><span class="meta">@Transcactional</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserRepository</span> <span class="keyword">extends</span> <span class="title">JpaRepository</span>&lt;<span class="title">User</span>, <span class="title">Integer</span>&gt; </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>Spring-data-jpa</code>基于JDK动态代理，自动创建接口实现类完成操作，无需手动编写接口实现类</li>
+</ul>
+</li>
 </ul>
 <p><code>jpaRepository</code>接口中的常用方法：<code>count(), delete(), deleteAll(), deleteById(), findAll(), findById(), save(),flush()</code>，不提供refresh方法</p>
 <ul>
-<li><code>save()</code>方法，持久化保存；无法获取数据库时间戳；默认基于主键更新，与是否为脱管状态无关；与merge()方法相同，全部属性更新，而且仅执行update更新语句，不会从数据库拉取数据；</li>
-<li><code>Optional findById()</code>，返回对象封装在optional容器（通过get()获得对象）</li>
+<li><code>save()</code>方法<ul>
+<li>Persist：持久化保存；无法获取数据库时间戳；</li>
+<li>Update：默认基于主键更新，与是否为脱管状态无关；与merge()方法相同，全部属性更新，而且仅执行update更新语句，不会从数据库拉取数据；</li>
+</ul>
+</li>
+<li><code>Optional findById()</code>，返回对象封装在optional容器（通过get()获得对象）<ul>
+<li>此方法依然先从持久化上下文PC中查找，没有强制从数据库同步</li>
+</ul>
+</li>
 </ul>
 <p>直接在接口中声明抽象查询方法，无需通过em手动查询</p>
 <ul>
 <li>@Query注解：声明JPQL查询语句</li>
-<li>@Param注解：声明方法参数对于的JPQL语句参数</li>
+<li>@Param注解：声明方法参数对应的JPQL语句参数</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Query</span>(<span class="string">"SELECT u FROM User u WHERE u.address=:address"</span>)</span><br><span class="line"><span class="function">List&lt;User&gt; <span class="title">list</span><span class="params">(@Param(<span class="string">"address"</span>)</span> String address)</span>;</span><br></pre></td></tr></table></figure>
 <p>spring-data支持基于属性名称自动创建查询，即仅按约定编写查询方法，无需编写JPQL语句</p>
@@ -286,19 +301,25 @@
 <p>Spring容器启动时，扫描并创建指定路径下全部组件的实例</p>
 <p>以<strong><code>键值对</code></strong>保存实例，键为类名首字母小写，值为容器创建的对象</p>
 <p>当不同路径下包含相同类名组件时，容器无法启动并抛出异常</p>
-<h2 id="JPQL"><a href="#JPQL" class="headerlink" title="JPQL"></a>JPQL</h2><p>查询语句何时能够省略<code>select</code></p>
+<h4 id="JPQL"><a href="#JPQL" class="headerlink" title="JPQL"></a>JPQL</h4><hr>
+<p>查询语句何时能够省略<code>select</code></p>
 <p>jpql语句，<strong>类、属性区分大小写</strong></p>
 <p>jpa jpql：基于实体类和属性查询，结果直接封装在<code>受管状态对象</code>中。</p>
 <p>在同一事务中，find()和JPQL查询使用相同的持久化上下文，不会因为查询方法不同而改变</p>
-<h4 id="Transaction"><a href="#Transaction" class="headerlink" title="Transaction"></a>Transaction</h4><p>乐观锁、悲观锁</p>
-<h4 id="Spring-data"><a href="#Spring-data" class="headerlink" title="Spring-data"></a>Spring-data</h4><p>spring-data-JPA</p>
+<p><strong>Transaction</strong></p>
+<p>乐观锁、悲观锁</p>
+<p><strong>Spring-data</strong></p>
+<p>spring-data-JPA</p>
 <p>JpaRepository接口，封装了改变实体对象状态的JPA方法，简化了基于实体对象的CRUD操作（无需关心实体对象状态）</p>
 <p>Spring-data-jpa基于JDK动态代理，自动创建接口实现类完成操作，无需手动编写接口实现类</p>
 <ul>
 <li>回顾表的连接等知识</li>
 </ul>
-<h2 id="Spring-Framework"><a href="#Spring-Framework" class="headerlink" title="Spring Framework"></a>Spring Framework</h2><h4 id="IoC"><a href="#IoC" class="headerlink" title="IoC"></a>IoC</h4><p>控制反转：由程序主动创建所需对象，变为程序被动接受所需对象</p>
-<h4 id="DI"><a href="#DI" class="headerlink" title="DI"></a>DI</h4><p>依赖注入：组件由容器管理，在需要时由容器动态注入组件所需的其他组件</p>
+<h4 id="Spring-Framework"><a href="#Spring-Framework" class="headerlink" title="Spring Framework"></a>Spring Framework</h4><hr>
+<p><strong>IoC</strong></p>
+<p>控制反转：由程序主动创建所需对象，变为程序被动接受所需对象</p>
+<p><strong>DI</strong></p>
+<p>依赖注入：组件由容器管理，在需要时由容器动态注入组件所需的其他组件</p>
 <p><code>@Autowired</code>，基于类型注入</p>
 <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.构造函数级</span><br><span class="line">2.方法级</span><br><span class="line">3.属性级，修饰属性，无需getter/setter方法即可注入bean</span><br><span class="line">4.Required</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -306,7 +327,8 @@
 <p>修饰属性时，无需提供getter/setter方法</p>
 </blockquote>
 <p><code>@Resource</code>，默认基于名称注入</p>
-<h4 id="IoC-Container"><a href="#IoC-Container" class="headerlink" title="IoC Container"></a>IoC Container</h4><p>IoC容器：可以实现依赖关系注入的容器，负责实例化、定位、配置应用程序所需对象，建立对象间的依赖关系，组装应用程序组件</p>
+<p><strong>IoC Container</strong></p>
+<p>IoC容器：可以实现依赖关系注入的容器，负责实例化、定位、配置应用程序所需对象，建立对象间的依赖关系，组装应用程序组件</p>
 <ul>
 <li><code>@SpringBootApplication</code> 复合注解<ul>
 <li><code>@SpringBootConfiguration</code> 声明为springboot配置类</li>
@@ -315,15 +337,17 @@
 </ul>
 </li>
 </ul>
-<h4 id="Components"><a href="#Components" class="headerlink" title="Components"></a>Components</h4><p><code>@Componet</code> 声明为组件</p>
+<p><strong>Components</strong></p>
+<p><code>@Componet</code> 声明为组件</p>
 <p><code>@Repository</code> 声明为持久化组件</p>
 <p><code>@Service</code> 声明为业务逻辑组件</p>
 <p><code>@Controller</code> 声明为逻辑控制组件</p>
 <p><code>@Bean</code> 方法级，声明方法返回的对象，由spring容器管理。当需注入非自定义组件时</p>
-<p><strong>组件注解，仅用于区分组件功能</strong></p>
-<p><strong>注解本身，不实现任何特殊功能</strong></p>
+<p><strong><code>组件注解，仅用于区分组件功能</code></strong></p>
+<p><strong><code>注解本身，不实现任何特殊功能</code></strong></p>
 <p>:interrobang:bean是什么</p>
-<h4 id="Bean-Scopes"><a href="#Bean-Scopes" class="headerlink" title="Bean Scopes"></a>Bean Scopes</h4><p><code>Scope</code>：Spring容器中bean相对于其他bean请求的可访问范围</p>
+<p><strong>Bean Scopes</strong></p>
+<p><code>Scope</code>：Spring容器中bean相对于其他bean请求的可访问范围</p>
 <ul>
 <li><code>The Singleton Scope</code> 单例</li>
 </ul>
@@ -344,7 +368,9 @@
 <li><code>@Primary</code> 基于类型的注入，当有多个候选匹配时（如接口有多个实现类时），注入此实现类对象</li>
 <li><code>@Qualifier</code> 当需要使用@Autowired基于类型的注入，但又需要选择合适实现类时声明注入对象名称</li>
 </ul>
-<h2 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h2><h4 id="AOP-Concepts"><a href="#AOP-Concepts" class="headerlink" title="AOP Concepts"></a>AOP Concepts</h4><p>面向对象编程模式的扩展，一种程序设计思想，使调用者与被调用者之间解耦</p>
+<h4 id="AOP"><a href="#AOP" class="headerlink" title="AOP"></a>AOP</h4><hr>
+<p><strong>AOP Concepts</strong></p>
+<p>面向对象编程模式的扩展，一种程序设计思想，使调用者与被调用者之间解耦</p>
 <ul>
 <li><p>Aspect：切面，一个横跨多个模块的关注点，如事务处理切面，日志管理切面，权限管理切面</p>
 <p>包含了切入点表达式和通知</p>
@@ -364,7 +390,8 @@
 </ul>
 <p>:interrobang: 反射</p>
 <p>:interrobang: 约定大于配置</p>
-<h4 id="Java-Proxy"><a href="#Java-Proxy" class="headerlink" title="Java Proxy"></a>Java Proxy</h4><ul>
+<p><strong>Java Proxy</strong></p>
+<ul>
 <li><p>当一个对象不能或不想直接引用另一对象时</p>
 </li>
 <li><p>静态代理</p>
@@ -377,7 +404,8 @@
 </ol>
 </li>
 </ul>
-<h4 id="Spring-AOP-Proxies"><a href="#Spring-AOP-Proxies" class="headerlink" title="Spring AOP Proxies"></a>Spring AOP Proxies</h4><ul>
+<p><strong>Spring AOP Proxies</strong></p>
+<ul>
 <li>基于JDK的动态代理<ul>
 <li><code>默认代理模式</code></li>
 <li>连接点方法必须为接口中的方法</li>
@@ -393,31 +421,36 @@
 </ul>
 </li>
 </ul>
-<h4 id="Types-of-Advice"><a href="#Types-of-Advice" class="headerlink" title="Types of Advice"></a>Types of Advice</h4><ul>
+<p><strong>Types of Advice</strong></p>
+<ul>
 <li><code>@Before</code>，前置通知，在切入点方法执行前通知</li>
 <li><code>@AfterReturning</code>，后置返回通知，在切入点方法执行并返回后执行，方法抛出异常时不执行</li>
 <li><code>@AfterThrowing</code></li>
 <li><code>@After</code>，后置最终通知，在切入点方法执行后，即使抛出异常也执行</li>
 <li><code>@Around</code>，环绕通知，在切入点方法执行前、或执行后执行，<code>可阻止目标方法的执行</code>，<code>替换参数</code>等。</li>
 </ul>
-<h4 id="Declaring-an-Aspect"><a href="#Declaring-an-Aspect" class="headerlink" title="Declaring an Aspect"></a>Declaring an Aspect</h4><ul>
+<p><strong>Declaring Aspect</strong></p>
+<ul>
 <li><code>@Aspect</code>，声明为切面类</li>
 <li>声明切面类为组件，由容器扫描创建</li>
 <li>声明切入点，也可将表达式单独声明在通知</li>
 <li>基于相应切入点方法名称，声明各种通知</li>
 </ul>
-<h4 id="Uderstanding-AOP-proxies"><a href="#Uderstanding-AOP-proxies" class="headerlink" title="Uderstanding AOP proxies"></a>Uderstanding AOP proxies</h4><ul>
+<p><strong>Uderstanding AOP proxies</strong></p>
+<ul>
 <li>启动切面，调用一个对象中的方法，首先调用的是代理对象的方法，之后是对象的实际方法</li>
 </ul>
 <p>:interrobang: 如何理解Lecture09-P12</p>
-<h4 id="Supported-Pointcur-Designators"><a href="#Supported-Pointcur-Designators" class="headerlink" title="Supported Pointcur Designators"></a>Supported Pointcur Designators</h4><ul>
+<p><strong>Supported Pointcur Designators</strong></p>
+<ul>
 <li>Execution：首要指示器，可声明切入点：路径、类型、方法、方法参数类型、参数个数等的匹配表达式</li>
 <li>Within：仅支持声明切入点路径及切入点类型</li>
 <li>args：参数类型，参数个数</li>
 </ul>
 <p>@within() 连接点类型包含指定注解</p>
 <p>@annotation() 连接点方法包含指定注解</p>
-<h4 id="Join-Point"><a href="#Join-Point" class="headerlink" title="Join Point"></a>Join Point</h4><p>JoinPoint接口，仅可以获取信息，无法改变连接点的类型</p>
+<p><strong>Join Point</strong></p>
+<p>JoinPoint接口，仅可以获取信息，无法改变连接点的类型</p>
 <ul>
 <li>Object getTarget()：获取连接点对象</li>
 <li>Object[] getArgs()：获取方法参数</li>
@@ -430,7 +463,8 @@
 </ul>
 <p><strong><code>Around通知可改变连接点方法的执行，修改原参数，修改返回结果等</code></strong></p>
 <p>接口对象可直接作为通知方法参数，注入使用</p>
-<h4 id="Spring-MVC"><a href="#Spring-MVC" class="headerlink" title="Spring MVC"></a>Spring MVC</h4><p><strong>请求处理过程</strong></p>
+<h4 id="Spring-MVC"><a href="#Spring-MVC" class="headerlink" title="Spring MVC"></a>Spring MVC</h4><hr>
+<p><strong>请求处理过程</strong></p>
 <p>Dispatcher（分发器）拦截请求</p>
 <p>Dispatcher调用<code>HandlerMapping</code>查找与请求匹配的Controller</p>
 <p>Dispatcher将请求转发给Controller处理</p>
@@ -445,10 +479,16 @@
 <p>支持多种数据源的序列/反序列化</p>
 <p>支持整合多种ORM技术框架的解析。例如，支持按JPA延迟加载策略解析（需单独声明依赖）</p>
 <p>与spring-mvc无缝整合</p>
+<blockquote>
+<p>1.Jackson默认序列化所有属性，无论值是否为null</p>
+<p>可在springboot配置application.properties添加，spring.jackson.default-property-inclusion=non_null，序列化时忽略值为null的属性</p>
+<p>2.支持修改日期的序列化格式</p>
+<p>@JsonFormat，在属性声明格式</p>
+</blockquote>
 <p><strong>RESTful</strong></p>
-<p>Resources（资源）：网络上的一个信息实体，一篇文章，一张图片、一首音乐、一个服务……，每个resource拥有独立的URI</p>
-<p>Representation（表现）：每个resource拥有多种外在的表现形式。例如，服务器可以将数据以HTML网页、XML、JSON等多种形式发送给客户端</p>
-<p>State Transfer（状态转化）：客户端基于无状态的HTTP协议，通过协议的GET/POST/PUT/PATCH/DELETE请求动作描述对resource的操作，从而完成互交。</p>
+<p><code>Resources（资源）</code>：网络上的一个信息实体，一篇文章，一张图片、一首音乐、一个服务……，每个resource拥有独立的URI</p>
+<p><code>Representation（表现）</code>：每个resource拥有多种外在的表现形式。例如，服务器可以将数据以HTML网页、XML、JSON等多种形式发送给客户端</p>
+<p><code>State Transfer（状态转化）</code>：客户端基于无状态的HTTP协议，通过协议的GET/POST/PUT/PATCH/DELETE请求动作描述对resource的操作，从而完成互交。</p>
 <p>REST规范中要求请求中包含状态，而非服务器端维护状态。</p>
 <p>RESTful是一种架构风格，而不是标准，目的是创建可扩展的Web Service</p>
 <p>:question: <code>地址栏只能发送GET请求</code>，则其他几种请求实际情况中如何发送</p>
@@ -459,7 +499,7 @@
 <p><code>@RequestMapping</code>，请求映射，类型级方法级注释</p>
 <p>​    value/Path属性，指定请求路径</p>
 <p><code>@GetMapping @PostMapping @PatchMapping .. ..</code></p>
-<p>:question: 默认规定，返回json的RESTful接口，全部以/api为basepath基本路径，以区分返回的视图资源</p>
+<p>默认规定，返回json的RESTful接口，全部以/api为basepath基本路径，以区分返回的视图资源</p>
 <p>建议全部以Map键值对封装到对象里返回，便于后期变更维护</p>
 <p><code>@RequestBody</code>，指定Controller方法参数绑定到请求体，自动基于jackson将请求数据反序列化为java对象。</p>
 <p>请求体数据类型必须是<code>application/json</code>(<code>Content-Type: application/json</code>)</p>
@@ -550,6 +590,7 @@
 <p><code>MethodValidationPostProcessor</code>类，启动方法级校验</p>
 <p>​    创建并直接将方法校验处理器对象注入spring容器即可</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// main主函数下面</span></span><br><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> MethodValidationPostProcessor <span class="title">methodValidationPostProcessor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> MethodValidationPostProcessor();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/api/example"</span>)</span><br><span class="line"><span class="meta">@Validated</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExampeController</span> </span>&#123;</span><br><span class="line">    <span class="meta">@GetMappping</span>(<span class="string">"/users/&#123;owner&#125;"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">getViolationException</span><span class="params">(</span></span></span><br><span class="line"><span class="function"><span class="params">        @Size(min = <span class="number">2</span>, max = <span class="number">6</span>, message = <span class="string">"用户信息错误"</span>)</span></span></span><br><span class="line"><span class="function">    	@PathVariable String owner) </span>&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ExceptionHandler(ConstraintViolationException.class)</span><br></pre></td></tr></table></figure>
 <p><strong>Encryption Algorithm</strong></p>
 <p>加密/解密算法，适合敏感数据的加密传输</p>
 <p>​    对称加密算法，2端通过密钥均可解密</p>
@@ -575,11 +616,16 @@
 <p>提供了包括对称/非对称，不同哈希算法等一系列实现</p>
 <p><code>PasswordEncoder接口</code></p>
 <p>​    encode()：编码密码</p>
-<p>​    match()：验证原始密码与编码密码</p>
+<p>​    matches()：验证原始密码与编码密码</p>
 <p>BCryptPasswordEncoder类，Bcrypt算法，自动生成随机盐值，并附在结果，避免盐值的单独保存</p>
 <p>​    使用时直接将PasswordEncoder组件注入容器</p>
 <p><strong>Jackson ObjectMapper</strong></p>
+<p><code>writeValueAsString()</code></p>
+<p><code>readValue()</code></p>
 <p>:question: 上面不是讲了自动序列化吗，为何还要使用这个</p>
+<p><strong>ResponseStatusException</strong></p>
+<p>SpringMVC5提供的，支持直接基于HTTP状态码抛出异常</p>
+<p><strong>Encryptors</strong></p>
 <h2 id="后端整合"><a href="#后端整合" class="headerlink" title="后端整合"></a>后端整合</h2><p><strong>收获及疑问</strong></p>
 <p>Query注解</p>
 <p>关于address的方法，是否应该新建一个addressservice，放在其里面</p>
