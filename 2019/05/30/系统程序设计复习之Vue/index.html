@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>系统程序设计复习之Vue | Find everything about tech</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content=":question: Bus不考吗，生命周期回调函数考不考，前端vue不考大题吗 :question:Lecture16-P17为何说模板语法类似于EL表达式 :question:Lecture16-P21，key与:key什么区别呢 Lec16-P30多看几遍，计算属性，属性的值可以是函数">
+  <meta name="description" content="==*== Bus不考吗，生命周期回调函数考不考，前端vue不考大题吗 ​    选填可能会考，不考编程 Lec16-P30多看几遍，计算属性，属性的值可以是函数">
 <meta name="keywords" content="review">
 <meta property="og:type" content="article">
 <meta property="og:title" content="系统程序设计复习之Vue">
 <meta property="og:url" content="http://yoursite.com/2019/05/30/系统程序设计复习之Vue/index.html">
 <meta property="og:site_name" content="Find everything about tech">
-<meta property="og:description" content=":question: Bus不考吗，生命周期回调函数考不考，前端vue不考大题吗 :question:Lecture16-P17为何说模板语法类似于EL表达式 :question:Lecture16-P21，key与:key什么区别呢 Lec16-P30多看几遍，计算属性，属性的值可以是函数">
+<meta property="og:description" content="==*== Bus不考吗，生命周期回调函数考不考，前端vue不考大题吗 ​    选填可能会考，不考编程 Lec16-P30多看几遍，计算属性，属性的值可以是函数">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-01T09:02:16.093Z">
+<meta property="og:updated_time" content="2019-06-04T15:01:22.260Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="系统程序设计复习之Vue">
-<meta name="twitter:description" content=":question: Bus不考吗，生命周期回调函数考不考，前端vue不考大题吗 :question:Lecture16-P17为何说模板语法类似于EL表达式 :question:Lecture16-P21，key与:key什么区别呢 Lec16-P30多看几遍，计算属性，属性的值可以是函数">
+<meta name="twitter:description" content="==*== Bus不考吗，生命周期回调函数考不考，前端vue不考大题吗 ​    选填可能会考，不考编程 Lec16-P30多看几遍，计算属性，属性的值可以是函数">
   
     <link rel="alternative" href="/atom.xml" title="Find everything about tech" type="application/atom+xml">
   
@@ -171,11 +171,28 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>:question: Bus不考吗，生命周期回调函数考不考，前端vue不考大题吗</p>
-<p>:question:<code>Lecture16-P17</code>为何说模板语法类似于EL表达式</p>
-<p>:question:<code>Lecture16-P21</code>，key与:key什么区别呢</p>
+        <p>==*== Bus不考吗，生命周期回调函数考不考，前端vue不考大题吗</p>
+<p>​    选填可能会考，不考编程</p>
 <p><code>Lec16-P30</code>多看几遍，计算属性，<strong><code>属性的值可以是函数</code></strong></p>
 <a id="more"></a>
+<p><strong>MVC与MVVM</strong></p>
+<p><code>MVC的思想</code>：</p>
+<p>Controller 负责响应用户的操作、网络请求以及与 Model 交互。这就导致了 Controller：逻辑复杂，难以维护。和 View 紧耦合，无法测试。</p>
+<p><code>MVVM与MVC的区别</code>：</p>
+<ul>
+<li>实现了View和Model的自动同步</li>
+<li>解决了MVC中大量的DOM操作导致的。。</li>
+</ul>
+<p><code>MVVM</code></p>
+<ul>
+<li><p>MVVM，不仅简化了业务与界面的依赖，还解决了==*==数据频繁更新的问题。</p>
+</li>
+<li><p>缺点：数据双向绑定不利于代码重用。客户端开发最常用的是View，但是数据双向绑定技术，让你在一个View都绑定了一个model，不同的模块model都不同。那就不能简单重用view了</p>
+<p>一个大的模块中model也会很大，虽然使用方便了也很容易保证数据的一致性，但是长期持有，不释放内存就造成话费更多的内存。</p>
+</li>
+<li><p>缺点：数据绑定也使得bug很难被调试</p>
+</li>
+</ul>
 <h4 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h4><p><strong>一、MVVM的设计思想</strong></p>
 <ul>
 <li><code>ViewModel</code>，协助处理显示逻辑</li>
@@ -207,7 +224,7 @@
 <li>会忽略所有表单元素的<code>value</code>，<code>checked</code>，<code>selected</code>特性的初始值，而总是将Vue实例的数据作为数据来源</li>
 <li>应该通过js在组件的<code>data()</code>中声明初值</li>
 </ul>
-<p>:question:<code>Lecture17-P11</code> ref属性有何作用；<code>Lec17-P10</code> 这种需求会考吗：必须选择2项才能提交；<code>Lec17-P14</code> Watch会考吗，还有上面需求基于属性监听器的实现；组件间的通信会考吗</p>
+<p>==*==<code>Lecture17-P11</code> ref属性有何作用：vue自带的属性，用来获取那些标签，因为使用js比较麻烦；</p>
 <blockquote>
 <p>v-model与v-bind的区别</p>
 <p>v-bind是和html的属性绑定在一起；v-model是用在表单控件上的，一种动态的双向数据绑定，只能用在input、textarea、select上，绑定之后随着输入的改变对应的数据也跟着改变</p>
@@ -219,13 +236,13 @@
 <li>基于Vue实现组合组件组成应用</li>
 <li>即，由vue-router在同一html页面切换显示不同的组件，实现单页面应用</li>
 <li>即，由vue-router实现当请求地址改变时，将什么组件渲染到什么地方</li>
-<li><code>&lt;router-link</code>，在具有路由功能的应用中导航。<ul>
+<li><code>&lt;router-link&gt;</code>，在具有路由功能的应用中导航。<ul>
 <li>通过<code>to</code>属性指定目标地址，默认渲染为<code>&lt;a&gt;</code></li>
-<li>:question:可通过配置tag属性生成别的标签，例如<code>&lt;li&gt;</code></li>
+<li>可通过配置tag属性生成别的标签，例如<code>&lt;li&gt;</code></li>
 </ul>
 </li>
 <li><code>router-view</code>，渲染路径匹配到的视图组件<ul>
-<li>:question:支持内嵌<code>router-view</code>，根据嵌套路径，渲染嵌套组件</li>
+<li>支持内嵌<code>router-view</code>，根据嵌套路径，渲染嵌套组件</li>
 </ul>
 </li>
 </ul>
@@ -345,6 +362,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/07/02/计算机网络复习/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          计算机网络复习
+        
+      </div>
+    </a>
   
   
     <a href="/2019/05/29/系统程序设计复习之SpringMVC/" id="article-nav-older" class="article-nav-link-wrap">
@@ -482,15 +508,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">review</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hexo使用</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">sort</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">review</a>
               </li>
              
               <li class="article-tag-list-item">

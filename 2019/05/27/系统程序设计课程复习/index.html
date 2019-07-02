@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>系统程序设计课程复习 | Find everything about tech</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="关于课程的思考 我们何处涉及到了微服务呢？ springboot约定大于配置的理解？">
+  <meta name="description" content="spring事务与JPA事务  基于注解使用事务  一致的事务模型，基于Spring框架配置，编写一次即可在不同的事务管理策略中切换，解决全局事务与局部事务的局限性  Spring事务其实就是Spring AOP,底层创建动态代理对象，在代码的开头结尾封装了开启事务和事务回滚操作   事务属性这个概念，**事务属性通常由事务的传播行为，事务的隔离级别，事务的超时值和事务只读标志组成 AOP、SOP">
 <meta name="keywords" content="review">
 <meta property="og:type" content="article">
 <meta property="og:title" content="系统程序设计课程复习">
 <meta property="og:url" content="http://yoursite.com/2019/05/27/系统程序设计课程复习/index.html">
 <meta property="og:site_name" content="Find everything about tech">
-<meta property="og:description" content="关于课程的思考 我们何处涉及到了微服务呢？ springboot约定大于配置的理解？">
+<meta property="og:description" content="spring事务与JPA事务  基于注解使用事务  一致的事务模型，基于Spring框架配置，编写一次即可在不同的事务管理策略中切换，解决全局事务与局部事务的局限性  Spring事务其实就是Spring AOP,底层创建动态代理对象，在代码的开头结尾封装了开启事务和事务回滚操作   事务属性这个概念，**事务属性通常由事务的传播行为，事务的隔离级别，事务的超时值和事务只读标志组成 AOP、SOP">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-02T08:44:37.624Z">
+<meta property="og:updated_time" content="2019-06-04T13:36:29.856Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="系统程序设计课程复习">
-<meta name="twitter:description" content="关于课程的思考 我们何处涉及到了微服务呢？ springboot约定大于配置的理解？">
+<meta name="twitter:description" content="spring事务与JPA事务  基于注解使用事务  一致的事务模型，基于Spring框架配置，编写一次即可在不同的事务管理策略中切换，解决全局事务与局部事务的局限性  Spring事务其实就是Spring AOP,底层创建动态代理对象，在代码的开头结尾封装了开启事务和事务回滚操作   事务属性这个概念，**事务属性通常由事务的传播行为，事务的隔离级别，事务的超时值和事务只读标志组成 AOP、SOP">
   
     <link rel="alternative" href="/atom.xml" title="Find everything about tech" type="application/atom+xml">
   
@@ -171,7 +171,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>关于课程的思考</strong></p>
+        <p><strong>spring事务与JPA事务</strong></p>
+<ul>
+<li><p>基于注解使用事务</p>
+</li>
+<li><p>一致的事务模型，基于Spring框架配置，编写一次即可在不同的事务管理策略中切换，解决全局事务与局部事务的局限性</p>
+</li>
+<li><p>Spring事务其实就是Spring AOP,底层创建动态代理对象，在代码的开头结尾封装了开启事务和事务回滚操作</p>
+</li>
+</ul>
+<p>事务属性这个概念，**事务属性通常由事务的传播行为，事务的隔离级别，事务的超时值和事务只读标志组成</p>
+<p><strong>AOP、SOP</strong></p>
+<p>什么是AOP？<br>面向切面编程（AOP）完善spring的依赖注入（DI），面向切面编程在spring中主要表现为两个方面<br>1.面向切面编程提供声明式事务管理<br>2.spring支持用户自定义的切面</p>
+<p>将通用需求功能从不相关类之中分离出来；同时，能够使得很多类共享一个 行为，一旦行为发生变化，不必修改很多类，只要修改这个<br>行为就可以。<br>AOP就是这种实现分散关注的编程方法，它将“关注”封装在“方面”中。 </p>
+<p>SOP是一种体系结构，目标是在软件代理交互中获得松散耦合</p>
+<p><strong>关于课程的思考</strong></p>
 <p>我们何处涉及到了微服务呢？</p>
 <p>springboot约定大于配置的理解？</p>
 <a id="more"></a>
@@ -219,17 +233,15 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">persist</span><span class="params">(Object entity)</span></span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>将新建状态对象转为持久化状态</li>
-<li>对象是持久化状态，该方法被忽略</li>
-</ul>
-<p>:question: <code>Lecture05 P25</code>：persist()后，是事务结束后统一执行update语句吗，为何新建状态到受管状态时执行了insert语句</p>
-<ul>
-<li>对象是脱管状态，将抛出异常</li>
-<li>对象是删除状态，将重新转化为持久化状态</li>
+<li><p>对象是持久化状态，该方法被忽略</p>
+</li>
+<li><p>对象是脱管状态，将抛出异常</p>
+</li>
+<li>==*==对象是删除状态，将重新转化为持久化状态</li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">Object <span class="title">find</span><span class="params">(Class entityClass, Object primaryKey)</span></span></span><br></pre></td></tr></table></figure>
 <p>基于实体类型与对象标识，加载受管对象；没有匹配记录，返回null</p>
 <p>加载顺序：在持久化上下文PC中，查询相同类型相同主键受管对象；在数据库中查询</p>
-<p>:question: 返回的对象的状态—受管状态</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">flush</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>强制当前所有受管状态对象，同步到数据库</li>
@@ -263,7 +275,6 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">clear</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 <p>将PC中的全部受管对象置为脱管状态</p>
 <p><strong>五、JPQL查询语言</strong></p>
-<p>==？==编程题是用<code>JPQL API</code>呢还是<code>Spring-data-jpa</code>呢</p>
 <p>数据库无关的，基于实体类的，面向对象的查询语句；通过操作<code>类</code>、<code>对象</code>、<code>属性</code>等获得数据结果集。</p>
 <ul>
 <li>包、类、属性等区分大小写；关键字不区分大小写（建议全部大写）</li>
@@ -311,15 +322,13 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FROM Address a WHERE a.user.id=1</span><br></pre></td></tr></table></figure>
 <p>例题：</p>
 <p><strong>六、数据库事务的作用及意义==？==</strong></p>
-<p>:question: 作用、意义说的不是同一回事吗。。</p>
 <p>概念：是指作为单个逻辑工作单元执行的一系列操作。一个逻辑工作单元要成为事务，必须满足ACID（原子性、一致性、隔离性、持久性）。</p>
 <p>数据库事务并发操作带来的数据不一致性现象：</p>
 <ol>
 <li>幻读：一个事务执行2次查询，记录结果数不一致</li>
 <li>脏读：一个事务读取到另一事务修改但未提的更新的数据</li>
-<li>重复读：一个事务2次读取同一数据得到不同结果</li>
+<li>重复读：一个事务2次读取同一数据得到不同结果​</li>
 </ol>
-<p>:question: <code>Lecture07-P16</code>不懂</p>
 <p><strong>七、乐观锁、悲观锁的作用、意义及区别==?==</strong></p>
 <ol>
 <li><p>乐观锁：能够同时保证高并发和高伸缩性；应用级别的版本检查</p>
@@ -350,16 +359,15 @@
 </li>
 </ul>
 <p><code>@Autowired</code>，基于类型注入：构造函数级、方法级、属性级、Required</p>
-<p>==？？==基于类型注入什么意思,<code>Lec08-P23</code>为何不直接注入实现类呢</p>
+<p>基于类型注入什么意思,<code>Lec08-P23</code>为何不直接注入实现类呢：注入接口的好处，可插拔。课程中为了简单起见，都是注入类。</p>
 <p><strong>二、Bean的作用范围</strong></p>
-<p>:question: 这里为何要讲这个呢？有什么意义</p>
+<p>这里为何要讲这个呢？有什么意义</p>
 <p>Scope：Spring容器中</p>
 <p>bean相对应其他bean请求的可访问范围</p>
 <ol>
 <li>单例Singleton：容器中仅存在bean的一个实例。生命周期由容器管理；即容器对所有注入请求使用相同实例</li>
 <li>原型Protorype：容器不保存bean的实例，每次请求容器均创建一个实例</li>
 </ol>
-<p>:question:<code>Request, Session, Application, Custom</code>这些需要记忆吗</p>
 <p><strong>三、AOP的作用与意义</strong></p>
 <p><code>AOP</code>：<code>OOP</code>编程模式的扩展，一种程序设计思想，使调用者与被调用者之间解耦</p>
 <ul>
@@ -404,11 +412,10 @@
 <li>启动切面，调用一个对象中的方法，首先调用的是代理对象的方法，之后是对象的实际方法</li>
 </ul>
 <p><strong>四、切入点表达式==？==</strong></p>
-<p>:question: <code>Lecture09-P13~P14</code> 尤其是@args这一条，什么意思</p>
+<p>除了execution的都不用看</p>
 <ul>
 <li>Execution：首要指示器，可声明切入点：路径、类型、方法、方法参数类型、参数个数等的匹配表达式</li>
 </ul>
-<p>:question:<code>Lecture09-P15最后一条如何理解</code></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Excecution Expression</span></span><br><span class="line">切任意公共方法：</span><br><span class="line">execution(<span class="keyword">public</span> * *(..));</span><br><span class="line">切所有以set为前缀的方法：</span><br><span class="line">execution(*set*(..));</span><br><span class="line">切指定类型中定义的任意方法</span><br><span class="line">execution(*com.xyz.service.AccountService.*(..));</span><br><span class="line">切指定包下所有类型的任意方法</span><br><span class="line">execution(*com.xyz.service.*.*(..))</span><br><span class="line">切指定包下及其子包下所有类型的任意方法：</span><br><span class="line">execution(*com.xyz.service..*.*(..));</span><br><span class="line">切指定包下所有名为service子包下所有类型的任意方法：？？？</span><br><span class="line">execution(*com..service..*.*(..))</span><br></pre></td></tr></table></figure>
 <ul>
 <li>Within：仅支持声明切入点路径及切入点类型</li>
@@ -419,11 +426,11 @@
 <li><code>&amp;&amp; ||</code></li>
 </ul>
 <p><strong>五、对被拦截对象的操作的接口</strong></p>
-<p><code>JoinPoint</code>接口，仅可以获取信息，无法改变连接点的执行</p>
+<p><code>JoinPoint</code>接口，==*==仅可以获取信息，无法改变连接点的执行</p>
 <ul>
-<li><code>Object getTarget()</code>，获取连接点对象</li>
+<li>==*==<code>Object getTarget()</code>，获取连接点对象</li>
 <li><code>Object[] getArgs()</code>，获取方法参数</li>
-<li><code>Object getThis()</code>，获取代理对象</li>
+<li>==*==<code>Object getThis()</code>，获取代理对象</li>
 </ul>
 <p><code>ProceedingJointPoint</code>接口，继承上面的，<strong><code>仅可注入around通知</code></strong></p>
 <ul>
@@ -435,9 +442,7 @@
 <blockquote>
 <p>关于AOP使用的个人理解：自己写个切面类<code>MyAspect</code>，定义好切入点，写好通知；之后在调用<code>AOPService</code>中的方法时，根据切入点表达式的定义，织入相应通知，创建代理对象，执行方法。</p>
 </blockquote>
-<p>:question:<code>Lecture09 P21-25 Advice Parameters</code>权限这一部分，还需要看吗</p>
 <p><strong>六、Spring事务与JPA事务==？==</strong></p>
-<p>:question:<code>Lecture09-P26什么意思呢; P28还考吗</code></p>
 <ul>
 <li>全局事务，事务处理过程中涉及多个资源管理者，基于JTA实现</li>
 <li>局部事务，事务处理过程中仅涉及单一资源管理者，基于JDBC实现</li>
@@ -465,7 +470,7 @@
 <p>:question: 受检与非受检异常</p>
 <p><strong>七、面向接口编程，面向切面编程，面向服务编程的意义==？==</strong></p>
 <ol>
-<li>面向接口程序设计+Java默认动态代理模式+依赖注入+Spring容器，使接口调用者无需关心接口的具体实现。实现类、代理类、位置、创建方式均与调用者无关:question:（这个说的是AOP吧？）</li>
+<li>面向接口程序设计+Java默认动态代理模式+依赖注入+Spring容器，使接口调用者无需关心接口的具体实现。实现类、代理类、位置、创建方式均与调用者无关（这个说的是<code>AOP</code>）</li>
 </ol>
 <blockquote>
 <p>面向切面编程：</p>
@@ -723,15 +728,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">review</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hexo使用</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">sort</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">review</a>
               </li>
              
               <li class="article-tag-list-item">

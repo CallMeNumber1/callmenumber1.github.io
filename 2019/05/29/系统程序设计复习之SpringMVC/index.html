@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>系统程序设计复习之SpringMVC | Find everything about tech</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="SpringMVC一、MVC的作用与意义==？== MVC：软件设计模型，实现一种动态的程序设计，简化后续程序的维护和扩展，使程序组件化，结构更加直观。 controller：响应用户输入和执行数据模型对象的相互作用 view：显示由controller请求显示的数据 model：管理应用程序的数据，响应请求">
+  <meta name="description" content="SpringMVC一、MVC的作用与意义 MVC：软件设计模型，实现一种动态的程序设计，简化后续程序的维护和扩展，使程序组件化，结构更加直观。 controller：响应用户输入和执行数据模型对象的相互作用 view：显示由controller请求显示的数据 model：管理应用程序的数据，响应请求">
 <meta name="keywords" content="review">
 <meta property="og:type" content="article">
 <meta property="og:title" content="系统程序设计复习之SpringMVC">
 <meta property="og:url" content="http://yoursite.com/2019/05/29/系统程序设计复习之SpringMVC/index.html">
 <meta property="og:site_name" content="Find everything about tech">
-<meta property="og:description" content="SpringMVC一、MVC的作用与意义==？== MVC：软件设计模型，实现一种动态的程序设计，简化后续程序的维护和扩展，使程序组件化，结构更加直观。 controller：响应用户输入和执行数据模型对象的相互作用 view：显示由controller请求显示的数据 model：管理应用程序的数据，响应请求">
+<meta property="og:description" content="SpringMVC一、MVC的作用与意义 MVC：软件设计模型，实现一种动态的程序设计，简化后续程序的维护和扩展，使程序组件化，结构更加直观。 controller：响应用户输入和执行数据模型对象的相互作用 view：显示由controller请求显示的数据 model：管理应用程序的数据，响应请求">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-02T12:50:29.919Z">
+<meta property="og:updated_time" content="2019-06-04T08:15:51.988Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="系统程序设计复习之SpringMVC">
-<meta name="twitter:description" content="SpringMVC一、MVC的作用与意义==？== MVC：软件设计模型，实现一种动态的程序设计，简化后续程序的维护和扩展，使程序组件化，结构更加直观。 controller：响应用户输入和执行数据模型对象的相互作用 view：显示由controller请求显示的数据 model：管理应用程序的数据，响应请求">
+<meta name="twitter:description" content="SpringMVC一、MVC的作用与意义 MVC：软件设计模型，实现一种动态的程序设计，简化后续程序的维护和扩展，使程序组件化，结构更加直观。 controller：响应用户输入和执行数据模型对象的相互作用 view：显示由controller请求显示的数据 model：管理应用程序的数据，响应请求">
   
     <link rel="alternative" href="/atom.xml" title="Find everything about tech" type="application/atom+xml">
   
@@ -171,7 +171,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h4><p><strong>一、MVC的作用与意义==？==</strong></p>
+        <h4 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h4><p><strong>一、MVC的作用与意义</strong></p>
 <p>MVC：软件设计模型，实现一种动态的程序设计，简化后续程序的维护和扩展，使程序组件化，结构更加直观。</p>
 <p><code>controller</code>：响应用户输入和执行数据模型对象的相互作用</p>
 <p><code>view</code>：显示由controller请求显示的数据</p>
@@ -223,8 +223,8 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 声明一个拦截器</span></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyInterceptor</span> <span class="keyword">extends</span> <span class="title">HandlerInterceptorAdapter</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">preHandle</span><span class="params">(HttpServletRequest request, response, Object handler)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">        log.debug(<span class="string">"preHandle()"</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 2.注册拦截器</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WebMvcConfig</span> <span class="keyword">implements</span> <span class="title">WebMvcConfigurer</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> Myinterceptor myinterceptor;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addInterceptors</span><span class="params">(InterceptorRegistry registry)</span> </span>&#123;</span><br><span class="line">        registry.addInterceptor(myinterceptor)</span><br><span class="line">            .addPathPatterns(<span class="string">"/api/example/**"</span>)</span><br><span class="line">            .excludePathPatterns(<span class="string">"/api/example/login"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>四、RESTful风格参数传递/获取的方法</strong></p>
 <ul>
-<li>REST规范要求请求中包含状态，而非服务器端维护状态</li>
-<li>RESTful是一种架构风格，而不是标准，目的是构建可扩展的Web Service</li>
+<li>==*==REST规范要求请求中包含状态，而非服务器端维护状态</li>
+<li>RESTful是一种==架构风格==，而不是标准，目的是构建可扩展的Web Service</li>
 <li><strong><code>默认浏览器Form表单仅支持POST/GET请求</code></strong></li>
 </ul>
 <p>带请求体的请求类型<code>POST,PATCH</code>，请求体数据类型必须为：<code>application/json</code></p>
@@ -241,7 +241,7 @@
 <p>:question:<code>Lecture10-P27</code> 第二个例子，如何实现的</p>
 <p>实际开发时，往往一个参数即可确定资源；但详细的资源地址，可作为资源的描述，而非仅仅定位资源的一部分</p>
 <p><strong>五、Controller全局统一异常处理的==作用==与声明方法</strong></p>
-<p>:question:数据校验考不考，即Bean Validation</p>
+<p>数据校验，即Bean Validation，要知道常用的几种对象</p>
 <p>@Valid注解，修饰需要检验的，包含校验规则的对象</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="meta">@RequestMapping</span>(<span class="string">"/api/example03"</span>)</span><br><span class="line"><span class="meta">@Validated</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Example03Controller</span> </span>&#123;</span><br><span class="line">    <span class="meta">@PostMappping</span>(<span class="string">"/users"</span>)</span><br><span class="line">    <span class="function"><span class="keyword">public</span> Map <span class="title">getbea</span><span class="params">(@Valid @RequstBody User user)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Map.of();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
@@ -257,10 +257,8 @@
 </li>
 </ul>
 <ol>
-<li><code>MethodArgumentNotValidException</code>异常，校验失败，springmvc将抛出异常，封装校验失败异常信息。</li>
-</ol>
-<p>==？？== 此异常下面的方法如<code>getBindingResult()</code>还用记吗</p>
-<ol start="2">
+<li><p><code>MethodArgumentNotValidException</code>异常，校验失败，springmvc将抛出异常，封装校验失败异常信息。</p>
+</li>
 <li><p><code>MethodArgumentTypeMismatchException</code>异常，请求地址中，参数转换异常</p>
 </li>
 <li><p><code>InvalidFormatException</code>异常，Jackson类型转换错误异常</p>
@@ -284,7 +282,6 @@
 <ol start="4">
 <li>在方法上以及方法参数使用校验约束</li>
 </ol>
-<p>:question: <code>Lecture11 P24</code>方法级校验，考不考</p>
 <p><strong>六、常用密码编码/文本加密接口，及主要算法</strong></p>
 <ul>
 <li>加密/解密算法：适合敏感数据的加密传输<ul>
@@ -306,7 +303,7 @@
 </li>
 </ul>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 直接将passwordEncoder组件注入容器</span></span><br><span class="line"><span class="meta">@Bean</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> PasswordEncoder <span class="title">getPasswordEncoder</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> BCryptPasswordEncoder();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>:question: <code>Lecture12 P12</code>为何不反序列化为User类型而是用Map呢；<code>P14</code>还考吗</p>
+<p>:question: <code>Lecture12 P12</code>为何不反序列化为User类型而是用Map呢；</p>
 <p><code>Encryptors</code><strong><code>文本加密</code></strong></p>
 <ul>
 <li>Spring-Security提供基于256-bit PBKDF2对称算法的实现</li>
@@ -328,7 +325,7 @@
 <li>Cron表达式由6项或7项组成</li>
 <li>顺序：秒、分、时、日、月、星期、年（可省略，即每年）</li>
 <li>默认不支持从后计算</li>
-<li>通配符：* 所有匹配值；. 或；/ 增幅；- 区间； ? 省略</li>
+<li>通配符：* 所有匹配值；, 或；/ 增幅；- 区间； ? 省略</li>
 </ul>
 </li>
 </ul>
@@ -587,15 +584,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">review</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hexo使用</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">sort</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">review</a>
               </li>
              
               <li class="article-tag-list-item">

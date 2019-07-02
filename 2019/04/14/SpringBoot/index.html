@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Find everything about tech">
 <meta property="og:description" content="前后端整合:date:04-29 后端初始时没有用户，使用InitService创建一个超级管理员，再完成教师、学生等信息的添加（一般通过Excel表格导入） 用户的权限（角色）像token一样，会被保存到sessionStroage 后端的权限不再是简单的1和2，而是一个字符串（哈希生成的），这样可以防止伪造权限 :date:05-20 后端中的一些疑问：  service和repository">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-02T12:42:15.941Z">
+<meta property="og:updated_time" content="2019-06-04T23:47:58.712Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SprngBoot">
 <meta name="twitter:description" content="前后端整合:date:04-29 后端初始时没有用户，使用InitService创建一个超级管理员，再完成教师、学生等信息的添加（一般通过Excel表格导入） 用户的权限（角色）像token一样，会被保存到sessionStroage 后端的权限不再是简单的1和2，而是一个字符串（哈希生成的），这样可以防止伪造权限 :date:05-20 后端中的一些疑问：  service和repository">
@@ -642,12 +642,15 @@
 <p>​    添加Hibernate5Module组件到容器，声明仅序列化延迟加载对象的ID，可用于后期操作</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">            &lt;groupId&gt;com.fasterxml.jackson.datatype&lt;/groupId&gt;</span><br><span class="line">            &lt;artifactId&gt;jackson-datatype-hibernate5&lt;/artifactId&gt;</span><br><span class="line">            &lt;version&gt;2.9.7&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
 <p>修改address，先查询其与用户的关系，再修改</p>
+<p>​    用来防止修改其他人的地址？</p>
 <p>CustomizedRepository及其实现类，由自己实现，不让容器扫描创建</p>
 <p>事务挂到业务逻辑层(Service)，一个事务是一个单元而非一次持久化操作。里面的操作都定义成抽象的</p>
 <p>加密解密组件</p>
 <p>拦截器拦截到你是谁，然后放到request身上（地址栏传过来的用户就不是真正的用户了）</p>
 <p>写完拦截器要写个注册类注入进去</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WebMvcConfig</span> <span class="keyword">implements</span> <span class="title">WebMvcConfigurer</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> LoginInterceptor loginInterceptor;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">addInterceptors</span><span class="params">(InterceptorRegistry registry)</span> </span>&#123;</span><br><span class="line">      	<span class="comment">// </span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>你真正是谁由token来决定，放在请求身上，通过注解可以直接将request身上的attribute注入进来，用户id和权限都是这样</p>
+<p>​    比如获取用户地址时，方法传入的参数是从request身上获得，使得即使在地址栏伪造数据无效</p>
 <p>双向关联会出现死循环</p>
 <p>listaddresses时会多次出现user的全部属性，是因为即时加载</p>
 <p>加一个包，让jackson认延迟加载策略</p>
@@ -935,15 +938,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">review</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Hexo使用</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">sort</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">review</a>
               </li>
              
               <li class="article-tag-list-item">
