@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>贪心思想 | Find everything about tech</title>
+  <title>算法复习 | Find everything about tech</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="贪心思想 Leetcode435. Non-overlapping Intervals (Medium)  先计算最多能组成的不重叠区间数，然后用区间总个数减去不重叠区间的个数 每次选择中区间的结尾最为重要，选择的区间结尾越小，留给后面区间的空间越大，则能选择的个数也越多，因此按区间的结尾小的在前进行排序，每次选择结尾最小，并且和前一个区间不重叠的区间">
-<meta name="keywords" content="Greedy">
+  <meta name="description" content="C语言算法复习北航夏令营准备之C语言算法复习字符串和整形相互转换 1.字符串转整形itoa 123456int num = 100;char str[25];itoa(num, str, 10);				// 字符串转整形（第三个参数为进制）// 下面为sprintf实现（可跨平台）char str[255];sprintf(str, &quot;%x&quot;, 100); //将100转为16进制表示的字符串。">
+<meta name="keywords" content="review">
 <meta property="og:type" content="article">
-<meta property="og:title" content="贪心思想">
-<meta property="og:url" content="http://yoursite.com/2019/04/07/贪心思想/index.html">
+<meta property="og:title" content="算法复习">
+<meta property="og:url" content="http://yoursite.com/2019/07/04/算法复习/index.html">
 <meta property="og:site_name" content="Find everything about tech">
-<meta property="og:description" content="贪心思想 Leetcode435. Non-overlapping Intervals (Medium)  先计算最多能组成的不重叠区间数，然后用区间总个数减去不重叠区间的个数 每次选择中区间的结尾最为重要，选择的区间结尾越小，留给后面区间的空间越大，则能选择的个数也越多，因此按区间的结尾小的在前进行排序，每次选择结尾最小，并且和前一个区间不重叠的区间">
+<meta property="og:description" content="C语言算法复习北航夏令营准备之C语言算法复习字符串和整形相互转换 1.字符串转整形itoa 123456int num = 100;char str[25];itoa(num, str, 10);				// 字符串转整形（第三个参数为进制）// 下面为sprintf实现（可跨平台）char str[255];sprintf(str, &quot;%x&quot;, 100); //将100转为16进制表示的字符串。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-07T01:51:46.807Z">
+<meta property="og:updated_time" content="2019-07-04T15:00:05.968Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="贪心思想">
-<meta name="twitter:description" content="贪心思想 Leetcode435. Non-overlapping Intervals (Medium)  先计算最多能组成的不重叠区间数，然后用区间总个数减去不重叠区间的个数 每次选择中区间的结尾最为重要，选择的区间结尾越小，留给后面区间的空间越大，则能选择的个数也越多，因此按区间的结尾小的在前进行排序，每次选择结尾最小，并且和前一个区间不重叠的区间">
+<meta name="twitter:title" content="算法复习">
+<meta name="twitter:description" content="C语言算法复习北航夏令营准备之C语言算法复习字符串和整形相互转换 1.字符串转整形itoa 123456int num = 100;char str[25];itoa(num, str, 10);				// 字符串转整形（第三个参数为进制）// 下面为sprintf实现（可跨平台）char str[255];sprintf(str, &quot;%x&quot;, 100); //将100转为16进制表示的字符串。">
   
     <link rel="alternative" href="/atom.xml" title="Find everything about tech" type="application/atom+xml">
   
@@ -151,44 +151,44 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-贪心思想" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-算法复习" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      贪心思想
+      算法复习
     </h1>
   
 
         
-        <a href="/2019/04/07/贪心思想/" class="archive-article-date">
-  	<time datetime="2019-04-07T01:42:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-07</time>
+        <a href="/2019/07/04/算法复习/" class="archive-article-date">
+  	<time datetime="2019-07-04T14:58:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="贪心思想"><a href="#贪心思想" class="headerlink" title="贪心思想"></a>贪心思想</h4><ul>
-<li>Leetcode<a href="https://leetcode.com/problems/non-overlapping-intervals/description/" target="_blank" rel="noopener">435. Non-overlapping Intervals (Medium)</a></li>
-</ul>
-<p>先计算最多能组成的不重叠区间数，然后用区间总个数减去不重叠区间的个数</p>
-<p>每次选择中区间的结尾最为重要，选择的区间结尾越小，留给后面区间的空间越大，则能选择的个数也越多，因此按区间的结尾小的在前进行排序，<code>每次选择结尾最小，并且和前一个区间不重叠的区间</code></p>
+        <h4 id="C语言算法复习"><a href="#C语言算法复习" class="headerlink" title="C语言算法复习"></a>C语言算法复习</h4><h4 id="北航夏令营准备之C语言算法复习"><a href="#北航夏令营准备之C语言算法复习" class="headerlink" title="北航夏令营准备之C语言算法复习"></a>北航夏令营准备之C语言算法复习</h4><p><strong>字符串和整形相互转换</strong></p>
+<p>1.字符串转整形<code>itoa</code></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">char</span> str[<span class="number">25</span>];</span><br><span class="line">itoa(num, str, <span class="number">10</span>);				<span class="comment">// 字符串转整形（第三个参数为进制）</span></span><br><span class="line"><span class="comment">// 下面为sprintf实现（可跨平台）</span></span><br><span class="line"><span class="keyword">char</span> str[<span class="number">255</span>];</span><br><span class="line"><span class="built_in">sprintf</span>(str, <span class="string">"%x"</span>, <span class="number">100</span>); <span class="comment">//将100转为16进制表示的字符串。</span></span><br></pre></td></tr></table></figure>
+<p>2.整形转字符串<code>atoi</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> s[<span class="number">100</span>];</span><br><span class="line">gets(s);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"integer=%d\n"</span>,atoi(s));</span><br></pre></td></tr></table></figure>
+<p><strong>字符串反转</strong></p>
+<p>C语言<code>strrev()</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> s[]=<span class="string">"hello"</span>;</span><br><span class="line">strrev(s);</span><br><span class="line"><span class="built_in">puts</span>(s);</span><br></pre></td></tr></table></figure>
+<p>C++<code>reverse()</code></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> s= <span class="string">"hello"</span>;</span><br><span class="line">reverse(s.begin(),s.end());</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<ul>
-<li>Leetcode<a href="https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/" target="_blank" rel="noopener">452. Minimum Number of Arrows to Burst Balloons (Medium)</a></li>
-</ul>
-<p>也是计算不重叠的区间个数</p>
-<blockquote>
-<p>比自己的思路简单的做法：按区间右端点排序，记录第一个区间的右端点为end，cnt为1；之后从第2个区间开始遍历所有区间，如果该区间的左端点比end大，则cnt++，同时更新end为该区间的右端点</p>
-</blockquote>
-<p>:question:比较cmp函数要声明在类外（即静态的），为何</p>
-<ul>
-<li><strong>Leetcode</strong><a href="https://leetcode.com/problems/queue-reconstruction-by-height/description/" target="_blank" rel="noopener">406. Queue Reconstruction by Height(Medium)</a></li>
-</ul>
-<p>为了使插入操作不影响后续的操作，身高较高的学生应该先做插入操作，否则身高较小的学生原先正确插入的第 k 个位置可能会变成第 k+1 个位置。</p>
+<p><strong>查找子串</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> a[<span class="number">100</span>],b[<span class="number">100</span>];</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%s %s"</span>,&amp;a,&amp;b);</span><br><span class="line"><span class="keyword">char</span> *p;</span><br><span class="line">p=<span class="built_in">strstr</span>(a,b);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d"</span>,p-a+<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>提取指定长度的字符串</strong><br><code>strncpy</code></p>
+<p><strong>BFS+记录路径，输出路径</strong></p>
+<p>第二题算是个图论吧，大意是虫子吃苹果。苹果树的每个节点最多有3个子节点，当然除根节点之外，各自都还有父节点。一个节点的子节点要么都是苹果（相当于叶子节点），要么都是“树杈”（非叶子节点）。每个苹果都有自己的成熟度，分为1-3三个等级。虫子一开始位于某一苹果，问你吃完该苹果后，在最大成熟度的条件下，离它最近（即经过树杈最少）的苹果是哪个，并输出路线，该题保证解唯一。这题理解清楚题意之后很简单，从虫子所在位置BFS，找出首先遇到的全局最成熟的苹果，并在这一过程中保存每一节点的前驱节点，最后从目标苹果开始反向输出路径</p>
+<p><strong>qsort进行结构体排序</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">In</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">   <span class="keyword">int</span> x;   </span><br><span class="line">   <span class="keyword">int</span> y;   </span><br><span class="line">&#125;s[<span class="number">100</span>];</span><br><span class="line"><span class="comment">//按照x从小到大排序，当x相等时按照y从大到小排序。</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cmp</span><span class="params">( <span class="keyword">const</span> <span class="keyword">void</span> *a , <span class="keyword">const</span> <span class="keyword">void</span> *b )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">In</span> *<span class="title">c</span> = (<span class="title">In</span> *)<span class="title">a</span>;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">In</span> *<span class="title">d</span> = (<span class="title">In</span> *)<span class="title">b</span>;</span></span><br><span class="line">    <span class="keyword">if</span>(c-&gt;x != d-&gt;x) <span class="keyword">return</span> c-&gt;x - d-&gt;x;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> d-&gt;y - c-&gt;y;</span><br><span class="line">&#125;</span><br><span class="line">qsort(s,<span class="number">100</span>,<span class="keyword">sizeof</span>(s[<span class="number">0</span>]),cmp);</span><br></pre></td></tr></table></figure>
 
       
 
@@ -223,7 +223,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Greedy</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">review</a>
         		</li>
       		
 		</ul>
@@ -279,7 +279,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/07/贪心思想/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/04/算法复习/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -293,18 +293,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/04/14/SpringBoot/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          SprngBoot
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/04/05/桶排序/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">桶排序</div>
+    <a href="/2019/07/02/计算机网络复习/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">计算机网络复习</div>
       <i class="icon-circle-right"></i>
     </a>
   
