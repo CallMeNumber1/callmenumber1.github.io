@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>算法复习 | Find everything about tech</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="C语言算法复习北航夏令营准备之C语言算法复习字符串和整形相互转换 1.字符串转整形itoa 123456int num = 100;char str[25];itoa(num, str, 10);				// 字符串转整形（第三个参数为进制）// 下面为sprintf实现（可跨平台）char str[255];sprintf(str, &quot;%x&quot;, 100); //将100转为16进制表示的字符串。">
+  <meta name="description" content="####  算法复习字符串和整形相互转换 1.字符串转整形itoa 123456int num = 100;char str[25];itoa(num, str, 10);				// 字符串转整形（第三个参数为进制）// 下面为sprintf实现（可跨平台）char str[255];sprintf(str, &quot;%x&quot;, 100); //将100转为16进制表示的字符串。 2.整形转字符串ato">
 <meta name="keywords" content="review">
 <meta property="og:type" content="article">
 <meta property="og:title" content="算法复习">
 <meta property="og:url" content="http://yoursite.com/2019/07/04/算法复习/index.html">
 <meta property="og:site_name" content="Find everything about tech">
-<meta property="og:description" content="C语言算法复习北航夏令营准备之C语言算法复习字符串和整形相互转换 1.字符串转整形itoa 123456int num = 100;char str[25];itoa(num, str, 10);				// 字符串转整形（第三个参数为进制）// 下面为sprintf实现（可跨平台）char str[255];sprintf(str, &quot;%x&quot;, 100); //将100转为16进制表示的字符串。">
+<meta property="og:description" content="####  算法复习字符串和整形相互转换 1.字符串转整形itoa 123456int num = 100;char str[25];itoa(num, str, 10);				// 字符串转整形（第三个参数为进制）// 下面为sprintf实现（可跨平台）char str[255];sprintf(str, &quot;%x&quot;, 100); //将100转为16进制表示的字符串。 2.整形转字符串ato">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-04T15:00:05.968Z">
+<meta property="og:updated_time" content="2019-07-07T13:07:39.923Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="算法复习">
-<meta name="twitter:description" content="C语言算法复习北航夏令营准备之C语言算法复习字符串和整形相互转换 1.字符串转整形itoa 123456int num = 100;char str[25];itoa(num, str, 10);				// 字符串转整形（第三个参数为进制）// 下面为sprintf实现（可跨平台）char str[255];sprintf(str, &quot;%x&quot;, 100); //将100转为16进制表示的字符串。">
+<meta name="twitter:description" content="####  算法复习字符串和整形相互转换 1.字符串转整形itoa 123456int num = 100;char str[25];itoa(num, str, 10);				// 字符串转整形（第三个参数为进制）// 下面为sprintf实现（可跨平台）char str[255];sprintf(str, &quot;%x&quot;, 100); //将100转为16进制表示的字符串。 2.整形转字符串ato">
   
     <link rel="alternative" href="/atom.xml" title="Find everything about tech" type="application/atom+xml">
   
@@ -171,17 +171,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="C语言算法复习"><a href="#C语言算法复习" class="headerlink" title="C语言算法复习"></a>C语言算法复习</h4><h4 id="北航夏令营准备之C语言算法复习"><a href="#北航夏令营准备之C语言算法复习" class="headerlink" title="北航夏令营准备之C语言算法复习"></a>北航夏令营准备之C语言算法复习</h4><p><strong>字符串和整形相互转换</strong></p>
+        <p>#### </p>
+<h4 id="算法复习"><a href="#算法复习" class="headerlink" title="算法复习"></a>算法复习</h4><p><strong>字符串和整形相互转换</strong></p>
 <p>1.字符串转整形<code>itoa</code></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">char</span> str[<span class="number">25</span>];</span><br><span class="line">itoa(num, str, <span class="number">10</span>);				<span class="comment">// 字符串转整形（第三个参数为进制）</span></span><br><span class="line"><span class="comment">// 下面为sprintf实现（可跨平台）</span></span><br><span class="line"><span class="keyword">char</span> str[<span class="number">255</span>];</span><br><span class="line"><span class="built_in">sprintf</span>(str, <span class="string">"%x"</span>, <span class="number">100</span>); <span class="comment">//将100转为16进制表示的字符串。</span></span><br></pre></td></tr></table></figure>
 <p>2.整形转字符串<code>atoi</code></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> s[<span class="number">100</span>];</span><br><span class="line">gets(s);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"integer=%d\n"</span>,atoi(s));</span><br></pre></td></tr></table></figure>
 <p><strong>字符串反转</strong></p>
 <p>C语言<code>strrev()</code></p>
+<a id="more"></a>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> s[]=<span class="string">"hello"</span>;</span><br><span class="line">strrev(s);</span><br><span class="line"><span class="built_in">puts</span>(s);</span><br></pre></td></tr></table></figure>
 <p>C++<code>reverse()</code></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> s= <span class="string">"hello"</span>;</span><br><span class="line">reverse(s.begin(),s.end());</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
 <p><strong>查找子串</strong></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> a[<span class="number">100</span>],b[<span class="number">100</span>];</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%s %s"</span>,&amp;a,&amp;b);</span><br><span class="line"><span class="keyword">char</span> *p;</span><br><span class="line">p=<span class="built_in">strstr</span>(a,b);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d"</span>,p-a+<span class="number">1</span>);</span><br></pre></td></tr></table></figure>
 <p><strong>提取指定长度的字符串</strong><br><code>strncpy</code></p>
@@ -189,6 +190,51 @@
 <p>第二题算是个图论吧，大意是虫子吃苹果。苹果树的每个节点最多有3个子节点，当然除根节点之外，各自都还有父节点。一个节点的子节点要么都是苹果（相当于叶子节点），要么都是“树杈”（非叶子节点）。每个苹果都有自己的成熟度，分为1-3三个等级。虫子一开始位于某一苹果，问你吃完该苹果后，在最大成熟度的条件下，离它最近（即经过树杈最少）的苹果是哪个，并输出路线，该题保证解唯一。这题理解清楚题意之后很简单，从虫子所在位置BFS，找出首先遇到的全局最成熟的苹果，并在这一过程中保存每一节点的前驱节点，最后从目标苹果开始反向输出路径</p>
 <p><strong>qsort进行结构体排序</strong></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">In</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">   <span class="keyword">int</span> x;   </span><br><span class="line">   <span class="keyword">int</span> y;   </span><br><span class="line">&#125;s[<span class="number">100</span>];</span><br><span class="line"><span class="comment">//按照x从小到大排序，当x相等时按照y从大到小排序。</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cmp</span><span class="params">( <span class="keyword">const</span> <span class="keyword">void</span> *a , <span class="keyword">const</span> <span class="keyword">void</span> *b )</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">In</span> *<span class="title">c</span> = (<span class="title">In</span> *)<span class="title">a</span>;</span></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">In</span> *<span class="title">d</span> = (<span class="title">In</span> *)<span class="title">b</span>;</span></span><br><span class="line">    <span class="keyword">if</span>(c-&gt;x != d-&gt;x) <span class="keyword">return</span> c-&gt;x - d-&gt;x;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">return</span> d-&gt;y - c-&gt;y;</span><br><span class="line">&#125;</span><br><span class="line">qsort(s,<span class="number">100</span>,<span class="keyword">sizeof</span>(s[<span class="number">0</span>]),cmp);</span><br></pre></td></tr></table></figure>
+<p><strong>栈与队列</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、队列 head==tail时队空</span><br><span class="line"><span class="keyword">int</span> head = tail = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span> (head &lt; tail) &#123;</span><br><span class="line">    <span class="comment">// to do sth</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="number">2</span>、栈 top==<span class="number">-1</span>时栈空</span><br><span class="line"><span class="keyword">int</span> top = <span class="number">-1</span>;</span><br></pre></td></tr></table></figure>
+<p><strong>动态规划</strong></p>
+<ol>
+<li><p>一类特殊的递推问题</p>
+</li>
+<li><p>求解最优化问题</p>
+<p>最大、最小、最长</p>
+</li>
+<li><p>最优子结构</p>
+<p>规模为n的最优解，取决于规模n-1的最优解</p>
+</li>
+<li><p>无后效性</p>
+<p>之前的决策对后续决策无影响，<strong>设计状态转移方程的关键</strong></p>
+<p>即求解父状态时不在乎子状态的方案，只告诉父状态一个最优值即可</p>
+</li>
+</ol>
+<p>例题1：最长回文子序列</p>
+<p><strong><code>计算一个数组的最长回文子序列，就相当于计算一个数组及其倒序数组之间的最长公共子序列</code></strong></p>
+<p>很多回文相关的题目，都可以通过类似的转化方法，将单数组问题转换为我们熟知的双数组问题。</p>
+<p>例题2：最长公共子序列</p>
+<ul>
+<li><p>确定动归状态</p>
+<p><code>dp[i][j]</code>代表A串长度i，B串长度j的最长公共子序列长度 <code>注意是串长</code></p>
+</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 初始dp[i][0] dp[0][j]都为0</span></span><br><span class="line">   <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= len1; i++) &#123;</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= len2; j++) &#123;</span><br><span class="line">           <span class="keyword">if</span> (s1[i - <span class="number">1</span>] == s2[j - <span class="number">1</span>]) &#123;</span><br><span class="line">               dp[i][j] = dp[i - <span class="number">1</span>][j - <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">           &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">               dp[i][j] = max(dp[i - <span class="number">1</span>][j], dp[i][j - <span class="number">1</span>]);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>例题3：01背包</p>
+<ul>
+<li><p>动归状态</p>
+<p><code>dp[i][j]</code>代表前i件物品，背包重为j时所获得的最大价值</p>
+</li>
+<li><p>状态转移方程</p>
+<p>分为选择了第i件物品和没有选择第i件物品</p>
+<p><code>dp[i][j] = max(dp[i-1][j], dp[i-1][j-w[i]] + v[i])</code></p>
+<p>:boom:<strong>其中选择了第i件物品时为</strong><code>dp[i-1][j-w[i]]+v[i]</code>代表只选择了一件i物品，剩下的在其他物品中选。这里也是与完全背包的区别</p>
+</li>
+</ul>
+<p>例题4：完全背包</p>
+<ul>
+<li>每件物品可以选多件</li>
+<li>与0/1背包的区别，状态转移方程，当拿了第i件物品，为<code>dp[i][j-w[i]]+v[i]</code>，因为前i件里面可能拿了物品i也可能没拿物品i</li>
+</ul>
+<p><strong>字符串的回文子串数目</strong></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">expand</span><span class="params">(<span class="built_in">string</span> s, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span> </span>&#123;                    <span class="comment">// 传递参数时以引用形式传递，会节省大量时间（节省拷贝时间）!!!!!!!!!!</span></span><br><span class="line">    <span class="keyword">while</span> (i &gt;= <span class="number">0</span> &amp;&amp; j &lt; s.size() &amp;&amp; s[i] == s[j]) &#123;</span><br><span class="line">        i--; j++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.size(); i++) &#123;</span><br><span class="line">            expand(s, i, i);</span><br><span class="line">            expand(s, i, i + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -434,11 +480,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">review</a>
+                <a href="javascript:void(0)" class="js-tag color1">字符串算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">字符串算法</a>
+                <a href="javascript:void(0)" class="js-tag color2">review</a>
               </li>
              
               <li class="article-tag-list-item">

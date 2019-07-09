@@ -148,6 +148,138 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-离散数学复习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/09/离散数学复习/">离散数学复习</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/09/离散数学复习/" class="archive-article-date">
+  	<time datetime="2019-07-09T09:28:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>幂集</strong></p>
+<p>P(A)</p>
+<p><strong>容斥原理</strong></p>
+<p><strong>二元关系</strong></p>
+<hr>
+<p>1、有序对/序偶：由两个元素x和y按一定顺序排成二元组，记作&lt;x, y&gt;；同理可得<code>有序n元组</code></p>
+<p>2、笛卡儿积：设A，B为集合，用A中元素为第一个元素，B中元素为第二个元素，构成有序对。所有这样的有序对组成的集合叫做A与B的笛卡儿积<br>$$<br>A \times B = {&lt;x, y&gt; | x \in A, y \in B}<br>$$</p>
+<blockquote>
+<p>性质：不满足交换律、结合律</p>
+</blockquote>
+<p>3、二元关系：集合中两个元素之间的某种关系</p>
+<p>定义：如果一个集合满足以下条件之一：（1）集合非空，且所有元素都是有序对（2）集合为空</p>
+<p>则称该集合为一个<code>二元关系</code>，简称为<code>关系</code>，记作$R$<br>$$</p>
+<p>&lt;x, y&gt; \in R，记作xRy<br>$$<br>4、从A到B的关系与A上的关系</p>
+<p>设A，B为集合，$A \times B$的任何子集所定义的二元关系叫做从A到B的关系，当A=B时叫做A上的二元关系</p>
+<p>5、A上的重要关系</p>
+<p>全域关系$E_A$；恒等关系$I_A$；小于等于关系$L_A$；整除关系$D_A$；包含关系</p>
+<p>6、关系的表示：关系的集合表达式；关系矩阵；关系图</p>
+<blockquote>
+<p>关系图仅适用于表示A上的关系</p>
+</blockquote>
+<hr>
+<p><strong>关系的运算</strong></p>
+<p>1、关系的定义域与值域</p>
+<p>2、逆与合成<br>$$<br>R^{-1} = {&lt;y, x&gt; | &lt;x, y&gt; \in R} \<br>R \circ S = {&lt;x, y&gt; | \exist z (&lt;x, z&gt; \in S \and &lt;z, y&gt; \in R)}<br>$$<br>3、限制和像</p>
+<p>4、A上关系的幂运算</p>
+<p>设R为A上的关系，n为自然数，则R的n次幂定义为：<br>$$<br>(1)R^0 = {&lt;x, x&gt; | x\in A} = I_A \<br>(2)R^{n + 1} = R^n \circ R<br>$$<br>5、幂的性质<br>$$<br>（1）当关系图中有回路时：R^2 = R^4 = … = R^{2k}; R^3 = R^5 = … = R^{2k + 1}\<br> (2)R^m \circ R^n =    R^{m + n}\<br> (3)(R^m)^n = R^{mn}<br>$$<br><strong>关系的性质</strong></p>
+<p>1、自反性；反自反性</p>
+<blockquote>
+<p>在自反性方面R有三种可能：自反的、反自反的、既非自反又非反自反的</p>
+</blockquote>
+<p>2、对称性</p>
+<blockquote>
+<p>可以即对称又反对称。如$R =  {&lt;x, x&gt; | x \in R }$</p>
+</blockquote>
+<p>3、传递性</p>
+<p><strong>关系的闭包运算</strong></p>
+<p>1、设$R \subseteq A \times A$，那么包含R而使之具有自反性质的<strong><code>最小关系</code></strong>，称之为R的自反闭包。 对称闭包和传递闭包同理。</p>
+<p>自反闭包记作$r(R)$；对称闭包$s(R)$；传递闭包$t(R)$</p>
+<p>2、计算方法：</p>
+<p>（1）逻辑运算方法：设R是A上的任一关系，则<br>$$<br>r(R) = R \cup I_A\<br>s(R) = R \cup R^{-1}\<br>t(R) = R \cup R^2 \cup … \cup R^{n - 1}<br>$$<br>（2）矩阵形式（3）关系图法</p>
+<p><strong>等价关系和偏序关系</strong></p>
+<p>1、等价关系：集合A上的关系R是<code>自反的</code>，<code>对称的</code>和<code>传递的</code>。</p>
+<p>设R是一个等价关系，若$&lt;x, y&gt;\in R$，则称x等价于y，记作x~y</p>
+<p>2、相容关系：R是A上的关系，且A是自反的，对称的</p>
+<blockquote>
+<p>等价关系一定是相容关系；相容关系不一定是等价关系</p>
+</blockquote>
+<p>3、偏序关系：集合A上的关系R是<code>自反的</code>，<code>反对称</code>的和<code>传递的</code>，记作”$\leq$”</p>
+<p>设R为偏序关系，如果$&lt;x,y&gt;\in R$，则记作$x \leq y$，读作“x<strong><code>小于等于</code></strong>y”。注意：这里的“小于等于”不是指数的大小，而是在偏序关系中的顺序性。</p>
+<p>例子：（1）任何集合A上的恒等关系（2）集合A的幂集P（A）上的包含关系（3）实数集上的小于等于、大于等于关系（4）正整数集上的整除关系</p>
+<p>4、相关概念</p>
+<p>偏序集：集合A和偏序关系$R_\leq$构成一个偏序集，记作$&lt;A, R_\leq&gt;$。</p>
+<p>可比：对于任意两个元素x和y，若$x \leq y或 y \leq x$ ，则x与y是<strong><code>可比</code></strong>的</p>
+<p>全序关系与全序集：若A中任意两个元素都是可比的，则$R_\leq$为<code>全序关系</code>，$&lt;A, R_\leq&gt;$为<code>全序集</code></p>
+<p>盖住：如果$x\leq y$，且不存在z使得$x \leq z \leq y$（<strong><code>不是间接的</code></strong>），则称<strong><code>y能盖住x</code></strong></p>
+<p>5、哈斯图</p>
+<p>6、偏序集中的一些特殊元素</p>
+<p>极小元；极大元；最小元；最大元；上界；下界；上确界（最小上界）；下确界（最大下界）</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">review</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/09/离散数学复习/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-操作系统复习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -250,16 +382,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="C语言算法复习"><a href="#C语言算法复习" class="headerlink" title="C语言算法复习"></a>C语言算法复习</h4><h4 id="北航夏令营准备之C语言算法复习"><a href="#北航夏令营准备之C语言算法复习" class="headerlink" title="北航夏令营准备之C语言算法复习"></a>北航夏令营准备之C语言算法复习</h4><p><strong>字符串和整形相互转换</strong></p>
+        <p>#### </p>
+<h4 id="算法复习"><a href="#算法复习" class="headerlink" title="算法复习"></a>算法复习</h4><p><strong>字符串和整形相互转换</strong></p>
 <p>1.字符串转整形<code>itoa</code></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">char</span> str[<span class="number">25</span>];</span><br><span class="line">itoa(num, str, <span class="number">10</span>);				<span class="comment">// 字符串转整形（第三个参数为进制）</span></span><br><span class="line"><span class="comment">// 下面为sprintf实现（可跨平台）</span></span><br><span class="line"><span class="keyword">char</span> str[<span class="number">255</span>];</span><br><span class="line"><span class="built_in">sprintf</span>(str, <span class="string">"%x"</span>, <span class="number">100</span>); <span class="comment">//将100转为16进制表示的字符串。</span></span><br></pre></td></tr></table></figure>
 <p>2.整形转字符串<code>atoi</code></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> s[<span class="number">100</span>];</span><br><span class="line">gets(s);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"integer=%d\n"</span>,atoi(s));</span><br></pre></td></tr></table></figure>
 <p><strong>字符串反转</strong></p>
 <p>C语言<code>strrev()</code></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> s[]=<span class="string">"hello"</span>;</span><br><span class="line">strrev(s);</span><br><span class="line"><span class="built_in">puts</span>(s);</span><br></pre></td></tr></table></figure>
-<p>C++<code>reverse()</code></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> s= <span class="string">"hello"</span>;</span><br><span class="line">reverse(s.begin(),s.end());</span><br></pre></td></tr></table></figure>
         
       
 
@@ -859,92 +989,6 @@
 
 
   
-    <article id="post-Leetcode" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/25/Leetcode/">Leetcode</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/25/Leetcode/" class="archive-article-date">
-  	<time datetime="2019-04-25T14:40:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h4><p><strong>Kth Element 问题</strong></p>
-<p>题目描述：找到第k大的元素</p>
-<ol>
-<li><p>排序。时间复杂度$O(NlogN)$，空间复杂度$O(1)$</p>
-</li>
-<li><p>堆排序。时间复杂度$O(NlogK)$，空间复杂度$O(K)$</p>
-<p>维护一个最多有k个元素的小顶堆（最后队列里剩下的是最大的k个元素）</p>
-</li>
-<li><p>快速选择</p>
-<p>使用快速排序的partition()实现</p>
-</li>
-</ol>
-<p>TopK Elements 问题</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/25/Leetcode/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1046,11 +1090,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">review</a>
+                <a href="javascript:void(0)" class="js-tag color1">字符串算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">字符串算法</a>
+                <a href="javascript:void(0)" class="js-tag color2">review</a>
               </li>
              
               <li class="article-tag-list-item">

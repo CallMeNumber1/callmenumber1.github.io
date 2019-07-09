@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019 | Find everything about tech</title>
+  <title>离散数学复习 | Find everything about tech</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Find everything about tech">
-<meta property="og:url" content="http://yoursite.com/archives/2019/page/2/index.html">
+  <meta name="description" content="幂集 P(A) 容斥原理 二元关系  1、有序对/序偶：由两个元素x和y按一定顺序排成二元组，记作&amp;lt;x, y&amp;gt;；同理可得有序n元组 2、笛卡儿积：设A，B为集合，用A中元素为第一个元素，B中元素为第二个元素，构成有序对。所有这样的有序对组成的集合叫做A与B的笛卡儿积$$A \times B = {&amp;lt;x, y&amp;gt; | x \in A, y \in B}$$  性质：不满足交换律">
+<meta name="keywords" content="review">
+<meta property="og:type" content="article">
+<meta property="og:title" content="离散数学复习">
+<meta property="og:url" content="http://yoursite.com/2019/07/09/离散数学复习/index.html">
 <meta property="og:site_name" content="Find everything about tech">
+<meta property="og:description" content="幂集 P(A) 容斥原理 二元关系  1、有序对/序偶：由两个元素x和y按一定顺序排成二元组，记作&amp;lt;x, y&amp;gt;；同理可得有序n元组 2、笛卡儿积：设A，B为集合，用A中元素为第一个元素，B中元素为第二个元素，构成有序对。所有这样的有序对组成的集合叫做A与B的笛卡儿积$$A \times B = {&amp;lt;x, y&amp;gt; | x \in A, y \in B}$$  性质：不满足交换律">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-07-09T09:28:18.267Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Find everything about tech">
+<meta name="twitter:title" content="离散数学复习">
+<meta name="twitter:description" content="幂集 P(A) 容斥原理 二元关系  1、有序对/序偶：由两个元素x和y按一定顺序排成二元组，记作&amp;lt;x, y&amp;gt;；同理可得有序n元组 2、笛卡儿积：设A，B为集合，用A中元素为第一个元素，B中元素为第二个元素，构成有序对。所有这样的有序对组成的集合叫做A与B的笛卡儿积$$A \times B = {&amp;lt;x, y&amp;gt; | x \in A, y \in B}$$  性质：不满足交换律">
   
     <link rel="alternative" href="/atom.xml" title="Find everything about tech" type="application/atom+xml">
   
@@ -146,291 +151,224 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-离散数学复习" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      离散数学复习
+    </h1>
+  
+
+        
+        <a href="/2019/07/09/离散数学复习/" class="archive-article-date">
+  	<time datetime="2019-07-09T09:28:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-09</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>幂集</strong></p>
+<p>P(A)</p>
+<p><strong>容斥原理</strong></p>
+<p><strong>二元关系</strong></p>
+<hr>
+<p>1、有序对/序偶：由两个元素x和y按一定顺序排成二元组，记作&lt;x, y&gt;；同理可得<code>有序n元组</code></p>
+<p>2、笛卡儿积：设A，B为集合，用A中元素为第一个元素，B中元素为第二个元素，构成有序对。所有这样的有序对组成的集合叫做A与B的笛卡儿积<br>$$<br>A \times B = {&lt;x, y&gt; | x \in A, y \in B}<br>$$</p>
+<blockquote>
+<p>性质：不满足交换律、结合律</p>
+</blockquote>
+<p>3、二元关系：集合中两个元素之间的某种关系</p>
+<p>定义：如果一个集合满足以下条件之一：（1）集合非空，且所有元素都是有序对（2）集合为空</p>
+<p>则称该集合为一个<code>二元关系</code>，简称为<code>关系</code>，记作$R$<br>$$</p>
+<p>&lt;x, y&gt; \in R，记作xRy<br>$$<br>4、从A到B的关系与A上的关系</p>
+<p>设A，B为集合，$A \times B$的任何子集所定义的二元关系叫做从A到B的关系，当A=B时叫做A上的二元关系</p>
+<p>5、A上的重要关系</p>
+<p>全域关系$E_A$；恒等关系$I_A$；小于等于关系$L_A$；整除关系$D_A$；包含关系</p>
+<p>6、关系的表示：关系的集合表达式；关系矩阵；关系图</p>
+<blockquote>
+<p>关系图仅适用于表示A上的关系</p>
+</blockquote>
+<hr>
+<p><strong>关系的运算</strong></p>
+<p>1、关系的定义域与值域</p>
+<p>2、逆与合成<br>$$<br>R^{-1} = {&lt;y, x&gt; | &lt;x, y&gt; \in R} \<br>R \circ S = {&lt;x, y&gt; | \exist z (&lt;x, z&gt; \in S \and &lt;z, y&gt; \in R)}<br>$$<br>3、限制和像</p>
+<p>4、A上关系的幂运算</p>
+<p>设R为A上的关系，n为自然数，则R的n次幂定义为：<br>$$<br>(1)R^0 = {&lt;x, x&gt; | x\in A} = I_A \<br>(2)R^{n + 1} = R^n \circ R<br>$$<br>5、幂的性质<br>$$<br>（1）当关系图中有回路时：R^2 = R^4 = … = R^{2k}; R^3 = R^5 = … = R^{2k + 1}\<br> (2)R^m \circ R^n =    R^{m + n}\<br> (3)(R^m)^n = R^{mn}<br>$$<br><strong>关系的性质</strong></p>
+<p>1、自反性；反自反性</p>
+<blockquote>
+<p>在自反性方面R有三种可能：自反的、反自反的、既非自反又非反自反的</p>
+</blockquote>
+<p>2、对称性</p>
+<blockquote>
+<p>可以即对称又反对称。如$R =  {&lt;x, x&gt; | x \in R }$</p>
+</blockquote>
+<p>3、传递性</p>
+<p><strong>关系的闭包运算</strong></p>
+<p>1、设$R \subseteq A \times A$，那么包含R而使之具有自反性质的<strong><code>最小关系</code></strong>，称之为R的自反闭包。 对称闭包和传递闭包同理。</p>
+<p>自反闭包记作$r(R)$；对称闭包$s(R)$；传递闭包$t(R)$</p>
+<p>2、计算方法：</p>
+<p>（1）逻辑运算方法：设R是A上的任一关系，则<br>$$<br>r(R) = R \cup I_A\<br>s(R) = R \cup R^{-1}\<br>t(R) = R \cup R^2 \cup … \cup R^{n - 1}<br>$$<br>（2）矩阵形式（3）关系图法</p>
+<p><strong>等价关系和偏序关系</strong></p>
+<p>1、等价关系：集合A上的关系R是<code>自反的</code>，<code>对称的</code>和<code>传递的</code>。</p>
+<p>设R是一个等价关系，若$&lt;x, y&gt;\in R$，则称x等价于y，记作x~y</p>
+<p>2、相容关系：R是A上的关系，且A是自反的，对称的</p>
+<blockquote>
+<p>等价关系一定是相容关系；相容关系不一定是等价关系</p>
+</blockquote>
+<p>3、偏序关系：集合A上的关系R是<code>自反的</code>，<code>反对称</code>的和<code>传递的</code>，记作”$\leq$”</p>
+<p>设R为偏序关系，如果$&lt;x,y&gt;\in R$，则记作$x \leq y$，读作“x<strong><code>小于等于</code></strong>y”。注意：这里的“小于等于”不是指数的大小，而是在偏序关系中的顺序性。</p>
+<p>例子：（1）任何集合A上的恒等关系（2）集合A的幂集P（A）上的包含关系（3）实数集上的小于等于、大于等于关系（4）正整数集上的整除关系</p>
+<p>4、相关概念</p>
+<p>偏序集：集合A和偏序关系$R_\leq$构成一个偏序集，记作$&lt;A, R_\leq&gt;$。</p>
+<p>可比：对于任意两个元素x和y，若$x \leq y或 y \leq x$ ，则x与y是<strong><code>可比</code></strong>的</p>
+<p>全序关系与全序集：若A中任意两个元素都是可比的，则$R_\leq$为<code>全序关系</code>，$&lt;A, R_\leq&gt;$为<code>全序集</code></p>
+<p>盖住：如果$x\leq y$，且不存在z使得$x \leq z \leq y$（<strong><code>不是间接的</code></strong>），则称<strong><code>y能盖住x</code></strong></p>
+<p>5、哈斯图</p>
+<p>6、偏序集中的一些特殊元素</p>
+<p>极小元；极大元；最小元；最大元；上界；下界；上确界（最小上界）；下确界（最大下界）</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/25/Leetcode/" class="archive-article-date">
-  	<time datetime="2019-04-25T14:40:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/25/Leetcode/">Leetcode</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">review</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/09/离散数学复习/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/22/Vue/" class="archive-article-date">
-  	<time datetime="2019-04-22T11:35:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-22</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/05/操作系统复习/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">操作系统复习</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/22/Vue/">Vue</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/14/SpringBoot/" class="archive-article-date">
-  	<time datetime="2019-04-14T15:31:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-14</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/14/SpringBoot/">SprngBoot</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/07/贪心思想/" class="archive-article-date">
-  	<time datetime="2019-04-07T01:42:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/07/贪心思想/">贪心思想</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Greedy</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/05/桶排序/" class="archive-article-date">
-  	<time datetime="2019-04-05T07:55:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/05/桶排序/">桶排序</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">sort</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/05/快速选择算法/" class="archive-article-date">
-  	<time datetime="2019-04-05T02:02:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/05/快速选择算法/">快速选择算法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">sort</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/25/第一篇个人博文/" class="archive-article-date">
-  	<time datetime="2019-03-25T11:07:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/25/第一篇个人博文/">第一篇个人博文</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Hexo使用</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2019/">&laquo; Prev</a><a class="page-number" href="/archives/2019/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -454,8 +392,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
