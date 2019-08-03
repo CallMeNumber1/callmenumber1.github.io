@@ -148,6 +148,133 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-知识图谱学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/03/知识图谱学习/">初识知识图谱</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/03/知识图谱学习/" class="archive-article-date">
+  	<time datetime="2019-08-03T01:01:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>概念</strong> </p>
+<p>用节点和关系所组成的图谱，为真实世界的各个场景直观地建模。通过不同知识的关联性形成一个网状的知识结构，对机器来说就是图谱。</p>
+<p>构建知识图谱这个过程的本质，就是让机器形成认知能力，去理解这个世界。</p>
+<p>知识图谱的图存储在图数据库（Graph Database）中，图数据库以图论为理论基础，图论中图的基本元素是节点和边，在图数据库中对应的就是节点和关系。用节点和关系所组成的图，为真实世界直观地建模，支持百亿量级甚至千亿量级规模的巨型图的高效关系运算和复杂关系分析。</p>
+<p><strong>价值</strong></p>
+<p>在风控领域中，知识图谱产品为精准揭露“欺诈环”、“窝案”、“中介造假”、“洗钱”和其他复杂的欺诈手法，提供了新的方法和工具。尽管没有完美的反欺诈措施，但通过超越单个数据点并让多个节点进行联系，仍能发现一些隐藏信息，找到欺诈者的漏洞，通常这些看似正常不过的联系（关系），常常被我们忽视，但又是最有价值的反欺诈线索和风险突破口。</p>
+<p>尽管各个风险场景的业务风险不同，其欺诈方式也不同，但都有一个非常重要的共同点——欺诈依赖于信息不对称和间接层，且它们可以通过知识图谱的关联分析被揭示出来，高级欺诈也难以“隐身”。</p>
+<p>在风控领域中，知识图谱类产品主要应用于反欺诈、反洗钱、互联网授信、保险欺诈、银行欺诈、电商欺诈、项目审计作假、企业关系分析、罪犯追踪等场景中。</p>
+<p><strong>1、知识建模</strong></p>
+<p>知识建模，即为知识和数据进行抽象建模，主要包括以下5个步骤：</p>
+<ol>
+<li>以节点为主体目标，实现对不同来源的数据进行映射与合并。（确定节点）</li>
+<li>利用属性来表示不同数据源中针对节点的描述，形成对节点的全方位描述。（确定节点属性、标签）</li>
+<li>利用关系来描述各类抽象建模成节点的数据之间的关联关系，从而支持关联分析。（图设计）</li>
+<li>通过节点链接技术，实现围绕节点的多种类型数据的关联存储。（节点链接）</li>
+<li>使用事件机制描述客观世界中动态发展，体现事件与节点间的关联，并利用时序描述事件的发展状况。（动态事件描述）</li>
+</ol>
+<p><strong>2、知识获取</strong></p>
+<p>从不同来源、不同结构的数据中进行知识提取，形成知识存入到知识图谱。</p>
+<p>针对不同种类的数据，我们会利用不同的技术进行提取。</p>
+<p><strong>3、知识融合</strong></p>
+<p>如果知识图谱的数据源来自不同数据结构的数据源，在系统已经从不同的数据源把不同结构的数据提取知识之后，接下来要做的是把它们融合成一个统一的知识图谱</p>
+<p>知识融合主要分为数据模式层融合和数据层融合，分别用的技术如下：</p>
+<ol>
+<li>数据模式层融合：概念合并、概念上下位关系合并、概念的属性定义合并。</li>
+<li>数据层融合：节点合并、节点属性融合、冲突检测与解决（如某一节点的数据来源有：豆瓣短文、数据库、网页爬虫等，需要将不同数据来源的同一节点进行数据层的融合）。</li>
+</ol>
+<p>由于行业知识图谱的数据模式通常采用自顶向下（由专家创建）和自底向上（从现有的行业标准转化，从现有高质量数据源（如百科）转化）结合的方式，在模式层基本都经过人工的校验，保证了可靠性，因此，知识融合的关键任务在数据层的融合。</p>
+<p><strong>4、知识存储</strong></p>
+<p>图谱的数据存储既需要完成基本的数据存储，同时也要能支持上层的知识推理、知识快速查询、图实时计算等应用，因此需要存储以下信息：三元组（由开始节点、关系、结束节点三个元素组成）知识的存储、事件信息的存储、时态信息的存储、使用知识图谱组织的数据的存储。</p>
+<p><strong>5、知识计算</strong></p>
+<p>知识计算主要是在知识图谱中知识和数据的基础上，通过各种算法，发现其中显式的或隐含的知识、模式或规则等，知识计算的范畴非常大，这里主要讲三个方面：</p>
+<ol>
+<li>图挖掘计算：基于图论的相关算法，实现对图谱的探索和挖掘。</li>
+<li>本体推理：使用本体推理进行新知识发现或冲突检测。</li>
+<li>基于规则的推理：使用规则引擎，编写相应的业务规则，通过推理辅助业务决策。</li>
+</ol>
+<p><strong>知识图谱的应用</strong></p>
+<p>问答、搜索、个性化推荐</p>
+<p>信用卡申请反诈骗图谱</p>
+<blockquote>
+<p>个人思考</p>
+<p>知识图谱使用图结构存储；组织形式上有些像数据库中逻辑模式中的ER图？</p>
+<p>主要利用关联关系来做一些事情，或者解决一些由于信息不对称（间接层）带来的问题；</p>
+<p>凡是有关系的地方都可以用到</p>
+<p>三元组是什么意思，存储结构吗？为何要这样</p>
+</blockquote>
+<p>关联图谱</p>
+<p>1、图：图是相互连接事物及其关系的一种结构化表达，是最接近真实世界的数据组织结构。通过图将所有的数据连接起来，即时地传达信息，易于揭示复杂的关系模式。</p>
+<p>图就是由一组一组的节点和边构成的，节点可以有多个属性，边也可以有多个属性，节点可以有多个<strong><code>标签</code></strong>，代表着不同的身份。如某个人在生活中即是一个孩子的爸爸，也是一位丈夫，也是某个金融科技公司的CPO。</p>
+<p>2、图的存储：图存储在图数据库（Graph Database）中，图数据库以图论为理论基础，图论中图的基本元素是节点和边，在图数据库中对应的就是节点和关系。目前市面上较为流行的图数据库有Neo4j、Orient DB、Titan、Flock DB、Allegro Graph等。</p>
+<p>与传统的关系型数据库相比，图数据库更擅长建立复杂的关系网络。</p>
+<p>3、关联图谱：基于图数据库建立关系网络图，是一种可视化的智能分析产品。通过数据抽取和转换，图计算引擎对数据进行查询和分析，实现秒级数据运算和数据可视化，并以图谱的形式展示给用户的图形分析工具。用户可以基于已建好的图谱进行查询、分析和探索。</p>
+<p>参考：<a href="http://www.woshipm.com/it/1088237.html" target="_blank" rel="noopener">知识图谱的价值和应用</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ai；kg</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/03/知识图谱学习/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-大三下暑期学习计划" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -955,84 +1082,6 @@
 
 
   
-    <article id="post-图论-最短路问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/01/图论-最短路问题/">图论-最短路问题详解</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/01/图论-最短路问题/" class="archive-article-date">
-  	<time datetime="2019-05-01T00:30:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="最短路径"><a href="#最短路径" class="headerlink" title="最短路径"></a>最短路径</h4><ul>
-<li>第一类：单一源点到其他点的最短路径</li>
-<li>第二类：所有点之间的最短路径</li>
-</ul>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">题目中有重边时的处理过程：</span><br><span class="line">选择已经存储的边和当前重边中的较小值</span><br><span class="line">自环：起点终点是同一个点的边</span><br><span class="line">负环：环上边权都是负数</span><br></pre></td></tr></table></figure>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Graph</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/01/图论-最短路问题/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1134,11 +1183,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">machine learning</a>
+                <a href="javascript:void(0)" class="js-tag color1">字符串算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">字符串算法</a>
+                <a href="javascript:void(0)" class="js-tag color1">ai；kg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">machine learning</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1146,11 +1199,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">review</a>
+                <a href="javascript:void(0)" class="js-tag color2">Hexo使用</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hexo使用</a>
+                <a href="javascript:void(0)" class="js-tag color2">review</a>
               </li>
              
               <li class="article-tag-list-item">
