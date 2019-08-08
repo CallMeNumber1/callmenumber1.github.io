@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>线段树和树状数组学习 | Find everything about tech</title>
+  <title>知识图谱面试题 | Find everything about tech</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="线段树 树 无向图，1.为连通图 2.无环 则称为一棵树 对于树来说，有n个节点，n-1条边 完全二叉树 1、二叉树：一个节点最多有两个子节点 2、完全二叉树：给定一个满二叉树，从最底层最右面的节点依次删除某些节点。 3、满二叉树：对于h层的二叉树来说，树的节点为$2^h - 1$。  满二叉树一定是完全二叉树  线段树每个节点都表示一个区间（左右都闭合），每个非叶子节点都有两个子节点，分别对应区">
-<meta name="keywords" content="algorithm">
+  <meta name="description" content="题目疑问 1、待匹配文本是否包含空格，标点符号？ 2、如何理解：输入里面，“槽位声明下一行一个短语，是该槽位中包含的所有词语片段”，下一行是该槽位可以使用的所有词语吗？ 3、输出部分 ​    根据文本输出匹配到的所有模板之外，还要输出与这些模板匹配的所有文本片段，以及每一个模板中每一个槽位对应匹配到的文本片段 状态机：自动机总是处于一个状态之中，也就是图中的圈圈。在读入字符串的时候，它从一个状态">
+<meta name="keywords" content="interview">
 <meta property="og:type" content="article">
-<meta property="og:title" content="线段树和树状数组学习">
-<meta property="og:url" content="http://yoursite.com/2019/07/16/线段树和树状数组学习/index.html">
+<meta property="og:title" content="知识图谱面试题">
+<meta property="og:url" content="http://yoursite.com/2019/08/08/百度知识图谱部面试题/index.html">
 <meta property="og:site_name" content="Find everything about tech">
-<meta property="og:description" content="线段树 树 无向图，1.为连通图 2.无环 则称为一棵树 对于树来说，有n个节点，n-1条边 完全二叉树 1、二叉树：一个节点最多有两个子节点 2、完全二叉树：给定一个满二叉树，从最底层最右面的节点依次删除某些节点。 3、满二叉树：对于h层的二叉树来说，树的节点为$2^h - 1$。  满二叉树一定是完全二叉树  线段树每个节点都表示一个区间（左右都闭合），每个非叶子节点都有两个子节点，分别对应区">
+<meta property="og:description" content="题目疑问 1、待匹配文本是否包含空格，标点符号？ 2、如何理解：输入里面，“槽位声明下一行一个短语，是该槽位中包含的所有词语片段”，下一行是该槽位可以使用的所有词语吗？ 3、输出部分 ​    根据文本输出匹配到的所有模板之外，还要输出与这些模板匹配的所有文本片段，以及每一个模板中每一个槽位对应匹配到的文本片段 状态机：自动机总是处于一个状态之中，也就是图中的圈圈。在读入字符串的时候，它从一个状态">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-07-16T12:53:43.120Z">
+<meta property="og:updated_time" content="2019-08-08T15:03:33.067Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="线段树和树状数组学习">
-<meta name="twitter:description" content="线段树 树 无向图，1.为连通图 2.无环 则称为一棵树 对于树来说，有n个节点，n-1条边 完全二叉树 1、二叉树：一个节点最多有两个子节点 2、完全二叉树：给定一个满二叉树，从最底层最右面的节点依次删除某些节点。 3、满二叉树：对于h层的二叉树来说，树的节点为$2^h - 1$。  满二叉树一定是完全二叉树  线段树每个节点都表示一个区间（左右都闭合），每个非叶子节点都有两个子节点，分别对应区">
+<meta name="twitter:title" content="知识图谱面试题">
+<meta name="twitter:description" content="题目疑问 1、待匹配文本是否包含空格，标点符号？ 2、如何理解：输入里面，“槽位声明下一行一个短语，是该槽位中包含的所有词语片段”，下一行是该槽位可以使用的所有词语吗？ 3、输出部分 ​    根据文本输出匹配到的所有模板之外，还要输出与这些模板匹配的所有文本片段，以及每一个模板中每一个槽位对应匹配到的文本片段 状态机：自动机总是处于一个状态之中，也就是图中的圈圈。在读入字符串的时候，它从一个状态">
   
     <link rel="alternative" href="/atom.xml" title="Find everything about tech" type="application/atom+xml">
   
@@ -151,76 +151,53 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-线段树和树状数组学习" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-百度知识图谱部面试题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      线段树和树状数组学习
+      知识图谱面试题
     </h1>
   
 
         
-        <a href="/2019/07/16/线段树和树状数组学习/" class="archive-article-date">
-  	<time datetime="2019-07-16T12:52:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-16</time>
+        <a href="/2019/08/08/百度知识图谱部面试题/" class="archive-article-date">
+  	<time datetime="2019-08-08T14:52:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-08</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="线段树"><a href="#线段树" class="headerlink" title="线段树"></a>线段树</h4><hr>
-<p><strong>树</strong></p>
-<p>无向图，1.为连通图 2.无环 则称为一棵树</p>
-<p>对于树来说，有n个节点，n-1条边</p>
-<p><strong>完全二叉树</strong></p>
-<p>1、二叉树：一个节点最多有两个子节点</p>
-<p>2、完全二叉树：给定一个满二叉树，从最底层最右面的节点依次删除某些节点。</p>
-<p>3、满二叉树：对于h层的二叉树来说，树的节点为$2^h - 1$。</p>
-<blockquote>
-<p>满二叉树一定是完全二叉树</p>
-</blockquote>
-<p>线段树每个节点都表示一个区间（左右都闭合），每个非叶子节点都有两个子节点，分别对应区间的<code>左半</code>和<code>右半</code></p>
-<p>给定根节点编号为1，对于每个节点，左节点为2i，右节点为2i+1，因此可用数组来存二叉树</p>
-<a id="more"></a>
-<p>对于一个节点，其所代表的区间：<code>[l, r]</code>，左子树：<code>[l, mid]</code> 右子树：<code>[mid + 1, r]</code>，一般规定mid是左子树的<code>mid = (l + r) / 2 下取整</code></p>
-<p>类似二分的思想，树高约为$log_2n$（$2^k = n$解出k即可），第一层为长为n的线段，一直到最后一层为n个长度为1的线段。可以计算出线段树的节点总数大约为2n，开空间时要特别注意，一般要开4n，这样对叶子节点也能方便的访问左右儿子，否则要针对是否为叶子节点写很多if语句，影响效率</p>
-<p>比如维护区间最小值：</p>
-<p><strong>线段树的建立</strong></p>
-<p>整个建树的过程，时间复杂度O（n）</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">pushup</span><span class="params">(<span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">    minv[id] = min(minv[id &lt;&lt; <span class="number">1</span>], minv[id &lt;&lt; <span class="number">1</span> | <span class="number">1</span>]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// id代表节点编号，id与原来数组的下标并非一一对应，表示原始数组中的某个区间</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> id, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 边界条件</span></span><br><span class="line">    <span class="keyword">if</span> (l == r) &#123;</span><br><span class="line">        minv[id] = a[l];</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> mid = (l + r) &gt;&gt; <span class="number">2</span>;</span><br><span class="line">    bulid(id &lt;&lt; <span class="number">1</span>, l, mid);</span><br><span class="line">    build(id &lt;&lt; <span class="number">1</span> | <span class="number">1</span>, mid + <span class="number">1</span>, r);</span><br><span class="line">    <span class="comment">// pushup(向上更新)</span></span><br><span class="line">    pushup(id);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 第一个1代表根节点下标为1，后面1~n代表根节点表示这个区间，注意两个1含义的不同</span></span><br><span class="line">build(<span class="number">1</span>, <span class="number">1</span>, n);</span><br></pre></td></tr></table></figure>
-<p><strong>线段树的单点更新</strong></p>
-<p>一个点的修改只会影响到包含这个点的区间，实际上是一条链，时间复杂度为O（logn）</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// x代表要更新数组下标，v为值</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> id, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> x, <span class="keyword">int</span> v)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l == r) &#123;</span><br><span class="line">        minv[id] = v;</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (x &lt;= mid) &#123;</span><br><span class="line">        update(id &lt;&lt; <span class="number">1</span>, l, mid, x, v);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        update(id &lt;&lt; <span class="number">1</span>  | <span class="number">1</span>, mid + <span class="number">1</span>, r, x, v);</span><br><span class="line"> 	&#125;</span><br><span class="line">    <span class="comment">// 别忘了向上更新；（更新完左右子树来更新当前节点）</span></span><br><span class="line">    pushup(id);</span><br><span class="line">&#125;</span><br><span class="line">update()</span><br></pre></td></tr></table></figure>
-<p><strong>查询</strong></p>
-<p>1、单点查询：O(logn) 沿着根节点一条链走到叶子即可</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>2、区间查询</p>
-<p>单点查询实际上是区间查询的一种特殊情况，每一层最多只有两个绿点，最左边一个和最右边一个，这两个绿点的中间的点都能被[x, y]区间完全覆盖，所以最多会有2*logn个绿点，所以一次区间查询的复杂度也是logn</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">query</span><span class="params">(<span class="keyword">int</span> id, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> x, <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 当该节点的区间被待查询区间完全包含时，直接用此结果去更新最小值</span></span><br><span class="line">    <span class="keyword">if</span> (x &lt;= l &amp;&amp; y &gt;= r) &#123;</span><br><span class="line">        <span class="keyword">return</span> minv[id];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> ans = INF;</span><br><span class="line">    <span class="keyword">int</span> mid = (l + r) &gt;&gt; <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 左节点的区间和待查区间有交集时就往左走</span></span><br><span class="line">    <span class="keyword">if</span> (x &lt;= mid) &#123;</span><br><span class="line">        ans = min(ans, query(id &lt;&lt; <span class="number">1</span>, l, mid, x, y));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 右节点的区间和待查区间有交集时往右走</span></span><br><span class="line">    <span class="comment">// 注意这里不是else if，因为既可能往左递归也可能往右递归</span></span><br><span class="line">    <span class="keyword">if</span> (y &gt;= mid + <span class="number">1</span>) &#123;</span><br><span class="line">        ans = min(ans, query(id &lt;&lt; <span class="number">1</span> |, mid + <span class="number">1</span>, r, x, y));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>基本思想：二分</p>
-<p>完全二叉树存储</p>
-<p>区间修改时只去修改对查询有用的点，因此引入懒标记</p>
-<p>​    引入懒标记后会对线段树的其他操作产生影响，即都要加上懒标记下传的一步</p>
-<p>It‘s now or never</p>
-<h4 id="树状数组"><a href="#树状数组" class="headerlink" title="树状数组"></a>树状数组</h4><hr>
-<p><strong>查询</strong></p>
-<p>若要查询[l, r]的值，可以先求出[l, r]的和值，然后再减去[1, r - 1]的和值。以下给出求[1, x]上的和值的方法。</p>
-<ol>
-<li>令<code>sum = 0</code></li>
-<li>加上区间<code>[x - lowbit(x) + 1, x]</code> 的值</li>
-<li>然后令<code>x = x - lowbit(x)</code></li>
-<li>如果<code>x = 0</code>，退出；否则重复步骤1</li>
-</ol>
-<p><code>x = x - lowbit(x)</code>等价于将x的二进制的最后一个1减去。而x的二进制里最多有logx个1，因此查询效率是<code>O(logx)</code>的</p>
-<p><strong>更新</strong></p>
-<p>如果让ax增加v，那么只有对于包含位置x的区间和值才会受影响。而求出哪些区间受影响有一个巧妙的操作，就是一直令<code>x = x + lowbit(x)</code>，直到<code>x &gt; n</code>，这一过程中所有x都是受影响的点</p>
-<p>这一操作时间复杂度为<code>O(logn)</code></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> v)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = x; i &lt;= n; i += lowbit(x)) &#123;</span><br><span class="line">        c[i] += v;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>树状数组能解决的问题是线段树的子集，线段树能解决树状数组不能解决的问题</strong></p>
-<p>==思考？==线段树如何解决区间和问题？</p>
+        <p><strong>题目疑问</strong></p>
+<p>1、待匹配文本是否包含<code>空格</code>，<code>标点符号</code>？</p>
+<p>2、如何理解：输入里面，“槽位声明下一行一个短语，是该槽位中包含的所有词语片段”，下一行是该槽位可以使用的所有词语吗？</p>
+<p>3、输出部分</p>
+<p>​    根据文本输出匹配到的所有模板之外，还要输出与这些模板匹配的所有文本片段，以及每一个模板中每一个槽位对应匹配到的文本片段</p>
+<p>状态机：自动机总是处于一个状态之中，也就是图中的圈圈。在读入字符串的时候，它从一个状态进入另一个状态。自动机有两个特殊的状态：<code>开始状态</code>和<code>匹配状态</code>。开始状态始于一个但箭头，匹配状态止于一个双环.</p>
+<p>状态机中有这样一些要素，对照分别说下：</p>
+<ul>
+<li>开始状态：圆圈表示状态，被一个“没有起点的箭头”指向的状态，是开始状态，上例中是 S1</li>
+<li>最终状态：也叫接受状态，图中用双圆圈表示，这个例子中也是 S1</li>
+<li>输入：在一个状态下，向状态机输入的符号/信号，不同输入导致状态机产生不同的状态改变</li>
+<li>转换：在一个状态下，根据特定输入，改变到特定状态的过程，就是转换</li>
+</ul>
+<p>参考：<a href="https://www.jianshu.com/p/48dc319f68f3" target="_blank" rel="noopener">https://www.jianshu.com/p/48dc319f68f3</a></p>
+<p>正则表达式，可以认为是对一组字符串集合的描述；有限状态机也可以用来描述字符串集合。</p>
+<p>编程语言中的正则表达式，一般是通过有限状态机来实现。正则表达式匹配字符串的过程，可以分解为：</p>
+<ul>
+<li>正则表达式转换为等价的有限状态机</li>
+<li>有限状态机输入字符串执行</li>
+</ul>
+<p><code>有限状态机</code>FSM：是表示有限个状态以及在这些状态之间的转移和动作等行为的数学模型。</p>
+<p>可以同时保存多种状态的也就是<code>非确定状态自动机</code>。</p>
+<p><strong>正则表达式的两种引擎</strong></p>
+<p>NFA：非确定性有限状态自动机</p>
+<p>DFA：确定性有限状态机：DFA 可以认为是一种特殊的 NFA，它最大的特点，就是<strong>确定性</strong>。它的确定性在于，在一个状态下，输入一个符号，一定是转换到确定的状态，没有其他的可能性。</p>
+<p><strong>正则表达式转NFA</strong></p>
+<p>Thompson算法</p>
 
       
 
@@ -255,7 +232,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">algorithm</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">interview</a>
         		</li>
       		
 		</ul>
@@ -311,7 +288,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/16/线段树和树状数组学习/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/08/百度知识图谱部面试题/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -325,18 +302,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/29/大三下暑期学习计划/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          coursera之ML笔记
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/07/09/离散数学复习/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">离散数学复习</div>
+    <a href="/2019/08/05/知识图谱综述学习总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">知识图谱综述学习总结</div>
       <i class="icon-circle-right"></i>
     </a>
   
