@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>知识图谱面试题 | Find everything about tech</title>
+  <title>百度知识图谱部面试题 | Find everything about tech</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="题目疑问 1、待匹配文本是否包含空格，标点符号？ 2、如何理解：输入里面，“槽位声明下一行一个短语，是该槽位中包含的所有词语片段”，下一行是该槽位可以使用的所有词语吗？ 3、输出部分 ​    根据文本输出匹配到的所有模板之外，还要输出与这些模板匹配的所有文本片段，以及每一个模板中每一个槽位对应匹配到的文本片段 状态机：自动机总是处于一个状态之中，也就是图中的圈圈。在读入字符串的时候，它从一个状态">
+  <meta name="description" content="题目理解 1、待匹配文本先做只含英文/中文的，循序渐进，再做中英文混杂的 2、[W:0-10]可以匹配长度0-10的任意字符，此处汉字算1个字符即可">
 <meta name="keywords" content="interview">
 <meta property="og:type" content="article">
-<meta property="og:title" content="知识图谱面试题">
+<meta property="og:title" content="百度知识图谱部面试题">
 <meta property="og:url" content="http://yoursite.com/2019/08/08/百度知识图谱部面试题/index.html">
 <meta property="og:site_name" content="Find everything about tech">
-<meta property="og:description" content="题目疑问 1、待匹配文本是否包含空格，标点符号？ 2、如何理解：输入里面，“槽位声明下一行一个短语，是该槽位中包含的所有词语片段”，下一行是该槽位可以使用的所有词语吗？ 3、输出部分 ​    根据文本输出匹配到的所有模板之外，还要输出与这些模板匹配的所有文本片段，以及每一个模板中每一个槽位对应匹配到的文本片段 状态机：自动机总是处于一个状态之中，也就是图中的圈圈。在读入字符串的时候，它从一个状态">
+<meta property="og:description" content="题目理解 1、待匹配文本先做只含英文/中文的，循序渐进，再做中英文混杂的 2、[W:0-10]可以匹配长度0-10的任意字符，此处汉字算1个字符即可">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-08T15:03:33.067Z">
+<meta property="og:updated_time" content="2019-08-09T15:48:51.213Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="知识图谱面试题">
-<meta name="twitter:description" content="题目疑问 1、待匹配文本是否包含空格，标点符号？ 2、如何理解：输入里面，“槽位声明下一行一个短语，是该槽位中包含的所有词语片段”，下一行是该槽位可以使用的所有词语吗？ 3、输出部分 ​    根据文本输出匹配到的所有模板之外，还要输出与这些模板匹配的所有文本片段，以及每一个模板中每一个槽位对应匹配到的文本片段 状态机：自动机总是处于一个状态之中，也就是图中的圈圈。在读入字符串的时候，它从一个状态">
+<meta name="twitter:title" content="百度知识图谱部面试题">
+<meta name="twitter:description" content="题目理解 1、待匹配文本先做只含英文/中文的，循序渐进，再做中英文混杂的 2、[W:0-10]可以匹配长度0-10的任意字符，此处汉字算1个字符即可">
   
     <link rel="alternative" href="/atom.xml" title="Find everything about tech" type="application/atom+xml">
   
@@ -158,7 +158,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      知识图谱面试题
+      百度知识图谱部面试题
     </h1>
   
 
@@ -171,11 +171,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>题目疑问</strong></p>
-<p>1、待匹配文本是否包含<code>空格</code>，<code>标点符号</code>？</p>
-<p>2、如何理解：输入里面，“槽位声明下一行一个短语，是该槽位中包含的所有词语片段”，下一行是该槽位可以使用的所有词语吗？</p>
-<p>3、输出部分</p>
-<p>​    根据文本输出匹配到的所有模板之外，还要输出与这些模板匹配的所有文本片段，以及每一个模板中每一个槽位对应匹配到的文本片段</p>
+        <p><strong>题目理解</strong></p>
+<p>1、待匹配文本先做只含英文/中文的，循序渐进，再做中英文混杂的</p>
+<p>2、<code>[W:0-10]</code>可以匹配长度0-10的任意字符，<strong><code>此处汉字算1个字符即可</code></strong></p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">我所理解的此处的格式：</span><br><span class="line">[D:性别]</span><br><span class="line">男子</span><br><span class="line">女子</span><br><span class="line">[D:体育运动]</span><br><span class="line">乒乓球</span><br><span class="line">摔跤</span><br><span class="line">羽毛球</span><br></pre></td></tr></table></figure>
+<p>3、输入输出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">输入：</span><br><span class="line">1、槽位词表文件</span><br><span class="line">[D:性别]</span><br><span class="line">男子</span><br><span class="line">女子</span><br><span class="line">[D:体育运动]</span><br><span class="line">乒乓球</span><br><span class="line">摔跤</span><br><span class="line">羽毛球</span><br><span class="line">[D:世界地区]</span><br><span class="line">中国</span><br><span class="line">美国</span><br><span class="line">俄罗斯</span><br><span class="line">[D:组织机构]</span><br><span class="line">IEEE</span><br><span class="line">ACM</span><br><span class="line"></span><br><span class="line">2、模板文件</span><br><span class="line">[D:性别][D:体育运动]选手</span><br><span class="line">[D:世界地区][W:2-8][D:组织机构]</span><br><span class="line"></span><br><span class="line">3、待匹配文本</span><br><span class="line">男子乒乓球选手和女子羽毛球选手和摔跤运动员都去参加了奥运会。</span><br><span class="line">中国多个学会声明反对IEEE“审稿门”。</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">输出：</span><br><span class="line">文本1匹配到的模板有：（输出所有匹配到的模板，此处仅列出1个）</span><br><span class="line">[D:性别][D:体育运动]选手</span><br><span class="line">该模板匹配上的片段有：男子乒乓球选手，女子羽毛球选手</span><br><span class="line">槽位和文本对应如下：</span><br><span class="line">[D:性别]：男子，女子；[D:体育运动]：乒乓球，羽毛球</span><br><span class="line"></span><br><span class="line">文本2匹配到的模板有：</span><br><span class="line">[D:世界地区][W:2-8][D:组织机构]</span><br><span class="line">该模板匹配上的片段有：中国多个学会声明反对IEEE</span><br><span class="line">槽位和文本对应如下：</span><br><span class="line">[D:世界地区]：中国；[W:2-8]：多个学会声明反对；[D:组织机构]：IEEE</span><br></pre></td></tr></table></figure>
+<p>待匹配文本可以有很多，模板也可以有很多。</p>
+<p>通配是原始字符长度，不是字节长度</p>
+<p><strong>思路探寻— 一、正则表达式</strong></p>
+<p>此思路的思考过程：因为一个槽位可以匹配很多个单词，而正则表达式就是用来匹配一个字符串集合的，因此联想到使用正则表达式解决</p>
+<p>匹配长度5-10的任意字符：<code>^.{5,10}$</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">^：^字符指示字符串的头，且要求字符串以字符开头，不占位。</span><br><span class="line">$：$字符指示字符串的尾，且要求字符串以字符结尾，不占位。</span><br></pre></td></tr></table></figure>
+<p>汉字的正则表达式<code>[\u4e00-\u9fa5]</code> </p>
 <p>状态机：自动机总是处于一个状态之中，也就是图中的圈圈。在读入字符串的时候，它从一个状态进入另一个状态。自动机有两个特殊的状态：<code>开始状态</code>和<code>匹配状态</code>。开始状态始于一个但箭头，匹配状态止于一个双环.</p>
 <p>状态机中有这样一些要素，对照分别说下：</p>
 <ul>
@@ -197,7 +207,27 @@
 <p>NFA：非确定性有限状态自动机</p>
 <p>DFA：确定性有限状态机：DFA 可以认为是一种特殊的 NFA，它最大的特点，就是<strong>确定性</strong>。它的确定性在于，在一个状态下，输入一个符号，一定是转换到确定的状态，没有其他的可能性。</p>
 <p><strong>正则表达式转NFA</strong></p>
-<p>Thompson算法</p>
+<p>正则表达式和NFA是等价的，每一个正则表达式都有一个等价的NFA，反之亦然。</p>
+<ul>
+<li>Thompson算法</li>
+</ul>
+<p>正则表达式的NFA由子表达式的NFA构成，每种操作符有不同的构造方法。子NFA没有匹配成功状态，但是有多个空箭头。构造过程会把这些箭头指向匹配成功的状态。</p>
+<ul>
+<li>正则表达式搜索算法</li>
+</ul>
+<p>匹配正则表达式的方法：把正则表达式转换为NFA，然后把字符串作为输入来运行NFA。现在来看一下模拟NFA运行的过程。 一种方法是先猜一个，要是不行，试试另外一个。</p>
+<p>这种<code>回溯</code>可以由递归来实现。缺点是，如果字符串本来无法匹配，那么NFA需要在放弃之前尝试所有的可能。在最坏情况下，这个过程需要指数时间成本。</p>
+<p>一种更加高效的方法就是尝试同时保持多个状态。自动机从开始状态直接可达的状态开始。同时保持着两种状态。当自动机读入一个字符的时候，就可以同时探索两条不同的路径了。这是一个巨大的提升，避免了很多不必要的尝试。在一个节点数为n的NFA中，状态只有n个，但是可能的路径最多有2^n条。</p>
+<hr>
+<h4 id="c-使用正则"><a href="#c-使用正则" class="headerlink" title="c++使用正则"></a>c++使用正则</h4><p><code>#include &lt;regex&gt;</code></p>
+<p>匹配与否</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">regex_match();完全匹配;</span><br><span class="line">regex_search();子串匹配;</span><br></pre></td></tr></table></figure>
+<p>捕捉（可以实现我们的需求）</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 高级捕捉1</span></span><br><span class="line"><span class="function">sregex_iterator <span class="title">pos</span><span class="params">(str.cbegin(), str.cend(), e)</span></span>;</span><br><span class="line">sregex_iterator end;</span><br><span class="line"><span class="comment">//cout &lt;&lt; pos-&gt;size() &lt;&lt; endl;</span></span><br><span class="line"><span class="keyword">for</span> (; pos != end; ++pos) &#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Matched: "</span> &lt;&lt; pos-&gt;str(<span class="number">0</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"sex: "</span> &lt;&lt; pos-&gt;str(<span class="number">1</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"sports: "</span> &lt;&lt; pos-&gt;str(<span class="number">2</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>捕捉2</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 高级捕捉2（捕获结果的组织顺序不同）</span></span><br><span class="line"><span class="function">sregex_token_iterator <span class="title">pos</span><span class="params">(str.cbegin(), str.cend(), e, <span class="number">0</span>)</span></span>;</span><br><span class="line">sregex_token_iterator end;</span><br><span class="line"><span class="keyword">for</span> (; pos != end; ++pos) &#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Matched: "</span> &lt;&lt; pos-&gt;str() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>进一步的思考：时间和空间效率未做分析，对于大规模数据量的应用场景可能性能不佳。</p>
+<p>参考：<a href="https://blog.csdn.net/bgzclxqq/article/details/90262904" target="_blank" rel="noopener">C++正则表达式使用</a></p>
 
       
 
@@ -487,6 +517,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ai, kg</a>
               </li>
             
             <div class="clearfix"></div>
