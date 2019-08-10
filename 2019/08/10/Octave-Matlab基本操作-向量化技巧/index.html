@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>系统程序设计复习之Vue | Find everything about tech</title>
+  <title>Octave/Matlab基本操作&amp;向量化技巧 | Find everything about tech</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="==*== Bus不考吗，生命周期回调函数考不考，前端vue不考大题吗 ​    选填可能会考，不考编程 Lec16-P30多看几遍，计算属性，属性的值可以是函数">
-<meta name="keywords" content="review">
+  <meta name="description" content="构造矩阵 构造矩阵，方式一 1A = [1 2; 3 4; 5 6] 构造一个行向量 1v = [1; 2; 3] 从1到2，每次递增0.1 1v = 1:0.1:2 从1到6，每次递增1（默认） 1v = 1:6 所有元素均为1的矩阵： 1ones(n); ones(m, n) 每个元素乘以2 1C = 2 * ones(2, 3) 所有元素均为0 1zeros(n); zeros(m, n)">
+<meta name="keywords" content="matlab">
 <meta property="og:type" content="article">
-<meta property="og:title" content="系统程序设计复习之Vue">
-<meta property="og:url" content="http://yoursite.com/2019/05/30/系统程序设计复习之Vue/index.html">
+<meta property="og:title" content="Octave&#x2F;Matlab基本操作&amp;向量化技巧">
+<meta property="og:url" content="http://yoursite.com/2019/08/10/Octave-Matlab基本操作-向量化技巧/index.html">
 <meta property="og:site_name" content="Find everything about tech">
-<meta property="og:description" content="==*== Bus不考吗，生命周期回调函数考不考，前端vue不考大题吗 ​    选填可能会考，不考编程 Lec16-P30多看几遍，计算属性，属性的值可以是函数">
+<meta property="og:description" content="构造矩阵 构造矩阵，方式一 1A = [1 2; 3 4; 5 6] 构造一个行向量 1v = [1; 2; 3] 从1到2，每次递增0.1 1v = 1:0.1:2 从1到6，每次递增1（默认） 1v = 1:6 所有元素均为1的矩阵： 1ones(n); ones(m, n) 每个元素乘以2 1C = 2 * ones(2, 3) 所有元素均为0 1zeros(n); zeros(m, n)">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-04T15:01:22.260Z">
+<meta property="og:updated_time" content="2019-08-10T09:37:54.937Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="系统程序设计复习之Vue">
-<meta name="twitter:description" content="==*== Bus不考吗，生命周期回调函数考不考，前端vue不考大题吗 ​    选填可能会考，不考编程 Lec16-P30多看几遍，计算属性，属性的值可以是函数">
+<meta name="twitter:title" content="Octave&#x2F;Matlab基本操作&amp;向量化技巧">
+<meta name="twitter:description" content="构造矩阵 构造矩阵，方式一 1A = [1 2; 3 4; 5 6] 构造一个行向量 1v = [1; 2; 3] 从1到2，每次递增0.1 1v = 1:0.1:2 从1到6，每次递增1（默认） 1v = 1:6 所有元素均为1的矩阵： 1ones(n); ones(m, n) 每个元素乘以2 1C = 2 * ones(2, 3) 所有元素均为0 1zeros(n); zeros(m, n)">
   
     <link rel="alternative" href="/atom.xml" title="Find everything about tech" type="application/atom+xml">
   
@@ -151,114 +151,90 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-系统程序设计复习之Vue" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Octave-Matlab基本操作-向量化技巧" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      系统程序设计复习之Vue
+      Octave/Matlab基本操作&amp;向量化技巧
     </h1>
   
 
         
-        <a href="/2019/05/30/系统程序设计复习之Vue/" class="archive-article-date">
-  	<time datetime="2019-05-30T10:47:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-30</time>
+        <a href="/2019/08/10/Octave-Matlab基本操作-向量化技巧/" class="archive-article-date">
+  	<time datetime="2019-08-10T07:30:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>==*== Bus不考吗，生命周期回调函数考不考，前端vue不考大题吗</p>
-<p>​    选填可能会考，不考编程</p>
-<p><code>Lec16-P30</code>多看几遍，计算属性，<strong><code>属性的值可以是函数</code></strong></p>
-<a id="more"></a>
-<p><strong>MVC与MVVM</strong></p>
-<p><code>MVC的思想</code>：</p>
-<p>Controller 负责响应用户的操作、网络请求以及与 Model 交互。这就导致了 Controller：逻辑复杂，难以维护。和 View 紧耦合，无法测试。</p>
-<p><code>MVVM与MVC的区别</code>：</p>
-<ul>
-<li>实现了View和Model的自动同步</li>
-<li>解决了MVC中大量的DOM操作导致的。。</li>
-</ul>
-<p><code>MVVM</code></p>
-<ul>
-<li><p>MVVM，不仅简化了业务与界面的依赖，还解决了==*==数据频繁更新的问题。</p>
-</li>
-<li><p>缺点：数据双向绑定不利于代码重用。客户端开发最常用的是View，但是数据双向绑定技术，让你在一个View都绑定了一个model，不同的模块model都不同。那就不能简单重用view了</p>
-<p>一个大的模块中model也会很大，虽然使用方便了也很容易保证数据的一致性，但是长期持有，不释放内存就造成话费更多的内存。</p>
-</li>
-<li><p>缺点：数据绑定也使得bug很难被调试</p>
-</li>
-</ul>
-<h4 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h4><p><strong>一、MVVM的设计思想</strong></p>
-<ul>
-<li><code>ViewModel</code>，协助处理显示逻辑</li>
-<li>将V中的显示内容，与VM中的数据绑定</li>
-<li>当VM中的数据发生变化时，通知V<strong><code>同步更新</code></strong>显示数据</li>
-</ul>
-<p><strong>二、响应式数据的声明与绑定方法</strong></p>
-<ul>
-<li><p>当一个Vue实例被创建时，<code>data()</code>方法返回值中声明的属性，自动为vue响应式属性</p>
-</li>
-<li><p>只有在<code>data() return</code>中预定义的属性才支持响应式更新；</p>
-<ul>
-<li>因此即使当前不使用，而以后使用的属性，也必须提前定义，但可先置空引用null</li>
-</ul>
-</li>
-<li><code></code>，在HTML模板引用<code>data() return</code>中声明的属性</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    export default &#123;</span><br><span class="line">        data() &#123;</span><br><span class="line">            return &#123;</span><br><span class="line">                msg: &quot;你好&quot;</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;</span><br><span class="line">        // 或者</span><br><span class="line">        data: () =&gt; (&#123;</span><br><span class="line">            msg: &quot;你好&quot;,</span><br><span class="line">            user: &#123; name: null, address: null &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    	// 下面的方法中引用时要加this.msg</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    export default &#123;</span><br><span class="line">        // 显示声明的属性的类型，单一对象或集合，便于理解程序</span><br><span class="line">        data() &#123;</span><br><span class="line">          retrun &#123;</span><br><span class="line">            courses: [],</span><br><span class="line">            user: []</span><br><span class="line">          &#125;;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p>v-bind</p>
-<ul>
-<li>动态绑定html标签属性的表达式</li>
-<li>缩写：如<code>v-bind:key</code>可缩写为<code>:key</code>，<code>v-bind:diabled</code>可缩写为<code>:disabled</code></li>
-</ul>
-<p><strong>三、表单数据的双向绑定方法</strong></p>
-<p>v-model</p>
-<ul>
-<li>它会根据控件类型自动选取正确的方法来更新元素</li>
-<li>会忽略所有表单元素的<code>value</code>，<code>checked</code>，<code>selected</code>特性的初始值，而总是将Vue实例的数据作为数据来源</li>
-<li>应该通过js在组件的<code>data()</code>中声明初值</li>
-</ul>
-<p>==*==<code>Lecture17-P11</code> ref属性有何作用：vue自带的属性，用来获取那些标签，因为使用js比较麻烦；</p>
-<blockquote>
-<p>v-model与v-bind的区别</p>
-<p>v-bind是和html的属性绑定在一起；v-model是用在表单控件上的，一种动态的双向数据绑定，只能用在input、textarea、select上，绑定之后随着输入的改变对应的数据也跟着改变</p>
-<p>v-model就是v-bind加上v-on的变形体（语法糖）</p>
-</blockquote>
-<p><strong>四、组件的路由与渲染</strong></p>
-<p>Router</p>
-<ul>
-<li>基于Vue实现组合组件组成应用</li>
-<li>即，由vue-router在同一html页面切换显示不同的组件，实现单页面应用</li>
-<li>即，由vue-router实现当请求地址改变时，将什么组件渲染到什么地方</li>
-<li><code>&lt;router-link&gt;</code>，在具有路由功能的应用中导航。<ul>
-<li>通过<code>to</code>属性指定目标地址，默认渲染为<code>&lt;a&gt;</code></li>
-<li>可通过配置tag属性生成别的标签，例如<code>&lt;li&gt;</code></li>
-</ul>
-</li>
-<li><code>router-view</code>，渲染路径匹配到的视图组件<ul>
-<li>支持内嵌<code>router-view</code>，根据嵌套路径，渲染嵌套组件</li>
-</ul>
-</li>
-</ul>
-<p><strong>五、路由参数的传递与获取方法</strong></p>
-<ul>
-<li>基于<code>RESTful</code>的参数传递</li>
-<li>在<code>router.js</code>路由中，使用<strong><code>:param</code></strong>，声明参数变量</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    path: <span class="string">"/example05/students/:sid/homeworks/:hid"</span>,</span><br><span class="line">    component: <span class="function"><span class="params">()</span> =&gt;</span> <span class="keyword">import</span>(<span class="string">"@/views/example05/Example05.vue"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>路由参数会被置于<code>this.$route.params</code>，基于路由参数名称获取参数值</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">this</span>.$route.params.sid)</span><br></pre></td></tr></table></figure>
-<p><strong>六、延迟加载组件的引用方法</strong></p>
-<p>声明为延迟加载组件，在编译时将编译为独立的文件，在组件真正渲染时，下载相应组件文件渲染，可极大的增加互交体验</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    export default &#123;</span><br><span class="line">        conponents: &#123; sidebar : () =&gt; import(&quot;@/views/Sidebar&quot;)&#125;</span><br><span class="line">    &#125;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+        <p><strong>构造矩阵</strong></p>
+<p>构造矩阵，方式一</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A = [<span class="number">1</span> <span class="number">2</span>; <span class="number">3</span> <span class="number">4</span>; <span class="number">5</span> <span class="number">6</span>]</span><br></pre></td></tr></table></figure>
+<p>构造一个行向量</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v = [<span class="number">1</span>; <span class="number">2</span>; <span class="number">3</span>]</span><br></pre></td></tr></table></figure>
+<p>从1到2，每次递增0.1</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v = <span class="number">1</span>:<span class="number">0.1</span>:<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>从1到6，每次递增1（默认）</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v = <span class="number">1</span>:<span class="number">6</span></span><br></pre></td></tr></table></figure>
+<p>所有元素均为1的矩阵：</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ones</span>(n); <span class="built_in">ones</span>(m, n)</span><br></pre></td></tr></table></figure>
+<p>每个元素乘以2</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C = <span class="number">2</span> * <span class="built_in">ones</span>(<span class="number">2</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<p>所有元素均为0</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">zeros</span>(n); <span class="built_in">zeros</span>(m, n)</span><br></pre></td></tr></table></figure>
+<p>单位矩阵</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">eye</span>(n)</span><br></pre></td></tr></table></figure>
+<p>高斯随机数</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rand</span>(<span class="number">3</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<p><strong>矩阵操作</strong></p>
+<p>读取矩阵A第三行第二列元素（注意为<strong><code>圆括号</code></strong>）</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A(<span class="number">3</span>, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<p>读取矩阵A第二行所有元素</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A(<span class="number">2</span>,:)</span><br></pre></td></tr></table></figure>
+<p>读取矩阵A第一行和第三行的所有元素</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A([<span class="number">1</span> <span class="number">3</span>],:)</span><br></pre></td></tr></table></figure>
+<p>将A第二列替换为[10; 11; 12]</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A(:, <span class="number">2</span>) = [<span class="number">10</span>; <span class="number">11</span>; <span class="number">12</span>]</span><br></pre></td></tr></table></figure>
+<p>在A的最后加上一列</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A = [A, [<span class="number">100</span>; <span class="number">101</span>; <span class="number">102</span>]]</span><br></pre></td></tr></table></figure>
+<p>将A的所有元素合并成一个列向量</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A(:)</span><br></pre></td></tr></table></figure>
+<p>两个矩阵的合并（列合并，左右合并）</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C = [A B]</span><br></pre></td></tr></table></figure>
+<p>两个矩阵的合并（行合并，上下合并）</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D = [A; B]</span><br></pre></td></tr></table></figure>
+<p>求矩阵的行数和列数</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">size(A); 		// 返回一个矩阵，记录A的两个维度，行和列</span><br><span class="line">size(A, 1);		// 行数</span><br><span class="line">size(A, 2);		// 列数</span><br><span class="line">length(a);		// 计算向量的长度，或矩阵中最长的一维</span><br></pre></td></tr></table></figure>
+<p>各种矩阵运算</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% .为针对矩阵中每个元素的计算</span></span><br><span class="line">A .* B;			<span class="comment">% 要求两个矩阵行列均相同</span></span><br><span class="line">A.^<span class="number">2</span>;</span><br><span class="line"><span class="number">1</span> ./ A;			<span class="comment">% 每个元素取倒数</span></span><br><span class="line">A';				<span class="comment">% A的转置</span></span><br><span class="line">pinv(A);		<span class="comment">% 逆矩阵</span></span><br><span class="line"><span class="built_in">log</span>(A);</span><br><span class="line"><span class="built_in">exp</span>(A)</span><br><span class="line">-A</span><br></pre></td></tr></table></figure>
+<p> A中每个元素加上1</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A + <span class="built_in">ones</span>(<span class="built_in">size</span>(A));</span><br><span class="line">A + <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<p>向量中的最大值</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[val ind] = <span class="built_in">max</span>(A);		<span class="comment">% 向量中最大值</span></span><br><span class="line"><span class="built_in">max</span>(A, [], <span class="number">1</span>);			<span class="comment">% 取出矩阵每列最大的元素（结果为行向量）</span></span><br><span class="line"><span class="built_in">max</span>(A, [], <span class="number">2</span>);			<span class="comment">% 取出矩阵每行最大的元素</span></span><br><span class="line"><span class="built_in">max</span>(<span class="built_in">max</span>(A))/<span class="built_in">max</span>(A(:));  <span class="comment">% 获得矩阵中最大的元素</span></span><br></pre></td></tr></table></figure>
+<p>所有元素的和</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sum(a);					<span class="comment">% 向量所有元素和</span></span><br><span class="line">sum(A, <span class="number">1</span>);</span><br><span class="line">sum(A, <span class="number">2</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>数据的读取与存储</strong></p>
+<p>读取数据</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">load featuresX.dat;</span><br><span class="line">load(<span class="string">'featuresX.dat'</span>);</span><br></pre></td></tr></table></figure>
+<p>显示当前所有变量</p>
+ <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">who;</span><br><span class="line">whos;(更详细)</span><br></pre></td></tr></table></figure>
+<p>删除某个变量</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clear featuresX</span><br></pre></td></tr></table></figure>
+<p>存储数据</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">v = priceY(1:10);	//取出priceY前十个数据</span><br><span class="line">save hello.mat v;</span><br></pre></td></tr></table></figure>
+<p><strong>绘制数据</strong></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">x = [<span class="number">0</span>: <span class="number">0.01</span> : <span class="number">0.98</span>];</span><br><span class="line">y = <span class="built_in">sin</span>(<span class="number">2</span>*<span class="built_in">pi</span>*<span class="number">4</span>*x);</span><br><span class="line"><span class="built_in">plot</span>(x, y);						<span class="comment">% sin函数图像</span></span><br><span class="line">y2 = <span class="built_in">cos</span>(<span class="number">2</span>*<span class="built_in">pi</span>*<span class="number">4</span>*x);				<span class="comment">% cos函数图像</span></span><br><span class="line"><span class="comment">% 将两个函数绘制在一起</span></span><br><span class="line"><span class="built_in">plot</span>(x, y); <span class="built_in">hold</span> on; <span class="built_in">plot</span>(x, y2, <span class="string">'r'</span>);</span><br><span class="line"><span class="comment">% 添加说明</span></span><br><span class="line">xlabel(<span class="string">"time"</span>); ylabel(<span class="string">"value"</span>); <span class="built_in">legend</span>(<span class="string">"sin"</span>, <span class="string">"cos"</span>);</span><br><span class="line"><span class="comment">% 存储图像</span></span><br><span class="line">print -dpng <span class="string">"myPlot.png"</span></span><br><span class="line"><span class="comment">% 分别在两个窗口显示两个图像</span></span><br><span class="line"><span class="built_in">figure</span>(<span class="number">1</span>); <span class="built_in">plot</span>(x, y);</span><br><span class="line"><span class="built_in">figure</span>(<span class="number">2</span>); <span class="built_in">plot</span>(x, y2);</span><br><span class="line"><span class="comment">% 在同一窗口不同位置显示两个图像</span></span><br><span class="line">subplot(<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>); <span class="built_in">plot</span>(x, y);</span><br><span class="line">subplot(<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>); <span class="built_in">plot</span>(x, y2);</span><br></pre></td></tr></table></figure>
+<p>将矩阵可视化</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">imagesc(<span class="built_in">magic</span>(<span class="number">15</span>))</span><br></pre></td></tr></table></figure>
+<p><strong>控制语句、函数</strong></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% for循环</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = indices,</span><br><span class="line"></span><br><span class="line">	....</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:n,</span><br><span class="line">	...</span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"><span class="comment">% if语句</span></span><br><span class="line"><span class="keyword">if</span> v(<span class="built_in">i</span>) == <span class="number">1</span>,</span><br><span class="line">	...</span><br><span class="line"><span class="keyword">elseif</span> v(<span class="built_in">i</span>) == <span class="number">2</span>,</span><br><span class="line">	...</span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line">	...</span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"><span class="comment">% function 1</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">y</span> = <span class="title">square</span><span class="params">(x)</span></span></span><br><span class="line">y = x^<span class="number">2</span>;</span><br><span class="line"><span class="comment">% function 2</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[y1, y2]</span> = <span class="title">squareAndCube</span><span class="params">(x)</span></span></span><br><span class="line">y1 = x^<span class="number">2</span>;</span><br><span class="line">y2 = x^<span class="number">3</span>;</span><br><span class="line"><span class="comment">%</span></span><br><span class="line">[a, b] = squareAndCube(x)</span><br></pre></td></tr></table></figure>
+<p><strong>向量化</strong></p>
+<p>能得到高效得多的线性回归算法，不仅编写效率更高，运行效率也更高</p>
+<p>比如：$h(X) = \theta^TX$</p>
 
       
 
@@ -293,7 +269,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">review</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">matlab</a>
         		</li>
       		
 		</ul>
@@ -349,7 +325,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/05/30/系统程序设计复习之Vue/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/10/Octave-Matlab基本操作-向量化技巧/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -363,18 +339,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/02/计算机网络复习/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          计算机网络复习
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/05/29/系统程序设计复习之SpringMVC/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">系统程序设计复习之SpringMVC</div>
+    <a href="/2019/08/10/courseraML笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">courseraML笔记</div>
       <i class="icon-circle-right"></i>
     </a>
   

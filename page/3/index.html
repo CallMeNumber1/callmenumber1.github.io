@@ -148,6 +148,273 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-SpringBoot" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/14/SpringBoot/">SprngBoot</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/14/SpringBoot/" class="archive-article-date">
+  	<time datetime="2019-04-14T15:31:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前后端整合"><a href="#前后端整合" class="headerlink" title="前后端整合"></a>前后端整合</h2><p>:date:04-29</p>
+<p>后端初始时没有用户，使用InitService创建一个超级管理员，再完成教师、学生等信息的添加（一般通过Excel表格导入）</p>
+<p>用户的权限（角色）像token一样，会被保存到sessionStroage</p>
+<p>后端的权限不再是简单的1和2，而是一个字符串（哈希生成的），这样可以防止伪造权限</p>
+<p>:date:05-20</p>
+<p>后端中的一些疑问：</p>
+<ol>
+<li><p>service和repository区别，还有controller</p>
+<p>实现的功能貌似重叠？个人理解是repository实现增删改查，service实现业务逻辑，然而在我们的后端中，<code>homeworkservice</code>下有两个list—Homeworks的方法，其中直接调用了repository中的查询方法，那这个service有何存在的必要呢？直接注入repository岂不更简单</p>
+</li>
+<li><p>本项目中有两个拦截器，如何判断先经过哪一个呢，是按声明的顺序吗</p>
+</li>
+<li><p><code>LoginController</code>中为何在response头部塞入token之后，要设置一个role呢，记录的权限对应的哈希值</p>
+</li>
+<li><p>将student和teacher用一个<code>User</code>类型表示，有何好处？</p>
+</li>
+<li><p>应用刚开始启动时为何要设置时区呢</p>
+</li>
+</ol>
+<p>注意事项：</p>
+<ol>
+<li>Map.of()方法，中的值不能为null</li>
+<li>test已编写完毕，执行顺序<code>logincontroller.http</code>得到token，再用<code>admincontroller</code>添加课程后添加作业，再用<code>usercontroller</code>查看课程和作业信息</li>
+</ol>
+<h2 id="项目容器"><a href="#项目容器" class="headerlink" title="项目容器"></a>项目容器</h2><p>建一个空的项目作为项目容器，里面新建Module作为子项目即可，只需要对项目容器做版本控制即可。</p>
+<p>每新建一个项目，将有关maven版本的文件删除（用不到）</p>
+<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><p><strong>实验二</strong></p>
+<ol>
+<li>持久化组件中</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Address&gt; <span class="title">listAddresses</span><span class="params">(<span class="keyword">int</span> uid)</span> </span>&#123;</span><br><span class="line">        User user = em.find(User.class, uid);</span><br><span class="line">        List&lt;Address&gt; addlist = user.getAddresses();</span><br><span class="line">        <span class="comment">// 奇了怪。。这里输出的话，Test调用的时候也能正常输出</span></span><br><span class="line">        <span class="comment">// 这里不输出的时候，Test里调用的时候会报错</span></span><br><span class="line">        <span class="keyword">for</span> (Address a : addlist) &#123;</span><br><span class="line">            System.out.println(a.getDetail());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> addlist;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><p>log.debug(“{}”)为何使用占位符而不是字符串拼接</p>
+<blockquote>
+<p> 当没有权限输出时，字符串拼接会无谓的消耗资源，并且占位符可以直接输出对象</p>
+</blockquote>
+</li>
+</ol>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/14/SpringBoot/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-贪心思想" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/07/贪心思想/">贪心思想</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/07/贪心思想/" class="archive-article-date">
+  	<time datetime="2019-04-07T01:42:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="贪心思想"><a href="#贪心思想" class="headerlink" title="贪心思想"></a>贪心思想</h4><ul>
+<li>Leetcode<a href="https://leetcode.com/problems/non-overlapping-intervals/description/" target="_blank" rel="noopener">435. Non-overlapping Intervals (Medium)</a></li>
+</ul>
+<p>先计算最多能组成的不重叠区间数，然后用区间总个数减去不重叠区间的个数</p>
+<p>每次选择中区间的结尾最为重要，选择的区间结尾越小，留给后面区间的空间越大，则能选择的个数也越多，因此按区间的结尾小的在前进行排序，<code>每次选择结尾最小，并且和前一个区间不重叠的区间</code></p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Greedy</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/07/贪心思想/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-桶排序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/04/05/桶排序/">桶排序</a>
+    </h1>
+  
+
+        
+        <a href="/2019/04/05/桶排序/" class="archive-article-date">
+  	<time datetime="2019-04-05T07:55:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>桶排序</strong></p>
+<p>设置若干个桶，每个桶存储出现频率相同的数，并且桶的下标代表桶中数出现的频率，即第i个桶存储的数出现的频率为i</p>
+<p>把数都放到桶之后，从后向前遍历桶，最先得到的k个数就是出现频率最多的k个数</p>
+<p>统计每个数的频率，可以借助map实现</p>
+<p>Leetcode <a href="https://leetcode.com/problems/top-k-frequent-elements/description/" target="_blank" rel="noopener">347. Top K Frequent Elements (Medium)</a></p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">sort</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/04/05/桶排序/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-快速选择算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -411,15 +678,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">matlab</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">machine learning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">字符串算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">machine learning</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -431,7 +702,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">review</a>
+                <a href="javascript:void(0)" class="js-tag color2">ai, kg</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -439,7 +710,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ai；kg</a>
+                <a href="javascript:void(0)" class="js-tag color2">review</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -455,11 +726,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ai</a>
+                <a href="javascript:void(0)" class="js-tag color1">knowledge graph</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">knowledge graph</a>
+                <a href="javascript:void(0)" class="js-tag color3">ai</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -468,10 +739,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">spring</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ai, kg</a>
               </li>
             
             <div class="clearfix"></div>
