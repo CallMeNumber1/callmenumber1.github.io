@@ -16,10 +16,12 @@
 <meta property="og:site_name" content="Find everything about tech">
 <meta property="og:description" content="题目理解 1、待匹配文本先做只含英文/中文的，循序渐进，再做中英文混杂的 2、[W:0-10]可以匹配长度0-10的任意字符，此处汉字算1个字符即可">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-19T13:13:05.199Z">
+<meta property="og:image" content="c:/Users/HC/Desktop/百度知识图谱部面试题/输出.png">
+<meta property="og:updated_time" content="2019-08-19T17:29:54.438Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="百度知识图谱部面试题">
 <meta name="twitter:description" content="题目理解 1、待匹配文本先做只含英文/中文的，循序渐进，再做中英文混杂的 2、[W:0-10]可以匹配长度0-10的任意字符，此处汉字算1个字符即可">
+<meta name="twitter:image" content="c:/Users/HC/Desktop/百度知识图谱部面试题/输出.png">
   
     <link rel="alternative" href="/atom.xml" title="Find everything about tech" type="application/atom+xml">
   
@@ -235,6 +237,32 @@
 <p>事实上，上面这个匹配不了所有汉字，不知道为何（比如“性别”两字就匹配不了），换成<code>[^x00-xff]</code>，但这个也会匹配到除了汉字外的一些特殊字符</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> str;</span><br><span class="line"><span class="function">regex <span class="title">e</span><span class="params">(<span class="string">"([\u4e00-\u9fa5]&#123;2&#125;|[A-Za-z1-9_]&#123;1&#125;)&#123;2&#125;"</span>)</span></span>;</span><br><span class="line"><span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; str) &#123;</span><br><span class="line">    <span class="keyword">bool</span> flag = regex_search(str, e);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; flag &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>考虑使用宏定义来实现通配符的处理</p>
+<p><strong>程序如何使用</strong></p>
+<p>1.在槽位词表(<code>in1.txt</code>)里输入槽位及对应的词汇</p>
+<p>2.在模板文件(<code>in2.txt</code>)里输入模板</p>
+<p>3.之后编译运行<code>main.cpp</code>文件</p>
+<p>4.输入待匹配文本，观察输出即可。</p>
+<p><strong>输入输出测试</strong></p>
+<p>1.槽位词表(<code>in1.txt</code>)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">[D:性别]</span><br><span class="line">男子</span><br><span class="line">女子</span><br><span class="line">[D:体育运动]</span><br><span class="line">乒乓球</span><br><span class="line">摔跤</span><br><span class="line">羽毛球</span><br><span class="line">[D:世界地区]</span><br><span class="line">中国</span><br><span class="line">美国</span><br><span class="line">俄罗斯</span><br><span class="line">[D:组织机构]</span><br><span class="line">IEEE</span><br><span class="line">ACM</span><br><span class="line">[D:sex]</span><br><span class="line">female</span><br><span class="line">male</span><br><span class="line">[D:sports]</span><br><span class="line">table tennis</span><br><span class="line">wrestling</span><br></pre></td></tr></table></figure>
+<p>2.模板文件(<code>in2.txt</code>)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[D:性别][D:体育运动]选手</span><br><span class="line">[D:世界地区][W:2-8][D:组织机构]</span><br><span class="line">[D:性别][W:10-12][D:体育运动]</span><br><span class="line">[D:性别]选手[D:体育运动]</span><br><span class="line">[D:sex][D:sports]</span><br></pre></td></tr></table></figure>
+<p>3.运行结果（输出）</p>
+<p><img src="C:\Users\HC\Desktop\百度知识图谱部面试题\输出.png" alt="输出"></p>
+<p><strong>注意事项</strong></p>
+<ol>
+<li>使用<code>getline()</code>进行从文件中或标准输入中读入，使得按行读入，同时能够读入空格，防止词汇输入错误。如：<code>table tennis</code>应看为一个词</li>
+<li>将基于模板的文本匹配转化为基于正则表达式的匹配</li>
+</ol>
+<p><strong>遗留问题</strong></p>
+<ul>
+<li><p>实现之后，对于英文（单词间不能有空格），加完<code>\s*</code>后得到改善</p>
+<p><code>\s</code>表示一个字符，该字符是空白符（空格、制表符、换页符</p>
+</li>
+<li><p>对于通配符匹配的情况，中文或英文单独都可以，但未能实现通配符里中英文混杂的情况</p>
+<p>实际上可以通过<code>(([\u4e00-\u9fa5]{2}|[A-Za-z1-9_]{1}){2})</code>这个正则表达式来实现，但是最后输出会多出一部分，目前尚未解决。</p>
+</li>
+</ul>
 
       
 
