@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Find everything about tech">
 <meta property="og:description" content="题目理解 1、待匹配文本先做只含英文/中文的，循序渐进，再做中英文混杂的 2、[W:0-10]可以匹配长度0-10的任意字符，此处汉字算1个字符即可">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-09T15:48:51.213Z">
+<meta property="og:updated_time" content="2019-08-19T13:13:05.199Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="百度知识图谱部面试题">
 <meta name="twitter:description" content="题目理解 1、待匹配文本先做只含英文/中文的，循序渐进，再做中英文混杂的 2、[W:0-10]可以匹配长度0-10的任意字符，此处汉字算1个字符即可">
@@ -186,6 +186,7 @@
 <p>匹配长度5-10的任意字符：<code>^.{5,10}$</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">^：^字符指示字符串的头，且要求字符串以字符开头，不占位。</span><br><span class="line">$：$字符指示字符串的尾，且要求字符串以字符结尾，不占位。</span><br></pre></td></tr></table></figure>
 <p>汉字的正则表达式<code>[\u4e00-\u9fa5]</code> </p>
+<p>正则表达式匹配中括号：在正则表达式中，前中括号 [ 属于特殊字符，要匹配它，需要转义，即加上 \；而后中括号 ] 不属于特殊字符，不必加转义字符</p>
 <p>状态机：自动机总是处于一个状态之中，也就是图中的圈圈。在读入字符串的时候，它从一个状态进入另一个状态。自动机有两个特殊的状态：<code>开始状态</code>和<code>匹配状态</code>。开始状态始于一个但箭头，匹配状态止于一个双环.</p>
 <p>状态机中有这样一些要素，对照分别说下：</p>
 <ul>
@@ -228,6 +229,12 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 高级捕捉2（捕获结果的组织顺序不同）</span></span><br><span class="line"><span class="function">sregex_token_iterator <span class="title">pos</span><span class="params">(str.cbegin(), str.cend(), e, <span class="number">0</span>)</span></span>;</span><br><span class="line">sregex_token_iterator end;</span><br><span class="line"><span class="keyword">for</span> (; pos != end; ++pos) &#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"Matched: "</span> &lt;&lt; pos-&gt;str() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>进一步的思考：时间和空间效率未做分析，对于大规模数据量的应用场景可能性能不佳。</p>
 <p>参考：<a href="https://blog.csdn.net/bgzclxqq/article/details/90262904" target="_blank" rel="noopener">C++正则表达式使用</a></p>
+<h4 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h4><p>使用C++11编写代码</p>
+<p><code>[\u4e00-\u9fa5]{2}</code> 可以匹配一个汉字<br>因此使用下面的正则表达式来识别长度为n的包含汉字或英文的混合文本段</p>
+<p><code>([\u4e00-\u9fa5]{2}|[A-Za-z1-9_]{1}){n}</code></p>
+<p>事实上，上面这个匹配不了所有汉字，不知道为何（比如“性别”两字就匹配不了），换成<code>[^x00-xff]</code>，但这个也会匹配到除了汉字外的一些特殊字符</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> str;</span><br><span class="line"><span class="function">regex <span class="title">e</span><span class="params">(<span class="string">"([\u4e00-\u9fa5]&#123;2&#125;|[A-Za-z1-9_]&#123;1&#125;)&#123;2&#125;"</span>)</span></span>;</span><br><span class="line"><span class="keyword">while</span> (<span class="built_in">cin</span> &gt;&gt; str) &#123;</span><br><span class="line">    <span class="keyword">bool</span> flag = regex_search(str, e);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; flag &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>考虑使用宏定义来实现通配符的处理</p>
 
       
 
