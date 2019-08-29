@@ -8,15 +8,21 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>循环神经网络 | Find everything about tech</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="RNN">
+  <meta name="description" content="一、绪论基本应用 语音问答、机器翻译、股票预测、作词机、作诗、模仿写论文、模仿写代码 图像理解 视觉问答 循环神经网络 vs. 卷积神经网络 循环神经网络所做的任务有什么特点呢？ ​    核心问题：上下文关系（时序） ​    目标：考虑更多的上下文 传统神经网络，卷积神经网络，输入和输出之间是相互独立的。 RNN可以更好地处理具有时序关系的任务 RNN通过其循环结构引入“记忆”的概念 ​">
+<meta name="keywords" content="RNN">
 <meta property="og:type" content="article">
 <meta property="og:title" content="循环神经网络">
 <meta property="og:url" content="http://yoursite.com/2019/08/29/循环神经网络/index.html">
 <meta property="og:site_name" content="Find everything about tech">
+<meta property="og:description" content="一、绪论基本应用 语音问答、机器翻译、股票预测、作词机、作诗、模仿写论文、模仿写代码 图像理解 视觉问答 循环神经网络 vs. 卷积神经网络 循环神经网络所做的任务有什么特点呢？ ​    核心问题：上下文关系（时序） ​    目标：考虑更多的上下文 传统神经网络，卷积神经网络，输入和输出之间是相互独立的。 RNN可以更好地处理具有时序关系的任务 RNN通过其循环结构引入“记忆”的概念 ​">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-29T09:25:56.084Z">
+<meta property="og:image" content="d:/Blog/public/img/RNN.png">
+<meta property="og:image" content="d:/Blog/public/img/RNN2.png">
+<meta property="og:updated_time" content="2019-08-29T09:57:12.947Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="循环神经网络">
+<meta name="twitter:description" content="一、绪论基本应用 语音问答、机器翻译、股票预测、作词机、作诗、模仿写论文、模仿写代码 图像理解 视觉问答 循环神经网络 vs. 卷积神经网络 循环神经网络所做的任务有什么特点呢？ ​    核心问题：上下文关系（时序） ​    目标：考虑更多的上下文 传统神经网络，卷积神经网络，输入和输出之间是相互独立的。 RNN可以更好地处理具有时序关系的任务 RNN通过其循环结构引入“记忆”的概念 ​">
+<meta name="twitter:image" content="d:/Blog/public/img/RNN.png">
   
     <link rel="alternative" href="/atom.xml" title="Find everything about tech" type="application/atom+xml">
   
@@ -168,7 +174,30 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h4 id="一、绪论"><a href="#一、绪论" class="headerlink" title="一、绪论"></a>一、绪论</h4><p><strong>基本应用</strong></p>
+<p>语音问答、机器翻译、股票预测、作词机、作诗、模仿写论文、模仿写代码</p>
+<p>图像理解</p>
+<p>视觉问答</p>
+<p><strong>循环神经网络 vs. 卷积神经网络</strong></p>
+<p>循环神经网络所做的任务有什么特点呢？</p>
+<p>​    核心问题：上下文关系（时序）</p>
+<p>​    目标：考虑更多的上下文</p>
+<p>传统神经网络，卷积神经网络，输入和输出之间是相互独立的。</p>
+<p>RNN可以更好地处理具有时序关系的任务</p>
+<p>RNN通过其循环结构引入“记忆”的概念</p>
+<p>​    输出不仅依赖于输入，还依赖“记忆”</p>
+<p>​    将同一个结构循环利用</p>
+<a id="more"></a>
+<h4 id="二、RNN的基本结构"><a href="#二、RNN的基本结构" class="headerlink" title="二、RNN的基本结构"></a>二、RNN的基本结构</h4><p>隐层的数据被存入到一个“记忆”单元中</p>
+<p>存在“记忆”中的数据会被作为另外一个输入与原始输入一起输入到神经网络中。</p>
+<ul>
+<li>两种输入：原始输入；记忆单元中的输入</li>
+<li>两种输出：正常输出；还有值被输出到记忆单元中</li>
+<li>一种函数：中间的运算</li>
+</ul>
+<p><img src="D:\Blog\public\img\RNN.png" alt="RNN"></p>
+<p><img src="D:\Blog\public\img\RNN2.png" alt="RNN2"></p>
+
       
 
       
