@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>深度学习课程：绪论 | Find everything about tech</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="####  绪论 感知智能，认知智能 知识工程（专家系统） vs. 机器学习  省时、省力；灵活性强  基于数据自动学习   根据问题的尺度与规则的复杂性来选择使用知识工程还是机器学习 机器学习应用领域：计算机视觉；语音技术；自然语言处理 机器学习的定义：  计算机系统能够利用经验提高自身的性能。 本质是一个基于经验数据的函数估计问题。 提取重要模式、趋势，并理解数据，即从数据中学习。  总结：从">
+  <meta name="description" content="绪论一、绪论 感知智能，认知智能 知识工程（专家系统） vs. 机器学习  省时、省力；灵活性强  基于数据自动学习   根据问题的尺度与规则的复杂性来选择使用知识工程还是机器学习 机器学习应用领域：计算机视觉；语音技术；自然语言处理 机器学习的定义：  计算机系统能够利用经验提高自身的性能。 本质是一个基于经验数据的函数估计问题。 提取重要模式、趋势，并理解数据，即从数据中学习。  总结：从数据">
 <meta name="keywords" content="deep learning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深度学习课程：绪论">
 <meta property="og:url" content="http://yoursite.com/2019/08/26/深度学习课程：绪论/index.html">
 <meta property="og:site_name" content="Find everything about tech">
-<meta property="og:description" content="####  绪论 感知智能，认知智能 知识工程（专家系统） vs. 机器学习  省时、省力；灵活性强  基于数据自动学习   根据问题的尺度与规则的复杂性来选择使用知识工程还是机器学习 机器学习应用领域：计算机视觉；语音技术；自然语言处理 机器学习的定义：  计算机系统能够利用经验提高自身的性能。 本质是一个基于经验数据的函数估计问题。 提取重要模式、趋势，并理解数据，即从数据中学习。  总结：从">
+<meta property="og:description" content="绪论一、绪论 感知智能，认知智能 知识工程（专家系统） vs. 机器学习  省时、省力；灵活性强  基于数据自动学习   根据问题的尺度与规则的复杂性来选择使用知识工程还是机器学习 机器学习应用领域：计算机视觉；语音技术；自然语言处理 机器学习的定义：  计算机系统能够利用经验提高自身的性能。 本质是一个基于经验数据的函数估计问题。 提取重要模式、趋势，并理解数据，即从数据中学习。  总结：从数据">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="d:/Blog/public/img/人工智能机器学习深度学习关系.png">
 <meta property="og:image" content="d:/Blog/public/img/深度学习的不能与解释性.png">
@@ -25,10 +25,13 @@
 <meta property="og:image" content="d:/Blog/public/img/数据降维.png">
 <meta property="og:image" content="d:/Blog/public/img/概率、函数形式统一.png">
 <meta property="og:image" content="d:/Blog/public/img/概率、函数.png">
-<meta property="og:updated_time" content="2019-08-28T12:10:58.009Z">
+<meta property="og:image" content="d:/Blog/public/img/损失函数.png">
+<meta property="og:image" content="d:/Blog/public/img/频率学派vs贝叶斯学派.png">
+<meta property="og:image" content="d:/Blog/public/img/相关性vs因果性.png">
+<meta property="og:updated_time" content="2019-08-28T13:47:04.117Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深度学习课程：绪论">
-<meta name="twitter:description" content="####  绪论 感知智能，认知智能 知识工程（专家系统） vs. 机器学习  省时、省力；灵活性强  基于数据自动学习   根据问题的尺度与规则的复杂性来选择使用知识工程还是机器学习 机器学习应用领域：计算机视觉；语音技术；自然语言处理 机器学习的定义：  计算机系统能够利用经验提高自身的性能。 本质是一个基于经验数据的函数估计问题。 提取重要模式、趋势，并理解数据，即从数据中学习。  总结：从">
+<meta name="twitter:description" content="绪论一、绪论 感知智能，认知智能 知识工程（专家系统） vs. 机器学习  省时、省力；灵活性强  基于数据自动学习   根据问题的尺度与规则的复杂性来选择使用知识工程还是机器学习 机器学习应用领域：计算机视觉；语音技术；自然语言处理 机器学习的定义：  计算机系统能够利用经验提高自身的性能。 本质是一个基于经验数据的函数估计问题。 提取重要模式、趋势，并理解数据，即从数据中学习。  总结：从数据">
 <meta name="twitter:image" content="d:/Blog/public/img/人工智能机器学习深度学习关系.png">
   
     <link rel="alternative" href="/atom.xml" title="Find everything about tech" type="application/atom+xml">
@@ -181,10 +184,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#### </p>
-<h4 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h4><hr>
+        <h4 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h4><h4 id="一、绪论"><a href="#一、绪论" class="headerlink" title="一、绪论"></a>一、绪论</h4><hr>
 <p>感知智能，认知智能</p>
-<p>知识工程（专家系统） vs. 机器学习</p>
+<p><strong>知识工程（专家系统） vs. 机器学习</strong></p>
 <ul>
 <li><p>省时、省力；灵活性强</p>
 </li>
@@ -215,54 +217,71 @@
 </blockquote>
 <p>更多的区别是在模型上，针对模型来讲对应的策略和算法。</p>
 <p><strong>模型分类</strong></p>
-<p>从数据分类角度：监督、无监督学习</p>
+<ul>
+<li>从数据分类角度：监督、无监督学习</li>
+</ul>
 <p>​    无监督学习从数据中学习模式适用于<code>描述数据</code>。</p>
 <p>​    监督学习从数据中学习分界面（输入-输出的映射函数），适用于<code>预测数据标记</code>。</p>
 <p>​    半监督学习（部分数据标记已知）：出发点：标记样本难以获取，无标记样本相对廉价。</p>
 <p>​    强化学习：数据标记未知，但知道与输出目标相关的反馈。决策类问题</p>
 <p>​        使用未标记的数据，但可以知道离目标越来越近还是越来越远（奖励反馈）</p>
-<p>从数据分布角度：</p>
+<ul>
+<li>从数据分布角度：</li>
+</ul>
 <p>这里的参数指的不是模型的参数，而是数据分布的参数</p>
 <p>1、参数模型</p>
 <p>2、非参数模型：不对数据分布进行假设，数据的所有统计特性都来源于数据本身。</p>
 <p>​    K近邻、SVM、决策树、随机森林</p>
 <p>有些时候数据没有提供足够信息来事先假设分布、或者问题本身没有明显的分布特性</p>
-<p>从建模对象角度：</p>
+<ul>
+<li>从建模对象角度：</li>
+</ul>
 <p>1、生成模型：对输入X和输出Y的联合分布$P(X,Y)$建模。</p>
 <p>​    先从数据中学习联合概率分布$P(X,Y)$；然后利用贝叶斯公式求$P(Y|X)=\frac{P(X,Y)}{\sum P(X,Y_i)}$</p>
 <p>​    优点：提供更多信息（建模边缘分布—&gt;采样生成样本，这也是当前比较重要的一个应用，比如用于半监督学习中）</p>
 <p>2、判别模型：对已知输入X条件下输出Yd的条件分布$P(Y|X)$建模</p>
 <p>​    直接学习$P(Y|X) $</p>
-<p>机器学习材料：西瓜书作为工具书较好；统计学习方法字字珠玑</p>
+<blockquote>
+<p>机器学习材料：西瓜书作为工具书较好；统计学习方法字字珠玑。</p>
+</blockquote>
+<hr>
+<blockquote>
 <p>深度学习并不是万能的，边界在哪</p>
+</blockquote>
+<p><strong>人工智能、机器学习与深度学习关系</strong></p>
 <p><img src="D:\Blog\public\img\人工智能机器学习深度学习关系.png" alt="1566865890938"></p>
 <p>传统机器学习：人工选择特征</p>
 <p>​    预处理、特征提取、特征转换、预测识别</p>
 <p>深度学习：自动选择特征</p>
 <p>​    从一些简单的特征，得到更复杂的特征</p>
 <p>​    从特征到输出的映射已经不那么重要了，因此又称为<code>表示学习</code></p>
-<p>==分类器==</p>
-<p>感知器–&gt;</p>
 <p>深度学习发展三个助推剂：算法、算力、大数据</p>
-<p>==梯度消失==</p>
+<blockquote>
 <p>神经网络为何要有这么多层，是否有数学的解释</p>
-<p>ImageNet：深度学习方法的试验田，现在用SQuAD（文本问答）来测试</p>
+</blockquote>
+<blockquote>
+<p><code>ImageNet</code>：深度学习方法的试验田，现在用<code>SQuAD</code>（文本问答）来测试</p>
+</blockquote>
 <p><strong>深度学习的边界</strong></p>
 <p>工程低门槛&amp;科研高门槛</p>
 <p>深度学习研究进入瓶颈。将深度学习应用于解决现实生活问题的应用正在迎来一个大爆发。</p>
-<p>==基于统计和基于贝叶斯==</p>
-<p>概率论两个学派：频率学派和贝叶斯学派</p>
+<ul>
+<li>概率论两个学派：频率学派和贝叶斯学派</li>
+</ul>
 <p>​    根据是否考虑先验信息</p>
-<p>深度学习应用研究：多媒体领域，视觉+语言</p>
-<p>深度学习理论研究：从“能“到“不能”</p>
+<ul>
+<li><p>深度学习应用研究：多媒体领域，视觉+语言（比如生成对图像的描述）</p>
+</li>
+<li><p>深度学习理论研究：从“能“到“不能”</p>
+</li>
+</ul>
 <p>​    共性的：不同领域的人都需要</p>
 <p>​    对问题的理解和解决思路是简洁且通用的</p>
 <p>深度学习的不能：</p>
 <ol>
-<li>算法输出不稳定，容易被“攻击”：如对抗样本</li>
-</ol>
+<li><p>算法输出不稳定，容易被“攻击”：如对抗样本</p>
 <p>在一张图片里面改变一个像素点的值（1像素攻击），就可能让图像识别出错</p>
-<ol start="2">
+</li>
 <li><p>模型复杂度高，难以纠错和调试</p>
 </li>
 <li><p>模型层级复合程度高，参数不透明</p>
@@ -279,7 +298,9 @@
 </ol>
 <p><img src="D:\Blog\public\img\深度学习的不能与解释性.png" alt="深度学习的不能与解释性"></p>
 <p>深度学习处于泛化能力强但解释性弱的局面</p>
-<p>从人获得知识和积累的过程得到启发</p>
+<ul>
+<li>从人获得知识和积累的过程得到启发</li>
+</ul>
 <p>​    知识的表达和积累：语言的出现</p>
 <p>​    而目前深度学习缺少“语言”这个载体</p>
 <p><strong>连接主义 vs. 符号主义：从对立走向合作</strong></p>
@@ -297,8 +318,8 @@
 <p>​    2.基于深度学习对知识图谱的构建进行服务，比如应用在图谱的表示里面</p>
 <p>==概率图模型==</p>
 <p>==卷积、卷积核==</p>
-<h4 id="神经网络基础"><a href="#神经网络基础" class="headerlink" title="神经网络基础"></a>神经网络基础</h4><hr>
-<p>浅层神经网络</p>
+<h4 id="二、神经网络基础"><a href="#二、神经网络基础" class="headerlink" title="二、神经网络基础"></a>二、神经网络基础</h4><hr>
+<p>浅层神经网络–&gt;深度神经网络</p>
 <p><strong>生物神经元</strong></p>
 <p>​    每个神经元都是一个多输入单输出的信息处理单元</p>
 <p>​    神经元具有<code>空间整合</code>（可接收来自不同位置信息）和<code>时间整合</code>（接收的信号可以是不同时间的；神经元处理信号时可能有滞后的特性）特性。</p>
@@ -507,7 +528,7 @@
 <p>==支持向量==</p>
 <p>==凸二次规划==</p>
 <h4 id="外一章"><a href="#外一章" class="headerlink" title="外一章"></a>外一章</h4><hr>
-<h4 id="一、机器学习中的数学基础"><a href="#一、机器学习中的数学基础" class="headerlink" title="一、机器学习中的数学基础"></a>一、机器学习中的数学基础</h4><ol>
+<h4 id="三、机器学习中的数学基础"><a href="#三、机器学习中的数学基础" class="headerlink" title="三、机器学习中的数学基础"></a>三、机器学习中的数学基础</h4><ol>
 <li><p>概率与统计：模型假设、策略设计的基础。</p>
 </li>
 <li><p>线性代数：数据表示、空间变换的基础。</p>
@@ -540,9 +561,7 @@
 <p>可应用于1.推荐系统；2.图像去噪：数据矩阵X一般同时包含结构信息和噪声，矩阵分解为两个矩阵相加，一个是低秩的（结构信息造成行或列间线性相关），另一个是稀疏的（噪声是稀疏的）。</p>
 </li>
 </ul>
-<p>==范式==</p>
-<h4 id="二、机器学习三要素"><a href="#二、机器学习三要素" class="headerlink" title="二、机器学习三要素"></a>二、机器学习三要素</h4><p>模型、策略、算法</p>
-<p>==超平面==</p>
+<h4 id="四、机器学习三要素"><a href="#四、机器学习三要素" class="headerlink" title="四、机器学习三要素"></a>四、机器学习三要素</h4><p>模型、策略、算法</p>
 <blockquote>
 <p>假设空间：比如二维回归问题里，数据可能是线性的分布，我们假设用直线去拟合数据，直线表达式$y=ax+b$，模型有两个参数，确定模型之后，假设空间即为所有可能的直线，即所有可能的a、b的组合。</p>
 </blockquote>
@@ -576,6 +595,53 @@
 <p>3、奥卡姆剃刀原理</p>
 <p>如无必要，勿增实体，即简单有效原理。</p>
 <p>如果多种模型能够同等程度地符合一个问题的观测结果，应该选择其中使用假设最少的–&gt;<code>最简单的模型</code></p>
+<ul>
+<li>一般认为模型复杂度高倾向于过拟合，然而对于神经网络却不然。</li>
+</ul>
+<p><strong>欠拟合、过拟合解决方案</strong></p>
+<ul>
+<li><p>欠拟合：提高模型复杂度</p>
+<p>决策树：拓展分支</p>
+<p>神经网络：增加训练轮数</p>
+</li>
+<li><p>过拟合：降低模型复杂度</p>
+<p>通用：优化目标加正则项</p>
+<p>决策树：剪纸</p>
+<p>神经网络：early stop, dropout</p>
+<p>数据增广（训练集越大，越不容易过拟合）：</p>
+<p>​    计算机视觉里：图像旋转、缩放、剪切。</p>
+<p>​    自然语言处理里：同义词替换。</p>
+<p>​    语音识别里：添加随机噪声。</p>
+</li>
+</ul>
+<p><strong>损失函数</strong></p>
+<p>1、平方损失：对于神经网络，平方损失下的代价函数为非凸函数</p>
+<p>2、交叉熵（对数损失函数）</p>
+<p>​    对于参数w是凸的</p>
+<p>​    平方损失假设高斯分布，而分类问题是二项/多项分布，对数巡视与二项/多项分布下的最大似然等价</p>
+<p>​    <strong><code>输出层</code></strong>的梯度大小不受激活函数的导数影响，损失函数下降速度快。（仅对于输出层不受导数影响，反向传播到前面还是会受影响，因此对于前面的激活函数，由sigmoid换成<code>ReLu</code>，仅输出层激活函数为<code>sigomid</code>）</p>
+<p><img src="D:\Blog\public\img\损失函数.png" alt="损失函数"></p>
+<p><strong>频率学派 vs 贝叶斯学派</strong></p>
+<ul>
+<li>概率论代表了一种看待世界的方式：对随机事件发生的<code>可能性</code>进行规范化数学描述</li>
+<li>对<code>可能性</code>的不同解读促生了概率论的两个学派。</li>
+</ul>
+<p>1、频率学派：关注<code>可独立重复</code>的随机试验中单个事件发生的频率</p>
+<p>​    通过观测数据里计算一个频率去估计唯一的那个值</p>
+<p>2、贝叶斯学派：关注随机事件的<code>可信程度</code>，不一定需要重复。如天气预报明天下雨的概率（无法重复）</p>
+<p>​    可能性=假设+数据：数据的作用是对初始假设做出修正，使观察者对概率的<code>主观认识（先验）</code>更接近<code>客观实际（预测）</code></p>
+<p>​    模型<code>参数本身是随机变量</code>，需要<code>估计参数的整个概率分布</code>。</p>
+<h4 id="五、Beyond深度学习"><a href="#五、Beyond深度学习" class="headerlink" title="五、Beyond深度学习"></a><img src="D:\Blog\public\img\频率学派vs贝叶斯学派.png" alt="频率学派vs贝叶斯学派">五、Beyond深度学习</h4><p><strong>因果推断</strong></p>
+<p>模式识别问题主要解决的是相关性问题：X-&gt;Y</p>
+<p>然而相关性很脆弱，可能因为新变量的加入而被改变。</p>
+<p><strong>相关性 vs 因果性<img src="D:\Blog\public\img\相关性vs因果性.png" alt="相关性vs因果性"></strong></p>
+<p>我们需要对问题的因果进行建模，才能得到更可靠的相关性。</p>
+<blockquote>
+<p>因果建模的方法：贝叶斯，概率图模型</p>
+</blockquote>
+<p><strong>群体智能</strong></p>
+<p>如<code>wikipedia</code></p>
+<p>高德地图中，根据这条路上打开软件人的速度情况去估计这条路上的畅通情况</p>
 
       
 
@@ -679,6 +745,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/08/29/卷积神经网络/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          卷积神经网络
+        
+      </div>
+    </a>
   
   
     <a href="/2019/08/24/非监督学习/" id="article-nav-older" class="article-nav-link-wrap">
@@ -808,11 +883,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">matlab</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color4">deep learning</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -824,11 +903,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">sort</a>
+                <a href="javascript:void(0)" class="js-tag color5">interview</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">interview</a>
+                <a href="javascript:void(0)" class="js-tag color5">sort</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -844,11 +923,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
+                <a href="javascript:void(0)" class="js-tag color2">Greedy</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Greedy</a>
+                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -857,10 +936,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Graph</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">deep learning</a>
               </li>
              
               <li class="article-tag-list-item">

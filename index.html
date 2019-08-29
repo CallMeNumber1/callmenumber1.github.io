@@ -148,6 +148,257 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-卷积神经网络" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/29/卷积神经网络/">卷积神经网络</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/29/卷积神经网络/" class="archive-article-date">
+  	<time datetime="2019-08-29T01:43:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h4><h4 id="一、绪论"><a href="#一、绪论" class="headerlink" title="一、绪论"></a>一、绪论</h4><p><strong>1、卷积神经网络的应用</strong></p>
+<p>基本应用：分类、检索、检测、分割</p>
+<p>人脸识别、人脸表情识别、图像生成（Image to  Image; Text to Image）、图像风格转化</p>
+<p>自动驾驶</p>
+<p><strong>2、传统神经网络 vs. 卷积神经网络</strong></p>
+<p>深度学习三部曲</p>
+<ol>
+<li><p>搭建神经网络结构：提取特征的过程</p>
+</li>
+<li><p>找到一个合适的损失函数：评估这个表示与真实值之间的差异</p>
+<p>交叉熵损失，均方误差</p>
+</li>
+<li><p>找到一个合适的优化函数，更新参数</p>
+<p>反向传播（BP），随机梯度下降（SGD）更新网络的参数</p>
+</li>
+</ol>
+<p>损失函数</p>
+<p><img src="D:\Blog\public\img\损失函数2.png" alt="损失函数2"></p>
+<p>传统神经网络能用到计算机视觉上，那为什么还需要卷积神经网络呢？</p>
+<ul>
+<li><p>全连接网络处理图像的问题：参数太多，权重矩阵的参数太多，–&gt;过拟合。</p>
+</li>
+<li><p>卷积神经网络的解决方式：</p>
+<p>局部关联：一个神经元不再和整个图片上都有连接，而是和局部块（卷积核）进行连接</p>
+<p>参数共享：神经元提取特征过程中（一次滑动过程中）卷积核中的参数是不改变的</p>
+</li>
+<li><p>结构：</p>
+<p>CONV layer：卷积层；RELU layer：RELU激活层；POOL layer：池化层；FC layer：全连接层</p>
+</li>
+</ul>
+<h4 id="二、基本组成结构"><a href="#二、基本组成结构" class="headerlink" title="二、基本组成结构"></a>二、基本组成结构</h4><p><strong>卷积</strong></p>
+<p><img src="D:\Blog\public\img\一维卷积.png" alt="一维卷积"></p>
+<p>卷积是对两个实变函数的一种数学操作。</p>
+<p>在图像处理中，图像是以二维矩阵的形式输入到神经网络的，因此我们需要二维卷积。</p>
+<p>实际上是一个内积的操作</p>
+<ul>
+<li>涉及到的基本概念：</li>
+</ul>
+<p>​    input：输入，二维矩阵，可能是对图像的表示。</p>
+<p>​    <code>kernel/filter卷积核/滤波器</code>。</p>
+<p>​    <code>weights权重</code>：卷积核里面的每一个值。</p>
+<p>​    <code>receptive filed感受野</code>：在卷积核进行一次卷积时，所对应的输入上的一个区域，即这个卷积核的感受野</p>
+<p>​    <code>feature map特征图</code>：经过一次卷积之后所输出的结果，</p>
+<p>​    <code>padding</code>：用来补0（当步长与维度不匹配时）</p>
+<p>​    channel/depth深度</p>
+<p>​    output输出：比如做分类时输出每一个分类的概率</p>
+<ul>
+<li><p>输出的特征图大小：假设输入大小为<code>N*N</code>，卷积核大小为<code>F*F</code></p>
+<p>$(N-F)/stride + 1$（未加padding）</p>
+<p>$(N+padding\times 2-F)/stride + 1$（有padding时输出的特征图大小）</p>
+</li>
+<li><p>对深度的理解：即特征图的厚度。</p>
+<p>与Filter的个数是保持一致的，因为每一个Filter会产生一个Feature Map</p>
+</li>
+</ul>
+<p><img src="D:\Blog\public\img\卷积.png" alt="卷积"></p>
+<p>关于卷积核（filter）的几个问题：</p>
+<blockquote>
+<p>W的权重和bias是如何确定的呢？</p>
+<p>刚开始会进行随机初始化，再通过BP去不断更新。</p>
+</blockquote>
+<ul>
+<li>卷积核可以是三维的，也可以是多维的。</li>
+<li>卷积核中有几个权重矩阵，和输入中有几个维度是对应的。</li>
+</ul>
+<blockquote>
+<p>:question:感受野与卷积核看起来是相等大小的，是这样吗？</p>
+</blockquote>
+<p><strong>池化-Pooling Layer</strong></p>
+<p>更像是在做缩放的过程</p>
+<p>Pooling</p>
+<ul>
+<li>保留主要特征的同时，减少参数和计算量，防止过拟合，提高模型泛化能力。</li>
+<li>它一般处于卷积层与卷积层之间，全连接层与全连接层之间</li>
+</ul>
+<p>Pooling的类型：</p>
+<ul>
+<li>最大值池化：分类的任务中倾向于使用</li>
+<li>平均值池化：</li>
+</ul>
+<p>池化也有一个filter的概念，表示每次在多大的区域上进行池化操作。</p>
+<p>实际使用时filter大小设置为<code>2*2</code>或<code>3*3</code>，步长一般为2</p>
+<p><img src="D:\Blog\public\img\池化.png" alt="池化"></p>
+<p>池化层是没有参数的</p>
+<p><strong>全连接-Fully Connected Layer</strong></p>
+<p>神经元和输入中的每一个值都有一个连接。</p>
+<ul>
+<li>两层之间所有神经元都有权重链接</li>
+<li>通常全连接池在卷积神经网络尾部</li>
+<li>全连接层参数量通常最大</li>
+</ul>
+<p><strong>小结</strong></p>
+<ul>
+<li>一个典型的卷积网络是由卷积层、池化层、全连接层（一般放在卷积网络尾层）交叉堆叠而成</li>
+<li>卷积是对两个实变函数的一种数学操作（内积）</li>
+<li>局部关联，参数共享</li>
+<li>特征图大小的计算：分加padding/未加padding的情况</li>
+<li>Pooling类型：Max pooling；Average pooling</li>
+</ul>
+<h4 id="三、卷积神经网络典型结构"><a href="#三、卷积神经网络典型结构" class="headerlink" title="三、卷积神经网络典型结构"></a>三、卷积神经网络典型结构</h4><p><strong>AlexNet</strong></p>
+<p><img src="D:\Blog\public\img\AlexNet.png" alt="AlexNet"></p>
+<p>激活函数由sigmoid换成<code>RuLU</code>：$ReLU = max(0, x)$ </p>
+<ul>
+<li>解决了梯度消失的问题（在正区间）</li>
+<li>计算速度特别快，只需判断输入是否大于0</li>
+<li>最大的好处在于，收敛速度远快于sigmoid，因为梯度比sigmoid大，当梯度比较大时，网络就更新的比较快。</li>
+</ul>
+<blockquote>
+<p>注意，<code>ReLu</code>是在feature map上进行的操作</p>
+</blockquote>
+<p>Dropout防止过拟合技术：训练时随机关闭部分神经元；测试时整合所有神经元</p>
+<p><img src="D:\Blog\public\img\dropout.png" alt="dropout"></p>
+<p>数据增强（data augmentation）</p>
+<ul>
+<li><p>平移、翻转、对称</p>
+<p>随机crop（采集区域）：比如，训练时对于<code>256*256</code>的图片进行随机crop到224*224</p>
+<p>水平翻转，相当将样本倍增</p>
+</li>
+<li><p>改变<code>RGB</code>通道强度</p>
+<p>对<code>RGB</code>空间做一个高斯扰动</p>
+</li>
+</ul>
+<p><strong><code>AlexNet</code>分层解析</strong></p>
+<p>第一次卷积：卷积–<code>ReLU</code>–池化；第二次卷积：卷积–<code>ReLU</code>–池化</p>
+<p>第三次卷积：卷积–<code>ReLU</code>；第四次卷积：卷积–<code>ReLU</code>；</p>
+<p>第五次卷积：卷积–<code>ReLU</code>–池化；</p>
+<p>第六层：全连接–<code>ReLU</code>–<code>Dropout</code>；第七层同上；第八层：全连接–<code>Softmax</code>；</p>
+<p><strong>VGG</strong></p>
+<p>先训练前面的11层，再将网络参数固定住，去训练后面的层。</p>
+<p><code>VGG16</code>、<code>VGG19</code></p>
+<p>是一个更深网络，由<code>AlexNet</code>的8层扩展到16层和19层。</p>
+<blockquote>
+<p>大部分做迁移学习的用的都是<code>VGG</code>。</p>
+</blockquote>
+<p>参数量（<code>138M</code>）差不多是<code>AlexNet</code>的两倍。</p>
+<p><strong>GoogleNet</strong></p>
+<p>网络总体结构：</p>
+<ul>
+<li>网络包含22个带参数的层（如果考虑pooling层就是27层），独立成块的层总共有约100个。</li>
+<li>参数数量大概是<code>AlexNet</code>的1/12。（因为除了最后的类别输出层，没有额外的全连接层）</li>
+</ul>
+<p><code>Naive Inception</code></p>
+<p>初衷：多卷积核增加特征多样性。</p>
+<p>但计算复杂度过高。</p>
+<p><code>Inception V2</code></p>
+<p>插入1*1卷积核进行降维，减少参数量</p>
+<p><code>Inception V3</code></p>
+<p>进一步对v2的参数数量进行降低</p>
+<ul>
+<li><p>将<code>5*5</code>的卷积核裂变为两个<code>3*3</code>的卷积核</p>
+<p><code>5*5</code>的卷积核进行一次卷积所对应感受野的大小，和两个<code>3*3</code>的卷积核进行一个卷积，在最下层对应的感受野的大小是一样的。</p>
+</li>
+</ul>
+<p>好处：</p>
+<ul>
+<li><p>降低参数量</p>
+<p>参数量由<code>5*5+1=26</code>-&gt;<code>(3*3+1)*2=20</code></p>
+</li>
+<li><p>增加非线性激活函数：增加非线性激活函数使网络产生更多独立特征，表征能力更强，训练更快。</p>
+</li>
+</ul>
+<p><strong>ResNet</strong></p>
+<p>残差学习网络（deep residual learning network）</p>
+<p>深度有152层（而没有出现梯度消失的问题）</p>
+<p><img src="D:\Blog\public\img\残差.png" alt="残差"></p>
+<p>不会存在传统网络有的梯度消失问题。</p>
+<p>可以根据你的任务去学习一个所需要的网络深度，通过这种形式去调节这个结构，而不会出现由于模型深度非常深而导致的梯度消失问题。</p>
+<blockquote>
+<p>如，当输出F(x)为0时，输出为x，输入和输出一样，相当于这层网络没用</p>
+<p>求导后有一个加和的性质，因此不会出现梯度消失问题。</p>
+</blockquote>
+<p><strong>代码实战</strong></p>
+<p><strong>几个疑问及解答</strong></p>
+<blockquote>
+<p>Batch Normalization，用在对隐藏层的输出操作，（卷积激活之后），用来防止过拟合的</p>
+<p>梯度爆炸：在深度网络或循环神经网络中，误差梯度可在更新中累积，变成非常大的梯度，然后导致网络权重的大幅度更新，并因此使网络变得不稳定；在极端情况下，权重的值变得非常大，以至于溢出，导致<code>NaN</code>值。</p>
+<p>梯度爆炸引起网络不稳定，最好的结果是无法从训练数据中学习，而最坏的结果是出现无法再更新的NaN权重。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">deep learning</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/29/卷积神经网络/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-深度学习课程：绪论" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -168,10 +419,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#### </p>
-<h4 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h4><hr>
+        <h4 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h4><h4 id="一、绪论"><a href="#一、绪论" class="headerlink" title="一、绪论"></a>一、绪论</h4><hr>
 <p>感知智能，认知智能</p>
-<p>知识工程（专家系统） vs. 机器学习</p>
+<p><strong>知识工程（专家系统） vs. 机器学习</strong></p>
 <ul>
 <li><p>省时、省力；灵活性强</p>
 </li>
@@ -1021,83 +1271,6 @@
 
 
   
-    <article id="post-知识图谱学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/03/知识图谱学习/">初识知识图谱</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/03/知识图谱学习/" class="archive-article-date">
-  	<time datetime="2019-08-03T01:01:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>概念</strong> </p>
-<p>用节点和关系所组成的图谱，为真实世界的各个场景直观地建模。通过不同知识的关联性形成一个网状的知识结构，对机器来说就是图谱。</p>
-<p>构建知识图谱这个过程的本质，就是让机器形成认知能力，去理解这个世界。</p>
-<p>知识图谱的图存储在图数据库（Graph Database）中，图数据库以图论为理论基础，图论中图的基本元素是节点和边，在图数据库中对应的就是节点和关系。用节点和关系所组成的图，为真实世界直观地建模，支持百亿量级甚至千亿量级规模的巨型图的高效关系运算和复杂关系分析。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ai, kg</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/03/知识图谱学习/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1195,11 +1368,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">matlab</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color4">deep learning</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1211,11 +1388,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">sort</a>
+                <a href="javascript:void(0)" class="js-tag color5">interview</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">interview</a>
+                <a href="javascript:void(0)" class="js-tag color5">sort</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1231,11 +1408,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
+                <a href="javascript:void(0)" class="js-tag color2">Greedy</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Greedy</a>
+                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1244,10 +1421,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Graph</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">deep learning</a>
               </li>
              
               <li class="article-tag-list-item">
