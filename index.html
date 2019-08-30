@@ -148,6 +148,150 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ML-异常检测" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/29/ML-异常检测/">ML-异常检测</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/29/ML-异常检测/" class="archive-article-date">
+  	<time datetime="2019-08-29T12:52:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="异常检测"><a href="#异常检测" class="headerlink" title="异常检测"></a>异常检测</h4><p><strong>Anomaly detection</strong></p>
+<p>例子：欺诈检测（异常用户检测）；计算机集群中检测大量计算机可能发生的异常</p>
+<p>给定无标签的训练集，我们将对数据建模即$p(x)$，（对x的分布概率建模）；当我们建立了x的概率模型后，就有，对于新的$x_{test}$，若$p(x_{test}) &lt; \epsilon$，则认为是异常的。</p>
+<p><strong>高斯分布</strong><br>$$<br>p(x;\mu,\sigma^2)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}<br>$$<br>分号后面，代表以这两个为参数</p>
+<ul>
+<li><p>高斯分布两个参数：$\mu,\ \sigma^2$</p>
+<p>$\mu$即高斯分布中心的位置</p>
+<p>$\sigma$决定了高斯分布密度曲线的宽度</p>
+</li>
+<li><p>参数估计问题：给定数据集，希望找到能够估算出$\mu,\sigma^2$的值</p>
+<p>估计的标准公式：</p>
+<p>$\mu = \frac{1}{m}\sum_{i=1}^mx^{(i)}, \ \sigma^2=\frac{1}{m}\sum_{i=1}^m(x^{(i)}-\mu)^2​$</p>
+</li>
+</ul>
+<p><strong>算法</strong></p>
+<p>我们处理异常检测的方式是，要用数据集建立起概率模型$p(x)$，要试图解决出哪些特征量出现的概率比较高，哪些比较低。<br>$$<br>p(x) = \Pi_{j=1}^np(x_j;\mu_j,\sigma_j^2)<br>$$<br>这个分布项$p(x)$的估计问题也叫密度估计问题。</p>
+<ol>
+<li><p>选择这样的特征，当出现异常样本时，特征值会异常地大或小；通常来说，还是选择那些能够描述你所收集的数据一般特性的特征。下一步是给出训练集。</p>
+</li>
+<li><p>进行参数拟合，$\mu_1,…,\mu_n,\sigma_1^2,…,\sigma_n^2$。</p>
+<p>$\mu_j = \frac{1}{m}\sum_{i=1}^mx_j^{(i)}, \ \sigma_j^2=\frac{1}{m}\sum_{i=1}^m(x_j^{(i)}-\mu)_j^2$</p>
+<p>令$\mu=[\mu_1;\mu_2;…;\mu_n]$，也可以写出一个向量化公式</p>
+</li>
+<li><p>给定新案例，计算$p(x)​$的值</p>
+<p>$p(x) = \Pi_{j=1}^np(x_j;\mu_j,\sigma_j^2) = \Pi_{j=1}^n\frac{1}{\sqrt{2\pi}\sigma_j}e^{-\frac{(x_j-\mu_j)^2}{2\sigma_j^2}}$</p>
+<p>$if\ p(x)&lt;\epsilon$，，标注为异常</p>
+</li>
+</ol>
+<p><strong>开发和评估异常检测系统</strong></p>
+<p>对于监督学习的情况</p>
+<p>评估一个异常检测算法的步骤。</p>
+<p>1.划分训练集（训练集里不要包含异常样本）、交叉验证集合、测试集。</p>
+<p>2.在训练集上拟合模型$p(x) $</p>
+<p>3.在交叉验证集/测试集上，预测<br>$$<br>\begin{equation}<br>y=\left{<br>\begin{aligned}<br>0 &amp; &amp; if \ p(x) \lt \epsilon &amp; \ (anomaly)\<br>1 &amp; &amp; if \ p(x) \ge \epsilon &amp; \ (normal)<br>\end{aligned}<br>\right.<br>\end{equation}<br>$$<br>4.选择合适的度量标准：Precision/Recall/$F_1score$（因为是偏斜类，大部分为正常样例）</p>
+<p>​    尝试去使用交叉验证集去选择阈值$\epsilon $，当选定$\epsilon$后就可以在测试集中对算法进行最后的评估。</p>
+<p>在能够评估一个算法后，能够用一个实数(如F1-score)进行评估之后，这将使得你在尝试开发一个异常检测系统时大大提高效率。（类似于我们在监督学习中所做的）</p>
+<p><strong>异常检测 vs. 监督学习</strong></p>
+<p>适用情况如下：</p>
+<p>Anomaly detection</p>
+<ul>
+<li>1.当有很少的正样本（y=1）时；或有很多的正样本（y=0）时。</li>
+</ul>
+<blockquote>
+<p>这里的正样本即异常样本</p>
+</blockquote>
+<ul>
+<li>2.经常有许多不同类型的异常，你有很少数量的正样本，则对一个算法就很难去从小数量的正样本中去学习异常是什么，尤其是未来出现的异常可能和以前的截然不同。</li>
+</ul>
+<blockquote>
+<p>这种情况就对负样本用高斯分布模型建模，而不是费尽心思对正样本建模，因为明天的异常可能与至今见过的情况都不一样。</p>
+</blockquote>
+<p>Supervised learning</p>
+<ul>
+<li><p>1.当正负样本数量都很多时。</p>
+</li>
+<li><p>2..当有足够数量的正样本，或一个已经能识别正样本的算法，尤其是你认为未来可能出现的正样本与当前训练集中的相似，则这种情况下使用监督学习算法。它能够观察大量正样本和负样本来学到相应特征，并且能够尝试区分正样本和负样本。</p>
+</li>
+</ul>
+<p>当正样本的数量是非常少的，或者有各种类型的之前从未见过的异常样本，则对于这种情况下，通常使用的是异常检测算法。</p>
+<p><strong>选择异常检测算法的特征</strong></p>
+<p>1.对特征做些转换，让分布更接近高斯分布</p>
+<p>如果你画出数据的直方图，发现图形看起来和高斯分布相差甚远，则有必要进行一些转换让你的数据更接近高斯分布。</p>
+<p>让特征更接近高斯分布：可以用<code>log(x+c),x^c</code>等代替原来的数据</p>
+<p>2.异常检测的误差分析</p>
+<p>看看这个算法没有标记出来的异常样本，看它是否能启发你去创造一些新特征，有了这些新特征，就能更容易地将异常样本从正常样本中区别出来。</p>
+<p>3.选择特征的技巧</p>
+<p>选那些既不会特别大也不会特别小的特征；也可以捕捉特征的组合来发现异常</p>
+<p>​    例子：$x_5=cpu\ load/network \ traffic$，当网络流量正常，而cpu负载很大时，说明cpu中可能出现了死循环；这时$x_5$就变得很大，说明出现了异常 </p>
+<p><strong>多元高斯分布</strong></p>
+<p>仅用高斯分布可能并不能发现其他一些数据中的异常。</p>
+<p>$x \in R^n$，不再对$p(x_1),…,p(x_n)$分别建模，直接对$p(x)$整体建模。参数为：$\mu \in R^n, \Sigma \in R^{n\times n}(协方差矩阵)$<br>$$<br>p(x;\mu,\Sigma) =<br>$$</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">machine learning</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/29/ML-异常检测/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-循环神经网络" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1023,99 +1167,9 @@
 
 
   
-    <article id="post-知识图谱综述学习总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/05/知识图谱综述学习总结/">知识图谱综述学习总结</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/05/知识图谱综述学习总结/" class="archive-article-date">
-  	<time datetime="2019-08-05T15:21:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="知识图谱概念"><a href="#知识图谱概念" class="headerlink" title="知识图谱概念"></a>知识图谱概念</h4><hr>
-<p><strong>知识图谱的定义及几个相关概念</strong></p>
-<p>1、知识库<code>knowledge base</code></p>
-<p>2、本体<code>ontology</code></p>
-<p>​    本体表示，允许知识的语义建模，因此经常被人工智能应用中用作知识库</p>
-<p>​    明确表示，本体和知识库没有区别</p>
-<p>​    本体不仅可以包含类型和属性，也可以拥有实例</p>
-<p>3、基于知识的系统<code>knowledge-based system</code></p>
-<p>4、知识图谱<code>KG</code></p>
-<p>​    推理能力区分KG与KB</p>
-<p>​    是一个包含知识库以及一个推理引擎的基于知识的系统</p>
-<p>​    定义：知识图获取信息并将信息集成到本体中，并应用推理器来派生新的知识。</p>
-<blockquote>
-<p>理解：整合一个或多个信息源，且具有推理得到新知识的能力</p>
-</blockquote>
-<p>5、语义网<code>Semantic Web</code></p>
-<p>​    可以理解为最全面的知识图谱</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">knowledge graph</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/05/知识图谱综述学习总结/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -1210,6 +1264,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">machine learning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">matlab</a>
               </li>
              
@@ -1218,19 +1276,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">machine learning</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">deep learning</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">字符串算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RNN</a>
+                <a href="javascript:void(0)" class="js-tag color4">deep learning</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1239,6 +1289,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">sort</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">RNN</a>
               </li>
              
               <li class="article-tag-list-item">

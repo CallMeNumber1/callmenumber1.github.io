@@ -6,33 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>深度学习课程：绪论 | Find everything about tech</title>
+  <title>ML-异常检测 | Find everything about tech</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="绪论一、绪论 感知智能，认知智能 知识工程（专家系统） vs. 机器学习  省时、省力；灵活性强  基于数据自动学习   根据问题的尺度与规则的复杂性来选择使用知识工程还是机器学习 机器学习应用领域：计算机视觉；语音技术；自然语言处理 机器学习的定义：  计算机系统能够利用经验提高自身的性能。 本质是一个基于经验数据的函数估计问题。 提取重要模式、趋势，并理解数据，即从数据中学习。  总结：从数据">
-<meta name="keywords" content="deep learning">
+  <meta name="description" content="异常检测Anomaly detection 例子：欺诈检测（异常用户检测）；计算机集群中检测大量计算机可能发生的异常 给定无标签的训练集，我们将对数据建模即$p(x)$，（对x的分布概率建模）；当我们建立了x的概率模型后，就有，对于新的$x_{test}$，若$p(x_{test}) &amp;lt; \epsilon$，则认为是异常的。 高斯分布$$p(x;\mu,\sigma^2)=\frac{1}{">
+<meta name="keywords" content="machine learning">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深度学习课程：绪论">
-<meta property="og:url" content="http://yoursite.com/2019/08/26/深度学习课程：绪论/index.html">
+<meta property="og:title" content="ML-异常检测">
+<meta property="og:url" content="http://yoursite.com/2019/08/29/ML-异常检测/index.html">
 <meta property="og:site_name" content="Find everything about tech">
-<meta property="og:description" content="绪论一、绪论 感知智能，认知智能 知识工程（专家系统） vs. 机器学习  省时、省力；灵活性强  基于数据自动学习   根据问题的尺度与规则的复杂性来选择使用知识工程还是机器学习 机器学习应用领域：计算机视觉；语音技术；自然语言处理 机器学习的定义：  计算机系统能够利用经验提高自身的性能。 本质是一个基于经验数据的函数估计问题。 提取重要模式、趋势，并理解数据，即从数据中学习。  总结：从数据">
+<meta property="og:description" content="异常检测Anomaly detection 例子：欺诈检测（异常用户检测）；计算机集群中检测大量计算机可能发生的异常 给定无标签的训练集，我们将对数据建模即$p(x)$，（对x的分布概率建模）；当我们建立了x的概率模型后，就有，对于新的$x_{test}$，若$p(x_{test}) &amp;lt; \epsilon$，则认为是异常的。 高斯分布$$p(x;\mu,\sigma^2)=\frac{1}{">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="d:/Blog/public/img/人工智能机器学习深度学习关系.png">
-<meta property="og:image" content="d:/Blog/public/img/深度学习的不能与解释性.png">
-<meta property="og:image" content="d:/Blog/public/img/M-P神经元.png">
-<meta property="og:image" content="d:/Blog/public/img/自编码器.png">
-<meta property="og:image" content="d:/Blog/public/img/自编码器vsRBM.png">
-<meta property="og:image" content="d:/Blog/public/img/鞍点.png">
-<meta property="og:image" content="d:/Blog/public/img/数据降维.png">
-<meta property="og:image" content="d:/Blog/public/img/概率、函数形式统一.png">
-<meta property="og:image" content="d:/Blog/public/img/概率、函数.png">
-<meta property="og:image" content="d:/Blog/public/img/损失函数.png">
-<meta property="og:image" content="d:/Blog/public/img/频率学派vs贝叶斯学派.png">
-<meta property="og:image" content="d:/Blog/public/img/相关性vs因果性.png">
-<meta property="og:updated_time" content="2019-08-28T13:47:04.117Z">
+<meta property="og:updated_time" content="2019-08-30T13:36:29.590Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深度学习课程：绪论">
-<meta name="twitter:description" content="绪论一、绪论 感知智能，认知智能 知识工程（专家系统） vs. 机器学习  省时、省力；灵活性强  基于数据自动学习   根据问题的尺度与规则的复杂性来选择使用知识工程还是机器学习 机器学习应用领域：计算机视觉；语音技术；自然语言处理 机器学习的定义：  计算机系统能够利用经验提高自身的性能。 本质是一个基于经验数据的函数估计问题。 提取重要模式、趋势，并理解数据，即从数据中学习。  总结：从数据">
-<meta name="twitter:image" content="d:/Blog/public/img/人工智能机器学习深度学习关系.png">
+<meta name="twitter:title" content="ML-异常检测">
+<meta name="twitter:description" content="异常检测Anomaly detection 例子：欺诈检测（异常用户检测）；计算机集群中检测大量计算机可能发生的异常 给定无标签的训练集，我们将对数据建模即$p(x)$，（对x的分布概率建模）；当我们建立了x的概率模型后，就有，对于新的$x_{test}$，若$p(x_{test}) &amp;lt; \epsilon$，则认为是异常的。 高斯分布$$p(x;\mu,\sigma^2)=\frac{1}{">
   
     <link rel="alternative" href="/atom.xml" title="Find everything about tech" type="application/atom+xml">
   
@@ -164,484 +151,97 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-深度学习课程：绪论" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-ML-异常检测" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      深度学习课程：绪论
+      ML-异常检测
     </h1>
   
 
         
-        <a href="/2019/08/26/深度学习课程：绪论/" class="archive-article-date">
-  	<time datetime="2019-08-26T12:48:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-26</time>
+        <a href="/2019/08/29/ML-异常检测/" class="archive-article-date">
+  	<time datetime="2019-08-29T12:52:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-29</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="绪论"><a href="#绪论" class="headerlink" title="绪论"></a>绪论</h4><h4 id="一、绪论"><a href="#一、绪论" class="headerlink" title="一、绪论"></a>一、绪论</h4><hr>
-<p>感知智能，认知智能</p>
-<p><strong>知识工程（专家系统） vs. 机器学习</strong></p>
+        <h4 id="异常检测"><a href="#异常检测" class="headerlink" title="异常检测"></a>异常检测</h4><p><strong>Anomaly detection</strong></p>
+<p>例子：欺诈检测（异常用户检测）；计算机集群中检测大量计算机可能发生的异常</p>
+<p>给定无标签的训练集，我们将对数据建模即$p(x)$，（对x的分布概率建模）；当我们建立了x的概率模型后，就有，对于新的$x_{test}$，若$p(x_{test}) &lt; \epsilon$，则认为是异常的。</p>
+<p><strong>高斯分布</strong><br>$$<br>p(x;\mu,\sigma^2)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}<br>$$<br>分号后面，代表以这两个为参数</p>
 <ul>
-<li><p>省时、省力；灵活性强</p>
+<li><p>高斯分布两个参数：$\mu,\ \sigma^2$</p>
+<p>$\mu$即高斯分布中心的位置</p>
+<p>$\sigma$决定了高斯分布密度曲线的宽度</p>
 </li>
-<li><p>基于数据自动学习</p>
-</li>
-</ul>
-<p>根据<code>问题的尺度</code>与<code>规则的复杂性</code>来选择使用知识工程还是机器学习</p>
-<p>机器学习应用领域：计算机视觉；语音技术；自然语言处理</p>
-<p><strong>机器学习的定义：</strong></p>
-<ul>
-<li>计算机系统能够利用<code>经验</code>提高自身的性能。</li>
-<li>本质是一个基于<code>经验数据</code>的<code>函数估计</code>问题。</li>
-<li>提取重要模式、趋势，并<code>理解数据</code>，即从数据中学习。</li>
-</ul>
-<p>总结：从数据中自动提取知识。</p>
-<a id="more"></a>
-<p><strong>机器学习：学什么</strong></p>
-<p>有规律的一个模式；往往是求解非解析解的问题（优化）</p>
-<p><strong>机器学习：怎么学</strong></p>
-<p>每一个方法都是：</p>
-<ul>
-<li>模型：对要学习问题映射的假设（问题建模，确定假设空间）</li>
-<li>策略：从假设空间中学习/选择最优模型的准则（确定目标函数）</li>
-<li>算法：根据目标函数求解最优模型的具体计算方法（求解模型参数）</li>
-</ul>
-<blockquote>
-<p>知识图谱和深度学习有着很强的双向关联</p>
-</blockquote>
-<p>更多的区别是在模型上，针对模型来讲对应的策略和算法。</p>
-<p><strong>模型分类</strong></p>
-<ul>
-<li>从数据分类角度：监督、无监督学习</li>
-</ul>
-<p>​    无监督学习从数据中学习模式适用于<code>描述数据</code>。</p>
-<p>​    监督学习从数据中学习分界面（输入-输出的映射函数），适用于<code>预测数据标记</code>。</p>
-<p>​    半监督学习（部分数据标记已知）：出发点：标记样本难以获取，无标记样本相对廉价。</p>
-<p>​    强化学习：数据标记未知，但知道与输出目标相关的反馈。决策类问题</p>
-<p>​        使用未标记的数据，但可以知道离目标越来越近还是越来越远（奖励反馈）</p>
-<ul>
-<li>从数据分布角度：</li>
-</ul>
-<p>这里的参数指的不是模型的参数，而是数据分布的参数</p>
-<p>1、参数模型</p>
-<p>2、非参数模型：不对数据分布进行假设，数据的所有统计特性都来源于数据本身。</p>
-<p>​    K近邻、SVM、决策树、随机森林</p>
-<p>有些时候数据没有提供足够信息来事先假设分布、或者问题本身没有明显的分布特性</p>
-<ul>
-<li>从建模对象角度：</li>
-</ul>
-<p>1、生成模型：对输入X和输出Y的联合分布$P(X,Y)$建模。</p>
-<p>​    先从数据中学习联合概率分布$P(X,Y)$；然后利用贝叶斯公式求$P(Y|X)=\frac{P(X,Y)}{\sum P(X,Y_i)}$</p>
-<p>​    优点：提供更多信息（建模边缘分布—&gt;采样生成样本，这也是当前比较重要的一个应用，比如用于半监督学习中）</p>
-<p>2、判别模型：对已知输入X条件下输出Yd的条件分布$P(Y|X)$建模</p>
-<p>​    直接学习$P(Y|X) $</p>
-<blockquote>
-<p>机器学习材料：西瓜书作为工具书较好；统计学习方法字字珠玑。</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>深度学习并不是万能的，边界在哪</p>
-</blockquote>
-<p><strong>人工智能、机器学习与深度学习关系</strong></p>
-<p><img src="D:\Blog\public\img\人工智能机器学习深度学习关系.png" alt="1566865890938"></p>
-<p>传统机器学习：人工选择特征</p>
-<p>​    预处理、特征提取、特征转换、预测识别</p>
-<p>深度学习：自动选择特征</p>
-<p>​    从一些简单的特征，得到更复杂的特征</p>
-<p>​    从特征到输出的映射已经不那么重要了，因此又称为<code>表示学习</code></p>
-<p>深度学习发展三个助推剂：算法、算力、大数据</p>
-<blockquote>
-<p>神经网络为何要有这么多层，是否有数学的解释</p>
-</blockquote>
-<blockquote>
-<p><code>ImageNet</code>：深度学习方法的试验田，现在用<code>SQuAD</code>（文本问答）来测试</p>
-</blockquote>
-<p><strong>深度学习的边界</strong></p>
-<p>工程低门槛&amp;科研高门槛</p>
-<p>深度学习研究进入瓶颈。将深度学习应用于解决现实生活问题的应用正在迎来一个大爆发。</p>
-<ul>
-<li>概率论两个学派：频率学派和贝叶斯学派</li>
-</ul>
-<p>​    根据是否考虑先验信息</p>
-<ul>
-<li><p>深度学习应用研究：多媒体领域，视觉+语言（比如生成对图像的描述）</p>
-</li>
-<li><p>深度学习理论研究：从“能“到“不能”</p>
+<li><p>参数估计问题：给定数据集，希望找到能够估算出$\mu,\sigma^2$的值</p>
+<p>估计的标准公式：</p>
+<p>$\mu = \frac{1}{m}\sum_{i=1}^mx^{(i)}, \ \sigma^2=\frac{1}{m}\sum_{i=1}^m(x^{(i)}-\mu)^2​$</p>
 </li>
 </ul>
-<p>​    共性的：不同领域的人都需要</p>
-<p>​    对问题的理解和解决思路是简洁且通用的</p>
-<p>深度学习的不能：</p>
+<p><strong>算法</strong></p>
+<p>我们处理异常检测的方式是，要用数据集建立起概率模型$p(x)$，要试图解决出哪些特征量出现的概率比较高，哪些比较低。<br>$$<br>p(x) = \Pi_{j=1}^np(x_j;\mu_j,\sigma_j^2)<br>$$<br>这个分布项$p(x)$的估计问题也叫密度估计问题。</p>
 <ol>
-<li><p>算法输出不稳定，容易被“攻击”：如对抗样本</p>
-<p>在一张图片里面改变一个像素点的值（1像素攻击），就可能让图像识别出错</p>
+<li><p>选择这样的特征，当出现异常样本时，特征值会异常地大或小；通常来说，还是选择那些能够描述你所收集的数据一般特性的特征。下一步是给出训练集。</p>
 </li>
-<li><p>模型复杂度高，难以纠错和调试</p>
+<li><p>进行参数拟合，$\mu_1,…,\mu_n,\sigma_1^2,…,\sigma_n^2$。</p>
+<p>$\mu_j = \frac{1}{m}\sum_{i=1}^mx_j^{(i)}, \ \sigma_j^2=\frac{1}{m}\sum_{i=1}^m(x_j^{(i)}-\mu)_j^2$</p>
+<p>令$\mu=[\mu_1;\mu_2;…;\mu_n]$，也可以写出一个向量化公式</p>
 </li>
-<li><p>模型层级复合程度高，参数不透明</p>
-</li>
-<li><p>端到端训练方式对数据依赖性强，模型增量性差，迁移性差</p>
-<p>端到端的训练方式可以找出一些很强大的特征，但也限制了深度学习的灵活性，也是深度学习很吃数据的原因。</p>
-</li>
-<li><p>专注直观感知类问题（从输入到输入的映射），对开放推理问题无能为力</p>
-<p>如鹦鹉和乌鸦</p>
-</li>
-<li><p>人类知识无法有效引入进行监督，机器偏见难以避免</p>
-<p>算法依赖于大数据，但数据不是中立的：从真实社会抽取，必然带有社会固有的不平等、排斥性和歧视</p>
+<li><p>给定新案例，计算$p(x)​$的值</p>
+<p>$p(x) = \Pi_{j=1}^np(x_j;\mu_j,\sigma_j^2) = \Pi_{j=1}^n\frac{1}{\sqrt{2\pi}\sigma_j}e^{-\frac{(x_j-\mu_j)^2}{2\sigma_j^2}}$</p>
+<p>$if\ p(x)&lt;\epsilon$，，标注为异常</p>
 </li>
 </ol>
-<p><img src="D:\Blog\public\img\深度学习的不能与解释性.png" alt="深度学习的不能与解释性"></p>
-<p>深度学习处于泛化能力强但解释性弱的局面</p>
+<p><strong>开发和评估异常检测系统</strong></p>
+<p>对于监督学习的情况</p>
+<p>评估一个异常检测算法的步骤。</p>
+<p>1.划分训练集（训练集里不要包含异常样本）、交叉验证集合、测试集。</p>
+<p>2.在训练集上拟合模型$p(x) $</p>
+<p>3.在交叉验证集/测试集上，预测<br>$$<br>\begin{equation}<br>y=\left{<br>\begin{aligned}<br>0 &amp; &amp; if \ p(x) \lt \epsilon &amp; \ (anomaly)\<br>1 &amp; &amp; if \ p(x) \ge \epsilon &amp; \ (normal)<br>\end{aligned}<br>\right.<br>\end{equation}<br>$$<br>4.选择合适的度量标准：Precision/Recall/$F_1score$（因为是偏斜类，大部分为正常样例）</p>
+<p>​    尝试去使用交叉验证集去选择阈值$\epsilon $，当选定$\epsilon$后就可以在测试集中对算法进行最后的评估。</p>
+<p>在能够评估一个算法后，能够用一个实数(如F1-score)进行评估之后，这将使得你在尝试开发一个异常检测系统时大大提高效率。（类似于我们在监督学习中所做的）</p>
+<p><strong>异常检测 vs. 监督学习</strong></p>
+<p>适用情况如下：</p>
+<p>Anomaly detection</p>
 <ul>
-<li>从人获得知识和积累的过程得到启发</li>
-</ul>
-<p>​    知识的表达和积累：语言的出现</p>
-<p>​    而目前深度学习缺少“语言”这个载体</p>
-<p><strong>连接主义 vs. 符号主义：从对立走向合作</strong></p>
-<p>从专家系统、统计机器学习到概率图模型再到深度学习，模型准确率不断提高，解释性却没有提高</p>
-<p>符号主义以逻辑为核心，相比以统计为核心的连接主义方法通常有较好的可解释性。</p>
-<p>以知识图谱为代表的符号主义和以深度学习为代表的连接主义，逐渐走向协同发展的方向。</p>
-<p>要同时在一个任务里保持准确率和可解释性，可能的一条路为：</p>
-<p>​    深度学习+图谱；数据+知识；</p>
-<blockquote>
-<p>联结主义：自下而上，模拟人的大脑结构</p>
-<p>符号主义：自上而下，代表为专家系统，人的推理方式</p>
-</blockquote>
-<p>联结主义+符号主义是什么：知识图谱与深度学习之间的结合，两个方向</p>
-<p>​    1.把知识图谱以先验的方式加入到深度学习的表示学习里面</p>
-<p>​    2.基于深度学习对知识图谱的构建进行服务，比如应用在图谱的表示里面</p>
-<p>==概率图模型==</p>
-<p>==卷积、卷积核==</p>
-<h4 id="二、神经网络基础"><a href="#二、神经网络基础" class="headerlink" title="二、神经网络基础"></a>二、神经网络基础</h4><hr>
-<p>浅层神经网络–&gt;深度神经网络</p>
-<p><strong>生物神经元</strong></p>
-<p>​    每个神经元都是一个多输入单输出的信息处理单元</p>
-<p>​    神经元具有<code>空间整合</code>（可接收来自不同位置信息）和<code>时间整合</code>（接收的信号可以是不同时间的；神经元处理信号时可能有滞后的特性）特性。</p>
-<p>​    神经元输入分兴奋性输入和抑制性输入两种。</p>
-<p>​    神经元具有<code>阈值</code>（当输入的信号在同一时间达到某个值，神经元才会工作）特性</p>
-<p><strong>M-P神经元</strong></p>
-<p>对生物神经元的简化建模</p>
-<p><img src="D:\Blog\public\img\M-P神经元.png" alt="1566911631788"></p>
-<p><strong>激活函数</strong></p>
-<ul>
-<li><p>生物学上：神经元继续传递信息、产生新连接的概率（超过阈值被激活，但不一定传递）。</p>
-</li>
-<li><p>没有激活函数相当于矩阵连乘</p>
-<p>矩阵连乘结果仍为矩阵，而矩阵代表的是线性变换，这代表着$x^TW_1…W_n$这样一个函数最终只能去做一个线性的运算。</p>
-<p>多层和一层一样；只能拟合线性函数</p>
-</li>
-</ul>
-<p>激活函数举例：</p>
-<p>我们需要的激活函数更多的是要有一个非线性能力，如：</p>
-<ul>
-<li><p>S性函数(sigmoid)</p>
-<p>问题1：容易饱和（当输入太大或太小的时候，斜率会很小）</p>
-<p>问题2：输出不对称，即输出只在0-1里面</p>
-</li>
-<li><p>双极S性函数(tanh)，解决sigmoid的问题2</p>
-</li>
-<li><p>ReLU修正线性单元，可以解决饱和区的问题</p>
-</li>
-<li><p>Leaky ReLU</p>
-</li>
-</ul>
-<p><strong>单层感知器</strong></p>
-<p>M-P神经元还不是能从数据中学习的模型，这里引入感知器，结构与M-P神经元基本一致，但里面的一些参数w矩阵是可以自己学习的。</p>
-<p>单层感知器解决不了非线性问题（比如异或问题）</p>
-<blockquote>
-<p>线性问题，对于分类问题来说，在空间里面找出一个线性的超平面，将数据完美的分开。</p>
-</blockquote>
-<p><strong>多层感知器</strong></p>
-<p>将单层感知器组合实现同或门</p>
-<p>能实现复杂的非线性问题 </p>
-<p><strong>万有逼近定理</strong></p>
-<ul>
-<li>对于一个单隐层的网络（三层网络：输入-隐层-输出），如果一个隐层<code>包含足够多的神经元</code>，三层前馈神经网络能以任意精度逼近任意预定的<code>连续函数</code>。</li>
-</ul>
-<p>为何线性分类任务组合后可以解决非线性分类任务？第一层感知器做的是空间的变换，对于第二层的感知器，实际上看到的不是原始数据的分布，而是被第一层感知器做了空间变换之后的分布，所看到的就是一个线性的分类问题。</p>
-<blockquote>
-<p>单隐层神经网络和加入了核函数之后的SVM有着很多的相似性</p>
-</blockquote>
-<ul>
-<li><p>双隐层感知器逼近非连续函数</p>
-<p>当隐层足够宽时，双隐层感知器（输入-隐层1-隐层2-输出）可以逼近任意<code>非连续函数</code>：可以解决任何复杂的分类问题。</p>
-</li>
-</ul>
-<p>看起来层数越多越好，为什么呢？</p>
-<p><strong>神经网络每一层的作用</strong></p>
-<p>每一层数学公式：$y = a(W*x + b)$</p>
-<p>完成输入-&gt;输出空间变换</p>
-<ul>
-<li>$W*x$：升维/降维；放大/缩小；旋转</li>
-<li>$+b$：平移</li>
-<li><p>$a(\cdot)$：弯曲</p>
-</li>
-<li><p>神经网络学习如何利用矩阵的线性变换加激活函数的非线性变换<code>将原始输入空间投影到线性可分的空间</code>去分类/回归。</p>
-</li>
-<li><p>增加节点数：增加维度，即增加线性转换能力。</p>
-</li>
-<li><p>增加层数：增加激活函数的次数，即增加非线性转换次数</p>
-</li>
-</ul>
-<p>而激活函数的选择就是训练数据的作用</p>
-<p><strong>更宽or更深</strong></p>
-<ul>
-<li>假设令神经元总数代表成本，在神经元总数相当的情况下，增加网络深度可以比增加宽度带来更强的<code>网络表示能力</code>：产生更多线性区域。</li>
-<li>深度和宽度对<code>函数复杂度</code>的贡献是不同的，深度的贡献是指数增长的，而宽度的贡献是线性的。</li>
-</ul>
-<p>是不是越深越好呢？</p>
-<p><strong>多层神经网络的问题</strong></p>
-<p>复合</p>
-<blockquote>
-<p>梯度和梯度下降</p>
-<p><code>导数</code>（是对于单自变量而言的）：函数值在某一点沿自变量正方向的变化率。导数是标量。</p>
-<p><strong><code>梯度</code></strong>：多元函数$f(x,y)$在每个点可以有多个方向，每个方向都可以计算导数，称为<code>方向导数</code></p>
-<p>梯度是一个<code>向量</code>，方向是<code>最大方向导数的方向</code>，模为方向导数的最大值。</p>
-<p>神经网络训练方式：<strong><code>梯度下降</code></strong>：参数沿负梯度方向更新可以使函数值下降（可通过二阶泰勒展开证明）</p>
-<p>凸函数：只有一个全局最优点。</p>
-<p>非凸函数：会有多个极值点，最终优化得到的参数依赖于初始点的选择。</p>
-</blockquote>
-<p><strong>神经网络的参数学习：误差反向传播</strong></p>
-<p>叫反向传播的原因是因为和前馈是相反的。</p>
-<p><strong>深度神经网络的问题：梯度消失</strong></p>
-<p>激活函数的梯度会很容易落到饱和区，导致逐层相乘之后，损失无法继续向前传播，（即只有最后一层会得到更新，前面几个隐层得不到更新）。</p>
-<p>很长一段时间，三层神经网络称为主流（即单隐层），原因：</p>
-<ul>
-<li>局部极小值：神经网络本身不是一个凸问题，本身就有局部最小值，而局部最小值的数量随着层数变多成倍增加，即层数越多，越容易落到一个很差的局部最小值里面。</li>
-<li>梯度消失：只能更新后面几层的参数，前面层的更新不了。</li>
-</ul>
-<p>解决方法：找到一个很好的初始值</p>
-<p><strong>逐层预训练(pre-training)</strong></p>
-<p>每次训练一层网络，逐层去累加，累加之后在最终一层加上监督信息，再从上到下去<code>微调</code></p>
-<p>会让收敛时是一个更紧致的区域，避免落在很差的局部最小值。</p>
-<ul>
-<li>逐层预训练要解决的核心问题是，没有额外的监督信息，如何将每一层的隐藏层去训练出来。</li>
-</ul>
-<p>实现方式：</p>
-<p><strong>自编码器</strong></p>
-<ul>
-<li><p>自编码器：假设输出与输入相同(<code>traget=input</code>)，是一种尽可能复现输入信号的神经网络</p>
-<p>将input输入一个encoder编码器，就会得到一个code；加一个decoder编码器，输出信息。</p>
-<p>通过调整encoder和decoder的参数，使重构误差最小</p>
-<p><strong><code>没有额外监督信息</code></strong>（不是无监督，而是将自己的输入作为输出）：无标签数据，误差的来源是直接重构后，信号与原输入相比得到。</p>
-</li>
-<li><p>自编码器一般是一个多层神经网络（最简单：三层）：</p>
-<p>训练目标是使输出层与输入层误差最小；中间隐藏层是代表输入的特征，可以最大程度上代表原输入信号。</p>
-<p>最初被用来降维。</p>
-<p><img src="D:\Blog\public\img\自编码器.png" alt="自编码器"></p>
-</li>
-<li><p>堆叠自编码器（<code>SAE</code>）：</p>
-<p>将多个自编码器得到的隐层串联；所有层预训练完成后，进行基于监督学习的全网络微调。</p>
-</li>
-<li><p>自编码器可以是很多层，是一种网络结构，可配合其他结构搭建深度网络（如==卷积==、==池化==等），是一种编码和解码的框架。</p>
-</li>
-<li><p>2.策略：最小化重构误差。可用BP算法求解</p>
-</li>
-</ul>
-<p><strong>受限玻尔兹曼机（<code>RBM</code>）</strong></p>
-<p>（用隐藏层代替可见层）</p>
-<ul>
-<li><p>模型结构：</p>
-<p>只有两层：可见层v和隐藏层h；</p>
-<p>不同层之间全连接，层内无连接，即<code>二分图</code>；</p>
-</li>
+<li>1.当有很少的正样本（y=1）时；或有很多的正样本（y=0）时。</li>
 </ul>
 <blockquote>
-<p>概率，能量，熵；通过熵将能量与概率联系起来</p>
-<p>而玻尔兹曼来源于一个能量分布，我们从能量分布里面定义了这个联合概率</p>
+<p>这里的正样本即异常样本</p>
 </blockquote>
 <ul>
-<li><p>模型求解：==？？？==</p>
-<p>优化目标：网络表示的概率分布与输入样本分布尽可能接近</p>
-<p>最大似然的梯度下降求解</p>
-</li>
-<li><p><code>RBM</code>到<code>DBN</code>（深度信念网络）</p>
-<p>一个<code>DBN</code>由若干个<code>RBM</code>堆叠而成，最后加一个监督层（如<code>BP</code>网络）</p>
-</li>
-<li><p>一般玻尔兹曼机（<code>BM</code>）</p>
-<p>是一个全网络（同层网络之间也可连接）；全连接图计算复杂度很高</p>
-</li>
+<li>2.经常有许多不同类型的异常，你有很少数量的正样本，则对一个算法就很难去从小数量的正样本中去学习异常是什么，尤其是未来出现的异常可能和以前的截然不同。</li>
 </ul>
 <blockquote>
-<p>神经网络为何要使用sigmoid函数呢？</p>
-<p>1.sigmoid很平滑优美，求导速度也快。</p>
-<p>2.背后有很强大的统计物理学的支撑。</p>
+<p>这种情况就对负样本用高斯分布模型建模，而不是费尽心思对正样本建模，因为明天的异常可能与至今见过的情况都不一样。</p>
 </blockquote>
-<p><strong>自编码器 vs. <code>RBM</code></strong></p>
-<p><img src="D:\Blog\public\img\自编码器vsRBM.png" alt="自编码器vsRBM"></p>
-<p><strong>预训练的实际作用（基本抛弃了）</strong></p>
+<p>Supervised learning</p>
 <ul>
-<li><p>初衷用于无监督逐层预训练</p>
-<p>当时的历史条件（没有新激活函数、没有dropout等优化技术）下，预训练使得深度网络的训练有了可能</p>
-<p>但无法本质上解决梯度消失等问题，逐层预训练只是让初始特征变得更好</p>
-<p>新的激活函数+优化方法+更大量的标注训练数据使得预训练很少使用</p>
+<li><p>1.当正负样本数量都很多时。</p>
 </li>
-<li><p>DNN（今天我们看到的深度神经网络） vs.<code>DBN</code></p>
-<p>DNN是前馈神经网络，训练方法是BP</p>
-<p>隐层激活函数使用ReLU（没有饱和区的问题，导数是恒定的），<code>改善梯度消失</code></p>
-<p>输出层激活函数是softmax，目标函数是交叉熵+大量标注数据，<code>避免差的局部极小值</code></p>
-<p>正则化+dropout，<code>改善过拟合</code></p>
-<p><code>没有使用逐层预训练</code></p>
+<li><p>2..当有足够数量的正样本，或一个已经能识别正样本的算法，尤其是你认为未来可能出现的正样本与当前训练集中的相似，则这种情况下使用监督学习算法。它能够观察大量正样本和负样本来学到相应特征，并且能够尝试区分正样本和负样本。</p>
 </li>
 </ul>
-<p><strong>玻尔兹曼机的理论和应用意义</strong></p>
-<p>在逐层预训练之外，还有其他的作用和意义。</p>
-<ul>
-<li><p>理论：</p>
-<p>模型结构：网络拓扑结构优化。</p>
-<p>学习算法：非线性优化过程近似</p>
-</li>
-<li><p>应用：</p>
-<p>深度玻尔兹曼机<code>DBM</code>，作为一种概率生成式模型应用到了协同滤波推荐、数据降维、时间序列降维等问题。</p>
-</li>
-</ul>
-<p><strong>自编码器变种</strong></p>
-<ul>
-<li><p>正则自编码器：应用：使提取的特征表达符合某种性质；惩罚大权重的L2正则化</p>
-</li>
-<li><p>稀疏自编码器：应用：提取稀疏特征表达（假设高维而稀疏的表达是好）</p>
-</li>
-<li><p>去噪自编码器：应用：提取鲁棒特征表达（假设能够对被污染/破坏的原数据编码、解码，还能恢复真正的原始数据，这样的特征才是好的）</p>
-</li>
-<li><p>变分自编码器：原理：基于隐层特征表达空间Z，通过解码层，生成样本；非监督生成模型，与对抗式生成网络GAN关系密切，是深度学习-概率图模型桥梁。；应用：数据生成、缺失数据填补、图像超分辨率</p>
-<blockquote>
-<p>变分自编码器+循环神经网络</p>
-</blockquote>
-</li>
-</ul>
-<blockquote>
-<p>思考：</p>
-<p>局部极值的定义，在某个点上，各个方向的导数都为0。</p>
-<p>1.深度网络的局部极小值是非凸的激活函数导致的吗？如果是，为什么不用凸激活函数？</p>
-<p>深层网络的局部极小值主要是<code>多个隐层复合</code>导致的。</p>
-<p>ReLu就是凸激活函数，但多个凸激活函数的复合也不一定是凸的：例如$f(x)=exp(-x)$，在$x\gt0$时凸，但$f(f(x))$就是非凸的。</p>
-<p>2.逐层预训练真的是为了找到更好的局部极小值吗？</p>
-</blockquote>
-<p><img src="D:\Blog\public\img\鞍点.png" alt="鞍点"></p>
-<p>==AlexNet；Inception；Inception==</p>
-<p>==支持向量==</p>
-<p>==凸二次规划==</p>
-<h4 id="外一章"><a href="#外一章" class="headerlink" title="外一章"></a>外一章</h4><hr>
-<h4 id="三、机器学习中的数学基础"><a href="#三、机器学习中的数学基础" class="headerlink" title="三、机器学习中的数学基础"></a>三、机器学习中的数学基础</h4><ol>
-<li><p>概率与统计：模型假设、策略设计的基础。</p>
-</li>
-<li><p>线性代数：数据表示、空间变换的基础。</p>
-<p>一方面要对数据/样本通过向量或矩阵的方式进行表示；另一方面，整个机器学习模型的基础如感知器是一种线性变换，很多操作是以矩阵相乘为基础的。</p>
-</li>
-<li><p>最优化：求解目标函数的具体算法。</p>
-</li>
-<li><p>信息论：对不确定性的度量。</p>
-</li>
-<li>微积分：如<code>BP</code>里的复合函数链式求导；不同阶的泰勒展开。</li>
-</ol>
-<p>概率是基础；支持向量机涉及很多数学基础；梯度下降是神经网络共同的基础。</p>
-<p><strong>线代：特征值与特征向量</strong></p>
-<p>矩阵和向量相乘，会将向量引导向该矩阵特征值最大的特征向量的方向。</p>
-<p><strong>线代：秩</strong></p>
-<p>秩可以理解为一种秩序。</p>
-<p>数据分布模式越容易被捕捉，即需要的基越少，秩就越小。</p>
-<p>数据冗余度越大，需要的基就越少，秩越小。</p>
-<p>若矩阵表达的是结构化信息，如图像、用户-物品表等，各行之间存在一定相关性，一般是低秩的。自然的图像一般都是低秩的。</p>
-<ul>
-<li><p>应用：数据降维</p>
-<p>方阵可以做特征值分解，任意一个矩阵则需要做奇异值分解。</p>
-<p>较大奇异值包含了矩阵的主要信息；只保留前r个较大奇异值及其对应的特征向量，可实现数据从$n\times d​$维降维到($n\times r + r\times r+ r\times d​$)</p>
-</li>
-</ul>
-<p><img src="D:\Blog\public\img\数据降维.png" alt="数据降维"></p>
-<ul>
-<li><p>应用：低秩近似（可以在保留很小的秩的情况下对原始数据进行重构）</p>
-<p>意义：保留决定数据分布的最主要的模式/方向（丢弃的可能是噪声或其他不关键信息）</p>
-<p>可应用于1.推荐系统；2.图像去噪：数据矩阵X一般同时包含结构信息和噪声，矩阵分解为两个矩阵相加，一个是低秩的（结构信息造成行或列间线性相关），另一个是稀疏的（噪声是稀疏的）。</p>
-</li>
-</ul>
-<h4 id="四、机器学习三要素"><a href="#四、机器学习三要素" class="headerlink" title="四、机器学习三要素"></a>四、机器学习三要素</h4><p>模型、策略、算法</p>
-<blockquote>
-<p>假设空间：比如二维回归问题里，数据可能是线性的分布，我们假设用直线去拟合数据，直线表达式$y=ax+b$，模型有两个参数，确定模型之后，假设空间即为所有可能的直线，即所有可能的a、b的组合。</p>
-</blockquote>
-<p><strong>概率/函数形式的统一</strong></p>
-<blockquote>
-<p>指数族：常见分布的一种标准化形式很多常见的分布：伯努利分布、高斯分布、泊松分布、迪利克雷分布都属于指数族。</p>
-<p>广义线性模型：线性回归、logistic回归、对数线性模型、<code>softmax</code>回归</p>
-<p>指数族和广义线性模型之间一一对应。如高斯分布—线性回归</p>
-</blockquote>
-<p><img src="D:\Blog\public\img\概率、函数形式统一.png" alt="概率、函数形式统一"></p>
-<p>对于<code>策略</code>来说，概率上的极大似然/最大后验与函数上的结构风险最小化/经验风险最小化是一致的，见下图。</p>
-<p><img src="D:\Blog\public\img\概率、函数.png" alt="概率、函数"></p>
-<ul>
-<li>在不同的机器学习方法在介绍模型和策略的时候，要么用条件概率建模，要么用决策函数建模，策略为概率所对应的极大似然估计/最大后验或函数所对应的结构风险最小化/经验风险最小化。</li>
-</ul>
-<p><strong>策略设计</strong></p>
-<p>1、训练误差–&gt;泛化误差</p>
-<ul>
-<li>最合适的模型：机器学习从<code>有限的观测数据中学习</code>出规律，并将总结的规律<code>推广应用到未观测样本上</code>–&gt;追求泛化性能。</li>
-</ul>
-<p>泛化误差很难计算，因为很多时候，我们并不能看到数据的真实分布，可能只看到了数据的局部。</p>
-<p>实际中我们看到的只是那些训练数据，因此算的时<code>训练误差（经验风险）</code></p>
-<ul>
-<li><p>如何看学到的模型好不好呢？策略目标：训练误差小&amp;泛化错误低</p>
-</li>
-<li><p>机器学习的目的是获得最小的泛化误差：训练误差要小；训练误差与泛化误差足够接近</p>
-</li>
-</ul>
-<p>2、无免费午餐定理</p>
-<p>当考虑在所有问题上的平均性能时，任意两个模型都是相同的。</p>
-<p>3、奥卡姆剃刀原理</p>
-<p>如无必要，勿增实体，即简单有效原理。</p>
-<p>如果多种模型能够同等程度地符合一个问题的观测结果，应该选择其中使用假设最少的–&gt;<code>最简单的模型</code></p>
-<ul>
-<li>一般认为模型复杂度高倾向于过拟合，然而对于神经网络却不然。</li>
-</ul>
-<p><strong>欠拟合、过拟合解决方案</strong></p>
-<ul>
-<li><p>欠拟合：提高模型复杂度</p>
-<p>决策树：拓展分支</p>
-<p>神经网络：增加训练轮数</p>
-</li>
-<li><p>过拟合：降低模型复杂度</p>
-<p>通用：优化目标加正则项</p>
-<p>决策树：剪纸</p>
-<p>神经网络：early stop, dropout</p>
-<p>数据增广（训练集越大，越不容易过拟合）：</p>
-<p>​    计算机视觉里：图像旋转、缩放、剪切。</p>
-<p>​    自然语言处理里：同义词替换。</p>
-<p>​    语音识别里：添加随机噪声。</p>
-</li>
-</ul>
-<p><strong>损失函数</strong></p>
-<p>1、平方损失：对于神经网络，平方损失下的代价函数为非凸函数</p>
-<p>2、交叉熵（对数损失函数）</p>
-<p>​    对于参数w是凸的</p>
-<p>​    平方损失假设高斯分布，而分类问题是二项/多项分布，对数巡视与二项/多项分布下的最大似然等价</p>
-<p>​    <strong><code>输出层</code></strong>的梯度大小不受激活函数的导数影响，损失函数下降速度快。（仅对于输出层不受导数影响，反向传播到前面还是会受影响，因此对于前面的激活函数，由sigmoid换成<code>ReLu</code>，仅输出层激活函数为<code>sigomid</code>）</p>
-<p><img src="D:\Blog\public\img\损失函数.png" alt="损失函数"></p>
-<p><strong>频率学派 vs 贝叶斯学派</strong></p>
-<ul>
-<li>概率论代表了一种看待世界的方式：对随机事件发生的<code>可能性</code>进行规范化数学描述</li>
-<li>对<code>可能性</code>的不同解读促生了概率论的两个学派。</li>
-</ul>
-<p>1、频率学派：关注<code>可独立重复</code>的随机试验中单个事件发生的频率</p>
-<p>​    通过观测数据里计算一个频率去估计唯一的那个值</p>
-<p>2、贝叶斯学派：关注随机事件的<code>可信程度</code>，不一定需要重复。如天气预报明天下雨的概率（无法重复）</p>
-<p>​    可能性=假设+数据：数据的作用是对初始假设做出修正，使观察者对概率的<code>主观认识（先验）</code>更接近<code>客观实际（预测）</code></p>
-<p>​    模型<code>参数本身是随机变量</code>，需要<code>估计参数的整个概率分布</code>。</p>
-<h4 id="五、Beyond深度学习"><a href="#五、Beyond深度学习" class="headerlink" title="五、Beyond深度学习"></a><img src="D:\Blog\public\img\频率学派vs贝叶斯学派.png" alt="频率学派vs贝叶斯学派">五、Beyond深度学习</h4><p><strong>因果推断</strong></p>
-<p>模式识别问题主要解决的是相关性问题：X-&gt;Y</p>
-<p>然而相关性很脆弱，可能因为新变量的加入而被改变。</p>
-<p><strong>相关性 vs 因果性<img src="D:\Blog\public\img\相关性vs因果性.png" alt="相关性vs因果性"></strong></p>
-<p>我们需要对问题的因果进行建模，才能得到更可靠的相关性。</p>
-<blockquote>
-<p>因果建模的方法：贝叶斯，概率图模型</p>
-</blockquote>
-<p><strong>群体智能</strong></p>
-<p>如<code>wikipedia</code></p>
-<p>高德地图中，根据这条路上打开软件人的速度情况去估计这条路上的畅通情况</p>
+<p>当正样本的数量是非常少的，或者有各种类型的之前从未见过的异常样本，则对于这种情况下，通常使用的是异常检测算法。</p>
+<p><strong>选择异常检测算法的特征</strong></p>
+<p>1.对特征做些转换，让分布更接近高斯分布</p>
+<p>如果你画出数据的直方图，发现图形看起来和高斯分布相差甚远，则有必要进行一些转换让你的数据更接近高斯分布。</p>
+<p>让特征更接近高斯分布：可以用<code>log(x+c),x^c</code>等代替原来的数据</p>
+<p>2.异常检测的误差分析</p>
+<p>看看这个算法没有标记出来的异常样本，看它是否能启发你去创造一些新特征，有了这些新特征，就能更容易地将异常样本从正常样本中区别出来。</p>
+<p>3.选择特征的技巧</p>
+<p>选那些既不会特别大也不会特别小的特征；也可以捕捉特征的组合来发现异常</p>
+<p>​    例子：$x_5=cpu\ load/network \ traffic$，当网络流量正常，而cpu负载很大时，说明cpu中可能出现了死循环；这时$x_5$就变得很大，说明出现了异常 </p>
+<p><strong>多元高斯分布</strong></p>
+<p>仅用高斯分布可能并不能发现其他一些数据中的异常。</p>
+<p>$x \in R^n$，不再对$p(x_1),…,p(x_n)$分别建模，直接对$p(x)$整体建模。参数为：$\mu \in R^n, \Sigma \in R^{n\times n}(协方差矩阵)$<br>$$<br>p(x;\mu,\Sigma) =<br>$$</p>
 
       
 
@@ -676,7 +276,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">deep learning</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">machine learning</a>
         		</li>
       		
 		</ul>
@@ -732,7 +332,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/26/深度学习课程：绪论/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/29/ML-异常检测/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -746,18 +346,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/08/29/卷积神经网络/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          卷积神经网络
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/08/24/非监督学习/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">非监督学习</div>
+    <a href="/2019/08/29/循环神经网络/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">循环神经网络</div>
       <i class="icon-circle-right"></i>
     </a>
   
