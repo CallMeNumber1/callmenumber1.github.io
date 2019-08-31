@@ -16,10 +16,13 @@
 <meta property="og:site_name" content="Find everything about tech">
 <meta property="og:description" content="异常检测Anomaly detection 例子：欺诈检测（异常用户检测）；计算机集群中检测大量计算机可能发生的异常 给定无标签的训练集，我们将对数据建模即$p(x)$，（对x的分布概率建模）；当我们建立了x的概率模型后，就有，对于新的$x_{test}$，若$p(x_{test}) &amp;lt; \epsilon$，则认为是异常的。 高斯分布$$p(x;\mu,\sigma^2)=\frac{1}{">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-08-30T13:36:29.590Z">
+<meta property="og:image" content="d:/Blog/public/img/多元高斯分布1.png">
+<meta property="og:image" content="d:/Blog/public/img/多元高斯分布1.png">
+<meta property="og:updated_time" content="2019-08-31T02:53:47.952Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ML-异常检测">
 <meta name="twitter:description" content="异常检测Anomaly detection 例子：欺诈检测（异常用户检测）；计算机集群中检测大量计算机可能发生的异常 给定无标签的训练集，我们将对数据建模即$p(x)$，（对x的分布概率建模）；当我们建立了x的概率模型后，就有，对于新的$x_{test}$，若$p(x_{test}) &amp;lt; \epsilon$，则认为是异常的。 高斯分布$$p(x;\mu,\sigma^2)=\frac{1}{">
+<meta name="twitter:image" content="d:/Blog/public/img/多元高斯分布1.png">
   
     <link rel="alternative" href="/atom.xml" title="Find everything about tech" type="application/atom+xml">
   
@@ -241,7 +244,43 @@
 <p>​    例子：$x_5=cpu\ load/network \ traffic$，当网络流量正常，而cpu负载很大时，说明cpu中可能出现了死循环；这时$x_5$就变得很大，说明出现了异常 </p>
 <p><strong>多元高斯分布</strong></p>
 <p>仅用高斯分布可能并不能发现其他一些数据中的异常。</p>
-<p>$x \in R^n$，不再对$p(x_1),…,p(x_n)$分别建模，直接对$p(x)$整体建模。参数为：$\mu \in R^n, \Sigma \in R^{n\times n}(协方差矩阵)$<br>$$<br>p(x;\mu,\Sigma) =<br>$$</p>
+<p>$x \in R^n$，不再对$p(x_1),…,p(x_n)$分别建模，直接对$p(x)$整体建模。参数为：$\mu \in R^n, \Sigma \in R^{n\times n}(协方差矩阵)$<br>$$<br>p(x;\mu,\Sigma) = \frac{1}{(2\pi)^{\frac{n}{2}}|\Sigma^{\frac{1}{2}}|}exp(-\frac{1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu)) \<br>|\Sigma|代表\Sigma的行列式<br>$$</p>
+<ul>
+<li>$\mu$是整个分布的中心，改变$\mu$就是在移动整个分布的中心</li>
+</ul>
+<ul>
+<li>协方差矩阵对角线上的值对应了特征$x_i$的方差</li>
+</ul>
+<p><img src="D:\Blog\public\img\多元高斯分布1.png" alt="多元高斯分布1"></p>
+<ul>
+<li>非对角线元素的值代表了特征之间的相关性</li>
+</ul>
+<p><img src="D:\Blog\public\img\多元高斯分布1.png" alt="多元高斯分布1"></p>
+<p>多元高斯分布最重要的优势就是能够让你描述两个特征变量之间可能存在正相关或负相关的情况。</p>
+<p><strong>使用多元高斯分布的异常检测</strong></p>
+<ul>
+<li>参数拟合</li>
+</ul>
+<p>给定训练集${x^{(1)},…,x^{(m)}} ;\ x\in R^n$，并且我的样本是服从多元高斯分布的，估计参数公式如下：</p>
+<p>$\mu = \frac{1}{m}\sum_{i=1}^mx^{(i)};\ \Sigma=\frac{1}{m}\sum_{i=1}^m(x^{(i)}-\mu)(x^{(i)}-\mu)^T$</p>
+<ul>
+<li>Anomaly detection with the multivariate Gaussian</li>
+</ul>
+<p>1.使用参数$\mu,\Sigma$来拟合该模型$ p(x)$</p>
+<p>2.给定新样本，计算$ p(x) $，if $p(x) &lt; \epsilon$，则标记为异常</p>
+<p><strong>和原始模型的联系</strong></p>
+<p>原始高斯分布得到的模型的轮廓都是与$x_1$和$x_2$轴对齐的。实际上就是多元高斯分布的一种特殊情况（协方差矩阵上非对角线上元素全0的情况），因此不能对不同特征之间的关系进行建模。</p>
+<p><strong>如何在原始模型和多元高斯模型间选择</strong></p>
+<p>多元高斯模型能自动捕捉不同特征之间的关系（通过捕获异常的组合值来捕捉异常样本），而原始模型，则需要手动设计这样的特征</p>
+<p>原始成本能适应数量巨大的特征（计算成本比较低），对于多元高斯模型，因为需要计算逆矩阵，计算成本非常高昂。</p>
+<p>多元高斯分布必须保证样本的数量大于特征的数量（否则，矩阵可能是不可逆的），而原始模型当样本数量小时也能运行。</p>
+<p>实践中，当m远大于n时，才会选择使用多元高斯分布。</p>
+<ul>
+<li>原始模型用得多一些，如果想捕捉具有相关性的特征，这时常手动设计一些这样的新特征（如$x3=x1/x2​$）来捕捉那些<code>异常的组合值</code>。但是当有一个很大的训练集，而n不是很大时，这时可以考虑多元高斯模型，可以节省你手动创建这些额外变量所花费的时间。</li>
+</ul>
+<blockquote>
+<p>如果在拟合多元高斯模型时发现协方差矩阵是奇异的（即不可逆），则通常因为：1.没有满足m远大于n的条件；2.存在冗余特征（即特征间线性相关的），如出现$x_1=x_2,或x5=x3+x4$等情况。</p>
+</blockquote>
 
       
 
