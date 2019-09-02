@@ -148,6 +148,161 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ML-大规模机器学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/01/ML-大规模机器学习/">ML-大规模机器学习</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/01/ML-大规模机器学习/" class="archive-article-date">
+  	<time datetime="2019-09-01T02:42:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="大规模机器学习"><a href="#大规模机器学习" class="headerlink" title="大规模机器学习"></a>大规模机器学习</h4><p>我们希望找出高效的计算方法来处理庞大的数据集。</p>
+<p>然而，在学习前，先分析学习曲线，是否规模1000的数据集（原数据的子集）就能达到比较好的效果，而不一定要用数据集中的所有样本去训练。</p>
+<p><strong>随机梯度下降</strong></p>
+<p>当我们数据规模庞大时，梯度下降算法的计算量会变得非常大。</p>
+<p>我们传统使用的为：批量梯度下降（Batch gradient）</p>
+<blockquote>
+<p>批量：每次都要同时考虑所有的训练样本</p>
+</blockquote>
+<p>下面介绍这种方法仅仅只需要考虑一个训练样本，而不是全部的</p>
+<p>定义代价函数为：$cost(\theta,(x^{(i)}),y^{(i)}) = \frac{1}{2}(h_\theta(x^{(i)})-y^{(i)})^2​$</p>
+<ol>
+<li><p>随机打乱所有数据</p>
+</li>
+<li><p>Repeat（<code>循环次数取决于训练集大小，一般1-10次就足够了</code>）{</p>
+<p> for i = 1,…, m{</p>
+<p> $\theta_j:=\theta_j-\alpha(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)}$(for every j = 0,…,n)</p>
+<p>}</p>
+<p>}</p>
+</li>
+</ol>
+<p>随机梯度下降不再需要对全部m个样本求和来得到梯度项，而只对单个训练样本取出梯度项，在这个过程中，已经开始优化参数了。因此就不需要对所有的数据进行扫描，就能对参数进行修改，使其达到全局最小值。</p>
+<p>对随机梯度下降来说，每次只需要关注一个训练样本。</p>
+<p>因为每次修改是为了更好的拟合某一个样本，因此随机梯度下降整个过程是以随机而迂回的路径朝全局最小值前进。因此，通常我们使用梯度下降能得到一个很接近全局最小值的应用，对于实际应用目的来说足够了。</p>
+<p><strong>Mini-Batch梯度下降</strong></p>
+<p>介于Batch梯度下降和随机梯度下降之间，每次使用$b=mini-batch \ size$个样本</p>
+<p>通常选择$b=10(一般为2-100之间)$</p>
+<p><img src="D:\Blog\public\img\mini-batch.png" alt="mini-batch"></p>
+<p>优缺点：</p>
+<p>如果有优秀的向量化方法，有时会比随机梯度下降更快（并行计算更多）</p>
+<p>当有一个额外的参数b时，确定b需要花费时间</p>
+<p><strong>随机梯度下降收敛</strong></p>
+<p>如何判断梯度下降已经收敛呢</p>
+<p>对于批量梯度下降，定期计算$ J_{train}(\theta)$，绘制$J_{train}(\theta)$随着迭代次数变化的曲线，当曲线趋于平缓时即达到了收敛。因为计算$J_{train}(\theta)$时要对所有的样本求和，因此计算量会比较大。</p>
+<p>对于随机梯度下降，每迭代1000次时，求出$cost(\theta,(x^{(i)}),y^{(i)})$（在每一轮调整$\theta_j$之前计算）的均值，作出曲线，如果反复上升下降，则提高到比如每5000次时计算均值；如果趋于发散，则对学习率$\alpha$进行调整。</p>
+<p><strong>在线学习</strong></p>
+<p>从连续的数据流中学习。</p>
+<p>在线学习算法的机制中，丢弃了固定的数据集这一概念，现在我们获取一个样本，利用这个样本学习，然后丢弃。</p>
+<p>如果你运行一个大型网站，网站有连续的数据流，则这种在线学习算法就非常适用。因为你相当于可以免费获取数据。当然，只有少量用户时，则最好不要使用这种算法，而是把所有的数据放在一个数据集，然后对这个数据集使用某种算法。</p>
+<blockquote>
+<p>可以适应变化的用户偏好。</p>
+</blockquote>
+<ul>
+<li>总结：与随机梯度下降算法很类似，唯一的区别是，不会使用一个固定的数据集，而是获取一个用户样本，从那个样本中学习，然后丢弃那个样本，继续处理下一个。</li>
+</ul>
+<p><strong>减少映射与数据并行</strong></p>
+<p>一些机器学习问题过于庞大以至于不能单机运行</p>
+<ul>
+<li><code>MapReduce</code>：把训练集分给n个机器，让每个机器分别对n分之一的训练样本计算，然后将结果发送到中心服务器，然后将各部分加起来。</li>
+</ul>
+<p>只要你的学习算法可以表示为对训练集的求和，则就可以使用<code>MapReducde</code>将你的学习算法的适用范围扩大到非常非常大的数据集。</p>
+<ul>
+<li><p>有时也可以在单机上进行<code>MapReduce</code>运算，因为现在计算机可以有多个处理核心</p>
+<p>有些线性代数库可以自动地在多个核心上并行计算</p>
+</li>
+</ul>
+<h4 id="机器学习应用举例：照片OCR"><a href="#机器学习应用举例：照片OCR" class="headerlink" title="机器学习应用举例：照片OCR"></a>机器学习应用举例：照片OCR</h4><p>即如何让计算机读出图片中的文字信息。</p>
+<p>Photo OCR pipline</p>
+<p>1.文字检测；2.字符分割；3.字符分类</p>
+<blockquote>
+<p>对于一个实际问题，可以设计一个流水线，划分成不同模块（不同模块可能使用不同的机器学习方法），每个模块可以分工给某几个人完成。</p>
+</blockquote>
+<p><strong>滑动窗口分类器</strong></p>
+<p>使用一个固定比例的滑动窗口进行分类，在图片上进行移动，每次移动的距离称为步长。</p>
+<p><strong>获取大量数据</strong></p>
+<p>一个最可靠的得到高性能机器学习系统的方法是使用一个低偏差机器学习算法，并且使用庞大的训练集去训练它。</p>
+<p>人工数据合成：两种形式</p>
+<p>1.从零开始创造新数据</p>
+<p>2.已有小的标签训练集，以某种方式扩充训练集</p>
+<p>​    例如对于图像识别问题，可以将图片扭曲；对于语音识别问题，可以加入背景噪声等。</p>
+<blockquote>
+<p>当你在考虑要添加哪种失真时，要考虑什么样的失真是有意义的，怎样才能使你生成的训练样本至少具有一定代表性，是有可能在测试集中见到的样本。</p>
+</blockquote>
+<blockquote>
+<p>在想办法生成人工训练数据前，要确保你的分类器偏差较低，这样的话更多的训练数据才会真正起作用。（比如画学习曲线）</p>
+</blockquote>
+<p><strong>上限分析：下一步工作的pipeline</strong></p>
+<p>指导你的工作流中哪一部分值得花时间去研究。</p>
+<p>如果一个模型近乎完美，系统性能增益多少，就像是给系统表现加了一个提升的上限值。</p>
+<blockquote>
+<p>个人理解，上限分析即分析某个模块可以提升的潜力。比如OCR工作流中，原来整个系统的准确率为72%，人工标注第一步文本检测的结果（即以完美的文本检测作为输入，继续之后的工作流），发现系统的准确率提高到了89%，则说明文本检测这个模块还有17%的提升空间，值得花时间去做，会对整个系统有较大的性能提高。</p>
+<p>用来衡量模块，当你想花时间精力到某模块上时，你可以确定这样做会不会有效果，整个系统的表现会不会产生明显的提高。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">machine learning</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/01/ML-大规模机器学习/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-ML之推荐系统" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1192,68 +1347,6 @@
 
 
   
-    <article id="post-courseraML编程作业" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/10/courseraML编程作业/">courseraML编程作业</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/10/courseraML编程作业/" class="archive-article-date">
-  	<time datetime="2019-08-10T07:29:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/10/courseraML编程作业/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1351,11 +1444,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color2">machine learning</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">machine learning</a>
+                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1371,19 +1464,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">interview</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">sort</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RNN</a>
+                <a href="javascript:void(0)" class="js-tag color5">interview</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">review</a>
+                <a href="javascript:void(0)" class="js-tag color4">RNN</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1395,15 +1484,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">review</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">unsupervised learning</a>
+                <a href="javascript:void(0)" class="js-tag color2">Greedy</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Greedy</a>
+                <a href="javascript:void(0)" class="js-tag color2">unsupervised learning</a>
               </li>
              
               <li class="article-tag-list-item">
