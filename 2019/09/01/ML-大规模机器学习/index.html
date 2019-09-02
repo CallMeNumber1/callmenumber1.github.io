@@ -17,7 +17,7 @@
 <meta property="og:description" content="大规模机器学习我们希望找出高效的计算方法来处理庞大的数据集。 然而，在学习前，先分析学习曲线，是否规模1000的数据集（原数据的子集）就能达到比较好的效果，而不一定要用数据集中的所有样本去训练。 随机梯度下降 当我们数据规模庞大时，梯度下降算法的计算量会变得非常大。 我们传统使用的为：批量梯度下降（Batch gradient）  批量：每次都要同时考虑所有的训练样本  下面介绍这种方法仅仅只需要">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="d:/Blog/public/img/mini-batch.png">
-<meta property="og:updated_time" content="2019-09-02T02:20:34.120Z">
+<meta property="og:updated_time" content="2019-09-02T12:44:26.746Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ML-大规模机器学习">
 <meta name="twitter:description" content="大规模机器学习我们希望找出高效的计算方法来处理庞大的数据集。 然而，在学习前，先分析学习曲线，是否规模1000的数据集（原数据的子集）就能达到比较好的效果，而不一定要用数据集中的所有样本去训练。 随机梯度下降 当我们数据规模庞大时，梯度下降算法的计算量会变得非常大。 我们传统使用的为：批量梯度下降（Batch gradient）  批量：每次都要同时考虑所有的训练样本  下面介绍这种方法仅仅只需要">
@@ -187,12 +187,13 @@
 <li><p>随机打乱所有数据</p>
 </li>
 <li><p>Repeat（<code>循环次数取决于训练集大小，一般1-10次就足够了</code>）{</p>
-<p> for i = 1,…, m{</p>
-<p> $\theta_j:=\theta_j-\alpha(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)}$(for every j = 0,…,n)</p>
+<p>for i = 1,…, m{</p>
+<p>$\theta_j:=\theta_j-\alpha(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)}​$(for every j = 0,…,n)</p>
 <p>}</p>
 <p>}</p>
 </li>
 </ol>
+<a id="more"></a>
 <p>随机梯度下降不再需要对全部m个样本求和来得到梯度项，而只对单个训练样本取出梯度项，在这个过程中，已经开始优化参数了。因此就不需要对所有的数据进行扫描，就能对参数进行修改，使其达到全局最小值。</p>
 <p>对随机梯度下降来说，每次只需要关注一个训练样本。</p>
 <p>因为每次修改是为了更好的拟合某一个样本，因此随机梯度下降整个过程是以随机而迂回的路径朝全局最小值前进。因此，通常我们使用梯度下降能得到一个很接近全局最小值的应用，对于实际应用目的来说足够了。</p>
@@ -359,9 +360,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2019/09/02/机器学习课程总结/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          机器学习课程总结
+        
+      </div>
+    </a>
+  
   
     <a href="/2019/08/31/ML之推荐系统/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ML之推荐系统</div>
+      <div class="article-nav-title">ML-推荐系统</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -499,15 +509,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">字符串算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">deep learning</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">sort</a>
+                <a href="javascript:void(0)" class="js-tag color1">字符串算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -519,11 +525,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ai, kg</a>
+                <a href="javascript:void(0)" class="js-tag color4">summarization</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hexo使用</a>
+                <a href="javascript:void(0)" class="js-tag color5">sort</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ai, kg</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -531,11 +541,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
+                <a href="javascript:void(0)" class="js-tag color2">Hexo使用</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Greedy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -148,6 +148,87 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-机器学习课程总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/02/机器学习课程总结/">机器学习课程总结</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/02/机器学习课程总结/" class="archive-article-date">
+  	<time datetime="2019-09-02T13:05:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>完结撒花！</p>
+<p><strong>学习历程</strong></p>
+<p>​    从今年4月开始，断断续续的开始在<code>网易云课堂</code>上看汉化版的《机器学习》课程，当时只是简单的水水视频了解大概概念，迫于大三下繁忙的考试与夏令营各种事情，进度缓慢。</p>
+<p>​    5月份的时候开始在<code>coursera</code>上做编程作业，开始时真的挺费时间，还记得做第一次编程作业的时候用了将近一上午的时间。前期的学习大概集中在这两个月，只是学到了神经网络这一章节。</p>
+<p>​    之后一直到7月末，正巧导师让我学习这个课程，才又开始对此课程的完整学习，一直到今天–9月的第二天，才完成了课程的所有内容，包括8次编程作业。</p>
+<blockquote>
+<p>学习此课程的初衷有两点，一是在当前人工智能火热的大环境下，对相关领域做一些了解，以期为将来带来积极的影响；二是兴许保研时能增加一些竞争力（事实上，学完才发现这门课程比较基础）。</p>
+</blockquote>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">summarization</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/02/机器学习课程总结/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-ML-大规模机器学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -182,75 +263,13 @@
 <li><p>随机打乱所有数据</p>
 </li>
 <li><p>Repeat（<code>循环次数取决于训练集大小，一般1-10次就足够了</code>）{</p>
-<p> for i = 1,…, m{</p>
-<p> $\theta_j:=\theta_j-\alpha(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)}$(for every j = 0,…,n)</p>
+<p>for i = 1,…, m{</p>
+<p>$\theta_j:=\theta_j-\alpha(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)}​$(for every j = 0,…,n)</p>
 <p>}</p>
 <p>}</p>
 </li>
 </ol>
-<p>随机梯度下降不再需要对全部m个样本求和来得到梯度项，而只对单个训练样本取出梯度项，在这个过程中，已经开始优化参数了。因此就不需要对所有的数据进行扫描，就能对参数进行修改，使其达到全局最小值。</p>
-<p>对随机梯度下降来说，每次只需要关注一个训练样本。</p>
-<p>因为每次修改是为了更好的拟合某一个样本，因此随机梯度下降整个过程是以随机而迂回的路径朝全局最小值前进。因此，通常我们使用梯度下降能得到一个很接近全局最小值的应用，对于实际应用目的来说足够了。</p>
-<p><strong>Mini-Batch梯度下降</strong></p>
-<p>介于Batch梯度下降和随机梯度下降之间，每次使用$b=mini-batch \ size$个样本</p>
-<p>通常选择$b=10(一般为2-100之间)$</p>
-<p><img src="D:\Blog\public\img\mini-batch.png" alt="mini-batch"></p>
-<p>优缺点：</p>
-<p>如果有优秀的向量化方法，有时会比随机梯度下降更快（并行计算更多）</p>
-<p>当有一个额外的参数b时，确定b需要花费时间</p>
-<p><strong>随机梯度下降收敛</strong></p>
-<p>如何判断梯度下降已经收敛呢</p>
-<p>对于批量梯度下降，定期计算$ J_{train}(\theta)$，绘制$J_{train}(\theta)$随着迭代次数变化的曲线，当曲线趋于平缓时即达到了收敛。因为计算$J_{train}(\theta)$时要对所有的样本求和，因此计算量会比较大。</p>
-<p>对于随机梯度下降，每迭代1000次时，求出$cost(\theta,(x^{(i)}),y^{(i)})$（在每一轮调整$\theta_j$之前计算）的均值，作出曲线，如果反复上升下降，则提高到比如每5000次时计算均值；如果趋于发散，则对学习率$\alpha$进行调整。</p>
-<p><strong>在线学习</strong></p>
-<p>从连续的数据流中学习。</p>
-<p>在线学习算法的机制中，丢弃了固定的数据集这一概念，现在我们获取一个样本，利用这个样本学习，然后丢弃。</p>
-<p>如果你运行一个大型网站，网站有连续的数据流，则这种在线学习算法就非常适用。因为你相当于可以免费获取数据。当然，只有少量用户时，则最好不要使用这种算法，而是把所有的数据放在一个数据集，然后对这个数据集使用某种算法。</p>
-<blockquote>
-<p>可以适应变化的用户偏好。</p>
-</blockquote>
-<ul>
-<li>总结：与随机梯度下降算法很类似，唯一的区别是，不会使用一个固定的数据集，而是获取一个用户样本，从那个样本中学习，然后丢弃那个样本，继续处理下一个。</li>
-</ul>
-<p><strong>减少映射与数据并行</strong></p>
-<p>一些机器学习问题过于庞大以至于不能单机运行</p>
-<ul>
-<li><code>MapReduce</code>：把训练集分给n个机器，让每个机器分别对n分之一的训练样本计算，然后将结果发送到中心服务器，然后将各部分加起来。</li>
-</ul>
-<p>只要你的学习算法可以表示为对训练集的求和，则就可以使用<code>MapReducde</code>将你的学习算法的适用范围扩大到非常非常大的数据集。</p>
-<ul>
-<li><p>有时也可以在单机上进行<code>MapReduce</code>运算，因为现在计算机可以有多个处理核心</p>
-<p>有些线性代数库可以自动地在多个核心上并行计算</p>
-</li>
-</ul>
-<h4 id="机器学习应用举例：照片OCR"><a href="#机器学习应用举例：照片OCR" class="headerlink" title="机器学习应用举例：照片OCR"></a>机器学习应用举例：照片OCR</h4><p>即如何让计算机读出图片中的文字信息。</p>
-<p>Photo OCR pipline</p>
-<p>1.文字检测；2.字符分割；3.字符分类</p>
-<blockquote>
-<p>对于一个实际问题，可以设计一个流水线，划分成不同模块（不同模块可能使用不同的机器学习方法），每个模块可以分工给某几个人完成。</p>
-</blockquote>
-<p><strong>滑动窗口分类器</strong></p>
-<p>使用一个固定比例的滑动窗口进行分类，在图片上进行移动，每次移动的距离称为步长。</p>
-<p><strong>获取大量数据</strong></p>
-<p>一个最可靠的得到高性能机器学习系统的方法是使用一个低偏差机器学习算法，并且使用庞大的训练集去训练它。</p>
-<p>人工数据合成：两种形式</p>
-<p>1.从零开始创造新数据</p>
-<p>2.已有小的标签训练集，以某种方式扩充训练集</p>
-<p>​    例如对于图像识别问题，可以将图片扭曲；对于语音识别问题，可以加入背景噪声等。</p>
-<blockquote>
-<p>当你在考虑要添加哪种失真时，要考虑什么样的失真是有意义的，怎样才能使你生成的训练样本至少具有一定代表性，是有可能在测试集中见到的样本。</p>
-</blockquote>
-<blockquote>
-<p>在想办法生成人工训练数据前，要确保你的分类器偏差较低，这样的话更多的训练数据才会真正起作用。（比如画学习曲线）</p>
-</blockquote>
-<p><strong>上限分析：下一步工作的pipeline</strong></p>
-<p>指导你的工作流中哪一部分值得花时间去研究。</p>
-<p>如果一个模型近乎完美，系统性能增益多少，就像是给系统表现加了一个提升的上限值。</p>
-<blockquote>
-<p>个人理解，上限分析即分析某个模块可以提升的潜力。比如OCR工作流中，原来整个系统的准确率为72%，人工标注第一步文本检测的结果（即以完美的文本检测作为输入，继续之后的工作流），发现系统的准确率提高到了89%，则说明文本检测这个模块还有17%的提升空间，值得花时间去做，会对整个系统有较大的性能提高。</p>
-<p>用来衡量模块，当你想花时间精力到某模块上时，你可以确定这样做会不会有效果，整个系统的表现会不会产生明显的提高。</p>
-</blockquote>
-
+        
       
 
       
@@ -310,7 +329,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/31/ML之推荐系统/">ML之推荐系统</a>
+      <a class="article-title" href="/2019/08/31/ML之推荐系统/">ML-推荐系统</a>
     </h1>
   
 
@@ -326,7 +345,7 @@
         <h4 id="推荐系统"><a href="#推荐系统" class="headerlink" title="推荐系统"></a>推荐系统</h4><p><strong>例子：预测电影评分</strong></p>
 <p>数据：</p>
 <p>$n_u$：用户数量。$n_m​$：电影数量。</p>
-<p>$r(i,j)$：用户$\ j\ $是否对电影$\ i\ $评分（取值0或1）</p>
+<p>$r(i,j)$：用户$\ j\ $是否对电影$\ i\ ​$评分（取值0或1）</p>
 <p>$y(i,j)$：用户$\ j\ $对电影$\ i\ $的评分（0-5星）（仅当$r(i,j)=1$时才被定义）</p>
 <p><strong>基于内容的推荐算法</strong></p>
 <blockquote>
@@ -336,59 +355,8 @@
 <p>$\theta^{(j)}$：用户$\ j\ $的参数向量</p>
 <p>$x^{(i)}$：：电影$\ i \ ​$的特征向量</p>
 <p>$m^{(j)}$：用户已经评级的电影数量。</p>
-<p>使用和线性回归类似的方法去获得$\theta^{(1)},…,\theta^{(n)}​$即可</p>
-<p><strong>协同过滤算法</strong></p>
-<p>有个重要特性：特征学习</p>
-<blockquote>
-<p>自行学习要使用的特征</p>
-</blockquote>
-<p>优化算法：</p>
-<p>假设给定了用户的偏好，想要学习电影的特征向量：<br>$$<br>min(x^{(i)})\ \frac{1}{2}\sum_{j:r(r,j)=1}((\theta^{(j)})^Tx^{(i)}-y^{(i,j)})^2 + \frac{\lambda}{2}\sum_{k=1}^n(x_k^{(i)})^2<br>$$</p>
-<blockquote>
-<p>预测用户会如何评价某电影，而这个预测值，在平方误差的形式中，要尽量接近于用户的实际评分</p>
-</blockquote>
-<p>上述即如何从一部特定电影中学习到特征，但我们要做的是学习出所有电影的所有特征，下面加上一个求和项。</p>
-<p>Given $\theta^{(1)},…,\theta^{(n_u)}$，to learn $x^{(1)},…,x^{(n_m)}$<br>$$<br>min(x^{(1)},…x^{(n_m)})\ \frac{1}{2}\sum_{i=1}^{n_m}\sum_{j:r(r,j)=1}((\theta^{(j)})^Tx^{(i)}-y^{(i,j)})^2 + \frac{\lambda}{2}\sum_{i=1}^{n_m}\sum_{k=1}^n(x_k^{(i)})^2<br>$$</p>
-<blockquote>
-<p>将它最小化，就能得到一系列合适的所有电影的特征。</p>
-</blockquote>
-<p>协同过滤算法：</p>
-<blockquote>
-<p>要已有不同用户对某些电影的评级做为数据</p>
-</blockquote>
-<blockquote>
-<p>协同：每个用户都在帮助算法更好地进行特征学习。</p>
-</blockquote>
-<ul>
-<li>可以同时学习几乎所有电影的特征，和所有用户参数，能对不同用户会如何对他们尚未评分的电影做出评价给出相当准确的预测。</li>
-</ul>
-<p>前面提到，如果给你几个特征表示电影，就可以用它们来学习用户的参数；如果给你用户的参数，你可以用它们来学习电影的特征。</p>
-<p>直接做法是先随机初始化，然后计算出$\theta$，再根据$\theta$计算出$x$，这样反复计算。下面介绍一种更有效率的做法，同时计算出$\theta$和$x$：</p>
-<p><img src="D:\Blog\public\img\协同过滤算法.png" alt="协同过滤算法"></p>
-<blockquote>
-<p>这样计算时，我们去掉截距项$x_0$以及$\theta_0$，理由是我们现在是在学习所有的特征，没有必要将一个特征值硬编码为1，如果算法真的需要一个特征永远为1，它可以选择靠自己去获取1这个值（如将$x_1$设为1）。</p>
-</blockquote>
-<p>步骤如下：</p>
-<p><img src="D:\Blog\public\img\协同过滤算法步骤.png" alt="协同过滤算法步骤"></p>
-<p><strong>向量化实现：低秩矩阵分解</strong></p>
-<ul>
-<li>1.向量化计算所有用户对所有电影的评分预测值</li>
-</ul>
-<blockquote>
-<p>$X\Theta^T$在线性代数中有一个数学性质，称为低秩矩阵。因此这个算法又叫低秩矩阵分解。</p>
-</blockquote>
-<ul>
-<li>2.利用已学习到的属性，来找到相关的电影</li>
-</ul>
-<p>small $||x^{(i)} - x^{(j)}  ||$—-&gt;movie i and movie j are similar</p>
-<p><strong>实施细节：均值归一化</strong></p>
-<p>让算法运行地更好</p>
-<ul>
-<li>如果有一些没进行过任何评价的用户，算法学习到的$\theta$为0向量，则无法为此用户做任何推荐。处理方式如下：</li>
-</ul>
-<p>1.对电影评分矩阵做均值归一化（每一行减去此行的均值，使每一行均值为0），用一个向量$\mu$存储每一行的均值（即电影i的评分均值），然后得到一个新的矩阵Y。用矩阵Y去对预测用户j对电影i的评分。</p>
-<p>2.则用户j对电影i的评分预测为：$(\Theta^{(j)})^T(x^{(i)})+\mu_i$，则对于没有进行过任何评分的用户，对于电影i的评分即为均值$\mu_i$，而不再是0。</p>
-
+<p>使用和线性回归类似的方法去获得$\theta^{(1)},…,\theta^{(n)}$即可</p>
+        
       
 
       
@@ -461,103 +429,10 @@
 </li>
 <li><p>参数估计问题：给定数据集，希望找到能够估算出$\mu,\sigma^2$的值</p>
 <p>估计的标准公式：</p>
-<p>$\mu = \frac{1}{m}\sum_{i=1}^mx^{(i)}, \ \sigma^2=\frac{1}{m}\sum_{i=1}^m(x^{(i)}-\mu)^2​$</p>
+<p>$\mu = \frac{1}{m}\sum_{i=1}^mx^{(i)}, \ \sigma^2=\frac{1}{m}\sum_{i=1}^m(x^{(i)}-\mu)^2$</p>
 </li>
 </ul>
-<p><strong>算法</strong></p>
-<p>我们处理异常检测的方式是，要用数据集建立起概率模型$p(x)$，要试图解决出哪些特征量出现的概率比较高，哪些比较低。<br>$$<br>p(x) = \Pi_{j=1}^np(x_j;\mu_j,\sigma_j^2)<br>$$<br>这个分布项$p(x)$的估计问题也叫密度估计问题。</p>
-<ol>
-<li><p>选择这样的特征，当出现异常样本时，特征值会异常地大或小；通常来说，还是选择那些能够描述你所收集的数据一般特性的特征。下一步是给出训练集。</p>
-</li>
-<li><p>进行参数拟合，$\mu_1,…,\mu_n,\sigma_1^2,…,\sigma_n^2$。</p>
-<p>$\mu_j = \frac{1}{m}\sum_{i=1}^mx_j^{(i)}, \ \sigma_j^2=\frac{1}{m}\sum_{i=1}^m(x_j^{(i)}-\mu)_j^2$</p>
-<p>令$\mu=[\mu_1;\mu_2;…;\mu_n]$，也可以写出一个向量化公式</p>
-</li>
-<li><p>给定新案例，计算$p(x)​$的值</p>
-<p>$p(x) = \Pi_{j=1}^np(x_j;\mu_j,\sigma_j^2) = \Pi_{j=1}^n\frac{1}{\sqrt{2\pi}\sigma_j}e^{-\frac{(x_j-\mu_j)^2}{2\sigma_j^2}}$</p>
-<p>$if\ p(x)&lt;\epsilon$，，标注为异常</p>
-</li>
-</ol>
-<p><strong>开发和评估异常检测系统</strong></p>
-<p>对于监督学习的情况</p>
-<p>评估一个异常检测算法的步骤。</p>
-<p>1.划分训练集（训练集里不要包含异常样本）、交叉验证集合、测试集。</p>
-<p>2.在训练集上拟合模型$p(x) $</p>
-<p>3.在交叉验证集/测试集上，预测<br>$$<br>\begin{equation}<br>y=\left{<br>\begin{aligned}<br>0 &amp; &amp; if \ p(x) \lt \epsilon &amp; \ (anomaly)\<br>1 &amp; &amp; if \ p(x) \ge \epsilon &amp; \ (normal)<br>\end{aligned}<br>\right.<br>\end{equation}<br>$$<br>4.选择合适的度量标准：Precision/Recall/$F_1score$（因为是偏斜类，大部分为正常样例）</p>
-<p>​    尝试去使用交叉验证集去选择阈值$\epsilon $，当选定$\epsilon$后就可以在测试集中对算法进行最后的评估。</p>
-<p>在能够评估一个算法后，能够用一个实数(如F1-score)进行评估之后，这将使得你在尝试开发一个异常检测系统时大大提高效率。（类似于我们在监督学习中所做的）</p>
-<p><strong>异常检测 vs. 监督学习</strong></p>
-<p>适用情况如下：</p>
-<p>Anomaly detection</p>
-<ul>
-<li>1.当有很少的正样本（y=1）时；或有很多的正样本（y=0）时。</li>
-</ul>
-<blockquote>
-<p>这里的正样本即异常样本</p>
-</blockquote>
-<ul>
-<li>2.经常有许多不同类型的异常，你有很少数量的正样本，则对一个算法就很难去从小数量的正样本中去学习异常是什么，尤其是未来出现的异常可能和以前的截然不同。</li>
-</ul>
-<blockquote>
-<p>这种情况就对负样本用高斯分布模型建模，而不是费尽心思对正样本建模，因为明天的异常可能与至今见过的情况都不一样。</p>
-</blockquote>
-<p>Supervised learning</p>
-<ul>
-<li><p>1.当正负样本数量都很多时。</p>
-</li>
-<li><p>2..当有足够数量的正样本，或一个已经能识别正样本的算法，尤其是你认为未来可能出现的正样本与当前训练集中的相似，则这种情况下使用监督学习算法。它能够观察大量正样本和负样本来学到相应特征，并且能够尝试区分正样本和负样本。</p>
-</li>
-</ul>
-<p>当正样本的数量是非常少的，或者有各种类型的之前从未见过的异常样本，则对于这种情况下，通常使用的是异常检测算法。</p>
-<p><strong>选择异常检测算法的特征</strong></p>
-<p>1.对特征做些转换，让分布更接近高斯分布</p>
-<p>如果你画出数据的直方图，发现图形看起来和高斯分布相差甚远，则有必要进行一些转换让你的数据更接近高斯分布。</p>
-<p>让特征更接近高斯分布：可以用<code>log(x+c),x^c</code>等代替原来的数据</p>
-<p>2.异常检测的误差分析</p>
-<p>看看这个算法没有标记出来的异常样本，看它是否能启发你去创造一些新特征，有了这些新特征，就能更容易地将异常样本从正常样本中区别出来。</p>
-<p>3.选择特征的技巧</p>
-<p>选那些既不会特别大也不会特别小的特征；也可以捕捉特征的组合来发现异常</p>
-<p>​    例子：$x_5=cpu\ load/network \ traffic$，当网络流量正常，而cpu负载很大时，说明cpu中可能出现了死循环；这时$x_5$就变得很大，说明出现了异常 </p>
-<p><strong>多元高斯分布</strong></p>
-<p>仅用高斯分布可能并不能发现其他一些数据中的异常。</p>
-<p>$x \in R^n$，不再对$p(x_1),…,p(x_n)$分别建模，直接对$p(x)$整体建模。参数为：$\mu \in R^n, \Sigma \in R^{n\times n}(协方差矩阵)$<br>$$<br>p(x;\mu,\Sigma) = \frac{1}{(2\pi)^{\frac{n}{2}}|\Sigma^{\frac{1}{2}}|}exp(-\frac{1}{2}(x-\mu)^T\Sigma^{-1}(x-\mu)) \<br>|\Sigma|代表\Sigma的行列式<br>$$</p>
-<ul>
-<li>$\mu$是整个分布的中心，改变$\mu$就是在移动整个分布的中心</li>
-</ul>
-<ul>
-<li>协方差矩阵对角线上的值对应了特征$x_i$的方差</li>
-</ul>
-<p><img src="D:\Blog\public\img\多元高斯分布1.png" alt="多元高斯分布1"></p>
-<ul>
-<li>非对角线元素的值代表了特征之间的相关性</li>
-</ul>
-<p><img src="D:\Blog\public\img\多元高斯分布1.png" alt="多元高斯分布1"></p>
-<p>多元高斯分布最重要的优势就是能够让你描述两个特征变量之间可能存在正相关或负相关的情况。</p>
-<p><strong>使用多元高斯分布的异常检测</strong></p>
-<ul>
-<li>参数拟合</li>
-</ul>
-<p>给定训练集${x^{(1)},…,x^{(m)}} ;\ x\in R^n$，并且我的样本是服从多元高斯分布的，估计参数公式如下：</p>
-<p>$\mu = \frac{1}{m}\sum_{i=1}^mx^{(i)};\ \Sigma=\frac{1}{m}\sum_{i=1}^m(x^{(i)}-\mu)(x^{(i)}-\mu)^T$</p>
-<ul>
-<li>Anomaly detection with the multivariate Gaussian</li>
-</ul>
-<p>1.使用参数$\mu,\Sigma$来拟合该模型$ p(x)$</p>
-<p>2.给定新样本，计算$ p(x) $，if $p(x) &lt; \epsilon$，则标记为异常</p>
-<p><strong>和原始模型的联系</strong></p>
-<p>原始高斯分布得到的模型的轮廓都是与$x_1$和$x_2$轴对齐的。实际上就是多元高斯分布的一种特殊情况（协方差矩阵上非对角线上元素全0的情况），因此不能对不同特征之间的关系进行建模。</p>
-<p><strong>如何在原始模型和多元高斯模型间选择</strong></p>
-<p>多元高斯模型能自动捕捉不同特征之间的关系（通过捕获异常的组合值来捕捉异常样本），而原始模型，则需要手动设计这样的特征</p>
-<p>原始成本能适应数量巨大的特征（计算成本比较低），对于多元高斯模型，因为需要计算逆矩阵，计算成本非常高昂。</p>
-<p>多元高斯分布必须保证样本的数量大于特征的数量（否则，矩阵可能是不可逆的），而原始模型当样本数量小时也能运行。</p>
-<p>实践中，当m远大于n时，才会选择使用多元高斯分布。</p>
-<ul>
-<li>原始模型用得多一些，如果想捕捉具有相关性的特征，这时常手动设计一些这样的新特征（如$x3=x1/x2​$）来捕捉那些<code>异常的组合值</code>。但是当有一个很大的训练集，而n不是很大时，这时可以考虑多元高斯模型，可以节省你手动创建这些额外变量所花费的时间。</li>
-</ul>
-<blockquote>
-<p>如果在拟合多元高斯模型时发现协方差矩阵是奇异的（即不可逆），则通常因为：1.没有满足m远大于n的条件；2.存在冗余特征（即特征间线性相关的），如出现$x_1=x_2,或x5=x3+x4$等情况。</p>
-</blockquote>
-
+        
       
 
       
@@ -1168,60 +1043,7 @@
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v = <span class="number">1</span>:<span class="number">6</span></span><br></pre></td></tr></table></figure>
 <p>所有元素均为1的矩阵：</p>
 <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ones</span>(n); <span class="built_in">ones</span>(m, n)</span><br></pre></td></tr></table></figure>
-<p>每个元素乘以2</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C = <span class="number">2</span> * <span class="built_in">ones</span>(<span class="number">2</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
-<p>所有元素均为0</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">zeros</span>(n); <span class="built_in">zeros</span>(m, n)</span><br></pre></td></tr></table></figure>
-<p>单位矩阵</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">eye</span>(n)</span><br></pre></td></tr></table></figure>
-<p>高斯随机数</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">rand</span>(<span class="number">3</span>, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
-<p><strong>矩阵操作</strong></p>
-<p>读取矩阵A第三行第二列元素（注意为<strong><code>圆括号</code></strong>）</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A(<span class="number">3</span>, <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
-<p>读取矩阵A第二行所有元素</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A(<span class="number">2</span>,:)</span><br></pre></td></tr></table></figure>
-<p>读取矩阵A第一行和第三行的所有元素</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A([<span class="number">1</span> <span class="number">3</span>],:)</span><br></pre></td></tr></table></figure>
-<p>将A第二列替换为[10; 11; 12]</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A(:, <span class="number">2</span>) = [<span class="number">10</span>; <span class="number">11</span>; <span class="number">12</span>]</span><br></pre></td></tr></table></figure>
-<p>在A的最后加上一列</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A = [A, [<span class="number">100</span>; <span class="number">101</span>; <span class="number">102</span>]]</span><br></pre></td></tr></table></figure>
-<p>将A的所有元素合并成一个列向量</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A(:)</span><br></pre></td></tr></table></figure>
-<p>两个矩阵的合并（列合并，左右合并）</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C = [A B]</span><br></pre></td></tr></table></figure>
-<p>两个矩阵的合并（行合并，上下合并）</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">D = [A; B]</span><br></pre></td></tr></table></figure>
-<p>求矩阵的行数和列数</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">size(A); 		// 返回一个矩阵，记录A的两个维度，行和列</span><br><span class="line">size(A, 1);		// 行数</span><br><span class="line">size(A, 2);		// 列数</span><br><span class="line">length(a);		// 计算向量的长度，或矩阵中最长的一维</span><br></pre></td></tr></table></figure>
-<p>各种矩阵运算</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% .为针对矩阵中每个元素的计算</span></span><br><span class="line">A .* B;			<span class="comment">% 要求两个矩阵行列均相同</span></span><br><span class="line">A.^<span class="number">2</span>;</span><br><span class="line"><span class="number">1</span> ./ A;			<span class="comment">% 每个元素取倒数</span></span><br><span class="line">A';				<span class="comment">% A的转置</span></span><br><span class="line">pinv(A);		<span class="comment">% 逆矩阵</span></span><br><span class="line"><span class="built_in">log</span>(A);</span><br><span class="line"><span class="built_in">exp</span>(A)</span><br><span class="line">-A</span><br></pre></td></tr></table></figure>
-<p> A中每个元素加上1</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A + <span class="built_in">ones</span>(<span class="built_in">size</span>(A));</span><br><span class="line">A + <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-<p>向量中的最大值</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[val ind] = <span class="built_in">max</span>(A);		<span class="comment">% 向量中最大值</span></span><br><span class="line"><span class="built_in">max</span>(A, [], <span class="number">1</span>);			<span class="comment">% 取出矩阵每列最大的元素（结果为行向量）</span></span><br><span class="line"><span class="built_in">max</span>(A, [], <span class="number">2</span>);			<span class="comment">% 取出矩阵每行最大的元素</span></span><br><span class="line"><span class="built_in">max</span>(<span class="built_in">max</span>(A))/<span class="built_in">max</span>(A(:));  <span class="comment">% 获得矩阵中最大的元素</span></span><br></pre></td></tr></table></figure>
-<p>所有元素的和</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sum(a);					<span class="comment">% 向量所有元素和</span></span><br><span class="line">sum(A, <span class="number">1</span>);</span><br><span class="line">sum(A, <span class="number">2</span>);</span><br></pre></td></tr></table></figure>
-<p><strong>数据的读取与存储</strong></p>
-<p>读取数据</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">load featuresX.dat;</span><br><span class="line">load(<span class="string">'featuresX.dat'</span>);</span><br></pre></td></tr></table></figure>
-<p>显示当前所有变量</p>
- <figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">who;</span><br><span class="line">whos;(更详细)</span><br></pre></td></tr></table></figure>
-<p>删除某个变量</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clear featuresX</span><br></pre></td></tr></table></figure>
-<p>存储数据</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">v = priceY(1:10);	//取出priceY前十个数据</span><br><span class="line">save hello.mat v;</span><br></pre></td></tr></table></figure>
-<p><strong>绘制数据</strong></p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">x = [<span class="number">0</span>: <span class="number">0.01</span> : <span class="number">0.98</span>];</span><br><span class="line">y = <span class="built_in">sin</span>(<span class="number">2</span>*<span class="built_in">pi</span>*<span class="number">4</span>*x);</span><br><span class="line"><span class="built_in">plot</span>(x, y);						<span class="comment">% sin函数图像</span></span><br><span class="line">y2 = <span class="built_in">cos</span>(<span class="number">2</span>*<span class="built_in">pi</span>*<span class="number">4</span>*x);				<span class="comment">% cos函数图像</span></span><br><span class="line"><span class="comment">% 将两个函数绘制在一起</span></span><br><span class="line"><span class="built_in">plot</span>(x, y); <span class="built_in">hold</span> on; <span class="built_in">plot</span>(x, y2, <span class="string">'r'</span>);</span><br><span class="line"><span class="comment">% 添加说明</span></span><br><span class="line">xlabel(<span class="string">"time"</span>); ylabel(<span class="string">"value"</span>); <span class="built_in">legend</span>(<span class="string">"sin"</span>, <span class="string">"cos"</span>);</span><br><span class="line"><span class="comment">% 存储图像</span></span><br><span class="line">print -dpng <span class="string">"myPlot.png"</span></span><br><span class="line"><span class="comment">% 分别在两个窗口显示两个图像</span></span><br><span class="line"><span class="built_in">figure</span>(<span class="number">1</span>); <span class="built_in">plot</span>(x, y);</span><br><span class="line"><span class="built_in">figure</span>(<span class="number">2</span>); <span class="built_in">plot</span>(x, y2);</span><br><span class="line"><span class="comment">% 在同一窗口不同位置显示两个图像</span></span><br><span class="line">subplot(<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>); <span class="built_in">plot</span>(x, y);</span><br><span class="line">subplot(<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>); <span class="built_in">plot</span>(x, y2);</span><br></pre></td></tr></table></figure>
-<p>将矩阵可视化</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">imagesc(<span class="built_in">magic</span>(<span class="number">15</span>))</span><br></pre></td></tr></table></figure>
-<p><strong>控制语句、函数</strong></p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% for循环</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = indices,</span><br><span class="line"></span><br><span class="line">	....</span><br><span class="line"></span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> = <span class="number">1</span>:n,</span><br><span class="line">	...</span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"><span class="comment">% if语句</span></span><br><span class="line"><span class="keyword">if</span> v(<span class="built_in">i</span>) == <span class="number">1</span>,</span><br><span class="line">	...</span><br><span class="line"><span class="keyword">elseif</span> v(<span class="built_in">i</span>) == <span class="number">2</span>,</span><br><span class="line">	...</span><br><span class="line"><span class="keyword">else</span> </span><br><span class="line">	...</span><br><span class="line"><span class="keyword">end</span>;</span><br><span class="line"><span class="comment">% function 1</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">y</span> = <span class="title">square</span><span class="params">(x)</span></span></span><br><span class="line">y = x^<span class="number">2</span>;</span><br><span class="line"><span class="comment">% function 2</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[y1, y2]</span> = <span class="title">squareAndCube</span><span class="params">(x)</span></span></span><br><span class="line">y1 = x^<span class="number">2</span>;</span><br><span class="line">y2 = x^<span class="number">3</span>;</span><br><span class="line"><span class="comment">%</span></span><br><span class="line">[a, b] = squareAndCube(x)</span><br></pre></td></tr></table></figure>
-<p><strong>向量化</strong></p>
-<p>能得到高效得多的线性回归算法，不仅编写效率更高，运行效率也更高</p>
-<p>比如：$h(X) = \theta^TX$</p>
-
+        
       
 
       
@@ -1245,79 +1067,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2019/08/10/Octave-Matlab基本操作-向量化技巧/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-courseraML笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/10/courseraML笔记/">courseraML笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/10/courseraML笔记/" class="archive-article-date">
-  	<time datetime="2019-08-10T07:29:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">machine learning</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/10/courseraML笔记/">展开全文 >></a>
         </p>
       
 
@@ -1456,15 +1205,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">字符串算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">deep learning</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">sort</a>
+                <a href="javascript:void(0)" class="js-tag color1">字符串算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1476,11 +1221,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ai, kg</a>
+                <a href="javascript:void(0)" class="js-tag color4">summarization</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hexo使用</a>
+                <a href="javascript:void(0)" class="js-tag color5">sort</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ai, kg</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1488,11 +1237,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
+                <a href="javascript:void(0)" class="js-tag color2">Hexo使用</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Greedy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
               </li>
              
               <li class="article-tag-list-item">

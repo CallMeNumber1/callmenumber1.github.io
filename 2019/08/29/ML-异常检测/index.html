@@ -18,7 +18,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="d:/Blog/public/img/多元高斯分布1.png">
 <meta property="og:image" content="d:/Blog/public/img/多元高斯分布1.png">
-<meta property="og:updated_time" content="2019-08-31T02:53:47.952Z">
+<meta property="og:updated_time" content="2019-09-02T12:44:06.237Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ML-异常检测">
 <meta name="twitter:description" content="异常检测Anomaly detection 例子：欺诈检测（异常用户检测）；计算机集群中检测大量计算机可能发生的异常 给定无标签的训练集，我们将对数据建模即$p(x)$，（对x的分布概率建模）；当我们建立了x的概率模型后，就有，对于新的$x_{test}$，若$p(x_{test}) &amp;lt; \epsilon$，则认为是异常的。 高斯分布$$p(x;\mu,\sigma^2)=\frac{1}{">
@@ -185,9 +185,10 @@
 </li>
 <li><p>参数估计问题：给定数据集，希望找到能够估算出$\mu,\sigma^2$的值</p>
 <p>估计的标准公式：</p>
-<p>$\mu = \frac{1}{m}\sum_{i=1}^mx^{(i)}, \ \sigma^2=\frac{1}{m}\sum_{i=1}^m(x^{(i)}-\mu)^2​$</p>
+<p>$\mu = \frac{1}{m}\sum_{i=1}^mx^{(i)}, \ \sigma^2=\frac{1}{m}\sum_{i=1}^m(x^{(i)}-\mu)^2$</p>
 </li>
 </ul>
+<a id="more"></a>
 <p><strong>算法</strong></p>
 <p>我们处理异常检测的方式是，要用数据集建立起概率模型$p(x)$，要试图解决出哪些特征量出现的概率比较高，哪些比较低。<br>$$<br>p(x) = \Pi_{j=1}^np(x_j;\mu_j,\sigma_j^2)<br>$$<br>这个分布项$p(x)$的估计问题也叫密度估计问题。</p>
 <ol>
@@ -281,6 +282,10 @@
 <blockquote>
 <p>如果在拟合多元高斯模型时发现协方差矩阵是奇异的（即不可逆），则通常因为：1.没有满足m远大于n的条件；2.存在冗余特征（即特征间线性相关的），如出现$x_1=x_2,或x5=x3+x4$等情况。</p>
 </blockquote>
+<h4 id="编程作业ex8"><a href="#编程作业ex8" class="headerlink" title="编程作业ex8"></a>编程作业ex8</h4><hr>
+<p>matlab中的equality test</p>
+<p>比如计算<code>假正例fp</code></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">fp = sum((cvPredictions == <span class="number">1</span>) &amp;&amp; (yval == <span class="number">0</span>))</span><br><span class="line"><span class="comment">% cvPredictions是binary vector，大小为交叉验证集的尺寸</span></span><br></pre></td></tr></table></figure>
 
       
 
@@ -389,7 +394,7 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          ML之推荐系统
+          ML-推荐系统
         
       </div>
     </a>
@@ -534,15 +539,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">字符串算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">deep learning</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">sort</a>
+                <a href="javascript:void(0)" class="js-tag color1">字符串算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -554,11 +555,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ai, kg</a>
+                <a href="javascript:void(0)" class="js-tag color4">summarization</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hexo使用</a>
+                <a href="javascript:void(0)" class="js-tag color5">sort</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ai, kg</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -566,11 +571,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
+                <a href="javascript:void(0)" class="js-tag color2">Hexo使用</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Greedy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
               </li>
              
               <li class="article-tag-list-item">
