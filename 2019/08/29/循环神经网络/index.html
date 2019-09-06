@@ -19,7 +19,11 @@
 <meta property="og:image" content="d:/Blog/public/img/RNN.png">
 <meta property="og:image" content="d:/Blog/public/img/RNN2.png">
 <meta property="og:image" content="d:/Blog/public/img/链式求导.png">
-<meta property="og:updated_time" content="2019-09-05T13:17:55.075Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190906083408.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190906083923.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190906103933.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190906154225.png">
+<meta property="og:updated_time" content="2019-09-06T07:42:45.897Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="循环神经网络">
 <meta name="twitter:description" content="一、绪论基本应用 语音问答、机器翻译、股票预测、作词机、作诗、模仿写论文、模仿写代码 图像理解 视觉问答 循环神经网络 vs. 卷积神经网络 循环神经网络所做的任务有什么特点呢？ ​    核心问题：上下文关系（时序） ​    目标：考虑更多的上下文 传统神经网络，卷积神经网络，输入和输出之间是相互独立的。 RNN可以更好地处理具有时序关系的任务 RNN通过其循环结构引入“记忆”的概念 ​">
@@ -208,7 +212,81 @@
 <li>RNN在不同时刻共享同一组参数(U,W,V)，极大的减少了需要训练和预估的参数量。</li>
 </ul>
 <p><strong>BPTT算法</strong></p>
+<p>之前的BP算法如下，会出现梯度消失问题</p>
 <p><img src="D:\Blog\public\img\链式求导.png" alt="链式求导"></p>
+<p>BPTT算法如下：</p>
+<p><img src="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190906083408.png" alt></p>
+<p><strong>传统RNN的问题</strong></p>
+<p>从BPTT算法的过程可以看出传统RNN的问题：</p>
+<p><img src="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190906083923.png" alt></p>
+<p>当循环神经网络在时间维度上非常深的时候，会导致梯度消失或梯度爆炸问题。</p>
+<p>梯度爆炸导致的问题：模型训练不稳定，梯度变为Nan（无效数字），Inf（无穷大）</p>
+<p>梯度爆炸问题的改进：</p>
+<ul>
+<li>权重衰减：$L^2$权重衰减：$E = E+\frac{\lambda}{2n}\sum_ww^2$</li>
+<li>梯度截断：检查误差梯度的值是否超过阈值，如果超过了就阶段梯度，将梯度设置为阈值。</li>
+</ul>
+<p>梯度消失导致的问题：长时依赖问题（随着时间间隔的不断增大，RNN会丧失学习到连接如此远的信息的能力）</p>
+<p>梯度消失的改进：</p>
+<ul>
+<li>改进模型：<code>LSTM</code>；<code>GRU</code></li>
+</ul>
+<p><strong>LSTM长短期记忆模型</strong></p>
+<p>引入一个额外的记忆单元c</p>
+<p>LSTM拥有三个门，来保护和控制细胞状态。</p>
+<ul>
+<li>遗忘门</li>
+</ul>
+<ul>
+<li>输入门</li>
+</ul>
+<ul>
+<li>输出门</li>
+</ul>
+<p>$C_t = f_t<em>C_{t-1} + i_t</em>\tilde{C_t}，以一定的概率忘掉过去的事情，再以一定的概率加入新的事情$</p>
+<p>RNN和LSTM对记忆的处理方式不同。</p>
+<p>RNN的记忆在每个时间点都会被新的输入覆盖，但LSTM中“记忆”是与新的输入相加</p>
+<p>LSTM如何解决梯度消失问题的？</p>
+<blockquote>
+<p>LSTM：如果前边的输入对$C_t$产生了影响，那这个影响会一直存在，除非遗忘门的权重为0。（实际使用中遗忘门所占的比例是较大的（接近1）</p>
+<p>LSTM可以解决梯度消失问题，但无法解决梯度爆炸问题，因此LSTM中<code>learning rate</code>可以被尽量的设置小。</p>
+</blockquote>
+<p>小结</p>
+<ul>
+<li>实现了三个门计算，来控制memory的传输。</li>
+<li>LSTM一个初始化技巧就是将输出门的bias设置为正数（例如1或5），这样模型刚开始训练时forget gate的值接近于1，不会发生梯度消失。</li>
+<li>但LSTM有三个门，运算复杂—-&gt;解决方法：GRU</li>
+</ul>
+<p><strong>GRU门控循环单元</strong></p>
+<p>差异：</p>
+<ul>
+<li>GRU只有两个门，重置门和更新门（相当于遗忘门和输入门的合并）</li>
+<li>混合了细胞状态和隐藏状态。</li>
+<li>重置门：控制忽略前一时刻的状态信息的程度，重置门越小说明忽略的越多。</li>
+<li>更新门：控制前一时刻的状态信息被带入到当前状态中的程度，更新门值越大前一时刻的状态信息带入越多。</li>
+</ul>
+<p>相似：</p>
+<ul>
+<li>从t-1到t时刻的记忆的更新都引入加法</li>
+<li>可以防止梯度消失</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190906103933.png" alt></p>
+<p>$h_t=(1-z_t)<em>h_{t-1} + z_t</em>\tilde{h_t}$，被遗忘掉多少信息，就添加上多少信息。</p>
+<blockquote>
+<p>其中$\tilde{h_t}和\tilde{C_t}$为备选更新。</p>
+</blockquote>
+<h4 id="三、扩展"><a href="#三、扩展" class="headerlink" title="三、扩展"></a>三、扩展</h4><p>现在用的最广泛的就是<code>LSTM</code>和<code>GRU</code></p>
+<p><strong>基于attention的RNN</strong></p>
+<p>attention：是受到人类注意力的启发。</p>
+<p>人们在观察图像的时候，并不是一次就把整幅图像的每个位置像素都看过，大多是根据需求将注意力集中到图像的特定部分。而且人类会根据之前观察的图像学习到未来要观察图像注意力应该集中的位置。</p>
+<p>比如在一篇Image Caption的经典论文中：<code>Show, attend and tell: Neural image caption generation with visual attention（ICML 2015）</code>中，生成特征图后，根据学习到的attention权重矩阵（关注的部分权重较高）与特征图做内积，生成对应的词汇。</p>
+<p><img src="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190906154225.png" alt></p>
+<p><strong>问题</strong></p>
+<blockquote>
+<p>BPTT中的链式法则，怎么成了加和的形式？</p>
+<p>attention</p>
+<p>Image Caption：图像描述生成（图像理解）</p>
+</blockquote>
 
       
 
@@ -454,11 +532,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">test</a>
+                <a href="javascript:void(0)" class="js-tag color2">matlab</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">matlab</a>
+                <a href="javascript:void(0)" class="js-tag color5">test</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -474,15 +552,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">sort</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">summarization</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hexo使用</a>
+                <a href="javascript:void(0)" class="js-tag color5">sort</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -494,15 +568,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Hexo使用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Greedy</a>
+                <a href="javascript:void(0)" class="js-tag color2">unsupervised learning</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">unsupervised learning</a>
+                <a href="javascript:void(0)" class="js-tag color2">Greedy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -514,11 +592,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">knowledge graph</a>
+                <a href="javascript:void(0)" class="js-tag color3">ai</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">ai</a>
+                <a href="javascript:void(0)" class="js-tag color1">knowledge graph</a>
               </li>
              
               <li class="article-tag-list-item">
