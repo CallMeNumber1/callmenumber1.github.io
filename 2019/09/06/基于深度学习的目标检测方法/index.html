@@ -22,7 +22,11 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190907220855.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190907223016.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190907224201.png">
-<meta property="og:updated_time" content="2019-09-07T14:47:58.355Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190908110346.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190908110824.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190908110857.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190908210934.png">
+<meta property="og:updated_time" content="2019-09-08T13:09:46.959Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于深度学习的目标检测方法">
 <meta name="twitter:description" content="一、背景介绍概念：对于一张图片，找出其中所有物体，并给出其类别和边界框（Bounding box） 应用：人脸检测；行人检测；车辆检测；工业检测；网络图片敏感信息检测；公共安全。 目标检测近期工作：数据驱动 ​    深度学习与数据：数据能促进深度学习更好地训练，深度学习很深的网络层数可以拟合大量的数据。 ​    早期方法所能覆盖的数据只是视觉大数据中的一个很小子集。 数据集：内容越来越复杂，种">
@@ -276,13 +280,18 @@
 <p>存在的问题：</p>
 <p>训练依旧分为多个阶段：还是要将网络训完，之后提特征，提完还是要放到SVM里去训练，还要训练一个单独的回归器，仍不是一个端到端的过程。</p>
 <p><strong>Fast R-CNN</strong></p>
-<p><code>ROI Pooling</code></p>
+<p><code>ROI Pooling</code>：SPPpooling的一个单层体，没有那么多空间分辨率了，只有一个空间层级。</p>
 <p>训练&amp;测试过程</p>
 <ol>
 <li>输入一张图片和一堆bounding boxes即目标候选（由SS产生）</li>
 <li>产生一个整体的卷积特征图</li>
 <li>对于每一个box，通过ROI Pooling层得到一个定长特征向量</li>
 <li>最后进行分类和回归，输出：(1)K+1类别概率；(2)回归框位置</li>
+</ol>
+<p>和R-CNN的区别：</p>
+<ol>
+<li>图片上的规整变为特征上的规整</li>
+<li>将SVM+Regressor的过程变为了多任务的分类损失（Soft max+Regressor）</li>
 </ol>
 <p>为何最后分类不再用SVM？</p>
 <blockquote>
@@ -291,7 +300,7 @@
 <p>优点：精度提高，速度提高。</p>
 <p>存在不足：<code>Region proposals</code>目标候选是通过<code>SS</code>提取的，在一定程度上限制了速度。</p>
 <p><strong>Faster R-CNN</strong></p>
-<p><code>RPN</code>：训练一个网络，用这个网络直接去预测目标候选的框。</p>
+<p><code>RPN(Region Proposal Network)</code>：训练一个网络，用这个网络直接去预测目标候选的框。</p>
 <p>步骤：</p>
 <ol>
 <li>在最后一个卷积层后面插入一个<code>Region Proposal Network(RPN)</code></li>
@@ -299,17 +308,19 @@
 <li>在<code>RPN</code>之后，像<code>Fast R-CNN</code>一样，使用ROI Pooling和后续的分类器、回归器。</li>
 </ol>
 <p><code>RPN</code>是怎么做的？</p>
-<blockquote>
 <p>有了整张图的卷积层特征后，加一个$3 \times3$的滑动窗口，通过卷积层产生一个265维的向量（代表此层有256个卷积核），</p>
-</blockquote>
+<p><img src="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190908110346.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190908110824.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190908110857.png" alt></p>
 <p>突破：</p>
 <ul>
 <li>采用<code>RPN</code>来生成proposal，检测效果得以提高</li>
 <li><code>RPN</code>与检测网络共享卷积部分，节省计算</li>
 </ul>
 <p>不足：但没能实现实时检测</p>
-<p><strong><code>FPN</code></strong></p>
+<p><strong>FPN</strong></p>
 <p>深度学习中，层越靠后，越靠近分类器，特征的语义信息越强；越靠前，分辨率越高，对小物体能精细化定位。</p>
+<p><img src="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190908210934.png" alt></p>
 <p><strong>问题</strong></p>
 <p>fine-tune</p>
 
