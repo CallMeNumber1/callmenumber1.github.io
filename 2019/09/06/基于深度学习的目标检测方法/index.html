@@ -26,7 +26,8 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190908110824.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190908110857.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190908210934.png">
-<meta property="og:updated_time" content="2019-09-08T13:09:46.959Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190908211110.png">
+<meta property="og:updated_time" content="2019-09-08T13:25:22.690Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于深度学习的目标检测方法">
 <meta name="twitter:description" content="一、背景介绍概念：对于一张图片，找出其中所有物体，并给出其类别和边界框（Bounding box） 应用：人脸检测；行人检测；车辆检测；工业检测；网络图片敏感信息检测；公共安全。 目标检测近期工作：数据驱动 ​    深度学习与数据：数据能促进深度学习更好地训练，深度学习很深的网络层数可以拟合大量的数据。 ​    早期方法所能覆盖的数据只是视觉大数据中的一个很小子集。 数据集：内容越来越复杂，种">
@@ -321,6 +322,17 @@
 <p><strong>FPN</strong></p>
 <p>深度学习中，层越靠后，越靠近分类器，特征的语义信息越强；越靠前，分辨率越高，对小物体能精细化定位。</p>
 <p><img src="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190908210934.png" alt></p>
+<p>思路：</p>
+<p>提出一个<code>特征金字塔网络</code>：先从下往上提特征，将特征从上往下进行融合，在融合的过程中将特征的分辨率扩大，然后把前面对应层的特征加过来作为指导，从而生成新的特征。由于这样的特征传递是从上层传下来的，语义信息得到保留；高分辨率的信息又加了过来，因此两种信息都得到保留，而且输入一张图片就可以得到这两种信息，效率也很高。</p>
+<p><img src="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190908211110.png" alt></p>
+<p>实现：</p>
+<p>进行跨层连接，上面小分辨率的层，进行一个2倍的上采样（可以通过反卷积的形式实现），再将左边的高分辨率的特征通过一个卷积加过来，这样就得到一个分辨率既高，语义信息又强的特征。</p>
+<p>FPN可以扩展到分割任务（对图片上每一个像素点打一个类别）</p>
+<p>FPN很通用，因为是一个学特征的框架，也可以在后面单阶段检测方法中使用。</p>
+<p><code>RFCN</code></p>
+<p>出发点：图片分类的平移不变性与物体检测之间的平移变换性之间的矛盾。</p>
+<p>卷积有一定的感受野，越高层的卷积的感受野越大，假设物体在图片上做了移动，因为高层的卷积感受野非常大，依然能感受到物体，因为对分类影响不大。</p>
+<p>但对于检测任务，就需要定义物体的具体位置。因此需要平移变换性。</p>
 <p><strong>问题</strong></p>
 <p>fine-tune</p>
 
@@ -405,6 +417,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/09/09/机器学习的数学基础/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          机器学习的数学基础
+        
+      </div>
+    </a>
   
   
     <a href="/2019/09/02/机器学习课程总结/" id="article-nav-older" class="article-nav-link-wrap">
@@ -567,6 +588,18 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">interview</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mathematics basics</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">summarization</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">RNN</a>
               </li>
              
@@ -575,15 +608,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">interview</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">summarization</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ai, kg</a>
+                <a href="javascript:void(0)" class="js-tag color2">Hexo使用</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -591,7 +616,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hexo使用</a>
+                <a href="javascript:void(0)" class="js-tag color2">ai, kg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Greedy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -603,19 +632,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Greedy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">object detection</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">deep learning</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Graph</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">object detection</a>
               </li>
              
               <li class="article-tag-list-item">

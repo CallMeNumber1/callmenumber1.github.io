@@ -28,7 +28,7 @@
 <meta property="og:image" content="d:/Blog/public/img/损失函数.png">
 <meta property="og:image" content="d:/Blog/public/img/频率学派vs贝叶斯学派.png">
 <meta property="og:image" content="d:/Blog/public/img/相关性vs因果性.png">
-<meta property="og:updated_time" content="2019-09-03T03:06:18.017Z">
+<meta property="og:updated_time" content="2019-09-09T13:21:05.538Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深度学习课程：绪论">
 <meta name="twitter:description" content="一、绪论 感知智能，认知智能 知识工程（专家系统） vs. 机器学习  省时、省力；灵活性强  基于数据自动学习   根据问题的尺度与规则的复杂性来选择使用知识工程还是机器学习 机器学习应用领域：计算机视觉；语音技术；自然语言处理 机器学习的定义：  计算机系统能够利用经验提高自身的性能。 本质是一个基于经验数据的函数估计问题。 提取重要模式、趋势，并理解数据，即从数据中学习。  总结：从数据中自">
@@ -234,8 +234,8 @@
 <ul>
 <li>从建模对象角度：</li>
 </ul>
-<p>1、生成模型：对输入X和输出Y的联合分布$P(X,Y)​$建模。</p>
-<p>​    先从数据中学习联合概率分布$P(X,Y)​$；然后利用贝叶斯公式求$P(Y|X)=\frac{P(X,Y)}{\sum P(X,Y_i)}​$</p>
+<p>1、生成模型：对输入X和输出Y的联合分布$P(X,Y)$建模。</p>
+<p>​    先从数据中学习联合概率分布$P(X,Y)$；然后利用贝叶斯公式求$P(Y|X)=\frac{P(X,Y)}{\sum P(X,Y_i)}$</p>
 <p>​    优点：提供更多信息（建模边缘分布—-&gt;采样生成样本，这也是当前比较重要的一个应用，比如用于半监督学习中）</p>
 <p>2、判别模型：对已知输入X条件下输出Y的条件分布$P(Y|X)$建模</p>
 <p>​    直接学习$P(Y|X) $</p>
@@ -545,7 +545,7 @@
 <ul>
 <li><p>应用：数据降维</p>
 <p>方阵可以做特征值分解，任意一个矩阵则需要做奇异值分解。</p>
-<p>较大奇异值包含了矩阵的主要信息；只保留前r个较大奇异值及其对应的特征向量，可实现数据从$n\times d​$维降维到($n\times r + r\times r+ r\times d​$)</p>
+<p>较大奇异值包含了矩阵的主要信息；只保留前r个较大奇异值及其对应的特征向量，可实现数据从$n\times d$维降维到($n\times r + r\times r+ r\times d$)</p>
 </li>
 </ul>
 <p><img src="D:\Blog\public\img\数据降维.png" alt="数据降维"></p>
@@ -636,6 +636,74 @@
 <p><strong>群体智能</strong></p>
 <p>如<code>wikipedia</code></p>
 <p>高德地图中，根据这条路上打开软件人的速度情况去估计这条路上的畅通情况</p>
+<p><strong>一些疑问</strong></p>
+<p>概率密度</p>
+<blockquote>
+<p>单纯的讲概率密度没有实际的意义，它必须有确定的有界区间为前提。可以把概率密度看出成纵坐标，区间看成是横坐标，概率密度对区间的积分这个面积就是事件在这个区间发生的概率，所有面积的和为1。单独分析一个点的概率密度没有任何意义，必须要有区间作为参考和对比</p>
+</blockquote>
+<p>经验风险最小化</p>
+<blockquote>
+<p>在假设空间，损失函数以及训练集确定的情况下，经验风险函数就可以确定。假设给定一个测试集：$T= {(x_1,y_1),…,(x_n,y_n)}$，模型$f(X)$<code>关于训练数据集的平均损失称为经验风险或经验损失</code>：</p>
+<script type="math/tex; mode=display">
+R_{emp}(f) = \frac{1}{N}\sum_{i=1}^nL(y_i, f(x_i))</script><p>经验风险就是模型关于训练样本集的平均损失。</p>
+<p>经验风险最小化(empirical risk minimization ERM)的策略认为，经验风险最小的模型是最优的模型，根据这一策略，按照经验风险最小化求最优模型就是求解最优化问题：</p>
+<script type="math/tex; mode=display">
+min_{f\in F} \frac{1}{N}\sum_{i=1}^NL(y_i,f(x_i))</script><p>当样本容量足够大时，经验风险最小化能保证有很好的学习效果，在现实中被广泛采用。例如：极大似然估计就是经验风险最小化的一个例子。==当模型是条件概率分布，损失函数是对数损失函数时，经验风险最小化就等于极大似然估计==。</p>
+</blockquote>
+<p>结构风险最小化</p>
+<blockquote>
+<p>当样本容量很小时，经验风险最小化学习的效果就未必好，会产生过拟合现象。而结构风险最小化（structural risk minimization SRM）是<code>为了防止过拟合而提出的策略</code>。</p>
+<p>结构风险最小化等于正则化，<code>结构风险在经验风险的基础上加上表示模型复杂度的正则化项</code>。</p>
+<p>在假设空间、损失函数以及训练集确定的情况下，结构风险的定义是：</p>
+<script type="math/tex; mode=display">
+R_{srm}(f) =\frac{1}{N}\sum_{i=1}^nL(y_i, f(x_i))+\lambda J(f)</script><p>其中，$J(f)$为模型的复杂度，模型$f$越复杂，复杂度越大。复杂度表示了对模型的惩罚。</p>
+<p>结构风险小的模型往往对训练数据和未知的测试数据都有较好的预测。</p>
+<p>贝叶斯估计中的最大后验概率估计（MAP）就是结构风险最小化的例子。==当模型是条件概率分布，损失函数是对数函数，模型复杂度由模型的先验概率表示时，结构风险最小化就等价于最大后验概率估计==。</p>
+<p>结构风险最小化的策略认为结构风险最小的模型最优，所以求解模型，即求解最优化问题如下：</p>
+<script type="math/tex; mode=display">
+min_{f\in F} \frac{1}{N}\sum_{i=1}^NL(y_i,f(x_i)) + \lambda J(f)</script></blockquote>
+<p>正则化</p>
+<blockquote>
+<p>正则化的作用是<code>防止过拟合，提高模型的泛化能力</code>。</p>
+<p>正则化是结构风险最小化策略的实现，是在经验风险上加上一个正则化项/惩罚项。正则化项一般是模型复杂度的递增函数，模型越复杂，正则化值就越大。比如，正则化项可以是模型参数向量的范数。</p>
+<p>第1项的经验风险较小的模型可能较复杂（有多个非0参数），这时第2项的模型复杂度会较大。正则化的作用是选择经验风险与模型复杂度同时较小的模型。</p>
+<p>正则化符合奥卡姆剃刀原理。奥卡姆剃刀原理应用于模型选择时变为以下想法：在所有可能选择的模型中，能够很好地解释已知数据并且十分简单才是最好的模型，也就是应该选择的模型。==从贝叶斯估计的角度看，正则化项对应于模型的先验概率，可以假设复杂的模型有较大的先验概率，简单的模型有较小的先验概率。==</p>
+</blockquote>
+<p>L0范数</p>
+<blockquote>
+<p><code>范数</code>：定义了向量的类似于长度的性质。</p>
+<p>L0是指向量中非0的元素的个数，如果我们用L0范数来规则化一个参数矩阵W的话，就是希望W的大部分元素是0。即，让参数W是<code>稀疏</code>的。</p>
+<p>$||x||_0 = #(i |x_i \ne 0)，表示向量x中非零元素的个数$，其优化问题为：</p>
+<p>$min||x||_0$</p>
+<p>然而L0范数的最优化问题是一个NP hard问题，且理论上证明，L1范数是L0范数的最优近似，因此通常用L1范数来代替。</p>
+</blockquote>
+<p>L1范数</p>
+<blockquote>
+<p>L1范数指向量中各个元素绝对值之和。也叫“稀疏规则算子”。</p>
+<script type="math/tex; mode=display">
+||x||_1 = \sum_{i=1}^n|x_i|</script><p>L1正则化之所以可以防止过拟合，因为L1范数就是各个参数的绝对值相加得到的，前面谈到参数值大小和模型复杂度是成正比的。因此复杂的模型，其L1范数就大，最终导致损失函数就大，说明这个模型就不够好。</p>
+</blockquote>
+<p>L2范数</p>
+<blockquote>
+<p>L2范数指向量元素绝对值的平方和再开方。也叫“岭回归”或“权值衰减”。</p>
+<p>但与L1范数不同的是，<code>它不会是每个元素为0，而只是接近于0</code>。越小的参数说明模型越简单，越简单的模型越不容易产生过拟合现象。</p>
+<p>L2范数即欧式距离：$||x||_2 = \sqrt{\sum_{i=1}^nx_i^2}$</p>
+</blockquote>
+<p>elastic net</p>
+<blockquote>
+<p>L1+L2结合的方式。兼顾特征选择（L1）和权重衰减（L2），公式如下：</p>
+<script type="math/tex; mode=display">
+min_w(L(w)+tp||w||_1+t(1-p)||w||_2^2),t为正则化项与L(w)之间的\\trade-off系数，p是elastic net里独有的参数，它是L1和L2之间的trade-off。</script></blockquote>
+<p>L1和L2范数的总结</p>
+<blockquote>
+<p><strong><code>L1会趋向于产生少量的特征，而其他的特征都是0</code></strong>，而<strong><code>L2会选择更多的特征，这些特征都会接近于0</code></strong>。所有特征中只有少数特征起重要作用的情况下，选择L1更合适；而如果所有特征中，大部分特征都能起作用，而且起的作用很平均，选择L2更合适。</p>
+<ul>
+<li>L1/L2范数让模型变得更稀疏，增加模型的可解析性，可用于特征选择。</li>
+<li>L2范数让模型变得更简单，防止过拟合问题。</li>
+</ul>
+<p>为何参数值越小模型越简单呢？越复杂的模型，越是会尝试对所有的样本进行拟合，甚至包括一些异常样本点，这就容易造成在较小的区间里预测值产生较大的波动，这种较大的波动也反映了在这个区间里的导数很大，而只有较大的参数值才能产生较大的导数。因此复杂的模型，其参数值会比较大。</p>
+</blockquote>
+<p>参考：<a href="https://blog.csdn.net/oTengYue/article/details/89644170" target="_blank" rel="noopener">一文弄懂正则化与L1、L2范式</a></p>
 
       
 
@@ -889,6 +957,18 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">interview</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mathematics basics</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">summarization</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">RNN</a>
               </li>
              
@@ -897,15 +977,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">interview</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">summarization</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ai, kg</a>
+                <a href="javascript:void(0)" class="js-tag color2">Hexo使用</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -913,7 +985,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hexo使用</a>
+                <a href="javascript:void(0)" class="js-tag color2">ai, kg</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Greedy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -925,19 +1001,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Greedy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">object detection</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">deep learning</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Graph</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">object detection</a>
               </li>
              
               <li class="article-tag-list-item">
