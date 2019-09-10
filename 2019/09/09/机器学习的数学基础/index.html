@@ -17,7 +17,9 @@
 <meta property="og:description" content="线性代数 张量 几何代数中定义的张量是基于向量和矩阵的推广，通俗理解，我们可以将标量视为零阶张量，矢量视为一阶张量，那么矩阵就是二阶张量。 例如，可以将任意一张彩色图片表示成一个三阶张量，三个维度分别是图片的高度、宽度和色彩数据。将这张图用张量表示出来，就是下方的表格：  其中表的横轴表示图片的宽度值；表的纵轴表示图片的高度值；表格中每个方格代表一个像素点，比如第一行第一列的表格数据为[1.0,1">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190909151850.png">
-<meta property="og:updated_time" content="2019-09-09T07:45:03.138Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190910212711.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190910212754.png">
+<meta property="og:updated_time" content="2019-09-10T13:28:07.782Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习的数学基础">
 <meta name="twitter:description" content="线性代数 张量 几何代数中定义的张量是基于向量和矩阵的推广，通俗理解，我们可以将标量视为零阶张量，矢量视为一阶张量，那么矩阵就是二阶张量。 例如，可以将任意一张彩色图片表示成一个三阶张量，三个维度分别是图片的高度、宽度和色彩数据。将这张图用张量表示出来，就是下方的表格：  其中表的横轴表示图片的宽度值；表的纵轴表示图片的高度值；表格中每个方格代表一个像素点，比如第一行第一列的表格数据为[1.0,1">
@@ -205,6 +207,43 @@ A = UDV^t</script><p>假设A是$m\times n$，则U、D、T分别是$m\times m, m\
 <p>==待查的概念==：对角矩阵，可对角化的矩阵，正交矩阵</p>
 </blockquote>
 <p><strong>几种常用的距离</strong></p>
+<h4 id="概率论"><a href="#概率论" class="headerlink" title="概率论"></a>概率论</h4><hr>
+<p>参数估计：对总体参数或数字特征的估计方法。当总体的分布已知时，经常使用最大似然法。</p>
+<p>最大似然法：设总体含有待估参数$\theta$，它可以取很多值，我们要在$\theta$的一切可能取值中选出一个使样本观测值出现的概率最大的$\theta$值，作为$\theta$的估计，并称$\hat{\theta}$为$\theta$的最大似然估计值。</p>
+<blockquote>
+<p>下面就离散和连续两类总体介绍求最大似然估计量的方法：</p>
+<p>1.如果总体X为离散型随机变量，其概率分布律为$P(X=x) = P(x_i;\theta_1,…,\theta_m)$，其中$(\theta_1,…,\theta_m)$为总体X的参数，$(X_1,..,X_n)$为来自总体的样本，样本观测值为$(x_1,…,x_n)$，则一次抽样中样本值恰为$(x_1,…,x_n)$的概率：</p>
+<script type="math/tex; mode=display">
+P(X_1=x_1,...,X_n=x_n)=P(X_1=x_1)\cdots P(X_n=x_n)=\\ \Pi_{i=1}^nP(X_i=x_i)=\Pi_{i=1}^nP(x_i;\theta_1,...,\theta_m)</script><p>称$L(\theta_1,…,\theta_n)=\Pi_{i=1}^nP(x_i;\theta_1,…,\theta_m)$为总体参数$(\theta_1,…,\theta_m)$的似然函数。</p>
+<p>2.如果总体X为连续型随机变量，其概率密度为$f(x;\theta_1,…,\theta_m)$，则样本$(X_1,…,.X_n)$的观测值在$(x_1,…,x_n)$附近的可能性大小，可用$(X_1,…,X_n)$的联合概率密度在$(x_1,…,x_n)$附近的大小来描述，称$L(\theta_1,…,\theta_n)=\Pi_{i=1}^nf(x_i;\theta_1,…,\theta_m)$为总体参数$(\theta_1,…,\theta_m)$的似然函数。</p>
+<p>因此，我们称使似然函数取最大值的参数$(\theta_1,…,\theta_m)$的值$(\hat{\theta_1},…,\hat{\theta_m})$为它的最大似然估计值，而相应的统计量称为最大似然估计量。</p>
+</blockquote>
+<p>以上参考自概率论课本。</p>
+<p>概率和统计</p>
+<blockquote>
+<p>概率和统计看似两个相近的概念，研究的问题刚好相反。</p>
+<p>概率研究的问题是，已知一个模型和参数，怎么去预测这个模型产生的结果的特性（例如均值、方差、协方差等）。</p>
+<p>统计研究的问题则相反，有一堆数据，要利用这堆数据去预测模型和参数。</p>
+<p><code>概率是已知模型和参数，推数据；统计是已知数据，推模型和参数</code>，</p>
+</blockquote>
+<p>贝叶斯公式</p>
+<blockquote>
+<script type="math/tex; mode=display">
+P(A|B) = \frac{P(B|A)P(A)}{P(B)}\\将B展开可以写成：P(A|B) = \frac{P(B|A)P(A)}{P(B|A)P(A)+P(B|\sim A)P(\sim A)}</script><p>贝叶斯公式就是在描述，你有多大把握能相信一件证据。假设响警报的目的就是想说汽车被砸了，把A记作“汽车被砸了”，B记作“响警报”。</p>
+<p>从分母的角度总结贝叶斯公式：做判断的时候，要考虑所有的因素。</p>
+<p>从分子的角度总结：一个本来就难以发生的事情，就算出现某个证据和他强烈相关，也要谨慎。证据可能来自别的虽然不是很相关，但发生概率较高的事情。（P(B|A)为汽车被砸后响警报的概率，姑且认为这是1，但是，若P(A)很小，即汽车被砸的概率本身很小，则P(B|A)P(A)依然很小，即分子很小，P(A|B) 还是大不起来）</p>
+</blockquote>
+<p>最大后验概率估计</p>
+<blockquote>
+<p>最大似然估计是求参数$\theta$，使得似然函数$P(x_0|\theta)$的概率最大。最大后验概率估计则是想求$\theta$使$P(x_0|\theta)P(\theta)$最大。求得的$\theta$ 不单单让似然函数大，$\theta$自己出现的先验概率也得大。（这有点像正则化里加惩罚项的思想，不过正则化里是利用加法，而MAP里是利用乘法）</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190910212711.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190910212754.png" alt></p>
+<p>以上参考自：<a href="https://blog.csdn.net/u011508640/article/details/72815981" target="_blank" rel="noopener">详解MLE、MAP及对贝叶斯公式的理解</a></p>
+<p><a href="https://www.jianshu.com/p/f9d56aeab75e" target="_blank" rel="noopener">9-11日看</a></p>
+<blockquote>
+<p>总结，MAP就是多个作为因子的先验概率$P(\theta)$，或者说；MLE就是把先验概率$P(\theta)$认为等于1，即认为$\theta$是均匀分布。</p>
+</blockquote>
 
       
 
