@@ -146,6 +146,236 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-离散数学复习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/09/离散数学复习/">离散数学复习</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/09/离散数学复习/" class="archive-article-date">
+  	<time datetime="2019-07-09T09:28:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-09</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>幂集</strong></p>
+<p>P(A)</p>
+<p><strong>容斥原理</strong></p>
+<p><strong>二元关系</strong></p>
+<hr>
+<p>1、有序对/序偶：由两个元素x和y按一定顺序排成二元组，记作<x, y>；同理可得<code>有序n元组</code></x,></p>
+<p>2、笛卡儿积：设A，B为集合，用A中元素为第一个元素，B中元素为第二个元素，构成有序对。所有这样的有序对组成的集合叫做A与B的笛卡儿积</p>
+<script type="math/tex; mode=display">
+A \times B = {<x, y> | x \in A, y \in B}</script><blockquote>
+<p>性质：不满足交换律、结合律</p>
+</blockquote>
+<p>3、二元关系：集合中两个元素之间的某种关系</p>
+<p>定义：如果一个集合满足以下条件之一：（1）集合非空，且所有元素都是有序对（2）集合为空</p>
+<p>则称该集合为一个<code>二元关系</code>，简称为<code>关系</code>，记作$R$ </p>
+<script type="math/tex; mode=display">
+<x, y> \in R，记作xRy</script><p>4、从A到B的关系与A上的关系</p>
+<p>设A，B为集合，$A \times B$的任何子集所定义的二元关系叫做从A到B的关系，当A=B时叫做A上的二元关系</p>
+<p>5、A上的重要关系</p>
+<p>全域关系$E_A$；恒等关系$I_A$；小于等于关系$L_A$；整除关系$D_A$；包含关系</p>
+<p>6、关系的表示：关系的集合表达式；关系矩阵；关系图</p>
+<blockquote>
+<p>关系图仅适用于表示A上的关系</p>
+</blockquote>
+<hr>
+<p><strong>关系的运算</strong></p>
+<p>1、关系的定义域与值域</p>
+<p>2、逆与合成</p>
+<script type="math/tex; mode=display">
+R^{-1} = {<y, x> | <x, y> \in R} \\
+R \circ S = {<x, y> | \exist z (<x, z> \in S \and <z, y> \in R)}</script><p>3、限制和像</p>
+<p>4、A上关系的幂运算</p>
+<p>设R为A上的关系，n为自然数，则R的n次幂定义为：</p>
+<script type="math/tex; mode=display">
+(1)R^0 = {<x, x> | x\in A} = I_A \\
+(2)R^{n + 1} = R^n \circ R</script><p>5、幂的性质</p>
+<script type="math/tex; mode=display">
+（1）当关系图中有回路时：R^2 = R^4 = ... = R^{2k}; R^3 = R^5 = ... = R^{2k + 1}\\
+ (2)R^m \circ R^n =    R^{m + n}\\
+ (3)(R^m)^n = R^{mn}</script><p><strong>关系的性质</strong></p>
+<p>1、自反性；反自反性</p>
+<blockquote>
+<p>在自反性方面R有三种可能：自反的、反自反的、既非自反又非反自反的</p>
+</blockquote>
+<p>2、对称性</p>
+<blockquote>
+<p>可以即对称又反对称。如$R =  \{<x, x> | x \in R \}$</x,></p>
+</blockquote>
+<p>3、传递性</p>
+<p><strong>关系的闭包运算</strong></p>
+<p>1、设$R \subseteq A \times A$，那么包含R而使之具有自反性质的<strong><code>最小关系</code></strong>，称之为R的自反闭包。 对称闭包和传递闭包同理。</p>
+<p>自反闭包记作$r(R)$；对称闭包$s(R)$；传递闭包$t(R)$</p>
+<p>2、计算方法：</p>
+<p>（1）逻辑运算方法：设R是A上的任一关系，则</p>
+<script type="math/tex; mode=display">
+r(R) = R \cup I_A\\
+s(R) = R \cup R^{-1}\\
+t(R) = R \cup R^2 \cup ... \cup R^{n - 1}</script><p>（2）矩阵形式（3）关系图法</p>
+<p><strong>等价关系和偏序关系</strong></p>
+<p>1、等价关系：集合A上的关系R是<code>自反的</code>，<code>对称的</code>和<code>传递的</code>。</p>
+<p>设R是一个等价关系，若$<x, y>\in R$，则称x等价于y，记作x~y</x,></p>
+<p>2、相容关系：R是A上的关系，且A是自反的，对称的</p>
+<blockquote>
+<p>等价关系一定是相容关系；相容关系不一定是等价关系</p>
+</blockquote>
+<p>3、偏序关系：集合A上的关系R是<code>自反的</code>，<code>反对称</code>的和<code>传递的</code>，记作”$\leq$”</p>
+<p>设R为偏序关系，如果$<x,y>\in R$，则记作$x \leq y$，读作“x<strong><code>小于等于</code></strong>y”。注意：这里的“小于等于”不是指数的大小，而是在偏序关系中的顺序性。</x,y></p>
+<p>例子：（1）任何集合A上的恒等关系（2）集合A的幂集P（A）上的包含关系（3）实数集上的小于等于、大于等于关系（4）正整数集上的整除关系</p>
+<p>4、相关概念</p>
+<p>偏序集：集合A和偏序关系$R_\leq$构成一个偏序集，记作$<a, r_\leq>$。</a,></p>
+<p>可比：对于任意两个元素x和y，若$x \leq y或 y \leq x$ ，则x与y是<strong><code>可比</code></strong>的</p>
+<p>全序关系与全序集：若A中任意两个元素都是可比的，则$R_\leq$为<code>全序关系</code>，$<a, r_\leq>$为<code>全序集</code></a,></p>
+<p>盖住：如果$x\leq y$，且不存在z使得$x \leq z \leq y$（<strong><code>不是间接的</code></strong>），则称<strong><code>y能盖住x</code></strong></p>
+<p>5、哈斯图</p>
+<p>6、偏序集中的一些特殊元素</p>
+<p>极小元；极大元；最小元；最大元；上界；下界；上确界（最小上界）；下确界（最大下界）</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">review</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/09/离散数学复习/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-操作系统复习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/07/05/操作系统复习/">操作系统复习</a>
+    </h1>
+  
+
+        
+        <a href="/2019/07/05/操作系统复习/" class="archive-article-date">
+  	<time datetime="2019-07-05T15:12:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>操作系统</strong></p>
+<p>1、什么是操作系统：资源管理器，完成以下工作：跟踪资源状态；分配资源；回收资源；保护资源</p>
+<p>2、三种基本类型：批处理系统、分时系统和实时系统</p>
+<p>3、分时系统采用<code>时间片轮转方式</code>处理服务请求，将CPU的运行时间划分为若干个片段，称为<code>时间片</code>。操作系统以时间片为单位，轮流为每个终端用户服务。</p>
+<p>4、操作系统的主要功能：</p>
+<p>​    进程管理：进程控制；进程同步；进程通信；进程调度</p>
+<p>​    存储管理：内存分配；内存保护；地址映射；内存扩充</p>
+<p>​    设备管理：缓冲管理；设备分配；设备处理；设备独立性和虚拟设备</p>
+<p>​    文件管理：文件存储空间的管理；目录管理；文件读、写管理；文件存取控制</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">review</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/07/05/操作系统复习/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-算法复习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -796,240 +1026,6 @@
 
 
   
-    <article id="post-Vue" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/22/Vue/">Vue</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/22/Vue/" class="archive-article-date">
-  	<time datetime="2019-04-22T11:35:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>:date:05-21</p>
-<p><strong>前后端整合实验-vue前端</strong></p>
-<p>疑问</p>
-<ol>
-<li><p><code>Promise.reject(error)</code></p>
-</li>
-<li><p>为何重新组织了<code>src</code>的目录结构</p>
-<p>App.vue有多个了，每个起什么样的作用</p>
-<p>登录页面为何用<code>login.html</code>而不是<code>login.vue</code> </p>
-<p>已经有了App.vue，那login.html有什么用呢</p>
-</li>
-<li><p><code>login.js</code>里，token已经包含了aid，为何还要多用一个role?</p>
-<p><code>window.location.href = &quot;./index.html&quot;</code>此处<code>./</code> 代表什么路径</p>
-<p>login.js放的是登录的业务逻辑</p>
-</li>
-<li><p><code>login/App.vue</code>里<code>form ref=&quot;login&quot;</code></p>
-</li>
-<li><p>xxx.$route.xxx，为何要加美元符，什么情况加，什么情况不加</p>
-</li>
-<li><p><code>Main.js</code>里，axios发请求时，模板字符串外面不用加双引号</p>
-</li>
-<li><p>嵌套路由的作用和实现</p>
-</li>
-<li><p>同级多router-view路由是什么意思</p>
-</li>
-<li><p>多页面的设置</p>
-<p>每个页面为啥还有一个template文件</p>
-</li>
-<li><p><code>course.vue</code>里props的用法</p>
-</li>
-</ol>
-<p>收获：</p>
-<p><strong>前后端整体业务逻辑</strong>：<code>login/App.vue</code>为登录页面，输入用户名和密码登录，调用<code>login.js</code>中的login方法，方法中判断响应头（因此这时后端中的<code>logincontroller</code>中应该在登录判断成功之后给响应体加上这俩属性）中是否有token和role（判断管理员权限用），如果有则将这两个存到session里并转到用户的主页，若没有，则清空输入框。</p>
-<p>在用户访问/api下的资源时，首先经过axios的请求拦截器，自动在请求头加上token（:question:之后token都是从session身上获得，请求头加上token有什么必要呢）。</p>
-<p>这时进入<code>main/main.js(入口)</code>时，从session中取出token和role，若token不存在则打回登录页面，若token存在，判断role来决定是否显示添加课程的按钮<code>addcoursebutton</code></p>
-<p><strong>前端结构</strong></p>
-<p>多页面：<code>login</code>和<code>main</code></p>
-<p>其中这两个目录下的<code>/api/login.js</code>和<code>./api/Main.js</code>负责发送axios请求，封装的是业务逻辑方法，</p>
-<p>拦截器：请求拦截器：可用于在每个请求中添加token等信息</p>
-<p>​    响应拦截器：可用于通过状态码判断响应结果，完成异常等操作</p>
-<p>sessionStorage保存token</p>
-<p>嵌套路由</p>
-
-`{{}}`
-
-<p>Node.js：开源，基于chrome JS V8引擎的，可运行JS代码的服务器端执行环境，使JS实现服务器端编程</p>
-<p>Npm：node提供的，JS工程模块依赖管理工具</p>
-<p>Webpack：前端资源模块化管理与打包工具</p>
-<p>​    可以将松散的模块，按照依赖和规则打包成符合生产环境部署的前端资源。支持按需异步加载模块，支持基于部署调试不同环境的编译打包。</p>
-<p>​    前端的基础</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/22/Vue/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-SpringBoot" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/04/14/SpringBoot/">SprngBoot</a>
-    </h1>
-  
-
-        
-        <a href="/2019/04/14/SpringBoot/" class="archive-article-date">
-  	<time datetime="2019-04-14T15:31:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="前后端整合"><a href="#前后端整合" class="headerlink" title="前后端整合"></a>前后端整合</h2><p>:date:04-29</p>
-<p>后端初始时没有用户，使用InitService创建一个超级管理员，再完成教师、学生等信息的添加（一般通过Excel表格导入）</p>
-<p>用户的权限（角色）像token一样，会被保存到sessionStroage</p>
-<p>后端的权限不再是简单的1和2，而是一个字符串（哈希生成的），这样可以防止伪造权限</p>
-<p>:date:05-20</p>
-<p>后端中的一些疑问：</p>
-<ol>
-<li><p>service和repository区别，还有controller</p>
-<p>实现的功能貌似重叠？个人理解是repository实现增删改查，service实现业务逻辑，然而在我们的后端中，<code>homeworkservice</code>下有两个list—-Homeworks的方法，其中直接调用了repository中的查询方法，那这个service有何存在的必要呢？直接注入repository岂不更简单</p>
-</li>
-<li><p>本项目中有两个拦截器，如何判断先经过哪一个呢，是按声明的顺序吗</p>
-</li>
-<li><p><code>LoginController</code>中为何在response头部塞入token之后，要设置一个role呢，记录的权限对应的哈希值</p>
-</li>
-<li><p>将student和teacher用一个<code>User</code>类型表示，有何好处？</p>
-</li>
-<li><p>应用刚开始启动时为何要设置时区呢</p>
-</li>
-</ol>
-<p>注意事项：</p>
-<ol>
-<li>Map.of()方法，中的值不能为null</li>
-<li>test已编写完毕，执行顺序<code>logincontroller.http</code>得到token，再用<code>admincontroller</code>添加课程后添加作业，再用<code>usercontroller</code>查看课程和作业信息</li>
-</ol>
-<h2 id="项目容器"><a href="#项目容器" class="headerlink" title="项目容器"></a>项目容器</h2><p>建一个空的项目作为项目容器，里面新建Module作为子项目即可，只需要对项目容器做版本控制即可。</p>
-<p>每新建一个项目，将有关maven版本的文件删除（用不到）</p>
-<h2 id="Q-amp-A"><a href="#Q-amp-A" class="headerlink" title="Q&amp;A"></a>Q&amp;A</h2><p><strong>实验二</strong></p>
-<ol>
-<li>持久化组件中</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Address&gt; <span class="title">listAddresses</span><span class="params">(<span class="keyword">int</span> uid)</span> </span>&#123;</span><br><span class="line">        User user = em.find(User.class, uid);</span><br><span class="line">        List&lt;Address&gt; addlist = user.getAddresses();</span><br><span class="line">        <span class="comment">// 奇了怪。。这里输出的话，Test调用的时候也能正常输出</span></span><br><span class="line">        <span class="comment">// 这里不输出的时候，Test里调用的时候会报错</span></span><br><span class="line">        <span class="keyword">for</span> (Address a : addlist) &#123;</span><br><span class="line">            System.out.println(a.getDetail());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> addlist;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<ol>
-<li><p>log.debug(“{}”)为何使用占位符而不是字符串拼接</p>
-<blockquote>
-<p> 当没有权限输出时，字符串拼接会无谓的消耗资源，并且占位符可以直接输出对象</p>
-</blockquote>
-</li>
-</ol>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">spring</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/04/14/SpringBoot/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -1164,7 +1160,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mathematics basics</a>
+                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1172,19 +1168,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RNN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">sort</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hexo使用</a>
+                <a href="javascript:void(0)" class="js-tag color4">RNN</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">review</a>
+                <a href="javascript:void(0)" class="js-tag color3">kg</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1192,7 +1184,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Greedy</a>
+                <a href="javascript:void(0)" class="js-tag color2">review</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Hexo使用</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1201,6 +1197,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">unsupervised learning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Greedy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1213,6 +1213,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">object detection</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mathematics basics</a>
               </li>
              
               <li class="article-tag-list-item">

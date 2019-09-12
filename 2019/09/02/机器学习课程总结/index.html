@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Today is the day">
 <meta property="og:description" content="完结撒花！ 学习历程 ​    从今年4月开始，断断续续的开始在网易云课堂上看汉化版的《机器学习》课程，当时只是简单的水水视频了解大概概念，迫于大三下繁忙的考试与夏令营各种事情，进度缓慢。 ​    5月份的时候开始在coursera上做编程作业，开始时真的挺费时间，还记得做第一次编程作业的时候用了将近一上午的时间。前期的学习大概集中在这两个月，只是学到了神经网络这一章节。 ​    之后一直到7">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-09T09:42:49.314Z">
+<meta property="og:updated_time" content="2019-09-12T12:12:01.147Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习课程总结">
 <meta name="twitter:description" content="完结撒花！ 学习历程 ​    从今年4月开始，断断续续的开始在网易云课堂上看汉化版的《机器学习》课程，当时只是简单的水水视频了解大概概念，迫于大三下繁忙的考试与夏令营各种事情，进度缓慢。 ​    5月份的时候开始在coursera上做编程作业，开始时真的挺费时间，还记得做第一次编程作业的时候用了将近一上午的时间。前期的学习大概集中在这两个月，只是学到了神经网络这一章节。 ​    之后一直到7">
@@ -201,6 +201,12 @@
 <p>2.同一句话的不同理解：借了我20块钱<br>（是借给我，还是向我借呢？）</p>
 <p>3.机器学习三要素是模型、策略和算法，那交叉验证集和测试集在哪里发挥作用呢？(误差分析作用在哪）</p>
 <p>4.为何求逆矩阵的计算成本高</p>
+<p>为何向量化能提高计算速度？</p>
+<blockquote>
+<p>比如python中：</p>
+<p>Python是解释语言，这意味着你的指令进行分析，并在每次执行解释。由于它们不是静态类型的，因此循环必须在每次迭代时评估操作数的类型，这导致计算开销。</p>
+<p>向量化可以使一条指令并行地对多个操作数执行相同的操作（SIMD（单指令，多数据）操作）。例如，要将大小为N的向量乘以标量，让我们调用M可以同时操作的操作数大小。如果是这样，那么它需要执行的指令数大约为N / M，如果采用循环方式，则必须执行N次操作。</p>
+</blockquote>
 
       
 
@@ -458,7 +464,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mathematics basics</a>
+                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -466,19 +472,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RNN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">sort</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hexo使用</a>
+                <a href="javascript:void(0)" class="js-tag color4">RNN</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">review</a>
+                <a href="javascript:void(0)" class="js-tag color3">kg</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -486,7 +488,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Greedy</a>
+                <a href="javascript:void(0)" class="js-tag color2">review</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Hexo使用</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -495,6 +501,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">unsupervised learning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Greedy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -507,6 +517,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">object detection</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mathematics basics</a>
               </li>
              
               <li class="article-tag-list-item">

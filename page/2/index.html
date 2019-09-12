@@ -146,6 +146,223 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-深度学习课程：绪论" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/26/深度学习课程：绪论/">深度学习课程：绪论</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/26/深度学习课程：绪论/" class="archive-article-date">
+  	<time datetime="2019-08-26T12:48:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="一、绪论"><a href="#一、绪论" class="headerlink" title="一、绪论"></a>一、绪论</h4><hr>
+<p>感知智能，认知智能</p>
+<p><strong>知识工程（专家系统） vs. 机器学习</strong></p>
+<ul>
+<li><p>省时、省力；灵活性强</p>
+</li>
+<li><p>基于数据自动学习</p>
+</li>
+</ul>
+<p>根据<code>问题的尺度</code>与<code>规则的复杂性</code>来选择使用知识工程还是机器学习</p>
+<p>机器学习应用领域：计算机视觉；语音技术；自然语言处理</p>
+<p><strong>机器学习的定义：</strong></p>
+<ul>
+<li>计算机系统能够利用<code>经验</code>提高自身的性能。</li>
+<li>本质是一个基于<code>经验数据</code>的<code>函数估计</code>问题。</li>
+<li>提取重要模式、趋势，并<code>理解数据</code>，即从数据中学习。</li>
+</ul>
+<p>总结：从数据中自动提取知识。</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">deep learning</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/26/深度学习课程：绪论/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-非监督学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/24/非监督学习/">非监督学习</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/24/非监督学习/" class="archive-article-date">
+  	<time datetime="2019-08-24T13:48:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="无监督学习"><a href="#无监督学习" class="headerlink" title="无监督学习"></a>无监督学习</h4><hr>
+<p>聚类算法clustering：给定一组未加标签的数据集，将数据集分成不同的簇</p>
+<p>​    可用于市场划分、社交网络分析、组织计算机集群等</p>
+<p><strong>K-means</strong></p>
+<p>迭代的过程</p>
+<p>聚类中心</p>
+<p>1.簇分配</p>
+<p>2.移动聚类中心</p>
+<ul>
+<li><p><code>input</code>:K；Training set</p>
+<p>$xi$是n维向量而非n+1维了</p>
+</li>
+<li><p>随机初始化K个聚类中心$\mu_1,…,\mu_k$</p>
+</li>
+<li><p>簇分配</p>
+</li>
+<li><p>移动聚类中心</p>
+</li>
+</ul>
+<p>如果出现一个没有点的聚类中心，直接这个聚类中心</p>
+<p>当用于没那么明显分开的数据（比如T恤制造）类似于市场分割</p>
+<p><strong>优化目标</strong></p>
+<p>了解这个有助于我们调试K均值算法，防止陷入局部最优</p>
+<p>$c^{(i)}$第i个样例归属的簇的索引</p>
+<p>$\mu_k$第k个聚类中心</p>
+<script type="math/tex; mode=display">
+<Empty \space Math \space Block></script><p>此代价函数也叫做K均值算法的失真</p>
+<p>算法的第一步簇分配，实际上就是在最小化失真函数J，它的参数是$c^{(i)}$，保持聚类中心的未知不变。</p>
+<p>第二步移动聚类中心，实际上是选择$\mu_k $来最小化代价函数J</p>
+<p><strong>随机初始化</strong></p>
+<p>使算法避开局部最优</p>
+<p>$K&lt;m$</p>
+<p>随机选择K个训练样例，令$\mu_1,…,\mu_k$等于这些训练样例</p>
+<p>随机初始化状态不同，最后收敛结果可能不同</p>
+<p>局部最优值指的是K均值算法落在局部最优，因而不能很好的最小化失真函数J</p>
+<p>为了避免得到局部最优，我们随机初始化多次来运行多次K均值算法（例如50-1000），然后我们可以用我们得到的聚类分配和聚类中心计算代价函数J，然后选择100种分类数据的方法种代价函数最小的一种。</p>
+<p>当K=2-10时，多次随机初始化能保证得到较好的结果</p>
+<p>当K很大时，多次随机初始化可能不会改善太多</p>
+<p><strong>选取聚类数量</strong></p>
+<p>实际上最常见的方法是手动选择</p>
+<ul>
+<li>1.肘部法则（不是每次都有效果）</li>
+</ul>
+<p>一开始畸变值下降的很快，到这个点之后下降的变慢</p>
+<p>但实际运用种不一定会有一个清晰的拐点</p>
+<ul>
+<li>2.看哪个聚类数量能更好地应用于后续目的</li>
+</ul>
+<h4 id="降维"><a href="#降维" class="headerlink" title="降维"></a>降维</h4><hr>
+<p>降维的应用1：压缩数据。</p>
+<p>可以减少对内存的需求，可以加快算法的运行速度</p>
+<p>应用2：可视化数据，更好地理解数据</p>
+<p><strong>PCA</strong></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">unsupervised learning</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/24/非监督学习/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-基于模板的文本匹配算法-解题报告" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -876,236 +1093,6 @@
 
 
   
-    <article id="post-离散数学复习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/09/离散数学复习/">离散数学复习</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/09/离散数学复习/" class="archive-article-date">
-  	<time datetime="2019-07-09T09:28:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>幂集</strong></p>
-<p>P(A)</p>
-<p><strong>容斥原理</strong></p>
-<p><strong>二元关系</strong></p>
-<hr>
-<p>1、有序对/序偶：由两个元素x和y按一定顺序排成二元组，记作<x, y>；同理可得<code>有序n元组</code></x,></p>
-<p>2、笛卡儿积：设A，B为集合，用A中元素为第一个元素，B中元素为第二个元素，构成有序对。所有这样的有序对组成的集合叫做A与B的笛卡儿积</p>
-<script type="math/tex; mode=display">
-A \times B = {<x, y> | x \in A, y \in B}</script><blockquote>
-<p>性质：不满足交换律、结合律</p>
-</blockquote>
-<p>3、二元关系：集合中两个元素之间的某种关系</p>
-<p>定义：如果一个集合满足以下条件之一：（1）集合非空，且所有元素都是有序对（2）集合为空</p>
-<p>则称该集合为一个<code>二元关系</code>，简称为<code>关系</code>，记作$R$ </p>
-<script type="math/tex; mode=display">
-<x, y> \in R，记作xRy</script><p>4、从A到B的关系与A上的关系</p>
-<p>设A，B为集合，$A \times B$的任何子集所定义的二元关系叫做从A到B的关系，当A=B时叫做A上的二元关系</p>
-<p>5、A上的重要关系</p>
-<p>全域关系$E_A$；恒等关系$I_A$；小于等于关系$L_A$；整除关系$D_A$；包含关系</p>
-<p>6、关系的表示：关系的集合表达式；关系矩阵；关系图</p>
-<blockquote>
-<p>关系图仅适用于表示A上的关系</p>
-</blockquote>
-<hr>
-<p><strong>关系的运算</strong></p>
-<p>1、关系的定义域与值域</p>
-<p>2、逆与合成</p>
-<script type="math/tex; mode=display">
-R^{-1} = {<y, x> | <x, y> \in R} \\
-R \circ S = {<x, y> | \exist z (<x, z> \in S \and <z, y> \in R)}</script><p>3、限制和像</p>
-<p>4、A上关系的幂运算</p>
-<p>设R为A上的关系，n为自然数，则R的n次幂定义为：</p>
-<script type="math/tex; mode=display">
-(1)R^0 = {<x, x> | x\in A} = I_A \\
-(2)R^{n + 1} = R^n \circ R</script><p>5、幂的性质</p>
-<script type="math/tex; mode=display">
-（1）当关系图中有回路时：R^2 = R^4 = ... = R^{2k}; R^3 = R^5 = ... = R^{2k + 1}\\
- (2)R^m \circ R^n =    R^{m + n}\\
- (3)(R^m)^n = R^{mn}</script><p><strong>关系的性质</strong></p>
-<p>1、自反性；反自反性</p>
-<blockquote>
-<p>在自反性方面R有三种可能：自反的、反自反的、既非自反又非反自反的</p>
-</blockquote>
-<p>2、对称性</p>
-<blockquote>
-<p>可以即对称又反对称。如$R =  \{<x, x> | x \in R \}$</x,></p>
-</blockquote>
-<p>3、传递性</p>
-<p><strong>关系的闭包运算</strong></p>
-<p>1、设$R \subseteq A \times A$，那么包含R而使之具有自反性质的<strong><code>最小关系</code></strong>，称之为R的自反闭包。 对称闭包和传递闭包同理。</p>
-<p>自反闭包记作$r(R)$；对称闭包$s(R)$；传递闭包$t(R)$</p>
-<p>2、计算方法：</p>
-<p>（1）逻辑运算方法：设R是A上的任一关系，则</p>
-<script type="math/tex; mode=display">
-r(R) = R \cup I_A\\
-s(R) = R \cup R^{-1}\\
-t(R) = R \cup R^2 \cup ... \cup R^{n - 1}</script><p>（2）矩阵形式（3）关系图法</p>
-<p><strong>等价关系和偏序关系</strong></p>
-<p>1、等价关系：集合A上的关系R是<code>自反的</code>，<code>对称的</code>和<code>传递的</code>。</p>
-<p>设R是一个等价关系，若$<x, y>\in R$，则称x等价于y，记作x~y</x,></p>
-<p>2、相容关系：R是A上的关系，且A是自反的，对称的</p>
-<blockquote>
-<p>等价关系一定是相容关系；相容关系不一定是等价关系</p>
-</blockquote>
-<p>3、偏序关系：集合A上的关系R是<code>自反的</code>，<code>反对称</code>的和<code>传递的</code>，记作”$\leq$”</p>
-<p>设R为偏序关系，如果$<x,y>\in R$，则记作$x \leq y$，读作“x<strong><code>小于等于</code></strong>y”。注意：这里的“小于等于”不是指数的大小，而是在偏序关系中的顺序性。</x,y></p>
-<p>例子：（1）任何集合A上的恒等关系（2）集合A的幂集P（A）上的包含关系（3）实数集上的小于等于、大于等于关系（4）正整数集上的整除关系</p>
-<p>4、相关概念</p>
-<p>偏序集：集合A和偏序关系$R_\leq$构成一个偏序集，记作$<a, r_\leq>$。</a,></p>
-<p>可比：对于任意两个元素x和y，若$x \leq y或 y \leq x$ ，则x与y是<strong><code>可比</code></strong>的</p>
-<p>全序关系与全序集：若A中任意两个元素都是可比的，则$R_\leq$为<code>全序关系</code>，$<a, r_\leq>$为<code>全序集</code></a,></p>
-<p>盖住：如果$x\leq y$，且不存在z使得$x \leq z \leq y$（<strong><code>不是间接的</code></strong>），则称<strong><code>y能盖住x</code></strong></p>
-<p>5、哈斯图</p>
-<p>6、偏序集中的一些特殊元素</p>
-<p>极小元；极大元；最小元；最大元；上界；下界；上确界（最小上界）；下确界（最大下界）</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">review</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/09/离散数学复习/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-操作系统复习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/05/操作系统复习/">操作系统复习</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/05/操作系统复习/" class="archive-article-date">
-  	<time datetime="2019-07-05T15:12:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>操作系统</strong></p>
-<p>1、什么是操作系统：资源管理器，完成以下工作：跟踪资源状态；分配资源；回收资源；保护资源</p>
-<p>2、三种基本类型：批处理系统、分时系统和实时系统</p>
-<p>3、分时系统采用<code>时间片轮转方式</code>处理服务请求，将CPU的运行时间划分为若干个片段，称为<code>时间片</code>。操作系统以时间片为单位，轮流为每个终端用户服务。</p>
-<p>4、操作系统的主要功能：</p>
-<p>​    进程管理：进程控制；进程同步；进程通信；进程调度</p>
-<p>​    存储管理：内存分配；内存保护；地址映射；内存扩充</p>
-<p>​    设备管理：缓冲管理；设备分配；设备处理；设备独立性和虚拟设备</p>
-<p>​    文件管理：文件存储空间的管理；目录管理；文件读、写管理；文件存取控制</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">review</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/05/操作系统复习/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1240,7 +1227,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mathematics basics</a>
+                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1248,19 +1235,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RNN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">sort</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hexo使用</a>
+                <a href="javascript:void(0)" class="js-tag color4">RNN</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">review</a>
+                <a href="javascript:void(0)" class="js-tag color3">kg</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1268,7 +1251,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Greedy</a>
+                <a href="javascript:void(0)" class="js-tag color2">review</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Hexo使用</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1277,6 +1264,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">unsupervised learning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Greedy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1289,6 +1280,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">object detection</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mathematics basics</a>
               </li>
              
               <li class="article-tag-list-item">
