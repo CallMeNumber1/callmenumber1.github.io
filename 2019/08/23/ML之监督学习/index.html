@@ -6,15 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/7 | Today is the day</title>
+  <title>ML之监督学习 | Today is the day</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Today is the day">
-<meta property="og:url" content="http://yoursite.com/archives/2019/07/index.html">
+  <meta name="description" content="什么是机器学习？  使计算机无需显式编程就能学习的研究领域。 E(experience) T(tasks) P(performance)  第一章监督学习 给算法一个数据集，其中包含了”正确答案“  回归问题  ​    目标是预测一个连续值输出  分类问题（两类、多类）  ​    预测离散值输出 如何处理无穷多个特征/属性">
+<meta name="keywords" content="supervised learning">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ML之监督学习">
+<meta property="og:url" content="http://yoursite.com/2019/08/23/ML之监督学习/index.html">
 <meta property="og:site_name" content="Today is the day">
+<meta property="og:description" content="什么是机器学习？  使计算机无需显式编程就能学习的研究领域。 E(experience) T(tasks) P(performance)  第一章监督学习 给算法一个数据集，其中包含了”正确答案“  回归问题  ​    目标是预测一个连续值输出  分类问题（两类、多类）  ​    预测离散值输出 如何处理无穷多个特征/属性">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190917204425.png">
+<meta property="og:image" content="c:/Users/HC/Desktop/神经网络代价函数.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190917204452.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190917204513.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190917204545.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190917204605.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190917204620.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190917204657.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190917204747.png">
+<meta property="og:updated_time" content="2019-09-17T12:48:07.468Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Today is the day">
+<meta name="twitter:title" content="ML之监督学习">
+<meta name="twitter:description" content="什么是机器学习？  使计算机无需显式编程就能学习的研究领域。 E(experience) T(tasks) P(performance)  第一章监督学习 给算法一个数据集，其中包含了”正确答案“  回归问题  ​    目标是预测一个连续值输出  分类问题（两类、多类）  ​    预测离散值输出 如何处理无穷多个特征/属性">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190917204425.png">
   
     <link rel="alternative" href="/atom.xml" title="Today is the day" type="application/atom+xml">
   
@@ -144,250 +159,721 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-ML之监督学习" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ML之监督学习
+    </h1>
+  
+
+        
+        <a href="/2019/08/23/ML之监督学习/" class="archive-article-date">
+  	<time datetime="2019-08-23T12:41:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-23</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>什么是机器学习？</p>
+<blockquote>
+<p>使计算机无需显式编程就能学习的研究领域。</p>
+<p>E(experience) T(tasks) P(performance)</p>
+</blockquote>
+<h4 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h4><p><strong>监督学习</strong></p>
+<p>给算法一个数据集，其中包含了”正确答案“</p>
+<ol>
+<li>回归问题</li>
+</ol>
+<p>​    目标是预测一个连续值输出</p>
+<ol>
+<li>分类问题（两类、多类）</li>
+</ol>
+<p>​    预测离散值输出</p>
+<p>如何处理无穷多个特征/属性</p>
+<a id="more"></a>
+<p><strong>无监督学习</strong></p>
+<p>给出的数据没有任何标签</p>
+<ol>
+<li>聚类算法</li>
+</ol>
+<p>​    簇（cluster）</p>
+<h4 id="二、单变量线性回归"><a href="#二、单变量线性回归" class="headerlink" title="二、单变量线性回归"></a>二、单变量线性回归</h4><hr>
+<p><strong>假设函数</strong></p>
+<p>线性回归(linear regression)</p>
+<p>向学习算法提供训练集，输出一个函数，通常用小写h表示<strong><code>假设函数</code></strong></p>
+<p><strong>代价函数</strong></p>
+<p>只要我们知道了假设函数，就可以进行预测了。假设函数中有两个未知量$\theta_0,\theta_1$，当选择不同的参数时，模型的效果肯定是不一样的。因此现在的问题是该如何选择这两个参数了，因此引入代价函数的概念。</p>
+<blockquote>
+<p>个人理解：代价函数用来选择参数，取使得代价函数最小的参数</p>
+<p>Hypothesis：$h_0(x)$</p>
+<p>Parameters：$\theta_0, \theta_1$</p>
+<p>Cost Function：$J(\theta_0, \theta_1)$</p>
+<p>Goal：minimize$J(\theta_0, \theta_1)$</p>
+</blockquote>
+<p>平方误差代价函数（用于回归问题）</p>
+<p>优化目标（想要代价函数最小）：</p>
+<script type="math/tex; mode=display">
+minimize(\theta_0, \theta_1) J(\theta_0, \theta_1) = \frac{1}{2m}\sum_{i=1}^{m}{(h(x) - y)}^2</script><p><strong>梯度下降</strong></p>
+<ul>
+<li>思想：首先随机选择两个$\theta_0,\theta_1$（例如都为0），不断改变它们的值使得$J(\theta)$ 变小，最终找到$J(\theta)$ 的最小值点。</li>
+</ul>
+<blockquote>
+<p>可以把梯度下降的过程想象成下山坡，如果想要尽可能快地下坡，应该每次往坡度最大的方向下山。</p>
+</blockquote>
+<ul>
+<li>计算梯度：梯度也就是代价函数对每个$\theta$ 的偏导</li>
+</ul>
+<p>$\theta_j := \theta_j - \alpha \frac{\partial(\theta_0, \theta_1)}{\partial\theta_j}$</p>
+<blockquote>
+<p>$\theta_0，\theta_1$必须<strong><code>同步更新</code></strong>，不然会出错</p>
+</blockquote>
+<ul>
+<li>学习率$\alpha$过小会导致收敛缓慢，过大会导致不收敛</li>
+</ul>
+<p>当到达局部最低点时，梯度下降相当于什么都没做，于我们的预期相符</p>
+<p>当我们接近局部最低点时，导数值会越来越小，梯度下降将自动采取较小的幅度</p>
+<p>可以尝试用它最小化任何代价函数，而不仅是线性回归中的代价函数 </p>
+<blockquote>
+<p>事实上，用于线性回归的代价函数总是一个<code>凸函数</code>(Convex Function)，没有局部最优解，只有一个全局最优解。所以在使用梯度下降时，总会得到一个全局最优解。</p>
+</blockquote>
+<p><strong>梯度下降应用到线性回归问题上—-线性回归的梯度下降</strong></p>
+<p>Batch梯度下降法</p>
+<p>​    每一次梯度下降，都遍历了整个训练集的样本</p>
+<p>另一种求解代价函数J最小值的方法：正规方程组法，之后介绍</p>
+<h4 id="三、多变量线性回归"><a href="#三、多变量线性回归" class="headerlink" title="三、多变量线性回归"></a>三、多变量线性回归</h4><hr>
+<p><strong>多特征</strong></p>
+<p>在之前的单变量线性回归中，我们的问题只涉及到了房子面积这一特征，然而在实际问题中会有很多特征，比如还有卧室数量$x_2$，房子楼层数$x_3$等，其中，n表示特征的数量，m表示训练样例的数量。</p>
+<p>​    $x^{(i)}$为第i个训练样例</p>
+<p>​    $x_j^{(i)}$为第i个训练样例的第j个特征</p>
+<p><strong>假设函数</strong></p>
+<p>类似单变量线性回归，现在假设函数记作</p>
+<script type="math/tex; mode=display">
+h_\theta(x) = \theta_0 + \theta_1x_1+\theta_2x_2+...+\theta_nx_n</script><p>每次这样写太麻烦，为了方便，先定义$x_0=1，即x_0^{(i)}=1$，则$h(x) = \theta_0 x_0 + \theta_1 x_1 + … + \theta_n x_n$，此时就得到了假设函数的向量表示：</p>
+<script type="math/tex; mode=display">
+h(x) = \theta ^Tx</script><p><strong>多元梯度下降法</strong></p>
+<p><strong>多元梯度下降法演练I：特征缩放</strong></p>
+<p>特征值的范围要接近，这样收敛过程会变快。并不需要太精确，只是为了让梯度下降运行的更快一点</p>
+<ul>
+<li>均值归一化</li>
+</ul>
+<p>$x_i = \frac{x_i - \mu_i}{si}，\mu_i为均值，s_i为范围（或标准差）$</p>
+<p><strong>多元梯度下降法演练II：学习率</strong></p>
+<p>确定梯度下降正确运行：</p>
+<ol>
+<li><p>通过绘制$J(\theta)$随迭代步数变化的曲线图观察，迭代之后代价函数变小(倾向于)</p>
+<p>如果曲线是上升的，往往可以通过减小学习率$\alpha$来实现</p>
+<p>如果曲线循环往复上升下降，也可以减小学习率</p>
+</li>
+<li><p>自动收敛测试</p>
+<p>如果一步迭代后的下降小于1e-3，则说明已经收敛</p>
+</li>
+</ol>
+<p>学习率太小时，收敛(convergence)会很慢</p>
+<p>学习率太大时，$J(\theta)$可能不会收敛</p>
+<p>​    尝试不同的$\alpha$值：0.001, 0.003, 0.01, 0.03, 0.1, 0.3, 1</p>
+<p><strong>特征选择和多项式回归</strong></p>
+<p>定义新特征有时候可能得到更好的模型</p>
+<p>如何将一个多项式（如一个二次函数/三次函数）拟合到我们的数据上</p>
+<p>​    $h_0(x) = \theta_0 + \theta_1(size) + \theta_2(size)^2 + \theta_3(size)^3$</p>
+<p>​    令$x_1 = (size), x_2 = (size)^2, x_3=(size)^3$</p>
+<p>​    则$h_0(x) = \theta _0 + \theta x_1 + \theta x_2 + \theta x_3$</p>
+<p><strong>正规方程</strong></p>
+<p>之前我们一直使用梯度下降来求解最优值，缺点是需要进行很多次迭代才能得到全局最优解。</p>
+<p>设计矩阵X为$m * (n +1)$维</p>
+<p>$\theta = (X^{T}X)^{-1}X^{T}y$</p>
+<p>得到的 $\theta$ 即为使得代价函数最小的值</p>
+<p>使用正规方程求解时可以<strong><code>不必进行特征缩放</code></strong></p>
+<p><strong>梯度下降与正规方程的选择</strong></p>
+<p>梯度下降法需要选择合适的学习速率 $\alpha$ ，并且需要很多迭代，还要画图判断敛散性，而正规方程不需要。</p>
+<p>然而当n很大时，正规方程的速度会很慢，求解$(X^{T}X)^{-1}$的时间接近于$O(n^3)$，因此当n小于10000时，可以选择正规方程求解，当大得多时，就要考虑梯度下降或者其他方法了</p>
+<p>使用正规方程还有一个问题就是$X^TX$可能存在不可逆的情况。这个时候可能因为我们使用了冗余的特征，或者使用了太多的特征（特征数大于样本的数量）。对于这种情况我们可以删掉一些特征或者使用正则化。</p>
+<h4 id="Logistic回归-对数机率回归"><a href="#Logistic回归-对数机率回归" class="headerlink" title="Logistic回归(对数机率回归)"></a>Logistic回归(对数机率回归)</h4><hr>
+<p>需要注意的是这个模型虽然叫regression，但它是一个用来解决分类问题的模型</p>
+<p>预测离散值</p>
+<p><strong>分类</strong></p>
+<p>分类问题的例子：判断一封邮件是否是垃圾邮件；判断一次金融交易是否欺诈；肿瘤恶性良性分类</p>
+<p>不推荐将线性回归用于分类问题</p>
+<p>​    因为对于数据集中y=0，1，而实际$h_\theta (x)$可能大于1或者小于0</p>
+<p>logistic回归实际上是一种分类算法</p>
+<p>​    0&lt;= h(x) &lt;= 1</p>
+<p><strong>假设函数</strong> </p>
+<p>对数机率函数(Logistic Function)是Sigmoid函数最重要的代表，它将z值转化为一个接近0或1的y值，并且其输出值在<code>z=0</code> 附近变化很陡。Sigmoid函数即形似S的函数</p>
+<p>由$h_\theta(x) =g(\theta^Tx)$   $g(z) = \frac{1}{1 + e^{-z}}$</p>
+<p>得到</p>
+<script type="math/tex; mode=display">
+h_\theta(x)=\frac{1}{1+e^{-\theta^Tx}}​</script><p>$P(y = 0|x;\theta)$ ：给定参数$\theta$，给定特征x的条件下y=0的概率</p>
+<p>$h_\theta(x) = P(y = 1|x;\theta)$，我们可以将对率函数的输出理解为当输入为x的时候，y=1的概率</p>
+<p><strong>决策边界</strong></p>
+<p>Sigmoid函数当$z\gt0$时即$g(z)\ge0.5$时即预测$y = 1$；当$z\lt0$时$g(z)\lt0.5$即预测$y=0$</p>
+<p>而在对率回归中，   $z = \theta^Tx$，因此 $\theta^Tx = 0$时可以得到决策边界</p>
+<ul>
+<li>决策边界是假设函数的一个属性，而不是训练集的属性，只要给定了$\theta$就确定</li>
+<li>当我们有更高阶的多项式时，会得到更复杂的决策边界</li>
+</ul>
+<p><strong>代价函数</strong></p>
+<p>若将假设函数代入之前的代价函数，则代价函数成为一个非凸函数（因为logistic回归中$h_\theta(x)$是非线性的），当应用梯度下降时可能进入局部最优。</p>
+<p>因此定义代价函数$J(\theta)$为：</p>
+<script type="math/tex; mode=display">
+J(\theta) = \frac{1}{m}Cost(h_\theta(x), y^{(i)})\\
+单个样本的代价：
+Cost(h_\theta(x), y) = \begin{cases}
+-log(h_\theta(x)) & y = 1 \\
+-log(1-h_\theta(x)) &  y = 0 
+\end{cases}</script><ul>
+<li>当y=1,h(x)=1时，假设函数预测正确，代价值为0，即当预测结果和真实结果一样时，我们不对学习算法进行惩罚；但当结果不一致时，即当h(x)-&gt;0时，我们对算法的惩罚趋于无穷。</li>
+</ul>
+<p>这样对代价函数处理之后，我们的代价函数就是一个凸函数，可以使用梯度下降来找到一个全局最优解。</p>
+<p><strong>简化的代价函数与梯度下降</strong></p>
+<p>因为y的值只有0或1两种情况，现在将代价函数用一个式子表达：</p>
+<script type="math/tex; mode=display">
+Cost = -ylog(h_\theta(x)) - (1 - y)log(1-h_\theta(x)) \\
+J(\theta) = -\frac{1}{m}[\sum_{i=1}^my^{(i)}logh_\theta(x^{(i)}) + (1 - y^{(i)})log(1-h_\theta(x^{(i)}))]</script><p>此代价函数是从统计学中的极大似然估计得来的，同时具有一个很好的性质—凸函数。</p>
+<blockquote>
+<p>凸函数：判定方法可利用定义法、已知结论法以及函数的二阶导数，对于实数集上的凸函数，一般的判别方法是求它的二阶导数，如果其二阶导数在区间上非负，就称为凸函数。如果其二阶导数在区间上恒大于0，就称为严格凸函数。</p>
+</blockquote>
+<p>因此是大部分人用来拟合logistic回归模型的代价函数</p>
+<p>要求$minJ(\theta)$：</p>
+<script type="math/tex; mode=display">
+重复进行
+\theta_j := \theta_j - \alpha \frac{\partial}{\partial\theta_j}J(\theta)\\
+即:\theta_j := \theta_j - \alpha\sum_{i = 1}^m(h_\theta(x^{(i)}) - y^{(i)})x_j^{(i)}</script><ul>
+<li>梯度下降的方式形式和线性回归时相同，然而$h_\theta(x)$不同，导致不同。</li>
+<li>同样的，可以使用<code>特征缩放</code>来加快梯度下降收敛的速度</li>
+</ul>
+<p><strong>高级优化</strong></p>
+<p>高级优化算法的目的是无需选择学习率a，同时更快速的找到全局最小值</p>
+<p>比梯度下降快得多得算法比如：</p>
+<p>​    共轭下降</p>
+<p>​    …</p>
+<p>优化算法库会使程序变得模糊，难于调试，但会加快梯度下降的速度</p>
+<p>例子：<code>fminunc()</code></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">options = optimset(<span class="string">'GradObj'</span>, <span class="string">'on'</span>, <span class="string">'MaxIter'</span>, <span class="string">'100'</span>);</span><br><span class="line">initalTheta = <span class="built_in">zeros</span>(<span class="number">2</span>, <span class="number">1</span>);</span><br><span class="line">[optTheta, functionVal, exitFlag] = fminunc(@costFunction, initialTheta, options);</span><br></pre></td></tr></table></figure>
+<p><strong>多元分类</strong>：一对多(one-vs-all)</p>
+<p>将多个类的分类变为多个二元分类。预测时，需要计算出$h_\theta^{(1)}(x),h_\theta^{(2)}(x).h_\theta^{(3)}(x)$的值并得出最大值，其对应的分类即为预测x的分类。</p>
+<h4 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h4><hr>
+<p><strong>过拟合问题</strong></p>
+<p>千方百计拟合训练集，导致无法泛化到新的样本中</p>
+<p>应对方法：</p>
+<p>​    1.减少特征数量，可以手工选择保留哪些特征，或者使用一些模型选择的算法（后面会讲到如PCA）</p>
+<p>​    2.正则化：保留所有特征，但是减少参数的大小</p>
+<p><strong>代价函数</strong></p>
+<script type="math/tex; mode=display">
+J(\theta) = \frac{1}{2m}[\sum_{i=1}^{m}{(h_\theta(x)^{(i)} - y^{(i)})}^2 + \lambda\sum_{j=1}^n\theta_j^2]</script><p>正则化参数：控制两个不同目标之间的取舍（一般不对$\theta_0$进行改变）</p>
+<p>​    1.想要更好的拟合数据</p>
+<p>​    2.保持参数尽量小（从而保持模型尽量简单，避免过拟合的发生）</p>
+<p>如果正则化参数设置太大，会使得$\theta$约等于0，即$h_\theta(x)=\theta_0$，$h_\theta(x)$就变成一条直线了，由过拟合变成欠拟合，得不偿失。所以需要选择一个合适的$\lambda$，后面的课程会讲到自动选择合适的$\lambda$ 的方法</p>
+<p><strong>线性回归的正则化</strong></p>
+<ul>
+<li>梯度下降</li>
+</ul>
+<p>因为我们不对$\theta_0$进行惩罚，所以将$\theta_0$的单独写出来，其余参数的更新规则如下公式（j&gt;0时）：</p>
+<script type="math/tex; mode=display">
+\theta_j:=\theta_j(1-\alpha \frac{\lambda}{m}) - \alpha\frac{1}{m}\sum_{i=1}^m(h_\theta(x^{(i)})-y^{(i)})x_j^{(i)}</script><p>也可以用正规方程来求解正则化线性回归模型</p>
+<p>利用它可以避免过拟合的问题，这样可以在较小的训练集而特征较多的情况下使用</p>
+<p><strong>Logistic回归的正则化</strong></p>
+<p>对于逻辑回归，也可以给代价函数加一个正则化的表达式$\frac{\lambda}{2m}\sum_{j=1}^n\theta_j^2$</p>
+<p><img src="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190917204425.png" alt></p>
+<h4 id="神经网络学习（上）"><a href="#神经网络学习（上）" class="headerlink" title="神经网络学习（上）"></a>神经网络学习（上）</h4><hr>
+<p><strong>非线性假设</strong></p>
+<p>我们之前学到的，无论是线性回归还是逻辑回归都有一个缺点，当特征太多时，计算量会非常大。</p>
+<p>神经元与大脑</p>
+<p>神经网络再次兴起的原因，计算能力的提升</p>
+<p><strong>模型展示I</strong></p>
+<p>神经元有很多输入通道（树突），它们接收来自其他神经元的信息</p>
+<p>神经元有一条输出通道（轴突），用来给其他神经元传导信息</p>
+<p>神经网络是大量神经元相互连接并通过电脉来交流的一个网络。</p>
+<p>因此一个神经元是一个计算单元</p>
+<p>激活函数：指代非线性函数<code>g(z)</code></p>
+<p>​    带有sigmoid函数的激活函数</p>
+<p><strong><code>输入层必要的时候会加一个$x_0$（为1），称为偏置单元</code></strong></p>
+<p>$\theta$称为模型的参数/权重</p>
+<p><strong><code>神经网络</code></strong>：是一组神经单元组成的集合</p>
+<blockquote>
+<p>第一层为输入层（输入特征），最后一层为输出层（输出假设的最终计算结果），中间的若干层为隐藏层</p>
+</blockquote>
+<ul>
+<li>$a_i^{(j)}$ 代表<code>第j层第i个</code>神经元的激活项</li>
+</ul>
+<p>​    由一个具体神经元计算并输出的值</p>
+<ul>
+<li>$\Theta^{(j)}$权重矩阵，控制第j层到第j+1层的映射</li>
+</ul>
+<script type="math/tex; mode=display">
+a_1^{(2)} = g(\Theta_{10}^{(1)}x_0+\Theta_{11}^{(1)}x_1+\Theta_{12}^{(1)}x_2+\Theta_{13}^{(1)}x_3)</script><p>即sigmoid激活函数(也即logistic激活函数)作用在这种输出的线性组合上的结果。</p>
+<blockquote>
+<p>个人理解，这种映射通过矩阵乘法实现 例如使用$\Theta^{(1)} \times a^{(1)}$ 再在g(z)的作用下即可得到$a^{(2)}$</p>
+</blockquote>
+<p>一般地，如果神经网络在层次j上有$s_j$个单元，在层次j+1上有$s_{j+1}$个单元，则$\theta^{(j)}$控制j到j+1层之间映射的矩阵，维度为 $s_{j+1}*(s_j + 1)$  （因为前一层加了一个bias unit）</p>
+<ul>
+<li>z：输入单元的加权和，将simoid函数应用到z上，得到激活值即a</li>
+<li>a的意义：激活值</li>
+</ul>
+<p><strong>模型展示II-前向传播算法</strong></p>
+<p>我们把这样从左往右的算法称为前向传播forward propagation，其实就是由输入层计算输出的过程。这里为了提高计算的效率，我们使用向量化的算法。</p>
+<ul>
+<li>向量化计算h(x)</li>
+</ul>
+<p>首先做如下定义：</p>
+<p>定义z为某个特定神经元的输入值$x_0,x_1,x_2,x_3..$的加权线性组合</p>
+<script type="math/tex; mode=display">
+z_1^{(2)} = \Theta_{10}^{(1)}x_0 + \Theta_{11}^{(1)}x_1 + \Theta_{12}^{(1)}x_2 + \Theta_{13}^{(1)}x_3 \\
+z_2^{(2)} = \Theta_{20}^{(1)}x_0 + \Theta_{21}^{(1)}x_1 + \Theta_{22}^{(1)}x_2 + \Theta_{23}^{(1)}x_3 \\
+z_3^{(2)} = \Theta_{30}^{(1)}x_0 + \Theta_{31}^{(1)}x_1 + \Theta_{32}^{(1)}x_2 + \Theta_{33}^{(1)}x_3 \\
+即z^{(2)} = \begin{bmatrix}z_1^{(2)}\\z_2^{(2)}\\z_3^{(2)}\end{bmatrix}</script><p>这样$z^{(2)}$的计算就可以写成向量计算：$z^{(2)}=\Theta^{(1)}x$，进而有$a^{(2)} = g(z^{(2)})$，为了使后面几层的写法统一，令$a^{(1)}=x$，所以有$z^{(2)}=\Theta^{(1)}a^{(1)}$，</p>
+<p>我们在隐藏层加上一个额外的$a_{(0)}^{(1)}= 1$，得到$a^{(2)}=\begin{bmatrix} a_0^{(2)} \\ a_1^{(2)}\\a_2^{(2)}\\ a_3^{(2)}\end{bmatrix}$，同理$z^{(3)}=\Theta^{(2)}a^{(2)}$，最后$h_\Theta(x)=a^{(3)}=g(z^{(3)})$</p>
+<p>现在我们先把刚才的神经网络输入层盖住，观察剩下部分的结构以及算法我们发现, 其实这一部分其实就是前面所讲的logistic回归. 不同的是, 它的输入$\alpha $是由正真的特征$x$学习得到的, 可以把$\alpha $看成新的特征, $x$看成初始特征. 这样, 神经网络就相当于通过初始特征学习到新的特征, 再通过新的特征进行logistic回归得到输出结果.</p>
+<p>前向传播的工作原理</p>
+<p>​    从输入层的激活项开始，前向传播到第一隐藏层，然后传播到第二隐藏层，最终到达输出层。</p>
+<ul>
+<li>神经网络利用隐藏层计算更复杂的特征，并输入到最后的输出层，从而学习更复杂的非线性假设函数</li>
+</ul>
+<p><strong>例子</strong></p>
+<p>以神经网络如何进行逻辑运算为例</p>
+<p>神经网络如何计算复杂的非线性假设</p>
+<p>为何神经网络可以计算复杂的函数</p>
+<p>​    当网络中有很多层，第二层有一些关于输入的简单函数，第三层在此基础上，计算更复杂的方程，再往后一层，计算的函数越来越复杂</p>
+<p>视频中以手写邮编的识别为例</p>
+<p><strong>多元分类</strong></p>
+<p>建立一个有4个输出单元的神经网络</p>
+<h4 id="神经网络学习（下）"><a href="#神经网络学习（下）" class="headerlink" title="神经网络学习（下）"></a><strong>神经网络学习（下）</strong></h4><hr>
+<p>如何让神经网络自动学习这些参数</p>
+<p><strong>代价函数</strong></p>
+<p>符号定义：</p>
+<ul>
+<li>L表示神经网络的层数</li>
+<li>$s_l$ 第l层计算单元的个数（不包括偏置单元）</li>
+<li>K：输出单元数（ $ s_L$）</li>
+</ul>
+<p>对于二分类问题，神经网络只需要一个输出单元，而对于多分类问题，需要K个输出单元，其中K为类的个数。</p>
+<ul>
+<li>二元分类</li>
+</ul>
+<p>最后输出层只有一个单元，输出的$h_\Theta(x)$ 是一个实数</p>
+<p>即K=1（K为输出单元的个数）</p>
+<ul>
+<li>多元分类</li>
+</ul>
+<p>我们的假设会输出K维向量，$h_\Theta(x) \in R^K$输出单元的个数也等于K</p>
+<p>同时可知$K\ge3$（否则就为二元分类了）</p>
+<ul>
+<li>正则化时不会将偏差项正则化，正则化的也没有大影响</li>
+<li>这里我们按照多分类对代价函数进行描述。对于前半部分，因为神经网络中要有K个输出，所以先要对这K个输出的损失求和；对于后半部分，因为每一层（除了输出层）都有一个$\Theta$，所以正则化项要将这些权重都包括进来（当然，不包括bias unit的权重）</li>
+</ul>
+<script type="math/tex; mode=display">
+h_\Theta(x) \in R^K，是一个K维的向量，我们用(h_\Theta(x))_i来代表第i个输出值 \\</script><p><img src="C:\Users\HC\Desktop\神经网络代价函数.png" alt="神经网络代价函数"></p>
+<p>注：三元组中的i与第几个训练样本无关</p>
+<p><strong>反向传播算法</strong></p>
+<p>同样，知道代价函数之后，我们希望使用梯度下降来找到最优解。想要使用梯度下降需要求出“梯度”即偏导项$\frac{\partial}{\partial_{\Theta_{ij}}^{(l)}}J(\Theta)$，而计算这个偏导数项的过程就叫做反向传播算法。</p>
+<p>为了计算所有参数的偏导数项，定义$\delta_j^{(l)}$为第l层第j个结点的误差</p>
+<p>$\delta^{(L)} = a^{(L)}-y^{(i)}$，不计算$\delta^{(1)}$，因为是输入层，不存在误差</p>
+<p>剩下每层的$\delta^{l}$为：（计算时忽略<code>bias unit</code>）</p>
+<script type="math/tex; mode=display">
+\delta^{(3)} = (\Theta^{(3)})^T\delta^{(4)}.*g'(z^{(3)})
+，其中g'(z^{(3)})=a^{(3)}.*(1-a^{(3)})</script><p>求出所有的$\delta$之后，可以很容易得到我们要求的偏导项（忽略正则化）</p>
+<script type="math/tex; mode=display">
+\frac{\partial}{\partial_{\Theta_{ij}^{(l)}}}J(\Theta)=a_i^{(l)}\delta_j^{(l+1)}
+\\写成向量的形式即\frac{\partial}{\partial_{\Theta^{(l)}}}J(\Theta)=\delta^{(l+1)}(a^{(l)})^T</script><p>完整计算过程如下：</p>
+<p><img src="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190917204452.png" alt></p>
+<p><strong>使用注意：展开参数</strong></p>
+<ul>
+<li>为了使用高级优化算法，这一节我们讲如何调整参数。在神经网络中，参数$\Theta^{(j)}$是一个矩阵，而在之前利用高级优化算法的课程中，我们知道$\theta$是一个向量，这个时候就需要对$\Theta$进行<code>unrolling</code></li>
+</ul>
+<p>参数的矩阵表达式和向量表达式之间的转换</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[jVal, gradient]</span> = <span class="title">costFunction</span><span class="params">(theta)</span></span></span><br><span class="line">...</span><br><span class="line">optTheta  = fminunc(@costFunction, initialTheta, options)</span><br><span class="line"></span><br><span class="line">thetaVec = [ Theta1(:); Theta2(:); Theta3() ];</span><br><span class="line">// 还原</span><br><span class="line">Theta1 = <span class="built_in">reshape</span>(thetaVec(<span class="number">1</span>:<span class="number">110</span>), <span class="number">10</span>, <span class="number">11</span>)</span><br><span class="line">Theta2 = <span class="built_in">reshape</span>(thetaVec(<span class="number">111</span>:<span class="number">220</span>), <span class="number">10</span>, <span class="number">11</span>)</span><br><span class="line">Theta3 = <span class="built_in">reshape</span>(thetaVec(<span class="number">221</span>:<span class="number">231</span>), <span class="number">1</span>, <span class="number">11</span>)</span><br></pre></td></tr></table></figure>
+<p>矩阵形式的优点：当进行前向/反向传播时更方便</p>
+<p>向量形式的优点：当使用一些高级优化函数时，算法通常要求把所有的参数展开成一个长向量的形式</p>
+<p><strong>梯度检测</strong></p>
+<p>由于神经网络的复杂性，我们在使用梯度下降或其他的高级优化算法时可能会出现bug，即使感觉上好像没出什么问题。那么如何有效检查出问题呢，这时就需要使用<code>Gradient Checking</code></p>
+<p>即梯度检测（数值检验方法）是用来确保算法运行的正确的</p>
+<p>我们使用以下近似：$\frac{d}{d\theta}J(\theta) \approx \frac{J(\theta + \epsilon) + J(\theta-\epsilon)}{2\epsilon}$，通常取$\epsilon=10^{-4}$   </p>
+<p>上面例子中$\theta$是一个实数，$\theta$为一个向量时，用偏导数进行数值估计</p>
+<script type="math/tex; mode=display">
+\frac{\partial}{\partial\theta_j}J(\theta) \approx \frac{J(\theta_1,...,\theta_j+\epsilon,...\theta_n) + J(\theta_1,...,\theta_j-\epsilon,\theta_n)}{2\epsilon}</script><ul>
+<li>在实际运用中，我们使用以下代码来计算<code>gradApprox</code>，然后我们通过反向传播算法计算得来的<code>DVec</code>和<code>gradApprox</code> 进行比较，如果两个值近似的话，说明我们的反向传播算法运行地没有问题。</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190917204513.png" alt></p>
+<ul>
+<li>步骤如下</li>
+</ul>
+<ol>
+<li>运用反向传播计算Dvec（可能是$D^{(1)},D^{(2)},D^{(3)}$这些矩阵的展开）</li>
+<li>数值上的梯度检测，计算出gradApprox</li>
+<li>确定两者的值相近（相等或差几位小数）</li>
+<li>一旦确定反向传播的实现是正确的，关掉梯度检测（因为梯度检测比反向传播计算导数要慢的多），继续运行反向传播</li>
+</ol>
+<p><strong>随机初始化</strong></p>
+<p>任何优化算法都需要一些初始值，对于逻辑回归我们将$\theta$ 设为0是可行的，但对于神经网络来说不行，这样会使得第二层所有激活单元都会有相同的值。当然，设成一样的非0值结果相同。</p>
+<p>对于$\theta^{(1)} \in R^{10\times11}$，使用随机函数来进行初始化：(设置为$[-\epsilon,\epsilon]$之间的值)</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Theta1 = <span class="built_in">rand</span>(<span class="number">10</span>, <span class="number">11</span>) * (<span class="number">2</span> * INIT_EPSILON) - INIT_EPSILON</span><br></pre></td></tr></table></figure>
+<p>总结，为了训练神经网络，应首先将权重随机初始化为一个接近0的，范围在$[-\epsilon, \epsilon]$之间的数，然后进行反向传播，进行梯度检测，最后使用梯度下降或其他高级优化算法来最小化代价函数J（关于$\Theta$的函数）</p>
+<p><strong>组合到一起</strong></p>
+<p>输入单元个数：特征$X^{(i)}$的维度</p>
+<p>输出单元个数：对于多元分类问题，类别个数</p>
+<p>隐藏层的选择：合理的默认情况为1个隐藏层，或者多于1个隐藏层，隐藏层的单元个数相同。</p>
+<p>​    隐藏层单元数量越多越好，但多的时候计算量一般会比较大</p>
+<p>训练神经网络的步骤：</p>
+<ol>
+<li>随机初始化权重</li>
+<li>执行前向传播，对任意一个$x^{(i)}$计算出$h(x^{(i)})$，即一个输出值y的向量</li>
+<li>计算代价函数$J(\Theta)$</li>
+<li>执行反向传播计算偏导数项（对所有样本使用for循环实现）</li>
+<li>进行梯度检查，然后禁用梯度检查</li>
+<li>使用梯度下降或高级优化算法，将这些优化算法与反向传播向结合来最小化$J(\Theta)$</li>
+</ol>
+<p>反向传播的目的是算出梯度下降的方向，梯度下降的作用是沿着这个方向一点点下降直到我们想要的点</p>
+<p>基本原理：试图找到某个$\Theta$最优的参数使得神经网络的输出值与训练集中观测到的$y^{(i)}$的实际值尽可能地接近</p>
+<h4 id="应用机器学习的建议"><a href="#应用机器学习的建议" class="headerlink" title="应用机器学习的建议"></a>应用机器学习的建议</h4><hr>
+<p><strong>决定下一步做什么</strong></p>
+<p>问题：加入得到学习参数后，将假设函数放到一组新的房屋样本上进行测试，预测房价时产生了很大的误差</p>
+<p>机器学习诊断法：通过执行这些测试能够了解算法在哪里出了问题，也能告诉你，要想改进一种算法的效果，什么样的尝试是有意义的。提早发现哪些方法是无效的</p>
+<p><strong>模型评估</strong></p>
+<p>分成训练集和测试集（7：3），随机选择</p>
+<ol>
+<li>首先从训练数据学习得到参数$\Theta $ </li>
+<li>带入测试集中计算误差<code>test set error</code></li>
+</ol>
+<p><strong>模型的选择和训练、验证、测试集</strong></p>
+<p>为何不建议用模型在测试集上的误差表示这个模型的泛化能力呢？</p>
+<blockquote>
+<p>假设我们现在有10个待选择的模型，为了选出最好的模型，不妨设参数d为模型最高阶的阶数。我们按照上一节的测试集方法，首先在训练集上得到每个模型的参数$\Theta^{(1)}, \Theta^{(2)},…..,\Theta^{(10)}$，然后使用这些参数来计算对应模型在测试集上的误差$J_{test}(\Theta^{(i)})$；通过比较后发现，$J_{test}(\Theta^{(5)})$最小，所以我们选择这个模型，并且以这个值来代表该模型对未知数据的泛化能力。</p>
+<p>现在想想，用测试集误差来代表该模型对未知数据的泛化能力是不公平的。因为，这个测试集误差是我们通过对比选择出来的，它在这个测试集上肯定是最优的，相当于我们已经看到了这些数据，用它来代表对未知数据的泛化能力显然不行。</p>
+</blockquote>
+<p>为了解决上述问题，我们重新将数据分成训练集(<code>Training set</code>)，交叉验证集(<code>Cross Validation set</code>)和测试集(<code>Test set</code>)三部分。然后计算<code>Training error</code>, <code>Cross Validation error</code>, <code>Test error</code></p>
+<p>最后我们用交叉验证集来选择模型，假设我们选择了第四个模型，然后计算出测试集误差，这个时候这个测试集误差就可以代表这个模型在新样例下的适应程度了。</p>
+<p>使用交叉验证集进行选择最合适的模型，并使用测试集进行评估</p>
+<p><strong>诊断偏差与方差</strong></p>
+<p>如果一个机器学习算法表现得不好，往往是因为欠拟合或过拟合 </p>
+<p>bias vs. variance</p>
+<p>高偏差（欠拟合）：训练误差$J_{train}(\theta)$高，验证误差$J_{cv}(\theta)$也高</p>
+<p>高方差（过拟合）：训练误差$J_{train}(\theta)$很小，验证误差$J_{cv}(\theta)$远远高于训练误差</p>
+<p><strong>正则化和偏差、方差</strong></p>
+<p>假设我们的模型是一个高阶多项式，我们想用正则化来避免过拟合。当$\lambda$选择不同值的时候有不同的效果，可以将$\lambda$看成正则化的强度，很大时，就会导致模型变得简单即产生高偏差<code>bias</code>；很小时，正则化过弱，就可能导致高方差<code>variance</code>，那么大小应该如何选择呢？</p>
+<p>图中可以大致看出一个趋势，可以帮助你选出验证误差最小的那个点。</p>
+<p>$\lambda$很大则可能处于欠拟合：对$\theta_1….\theta_n$都用了很大的惩罚值，最后$h_\theta(x)$约等于$\theta_0 $。</p>
+<p>$\lambda$很小时则可能处于过拟合：因为基本忽略正则化。</p>
+<p><img src="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190917204545.png" alt></p>
+<p><strong>学习曲线</strong></p>
+<p>学习曲线用于判断一个学习算法是否处于偏差、方差或者两者都有。我们可以将$J_{train}(\theta)$和$J_{cv}(\theta)$看成关于m（训练样本数）的函数，观察随着m的增加这两个误差的变化。</p>
+<p>当样本数量很少时，模型可以很容易完全拟合这些样本，即$J_{train}(\theta) $很小，但是随着样本数量的增加，想要完美地拟合数据就越来越困难，即误差会增加。</p>
+<p>对于$J_{cv}(\theta) $ ，只有当我们有大量数据时，我们得到的模型才能更好地泛化。</p>
+<p>知道了学习曲线之后，我们可以利用它来帮助我们判断增加训练样本的数量会不会对我们的模型有帮助。</p>
+<p>1.现在假设我们的模型存在<code>high bias</code>问题，即欠拟合。我们的假设函数如图所示，我们的模型较为简单，根本不能很好的描述数据的规律，所以两种误差都比较大，这个时候增加更多的训练样本对我们的模型不会有任何帮助。</p>
+<p><img src="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190917204605.png" alt></p>
+<p>2.假设我们的模型存在<code>high variance问题</code>，即过拟合，我们的假设函数如下图所示。当m较小时，假设函数可以完全拟合训练集，当m越来越大，想要完全拟合就会困难一些，但仍然可以很好地拟合。因为在高方差的时候，假设函数处于过拟合，验证误差一直都比较大，但是持续增大样本的数量时，验证误差会一直减小。因此当学习算法存在高方差问题时，增加训练数据很可能有帮助。</p>
+<p><img src="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190917204620.png" alt></p>
+<p><strong><code>在改进算法之前，往往先画出学习曲线来判断是什么问题</code></strong></p>
+<p>如果一个算法处于高偏差，选用更多的训练数据对于改善算法表现并无作用</p>
+<p>如果一个算法处于高方差，获得更多的训练数据对改进算法是有帮助的</p>
+<p><strong>决定下一步做什么</strong></p>
+<p>改进一个机器学习算法时：</p>
+<ul>
+<li>获得更多的训练样例：修复高方差</li>
+<li>尝试更小的特征集：修复高方差</li>
+<li>尝试附加特征：修复高偏差</li>
+<li>增加多项式特征($x_1^2,x_2^2,x_1x_2,etc$）：修复高偏差</li>
+<li>减小$\lambda$：修复高偏差</li>
+<li>增大$\lambda$：修复高方差</li>
+</ul>
+<p>最后再来看看神经网络中的<code>bias</code>与<code>variance</code>问题。在较小的神经网络中，虽然计算资源消耗较小，但是容易出现欠拟合的问题；在较大的神经网络中，会消耗比较大的计算资源，也会出现过拟合的问题，可以用正则化<code>regularization</code>来解决这个问题，这样的神经网络比较小的神经网络更加有效。</p>
+<h4 id="机器学习系统设计"><a href="#机器学习系统设计" class="headerlink" title="机器学习系统设计"></a>机器学习系统设计</h4><hr>
+<p><strong>确定执行的优先级</strong></p>
+<p>即确定选定什么方案值得花上时间去研究</p>
+<p>如何区分是否为垃圾邮件</p>
+<p>​    首先想的是如何表示邮件的特征向量X，结合分类标签y，就能训练一个分类器</p>
+<p><strong>误差分析</strong></p>
+<p>以下是比较推荐的做法：</p>
+<ol>
+<li>快速实现一个较简单的算法并使用交叉验证测试。</li>
+<li>绘制学习曲线，决定是增加更多数据，或者添加更多特征。</li>
+<li>进行误差分析：人工检查算法在交叉验证集上出现错误的样例，找出这些样例中一些有规律的特征。</li>
+</ol>
+<p><strong>不对称性分类的误差评估</strong></p>
+<p><strong><code>偏斜类</code></strong><code>skewed classes</code>：一个类中的样本数比另一个类的数据多很多，因此通过总是预测y=1或y=0，算法可能表现非常好，因此使用分类误差（精确度accuracy）作为评估度量会出现问题。</p>
+<p>因此我们要选择别的误差度量值，其中一种是<code>查准率</code>/<code>召回率</code>（以数量较少的那个类作为y=1）</p>
+<p>分为<code>真阳性TP</code>，<code>真阴性TN</code>，<code>假阳性FP</code>、<code>假阴性FN</code></p>
+<p>precision:$查准率 = \frac{true \ pos}{true \  pos + false \ pos}$</p>
+<p>查准率越高越好</p>
+<p>Recall:$召回率 = \frac{true \ pos}{true \ pos + false \ neg}$</p>
+<p>如果所有病人确实得了癌症，有多少人我们能够正确告诉他们需要治疗</p>
+<p>这样一个总是预测y=0的评估模型中，召回率为0，这样的模型不会有高查准率和高查全率，即算法不能总是预测y=1或0来欺骗我们</p>
+<blockquote>
+<p>TP真正：将正类预测为正类数；TN真负：将负类预测为负类数</p>
+<p>FP假正：将负类预测为正类数（误报）；FN假负：将正类预测为负类数（漏报）</p>
+<p>精确率precision定义为：$P=\frac{TP}{TP+FP}$。精确率是针对我们<code>预测结果</code>而言的，它表示预测为正的样本中有多少是对的。</p>
+<p>召回率recall定义为：$R=\frac{TP}{TP+FN}$。召回率是针对我们原来的<code>样本</code>而言的，表示的是样本中的正例有多少被预测正确了。</p>
+<p>精确率precision和准确率accuracy是不一样的。$ACC=\frac{TP+TN}{TP+TN+FP+FN}$（正负样本不平衡的情况下，accuracy这个评价指标有很大缺陷。</p>
+</blockquote>
+<p><strong>查准率和召回率的平衡</strong></p>
+<p>取决你想要高查准率，低召回率还是高召回率，低查准率，来选择：</p>
+<p>$Predict \ 1 \ if \ h_\theta(x) \ge threshod$</p>
+<p>F值公式（结合precision和recall给出一个评估度量值）</p>
+<script type="math/tex; mode=display">
+F_1\ Score = 2 \frac{PR}{P + R}</script><p><strong>数据集对模型的影响</strong></p>
+<p>如果有大量的数据，并且训练了一个带有很多参数的学习算法，会是一个很好的方式来提供一个高性能的学习算法。</p>
+<p>满足上述说法是有一定条件的，第一个条件就是特征包含了可以准确预测结果的充足信息；第二个条件就是学习算法需要具有很多参数，并且训练集很大。这样，使用大量的数据就不太会过拟合，从而会有一个较小的$J_{test}(\theta) $</p>
+<h4 id="支持向量机"><a href="#支持向量机" class="headerlink" title="支持向量机"></a>支持向量机</h4><hr>
+<p> <strong>代价函数</strong></p>
+<p>我们将logistic regression中的两个部分用$Cost_1(z)$和$Cost_0(z)$替换，并且去掉$\frac{1}{m}$常数项。最后再去掉$\lambda$并加上常数项$C$，就得到了<code>SVM</code>的cost function</p>
+<script type="math/tex; mode=display">
+minC\sum_{i=1}^n[y^{(i)}cost_1(\theta^Tx^{(i)})+(1-y^{(i)})cost_0(\theta^Tx^{(i)})] + \frac{1}{2}\sum_{i=1}^n\theta_j^2</script><p>cost_1用于正样本</p>
+<p>$CA+B$，通过调整C的值来权衡A和B的权重</p>
+<p>与logistic回归不同的是，支持向量机不会输出概率，相对的我们得到的是通过优化这个函数得到一个参数$\theta$</p>
+<p><strong>直观上对大间隔的理解</strong></p>
+<p>SVM也叫大间隔分类器：尽量把正样本和负样本以最大的间距分开 </p>
+<p>支持向量机的间距：</p>
+<p>C起的作用就像$\frac{1}{\lambda}$（正则化参数）</p>
+<p><img src="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190917204657.png" alt></p>
+<hr>
+<p>上图为支持向量机模型的代价函数，现在考虑一下，最小化这些代价函数的必要条件是什么。</p>
+<p>支持向量机的要求更高，不仅仅要能正确分开输入的样本，即不仅要求$\theta^Tx&gt;0$，我们需要的是比0值大很多，比如大于等于1；我们也想这个值比0小很多，比如我希望它小于等于-1，这相当于在支持向量机中嵌入了一个额外的安全因子。</p>
+<p>现在假设C是一个非常大的数例如100,000，我们看看SVM会有什么结果。在C非常大的情况下，我们想要最小化代价函数，那么就得有第一项为0，而要想第一项为0，我们需要保证当当y=1的时候$\theta^Tx \ge 1$或者当y=0的时候$\theta^Tx \le -1$，在此约束下，我们的优化问题变成了：(<code>s.t.含义：使得...满足...</code>)</p>
+<p><img src="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190917204747.png" alt></p>
+<p>我们接下来忽略掉截距，令$\theta_0=0$，这样更容易画示意图。设特征数量为2，因此我们仅有两个特征$x_1, x_2$，现在看我们的优化目标函数，当我们仅有两个特征，即n=2时，这个式子可以写作：</p>
+<script type="math/tex; mode=display">
+\frac{1}{2}(\theta_1^2+\theta_2^2) = \frac{1}{2}(\sqrt{\theta_1^2+\theta^2_2} =\frac{1}{2}||\theta^2||</script><p>这意味着我们的目标函数等于$\frac{1}{2}||\theta^2||$。因此支持向量机做的全部事情就是极小化参数向量$\theta$的范数的平方（或者说长度的平方）</p>
+<p><strong>大间隔分类器的数学原理</strong></p>
+<p>向量内积</p>
+<p>目标优化函数</p>
+<script type="math/tex; mode=display">
+min\frac{1}{2}\sum_{j=1}^n\theta_j^2\\
+     s.t.\ p^{(i)}||\theta|| \ge 1 \ if\ y^{(i)} = 1\\
+    p^{(i)}||\theta|| \le -1 \quad if\ y^{(i)} = 0\\
+    ||\theta||代表\theta的长度length/范数norm\\
+    p^{(i)}is \ the \ projection \ of \ x^{(i)} \ onto \ the \ vector \ \theta</script><p>为什么SVM会是一个大间隔分类器？</p>
+<p>正样本和负样本之间的间隔的值即$p^{(i)}$的值，<strong>通过使他们的值变大，即间距变大，SVM最终可以输出一个较小的$\theta$的值</strong>，这就是支持向量机优化目标函数所做的，这也使为何SVM最终会找到大间距分类器的原因，因为它试图最大化这些$p^{(i)}$的范数，也就是训练样本到决策边界的距离.</p>
+<p><strong>核函数1</strong></p>
+<p>可以用高级数的多项式模型来解决无法用直线进行分隔的分类问题。</p>
+<p>构造复杂的非线性分类器</p>
+<p>这些不同的相似度量函数即为核函数（此处为高斯核）</p>
+<blockquote>
+<p>注：这个函数和高斯分布没什么实际上的关系，只是看上去像而已</p>
+</blockquote>
+<p>通过<strong><code>标记</code></strong>点和<strong><code>相似性函数</code></strong>来定义新的特征变量，从而训练复杂的非线性边界</p>
+<script type="math/tex; mode=display">
+f_1 = similarity(x, l^{(1)}) = exp(-\frac{||x-l^{(1)}||^2}{2\sigma^2})\\
+if \ x\approx l^{(1)}: \ f_1 \approx 1\\
+if \ x \ is \ far \ from \ l^{(i)}: f_1 \approx0\\</script><p>==接下来的内容看视频辅助理解==</p>
+<p>Predict “1” </p>
+<p>when $\theta_0 + \theta_1f_1 + \theta_2f_2 + \theta_3f_3 \ge 0$</p>
+<p><strong>核函数2</strong></p>
+<ul>
+<li><p>如何选取标记点</p>
+<p>将训练样本直接选为标记点</p>
+</li>
+<li><p>当给定核函数和相似度函数后，如何使用SVM</p>
+<p>给定$x$，计算特征$f \in R^{m+1}$</p>
+<p>​    已知$\theta$后，<strong>Predict y = 1 if $\theta^Tf \ge 0$</strong>，$\theta \in R^{m+1}$</p>
+<p>从下式获得$\theta$ ，通过解决最小化问题获得</p>
+</li>
+</ul>
+<script type="math/tex; mode=display">
+minC\sum_{i=1}^n[y^{(i)}cost_1(\theta^Tf^{(i)})+(1-y^{(i)})cost_0(\theta^Tf^{(i)})] + \frac{1}{2}\sum_{i=1}^n\theta_j^2</script><p>不建议自己写代码来实现求解$\theta$，只需调用相关库函数</p>
+<ul>
+<li><p>SVM参数的选择：</p>
+<p>$C(=\frac{1}{\lambda})$的选择：</p>
+<p>Large C(small $\lambda$)：可能会导致过拟合，则低偏差，高方差</p>
+<p>Small C(large $ \lambda $)：可能会导致欠拟合，高偏差，低方差</p>
+<p>$\sigma^2$的选择：</p>
+<p>Large：高斯核函数倾向于变得平缓，特征$f_i$变化平滑，导致高偏差，低方差</p>
+<p>Small：特征的变化会变得不平滑，会有较大的斜率，导致低偏差，高方差</p>
+</li>
+</ul>
+<p><strong>使用SVM</strong></p>
+<p>尽管不需要写实现，要选择<code>参数C</code>以及选择<code>核函数(相似度函数)</code></p>
+<ol>
+<li><p>不适用核函数的SVM也叫做线性核</p>
+<p><code>linear kernel</code>，Predict “y = 1” if $\theta^Tx \ge 0$</p>
+</li>
+<li><p>当选用高斯核时，又面临$\sigma^2$的选择。</p>
+<p>当n小m大时，想用核函数拟合相当复杂的非线性决策边界，可以选用高斯核</p>
+</li>
+</ol>
+<p>当选用高斯核的时候，要先进行特征缩放，不然式子中的间距都会由其中个别特征决定。要使SVM考虑到所有的特征变量</p>
+<ul>
+<li>不是所有的相似度量函数都是有效的核函数，核函数需要满足默塞尔定理</li>
+</ul>
+<p>很多现成的核函数：如多项式核函数，还有一些难懂的核函数：字符串核函数（文本分类）、卡方核函数等等</p>
+<ul>
+<li>多元分类：使用SVM包内置的或者使用one-vs-all方法（训练k个支持向量机）</li>
+</ul>
+<p><strong>Logistic regression vs. SVMs（适用情况对比）</strong></p>
+<p>下面是一些普遍使用的准则：</p>
+<p>​    n为特征数量($x\in R^{n+1}$)，m为训练样本数目</p>
+<p>​    n相对于m足够大时，即训练集数据量不支持我们训练一个复杂的非线性模型，使用logstic或者线性核函数的SVM</p>
+<p>​    n小，m适中时，使用高斯核的SVM</p>
+<p>​    n小，m很大时，此时高斯核会运算的很慢，此时可以手动创建更多特征，然后使用logstic或者线性核（即不带核函数）的SVM</p>
+<p>SVM具有的优化问题是一种凸优化问题，好的SVM软件包总能找到全局最小值或者接近它的值</p>
+<p>为何这里不用神经网络，因为训练会比较慢</p>
+<hr>
+<h4 id="编程作业篇"><a href="#编程作业篇" class="headerlink" title="编程作业篇"></a>编程作业篇</h4><p>:question: 向量化计算$\theta$</p>
+<p><strong>编程作业二</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">logistic regression</span><br><span class="line">1.y为列向量，pos = find(y==1)返回一个列向量，为y==1的indices</span><br><span class="line">2.括号()用于引用数组的元素，比如X(pos, 1)代表取所有下标对应的行的第一列</span><br><span class="line">3.矩阵点乘代表每一个元素对应相乘，要求两矩阵维度相等</span><br><span class="line">4.使用fminunc，不需要手动写任何循环，也不需要设置学习率，只需要提供一个计算cost和gradient的函数</span><br><span class="line">regularized logistic regression</span><br></pre></td></tr></table></figure>
+<p><strong>logistic regression仅能够找出一个线性的决策边界</strong></p>
+<p><code>mapFeature.m</code>将两个特征的向量转换为有28个特征的高维向量，基于这个高维特征向量训练出的分类器将有一个更加复杂的决策边界</p>
+<p>扩展内容：</p>
+<p> 看<code>plotDecisionBoundary.m</code>是如何画决策界限的</p>
+<p><strong>编程作业三</strong></p>
+<p>1.logistic regression向量化的技巧</p>
+<p>当实现对正则化逻辑回归的向量化时，有时候会仅仅对$\theta$中的某些元素进行更新或求和。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>用法示例：</span><br><span class="line">A(:, <span class="number">1</span>:<span class="number">3</span>) = B(:, <span class="number">1</span>:<span class="number">3</span>);</span><br><span class="line"><span class="number">2.</span>在索引的时候可以使用关键字：`end`</span><br><span class="line">A(:, <span class="number">2</span>:end);</span><br><span class="line"><span class="number">3.</span>结合sum和.^操作符的使用：</span><br><span class="line">sum(z(<span class="number">2</span>:end) .^ <span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<p>2.多元逻辑回归：sone-vs-all classification</p>
+<p>当训练第k (k$\in [1, K]$个分类器时，会需要一个m维的向量y，$y_i \in [0, 1]$，代表第i个训练样例是否为class k，因此会需要logical array</p>
+<p>matalb logical数组</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">1</span>:<span class="number">10</span>;</span><br><span class="line">b = <span class="number">3</span>;</span><br><span class="line">a == b</span><br><span class="line"> 结果为输出</span><br><span class="line"> <span class="number">1</span>×<span class="number">10</span> logical 数组</span><br><span class="line"> <span class="number">0</span>   <span class="number">0</span>   <span class="number">1</span>   <span class="number">0</span>   <span class="number">0</span>   <span class="number">0</span>   <span class="number">0</span>   <span class="number">0</span>   <span class="number">0</span>   <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p>matlab max函数用法</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">max</span>(A, [], dim) 返回A中由dim指定的维数范围的最大值</span><br><span class="line">例如：[Y,I] = <span class="built_in">max</span>(A,[],<span class="number">1</span>)，取每列最大值，结果存在Y里，I里存的是每列最大值的行位置。返回的是行向量</span><br></pre></td></tr></table></figure>
+<p>3.神经网络Neural Neworks</p>
+<p>本周的编程作业使用已经训练好的参数，使用此参数执行前向传播进行预测</p>
+<p>下周将写反向传播来学习神经网络参数</p>
+<p><strong>编程作业四</strong></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">h = <span class="built_in">eye</span>(num_labels);    <span class="comment">% 10阶单位阵</span></span><br><span class="line">y = h(y, :);                    <span class="comment">% 很巧妙地把1~10的值映射为对应的0/1向量 y.size=5000*1 -&gt; y.size = 5000 * num_labels (num_labels=10)</span></span><br><span class="line"></span><br><span class="line">a1 = [<span class="built_in">ones</span>(m, <span class="number">1</span>) X];        <span class="comment">% 5000 * 401</span></span><br><span class="line">z2 = a1 * Theta1';           <span class="comment">% 5000 * 25  </span></span><br><span class="line">a2 = sigmoid(z2);</span><br><span class="line">n = <span class="built_in">size</span>(a2, <span class="number">1</span>);</span><br><span class="line">a2 = [<span class="built_in">ones</span>(n, <span class="number">1</span>) a2];       <span class="comment">% 5000 * 26 每行为一个样例</span></span><br><span class="line">z3 = a2 * Theta2';          <span class="comment">% 5000 * 10</span></span><br><span class="line">a3 = sigmoid(z3);           <span class="comment">% 5000 * 10</span></span><br><span class="line">h = a3;</span><br><span class="line">J =  sum(sum(-y .* <span class="built_in">log</span>(h) - (<span class="number">1</span>-y) .* <span class="built_in">log</span>(<span class="number">1</span>-h))) / m;</span><br><span class="line"></span><br><span class="line"><span class="comment">% regularzation</span></span><br><span class="line">Theta1_reg = Theta1(:, <span class="number">2</span>:<span class="keyword">end</span>);</span><br><span class="line">Theta2_reg = Theta2(:, <span class="number">2</span>:<span class="keyword">end</span>);</span><br><span class="line">J = J + (lambda / (<span class="number">2</span> * m)) *  sum(sum(Theta1_reg .^ <span class="number">2</span>)) + sum(sum(Theta2_reg .^ <span class="number">2</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">% backpropagation</span></span><br><span class="line">delta3 = a3 - y;                        <span class="comment">% 5000 * 10</span></span><br><span class="line">delta2 = (delta3 * Theta2);        <span class="comment">% 5000 * 26</span></span><br><span class="line">delta2 = delta2(:, <span class="number">2</span>:<span class="keyword">end</span>);          <span class="comment">% 5000 * 25</span></span><br><span class="line">delta2 = delta2 .* sigmoidGradient(z2)</span><br><span class="line">Delta2 = <span class="built_in">zeros</span>(<span class="built_in">size</span>(Theta2));     <span class="comment">% 10 * 26</span></span><br><span class="line">Delta1 = <span class="built_in">zeros</span>(<span class="built_in">size</span>(Theta1));      <span class="comment">% 26 * 401</span></span><br><span class="line">Delta2 =Delta2 + delta3' * a2;</span><br><span class="line">Delta1 = Delta1 + delta2' * a1;</span><br><span class="line"></span><br><span class="line">Theta1_grad = Delta1 / m;</span><br><span class="line">Theta2_grad = Delta2 / m;</span><br></pre></td></tr></table></figure>
+<p>Practical Tip：进行梯度检查时，使用一个小的神经网络更为高效（这样参数的数量也比较少），来验证梯度的计算是否正确。在确认正确后，在运行学习算法之前关掉梯度检查。</p>
+<p><strong>编程作业五</strong></p>
+<p>要特别注意，matlab中下标从1开始。</p>
+<p>有时候sum求和可以用两个矩阵相乘来实现，比如求正则化梯度时。</p>
+<p>3.1 Learning Polynomial Regression</p>
+<p>​    尽管在特征向量中出现了多项式，我们仍然在解决一个线性回归问题，因为多项式项变成了我们可以用来在线性回归中使用的特征</p>
+<p><strong>编程作业六</strong></p>
+<p>1.2.1 高斯核中的$\sigma$决定了，随着样例越来越远，相似性度量降低（到0）的速度</p>
+<p>1.2.3 matlab里无穷大：<code>Inf</code>来表示</p>
+<p>@是用于定义函数句柄的操作符</p>
+<p>==@的用法==</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="params">[model]</span> = <span class="title">svmTrain</span><span class="params">(X, Y, C, kernelFunction, ...</span></span></span><br><span class="line"><span class="function"><span class="params">                            tol, max_passes)</span></span></span><br><span class="line"><span class="comment">% 上面的...是用来换行，还是说后面的参数为非必须的？</span></span><br><span class="line"><span class="comment">% 困惑已解决，下面的代码中有一段内容“当参数不存在时，初始化为一个值”</span></span><br><span class="line">model = svmTrain(X, y, currC, @(x1, x2) gaussianKernel(x1, x2, currSigma));</span><br><span class="line"><span class="comment">% 这个调用是什么操作？</span></span><br></pre></td></tr></table></figure>
+<p>2.1 Processing Emails</p>
+<p>向量中追加元素可以这样：<code>wrod_indices = [wordindices; i]</code></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/29/大三下暑期学习计划/" class="archive-article-date">
-  	<time datetime="2019-07-29T08:52:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/29/大三下暑期学习计划/">coursera之ML笔记</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">machine learning</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">supervised learning</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/23/ML之监督学习/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/16/线段树和树状数组学习/" class="archive-article-date">
-  	<time datetime="2019-07-16T12:52:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-16</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2019/08/24/非监督学习/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          非监督学习
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/08/20/基于模板的文本匹配算法-解题报告/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">基于模板的文本匹配算法-解题报告</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/16/线段树和树状数组学习/">线段树和树状数组学习</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">algorithm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/09/离散数学复习/" class="archive-article-date">
-  	<time datetime="2019-07-09T09:28:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-09</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/09/离散数学复习/">离散数学复习</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">review</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/05/操作系统复习/" class="archive-article-date">
-  	<time datetime="2019-07-05T15:12:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/05/操作系统复习/">操作系统复习</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">review</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/04/算法复习/" class="archive-article-date">
-  	<time datetime="2019-07-04T14:58:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/04/算法复习/">算法复习</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">review</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/07/02/计算机网络复习/" class="archive-article-date">
-  	<time datetime="2019-07-02T15:32:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/07/02/计算机网络复习/">计算机网络复习</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">review</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -410,8 +896,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

@@ -19,7 +19,8 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190909151850.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190910212711.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190910212754.png">
-<meta property="og:updated_time" content="2019-09-11T13:02:11.995Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190917195234.png">
+<meta property="og:updated_time" content="2019-09-17T11:53:40.238Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习的数学基础">
 <meta name="twitter:description" content="线性代数 张量 几何代数中定义的张量是基于向量和矩阵的推广，通俗理解，我们可以将标量视为零阶张量，矢量视为一阶张量，那么矩阵就是二阶张量。 例如，可以将任意一张彩色图片表示成一个三阶张量，三个维度分别是图片的高度、宽度和色彩数据。将这张图用张量表示出来，就是下方的表格：">
@@ -265,6 +266,17 @@ P(A|B) = \frac{P(B|A)P(A)}{P(B)}\\将B展开可以写成：P(A|B) = \frac{P(B|A)
 <p>协方差被用于衡量两个随机变量X和Y之间的总体误差。</p>
 <script type="math/tex; mode=display">
 Cov(X,Y) = E[(X-EX)(Y-EY)] = E(XY) - EXEY</script><p><strong>常见分布函数</strong></p>
+<p>条件独立</p>
+<blockquote>
+<p>给定第三个事件Z，如果$P(X,Y|Z)=P(X|Z)P(Y|Z)$，则称X和Y是条件独立事件。若X，Y关于事件Z条件独立，则有以下一些理解：</p>
+<p>（1）事件Z的发生，使本来可能不独立的事件A和B变得独立起来。</p>
+<p>（2）事件Z的出现或发生，解开了X和Y的依赖关系</p>
+</blockquote>
+<p>协方差与协方差矩阵</p>
+<blockquote>
+<p>协方差：随机变量之间的线性相关关系。可以理解为：两个变量在变化过程中是正相关/负相关/不相关。</p>
+<p>如果协方差为正，说明X，Y同向变化，协方差越大说明同向程度越高；如果协方差为负，说明X，Y反向运动，协方差越小说明反向程度越高。</p>
+</blockquote>
 <h4 id="信息论"><a href="#信息论" class="headerlink" title="信息论"></a>信息论</h4><hr>
 <p>信息论本来是通信中的概念，但是其核心思想“熵”在机器学习中也得到了广泛的应用。比如决策树模型ID3，C4.5中是利用信息增益来划分特征而生成一颗决策树的，而信息增益就是基于这里所说的熵。所以它的重要性也是可想而知。</p>
 <p>1.熵：如果一个随机变量X的可能取值为$X={x_1,…,x_n}$，其概率分布为$P(X=x_i)=p_i,i=1,2,…,n$，则随机变量X的熵定义为$H(X)$：</p>
@@ -292,6 +304,60 @@ H(X) = -\sum_{i=1}^nP(x_i)logP(x_i) = \sum_{i=1}^nP(x_i)\frac{1}{logP(x_i)}</scr
 </blockquote>
 <h4 id="最优化"><a href="#最优化" class="headerlink" title="最优化"></a>最优化</h4><hr>
 <p>以上参考自：<a href="https://www.cnblogs.com/jialin0421/p/8988824.html" target="_blank" rel="noopener">机器学习中的数学基础</a></p>
+<p>以下更新于<code>09-17</code>日，在学习PyTorch自动求导相关概念时遇到的问题</p>
+<p>参考自：<a href="https://www.jianshu.com/p/2da10b181c59" target="_blank" rel="noopener">机器学习中的矩阵、向量求导</a></p>
+<hr>
+<h4 id="机器学习中的矩阵、向量求导"><a href="#机器学习中的矩阵、向量求导" class="headerlink" title="机器学习中的矩阵、向量求导"></a>机器学习中的矩阵、向量求导</h4><p><strong>所谓矩阵求导，本质上只不过是多元函数求导</strong>，仅仅是把函数的自变量以及求导的结果排列成了矩阵的形式，方便表达与计算而已。类似地，复合函数的求导法则也是多元函数求导的链式法则，只是将结果整理成了矩阵的形式。从原理上讲，可以对矩阵的每个分量逐元素地求导，得到最终结果；但是这样做太繁琐，容易出错，因此推导并记住一些常用的结论在实践中是非常必要的。</p>
+<p>矩阵求导本身有很多争议，如：</p>
+<ul>
+<li><p>对于求导结果是否需要转置？</p>
+<p>不同教材对此处理的结果不一样，本文以不转置为准。</p>
+</li>
+<li><p>矩阵对向量，向量对矩阵，矩阵对矩阵求导的结果是什么？</p>
+<p>本教程中我们认为这三种情形下导数没有定义。凡是遇到这种情况，都通过其他手段来绕过，后面会有具体示例。</p>
+</li>
+</ul>
+<p><strong>变量使用规范</strong></p>
+<ul>
+<li>向量默认为列向量，行向量使用列向量的转置表示。</li>
+</ul>
+<p><strong>导数符号</strong></p>
+<ul>
+<li><p>若$f$是关于$x$的函数，则$f$对$x$的导数记作：$\frac{\partial f}{\partial x}$或$\nabla_xf$；若待求导的变量比较明确，也可以省略下标记作$\nabla f $</p>
+</li>
+<li><p>上一条中的$f$和$x$可以指代任意维度的变量</p>
+</li>
+</ul>
+<p><strong>导数定义</strong></p>
+<p>以上面的符号为基础，根据函数值和自变量的类型，本文对求导结果及其维度进行如下约定：</p>
+<p>1.矩阵/向量值函数对实数的导数</p>
+<ul>
+<li>要点：求导结果与函数值同型，且每个元素就是函数值的相应分量对自变量$x$求导</li>
+<li><p>若函数$F:R\rightarrow R^{m\times n}$，则$\frac{\partial f}{\partial x}$也是一个$m \times n$维矩阵，且$(\frac{\partial f}{\partial x})_{ij} = \frac{\partial f_{ij}}{\partial x}$。导数也可记作$\nabla_xF$或$F’_x$</p>
+</li>
+<li><p>由于向量是矩阵的特殊情形，根据上面的定义也可以得到函数值为列向量时的定义。</p>
+</li>
+</ul>
+<p>2.实值函数对矩阵/向量的导数</p>
+<ul>
+<li>要点：求导结果与自变量同型，且每个元素就是$f$对自变量的相应分量求导</li>
+<li>这是最重要的一个类别，因为机器学习里一般都是求标量损失函数对向量/矩阵的参数</li>
+<li><p>若函数$f:R^{m\times n} \rightarrow R$，则$\frac{\partial f}{\partial X}$也是一个$m \times n$维矩阵，且$(\frac{\partial f}{\partial X})_{ij} = \frac{\partial f}{\partial x_{ij}}$。导数也可使用劈型算子记作$\nabla_Xf$</p>
+</li>
+<li><p>由于向量是矩阵的特殊情形，根据上面的定义也可得到自变量为列向量时的定义。</p>
+</li>
+</ul>
+<p>3.向量值函数对向量的导数（<strong>雅可比矩阵Jacobian</strong>）</p>
+<ul>
+<li><p>若函数$\boldsymbol{f}:R^n\rightarrow R^m$，则$\frac{\boldsymbol{\partial f}}{\boldsymbol{\partial x}}$是一个$m\times n$维矩阵，且$(\frac{\boldsymbol{\partial f}}{\boldsymbol{\partial x}})_{ij} = \frac{\partial f_i}{\partial x_j}$。用劈型算子表示可记作$\nabla_x\boldsymbol{f}$</p>
+</li>
+<li><p>特别地，若$\boldsymbol{f}$退化成标量$f$，则$\boldsymbol{x} $到$ \boldsymbol{f}$的 $\frac{\boldsymbol{\partial f}}{\boldsymbol{\partial x}}$是一个行向量，是梯度（列向量）的转置，即$(\frac{\boldsymbol{\partial f}}{\boldsymbol{\partial x}}) = (\frac{\partial f}{\partial x})^T$</p>
+<p>注意这里使用的记号，左边f加粗，是把它看做一个长度为1的向量，表示求向量x到向量f的雅可比矩阵；右边f为普通字体，表示是函数f对向量x的导数。</p>
+</li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190917195234.png" alt></p>
+<p>写公式太麻烦了，后续阅读如下文章（矩阵向量求导系列四篇）：</p>
+<p><a href="https://www.cnblogs.com/pinard/p/10750718.html" target="_blank" rel="noopener">矩阵向量求导系列（一）求导定义与求导布局</a></p>
 
       
 
@@ -529,11 +595,11 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
+                <a href="javascript:void(0)" class="js-tag color2">machine learning</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">machine learning</a>
+                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -549,7 +615,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
+                <a href="javascript:void(0)" class="js-tag color5">sort</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">RNN</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -557,11 +627,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">sort</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RNN</a>
+                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -573,11 +639,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Hexo使用</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">review</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Hexo使用</a>
+                <a href="javascript:void(0)" class="js-tag color2">Greedy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -586,10 +656,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">unsupervised learning</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Greedy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -622,6 +688,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">spring</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">supervised learning</a>
               </li>
             
             <div class="clearfix"></div>
