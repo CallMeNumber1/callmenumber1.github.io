@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Today is the day</title>
+  <title>DL（一）神经网络和深度学习 | Today is the day</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Today is the day">
-<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+  <meta name="description" content="吴恩达深度学习系列课程一：神经网络与深度学习 1.2 什么是神经网络 以房价预测问题为例：   中间层节点是神经网络学到的特征。  对于神经网络，只要给它足够多的数据，即足够多的x、y训练样本，神经网络非常擅长于计算从x到y的精准映射函数。 1.3 用神经网络进行监督学习  深度学习最近的应用：  在线广告（给用户展示其最可能点击的广告） 图像标注；语音识别（输入语音，输出文本）；机器翻译；自动驾">
+<meta name="keywords" content="nerual network">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DL（一）神经网络和深度学习">
+<meta property="og:url" content="http://yoursite.com/2019/09/19/DL（一）神经网络和深度学习/index.html">
 <meta property="og:site_name" content="Today is the day">
+<meta property="og:description" content="吴恩达深度学习系列课程一：神经网络与深度学习 1.2 什么是神经网络 以房价预测问题为例：   中间层节点是神经网络学到的特征。  对于神经网络，只要给它足够多的数据，即足够多的x、y训练样本，神经网络非常擅长于计算从x到y的精准映射函数。 1.3 用神经网络进行监督学习  深度学习最近的应用：  在线广告（给用户展示其最可能点击的广告） 图像标注；语音识别（输入语音，输出文本）；机器翻译；自动驾">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190919183049.png">
+<meta property="og:updated_time" content="2019-09-19T10:59:40.250Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Today is the day">
+<meta name="twitter:title" content="DL（一）神经网络和深度学习">
+<meta name="twitter:description" content="吴恩达深度学习系列课程一：神经网络与深度学习 1.2 什么是神经网络 以房价预测问题为例：   中间层节点是神经网络学到的特征。  对于神经网络，只要给它足够多的数据，即足够多的x、y训练样本，神经网络非常擅长于计算从x到y的精准映射函数。 1.3 用神经网络进行监督学习  深度学习最近的应用：  在线广告（给用户展示其最可能点击的广告） 图像标注；语音识别（输入语音，输出文本）；机器翻译；自动驾">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190919183049.png">
   
     <link rel="alternative" href="/atom.xml" title="Today is the day" type="application/atom+xml">
   
@@ -144,855 +151,48 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-知识图谱学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-DL（一）神经网络和深度学习" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/03/知识图谱学习/">初识知识图谱</a>
+    <h1 class="article-title" itemprop="name">
+      DL（一）神经网络和深度学习
     </h1>
   
 
         
-        <a href="/2019/08/03/知识图谱学习/" class="archive-article-date">
-  	<time datetime="2019-08-03T01:01:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-03</time>
+        <a href="/2019/09/19/DL（一）神经网络和深度学习/" class="archive-article-date">
+  	<time datetime="2019-09-19T10:31:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>概念</strong> </p>
-<p>用节点和关系所组成的图谱，为真实世界的各个场景直观地建模。通过不同知识的关联性形成一个网状的知识结构，对机器来说就是图谱。</p>
-<p>构建知识图谱这个过程的本质，就是让机器形成认知能力，去理解这个世界。</p>
-<p>知识图谱的图存储在图数据库（Graph Database）中，图数据库以图论为理论基础，图论中图的基本元素是节点和边，在图数据库中对应的就是节点和关系。用节点和关系所组成的图，为真实世界直观地建模，支持百亿量级甚至千亿量级规模的巨型图的高效关系运算和复杂关系分析。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ai, kg</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/03/知识图谱学习/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-大三下暑期学习计划" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/29/大三下暑期学习计划/">coursera之ML笔记</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/29/大三下暑期学习计划/" class="archive-article-date">
-  	<time datetime="2019-07-29T08:52:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>引子</strong></p>
-<p>​    今年4月份开始学习机器学习的课程并做了<code>线性回归</code>、<code>logistic回归</code>、<code>神经网络</code>这三章个节的作业。北航面试结束，找到了此方向满意的导师，故利用暑假时间在<code>coursera</code>上再次系统学习一遍，将公式、算法及其思想重新体会，希望能打下坚实的基础，以期将来有所造诣和建树。为此，计划暂列如下。</p>
-<p><strong>计划</strong></p>
-<p>1、数学知识复习：<code>线性代数</code>、<code>概率论</code>、和一些<code>高数知识</code></p>
+        <p>吴恩达深度学习系列课程一：神经网络与深度学习</p>
+<p><strong>1.2 什么是神经网络</strong></p>
+<p>以房价预测问题为例：</p>
+<p><img src="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190919183049.png" alt></p>
 <blockquote>
-<p>可有意识去复习，或用到时去详细回顾学习，未能理解时结合他人（老师、同学）以及网上资料搞得尽量明白。</p>
+<p>中间层节点是神经网络学到的特征。</p>
 </blockquote>
-<p>2、<code>coursera</code>上课程的学习</p>
-<blockquote>
-<p>包括视频、章节测验。</p>
-</blockquote>
-<p>3、学习<code>李航《统计学习方法》</code></p>
-<blockquote>
-<p>老师推荐</p>
-</blockquote>
-<p><strong>时间安排</strong></p>
-<p><strong><code>Week1</code></strong>(08.01~08.07)</p>
+<p>对于神经网络，只要给它足够多的数据，即足够多的x、y训练样本，神经网络非常擅长于计算从x到y的精准映射函数。</p>
+<p><strong>1.3 用神经网络进行监督学习</strong></p>
 <ul>
-<li>前三章的回顾</li>
+<li>深度学习最近的应用：</li>
 </ul>
-<p><strong><code>Week2</code></strong>(08.08~08.15)</p>
+<p>在线广告（给用户展示其最可能点击的广告）</p>
+<p>图像标注；语音识别（输入语音，输出文本）；机器翻译；自动驾驶</p>
+<p>要机智地选择x和y才能解决特定问题，然后把监督学习过的系统嵌入到更大型的系统中。</p>
 <ul>
-<li>三章内容</li>
-</ul>
-<p><strong><code>Week3</code></strong>(08.16~08.23)</p>
-<ul>
-<li>三章内容</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">machine learning</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/29/大三下暑期学习计划/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-线段树和树状数组学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/16/线段树和树状数组学习/">线段树和树状数组学习</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/16/线段树和树状数组学习/" class="archive-article-date">
-  	<time datetime="2019-07-16T12:52:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="线段树"><a href="#线段树" class="headerlink" title="线段树"></a>线段树</h4><hr>
-<p><strong>树</strong></p>
-<p>无向图，1.为连通图 2.无环 则称为一棵树</p>
-<p>对于树来说，有n个节点，n-1条边</p>
-<p><strong>完全二叉树</strong></p>
-<p>1、二叉树：一个节点最多有两个子节点</p>
-<p>2、完全二叉树：给定一个满二叉树，从最底层最右面的节点依次删除某些节点。</p>
-<p>3、满二叉树：对于h层的二叉树来说，树的节点为$2^h - 1$。</p>
-<blockquote>
-<p>满二叉树一定是完全二叉树</p>
-</blockquote>
-<p>线段树每个节点都表示一个区间（左右都闭合），每个非叶子节点都有两个子节点，分别对应区间的<code>左半</code>和<code>右半</code></p>
-<p>给定根节点编号为1，对于每个节点，左节点为2i，右节点为2i+1，因此可用数组来存二叉树</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">algorithm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/16/线段树和树状数组学习/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-离散数学复习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/09/离散数学复习/">离散数学复习</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/09/离散数学复习/" class="archive-article-date">
-  	<time datetime="2019-07-09T09:28:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>幂集</strong></p>
-<p>P(A)</p>
-<p><strong>容斥原理</strong></p>
-<p><strong>二元关系</strong></p>
-<hr>
-<p>1、有序对/序偶：由两个元素x和y按一定顺序排成二元组，记作<x, y>；同理可得<code>有序n元组</code></x,></p>
-<p>2、笛卡儿积：设A，B为集合，用A中元素为第一个元素，B中元素为第二个元素，构成有序对。所有这样的有序对组成的集合叫做A与B的笛卡儿积</p>
-<script type="math/tex; mode=display">
-A \times B = {<x, y> | x \in A, y \in B}</script><blockquote>
-<p>性质：不满足交换律、结合律</p>
-</blockquote>
-<p>3、二元关系：集合中两个元素之间的某种关系</p>
-<p>定义：如果一个集合满足以下条件之一：（1）集合非空，且所有元素都是有序对（2）集合为空</p>
-<p>则称该集合为一个<code>二元关系</code>，简称为<code>关系</code>，记作$R$ </p>
-<script type="math/tex; mode=display">
-<x, y> \in R，记作xRy</script><p>4、从A到B的关系与A上的关系</p>
-<p>设A，B为集合，$A \times B$的任何子集所定义的二元关系叫做从A到B的关系，当A=B时叫做A上的二元关系</p>
-<p>5、A上的重要关系</p>
-<p>全域关系$E_A$；恒等关系$I_A$；小于等于关系$L_A$；整除关系$D_A$；包含关系</p>
-<p>6、关系的表示：关系的集合表达式；关系矩阵；关系图</p>
-<blockquote>
-<p>关系图仅适用于表示A上的关系</p>
-</blockquote>
-<hr>
-<p><strong>关系的运算</strong></p>
-<p>1、关系的定义域与值域</p>
-<p>2、逆与合成</p>
-<script type="math/tex; mode=display">
-R^{-1} = {<y, x> | <x, y> \in R} \\
-R \circ S = {<x, y> | \exist z (<x, z> \in S \and <z, y> \in R)}</script><p>3、限制和像</p>
-<p>4、A上关系的幂运算</p>
-<p>设R为A上的关系，n为自然数，则R的n次幂定义为：</p>
-<script type="math/tex; mode=display">
-(1)R^0 = {<x, x> | x\in A} = I_A \\
-(2)R^{n + 1} = R^n \circ R</script><p>5、幂的性质</p>
-<script type="math/tex; mode=display">
-（1）当关系图中有回路时：R^2 = R^4 = ... = R^{2k}; R^3 = R^5 = ... = R^{2k + 1}\\
- (2)R^m \circ R^n =    R^{m + n}\\
- (3)(R^m)^n = R^{mn}</script><p><strong>关系的性质</strong></p>
-<p>1、自反性；反自反性</p>
-<blockquote>
-<p>在自反性方面R有三种可能：自反的、反自反的、既非自反又非反自反的</p>
-</blockquote>
-<p>2、对称性</p>
-<blockquote>
-<p>可以即对称又反对称。如$R =  \{<x, x> | x \in R \}$</x,></p>
-</blockquote>
-<p>3、传递性</p>
-<p><strong>关系的闭包运算</strong></p>
-<p>1、设$R \subseteq A \times A$，那么包含R而使之具有自反性质的<strong><code>最小关系</code></strong>，称之为R的自反闭包。 对称闭包和传递闭包同理。</p>
-<p>自反闭包记作$r(R)$；对称闭包$s(R)$；传递闭包$t(R)$</p>
-<p>2、计算方法：</p>
-<p>（1）逻辑运算方法：设R是A上的任一关系，则</p>
-<script type="math/tex; mode=display">
-r(R) = R \cup I_A\\
-s(R) = R \cup R^{-1}\\
-t(R) = R \cup R^2 \cup ... \cup R^{n - 1}</script><p>（2）矩阵形式（3）关系图法</p>
-<p><strong>等价关系和偏序关系</strong></p>
-<p>1、等价关系：集合A上的关系R是<code>自反的</code>，<code>对称的</code>和<code>传递的</code>。</p>
-<p>设R是一个等价关系，若$<x, y>\in R$，则称x等价于y，记作x~y</x,></p>
-<p>2、相容关系：R是A上的关系，且A是自反的，对称的</p>
-<blockquote>
-<p>等价关系一定是相容关系；相容关系不一定是等价关系</p>
-</blockquote>
-<p>3、偏序关系：集合A上的关系R是<code>自反的</code>，<code>反对称</code>的和<code>传递的</code>，记作”$\leq$”</p>
-<p>设R为偏序关系，如果$<x,y>\in R$，则记作$x \leq y$，读作“x<strong><code>小于等于</code></strong>y”。注意：这里的“小于等于”不是指数的大小，而是在偏序关系中的顺序性。</x,y></p>
-<p>例子：（1）任何集合A上的恒等关系（2）集合A的幂集P（A）上的包含关系（3）实数集上的小于等于、大于等于关系（4）正整数集上的整除关系</p>
-<p>4、相关概念</p>
-<p>偏序集：集合A和偏序关系$R_\leq$构成一个偏序集，记作$<a, r_\leq>$。</a,></p>
-<p>可比：对于任意两个元素x和y，若$x \leq y或 y \leq x$ ，则x与y是<strong><code>可比</code></strong>的</p>
-<p>全序关系与全序集：若A中任意两个元素都是可比的，则$R_\leq$为<code>全序关系</code>，$<a, r_\leq>$为<code>全序集</code></a,></p>
-<p>盖住：如果$x\leq y$，且不存在z使得$x \leq z \leq y$（<strong><code>不是间接的</code></strong>），则称<strong><code>y能盖住x</code></strong></p>
-<p>5、哈斯图</p>
-<p>6、偏序集中的一些特殊元素</p>
-<p>极小元；极大元；最小元；最大元；上界；下界；上确界（最小上界）；下确界（最大下界）</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">review</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/09/离散数学复习/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-操作系统复习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/05/操作系统复习/">操作系统复习</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/05/操作系统复习/" class="archive-article-date">
-  	<time datetime="2019-07-05T15:12:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>操作系统</strong></p>
-<p>1、什么是操作系统：资源管理器，完成以下工作：跟踪资源状态；分配资源；回收资源；保护资源</p>
-<p>2、三种基本类型：批处理系统、分时系统和实时系统</p>
-<p>3、分时系统采用<code>时间片轮转方式</code>处理服务请求，将CPU的运行时间划分为若干个片段，称为<code>时间片</code>。操作系统以时间片为单位，轮流为每个终端用户服务。</p>
-<p>4、操作系统的主要功能：</p>
-<p>​    进程管理：进程控制；进程同步；进程通信；进程调度</p>
-<p>​    存储管理：内存分配；内存保护；地址映射；内存扩充</p>
-<p>​    设备管理：缓冲管理；设备分配；设备处理；设备独立性和虚拟设备</p>
-<p>​    文件管理：文件存储空间的管理；目录管理；文件读、写管理；文件存取控制</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">review</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/05/操作系统复习/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-算法复习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/04/算法复习/">算法复习</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/04/算法复习/" class="archive-article-date">
-  	<time datetime="2019-07-04T14:58:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id><a href="#" class="headerlink" title=" "></a> </h4><h4 id="算法复习"><a href="#算法复习" class="headerlink" title="算法复习"></a>算法复习</h4><p><strong>字符串和整形相互转换</strong></p>
-<p>1.字符串转整形<code>itoa</code></p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> num = <span class="number">100</span>;</span><br><span class="line"><span class="keyword">char</span> str[<span class="number">25</span>];</span><br><span class="line">itoa(num, str, <span class="number">10</span>);				<span class="comment">// 字符串转整形（第三个参数为进制）</span></span><br><span class="line"><span class="comment">// 下面为sprintf实现（可跨平台）</span></span><br><span class="line"><span class="keyword">char</span> str[<span class="number">255</span>];</span><br><span class="line"><span class="built_in">sprintf</span>(str, <span class="string">"%x"</span>, <span class="number">100</span>); <span class="comment">//将100转为16进制表示的字符串。</span></span><br></pre></td></tr></table></figure>
-<p>2.整形转字符串<code>atoi</code></p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> s[<span class="number">100</span>];</span><br><span class="line">gets(s);</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"integer=%d\n"</span>,atoi(s));</span><br></pre></td></tr></table></figure>
-<p><strong>字符串反转</strong></p>
-<p>C语言<code>strrev()</code></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">review</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/04/算法复习/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-计算机网络复习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/02/计算机网络复习/">计算机网络复习</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/02/计算机网络复习/" class="archive-article-date">
-  	<time datetime="2019-07-02T15:32:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h4><hr>
-<p><strong>端系统之间的两种通信方式</strong></p>
-<p>客户-服务器方式（C/S方式）</p>
-<p>对等方式（P2P）：每一个主机既是客户又是服务器</p>
-<p><strong>分组交换</strong></p>
-<p>采用<code>存储转发</code>技术</p>
-<p>在发送端，先将较长的报文划分成较短的、固定长度的数据段，每一个数据段前面加上首部构成<code>分组</code>。</p>
-<p>分组交换网以分组作为数据传输单元</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">review</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/07/02/计算机网络复习/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-系统程序设计复习之Vue" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/30/系统程序设计复习之Vue/">系统程序设计复习之Vue</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/30/系统程序设计复习之Vue/" class="archive-article-date">
-  	<time datetime="2019-05-30T10:47:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>==*== Bus不考吗，生命周期回调函数考不考，前端vue不考大题吗</p>
-<p>​    选填可能会考，不考编程</p>
-<p><code>Lec16-P30</code>多看几遍，计算属性，<strong><code>属性的值可以是函数</code></strong></p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">review</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/30/系统程序设计复习之Vue/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-系统程序设计复习之SpringMVC" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/29/系统程序设计复习之SpringMVC/">系统程序设计复习之SpringMVC</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/29/系统程序设计复习之SpringMVC/" class="archive-article-date">
-  	<time datetime="2019-05-29T08:02:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h4><p><strong>一、MVC的作用与意义</strong></p>
-<p>MVC：软件设计模型，实现一种动态的程序设计，简化后续程序的维护和扩展，使程序组件化，结构更加直观。</p>
-<p><code>controller</code>：响应用户输入和执行数据模型对象的相互作用</p>
-<p><code>view</code>：显示由controller请求显示的数据</p>
-<p><code>model</code>：管理应用程序的数据，响应请求</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">review</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/29/系统程序设计复习之SpringMVC/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-系统程序设计课程复习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/05/27/系统程序设计课程复习/">系统程序设计课程复习</a>
-    </h1>
-  
-
-        
-        <a href="/2019/05/27/系统程序设计课程复习/" class="archive-article-date">
-  	<time datetime="2019-05-27T14:35:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>spring事务与JPA事务</strong></p>
-<ul>
-<li><p>基于注解使用事务</p>
-</li>
-<li><p>一致的事务模型，基于Spring框架配置，编写一次即可在不同的事务管理策略中切换，解决全局事务与局部事务的局限性</p>
-</li>
-<li><p>Spring事务其实就是Spring AOP,底层创建动态代理对象，在代码的开头结尾封装了开启事务和事务回滚操作</p>
+<li><p>结构化数据与非结构化数据</p>
+<p>结构化：如表格</p>
+<p>非结构化：音频、图像、文本</p>
 </li>
 </ul>
-<p>事务属性这个概念，**事务属性通常由事务的传播行为，事务的隔离级别，事务的超时值和事务只读标志组成</p>
-<p><strong>AOP、SOP</strong></p>
-<p>什么是AOP？<br>面向切面编程（AOP）完善spring的依赖注入（DI），面向切面编程在spring中主要表现为两个方面<br>1.面向切面编程提供声明式事务管理<br>2.spring支持用户自定义的切面</p>
-<p>将通用需求功能从不相关类之中分离出来；同时，能够使得很多类共享一个 行为，一旦行为发生变化，不必修改很多类，只要修改这个<br>行为就可以。<br>AOP就是这种实现分散关注的编程方法，它将“关注”封装在“方面”中。 </p>
-<p>SOP是一种体系结构，目标是在软件代理交互中获得松散耦合</p>
-<p><strong>关于课程的思考</strong></p>
-<p>我们何处涉及到了微服务呢？</p>
-<p>springboot约定大于配置的理解？</p>
-        
+
       
 
       
@@ -1005,7 +205,7 @@ t(R) = R \cup R^2 \cup ... \cup R^{n - 1}</script><p>（2）矩阵形式（3）�
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">review</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">nerual network</a>
         		</li>
       		
 		</ul>
@@ -1014,16 +214,75 @@ t(R) = R \cup R^2 \cup ... \cup R^{n - 1}</script><p>（2）矩阵形式（3）�
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/05/27/系统程序设计课程复习/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/19/DL（一）神经网络和深度学习/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/18/计算图/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">计算图角度看BP算法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -1043,12 +302,14 @@ t(R) = R \cup R^2 \cup ... \cup R^{n - 1}</script><p>（2）矩阵形式（3）�
 
 
 
+  
+  
+  
 
   
+
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
-    </nav>
+
   
 
 
@@ -1071,8 +332,8 @@ t(R) = R \cup R^2 \cup ... \cup R^{n - 1}</script><p>（2）矩阵形式（3）�
     <script>
 	var yiliaConfig = {
 		mathjax: true,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

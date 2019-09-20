@@ -146,6 +146,219 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-DL（一）神经网络和深度学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/19/DL（一）神经网络和深度学习/">DL（一）神经网络和深度学习</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/19/DL（一）神经网络和深度学习/" class="archive-article-date">
+  	<time datetime="2019-09-19T10:31:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>吴恩达深度学习系列课程一：神经网络与深度学习</p>
+<p><strong>1.2 什么是神经网络</strong></p>
+<p>以房价预测问题为例：</p>
+<p><img src="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190919183049.png" alt></p>
+<blockquote>
+<p>中间层节点是神经网络学到的特征。</p>
+</blockquote>
+<p>对于神经网络，只要给它足够多的数据，即足够多的x、y训练样本，神经网络非常擅长于计算从x到y的精准映射函数。</p>
+<p><strong>1.3 用神经网络进行监督学习</strong></p>
+<ul>
+<li>深度学习最近的应用：</li>
+</ul>
+<p>在线广告（给用户展示其最可能点击的广告）</p>
+<p>图像标注；语音识别（输入语音，输出文本）；机器翻译；自动驾驶</p>
+<p>要机智地选择x和y才能解决特定问题，然后把监督学习过的系统嵌入到更大型的系统中。</p>
+<ul>
+<li><p>结构化数据与非结构化数据</p>
+<p>结构化：如表格</p>
+<p>非结构化：音频、图像、文本</p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">nerual network</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/19/DL（一）神经网络和深度学习/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-计算图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/18/计算图/">计算图角度看BP算法</a>
+    </h1>
+  
+
+        
+        <a href="/2019/09/18/计算图/" class="archive-article-date">
+  	<time datetime="2019-09-18T13:37:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>学了数日Pytorch后，发现需要对计算图做些理解，参考如下：</p>
+<p><a href="https://blog.csdn.net/u013527419/article/details/70184690" target="_blank" rel="noopener">计算图角度看BP算法</a></p>
+<h4 id="一、通用形式"><a href="#一、通用形式" class="headerlink" title="一、通用形式"></a>一、通用形式</h4><p><strong>1.计算图就是用来描述Function的（神经网络实际就说一个Function）</strong></p>
+<ul>
+<li><p>Node：varaible(scalar, vector, tensor(matrix or higher dimension))</p>
+</li>
+<li><p>Edge：operation(simple function)</p>
+</li>
+</ul>
+<p>计算图例子：</p>
+<p><img src="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190919104137.png" alt></p>
+<p><strong>2.用计算图和链式法则来算偏导数</strong></p>
+<p><img src="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190919104359.png" alt></p>
+<p><strong>3.如果要求同时求一个参数对多个参数的偏导数</strong></p>
+<ol>
+<li><p>按照上面例子来求，这样的话当参数很多的时候，分别求很没效率（forward mode）</p>
+</li>
+<li><p>按反方向来求，如下图中绿色箭头，这样遍历一次图就可以同时求出来，更快。（reverse mode） </p>
+<p>此法适用于有一个root的结构，例如在神经网络中，我们用到就是reverse mode，因为在NN中，我们要求的就是最终的loss function的偏微分，这个function的输出就只有一个，要算这个loss function对所有参数的偏微分，反向更有效率。 </p>
+</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190919104843.png" alt></p>
+<p><strong>4.如果计算图中有Parameter sharing（即同一个参数出现在不同的node上）</strong></p>
+<p>Parameter sharing也是NN中经常发生的事，例如CNN,RNN中都有。<br>步骤：<br>（1）计算每一条边上的偏微分，如下图中绿色箭头，注意计算中将相同的参数看作不同的对待，如将x看作带不同下标的x<br>（2）将y到三个x的三条路径的偏微分之乘相加即可。</p>
+<blockquote>
+<p>即遇到Parameter sharing的情况时，先将同一个参数相当做不同的参数来看，算完之后再相加。 </p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190919105011.png" alt></p>
+<h4 id="二、全连接神经网络中的计算图"><a href="#二、全连接神经网络中的计算图" class="headerlink" title="二、全连接神经网络中的计算图"></a>二、全连接神经网络中的计算图</h4><p><strong>1.先复习一下bp算法</strong></p>
+<p>如下：</p>
+<p>第一个红色框中的部分第l层的第i个神经元对与其相连的j个权重的偏导数分别为l-1层中每一个权重参数w连接的那个神经元的输出，这个通过一个前向传播就可以很容易求出所有的偏导数值。<br>第二个绿色框中的部分loss function对第l层的神经元的输入z的偏导（即Error signal $\delta$）可以通过将误差后向递归传播得到。</p>
+<p><strong>2.用计算图来做bp</strong></p>
+<p>首先将神经网络画成计算图的形式，w，b都是参数，都是节点。再按照刚才的步骤依次求每一个箭头上的偏导数，最后将每条路径上的偏导数相乘最后相加即可。用<code>reverse mode</code>。</p>
+<p><img src="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190919110630.png" alt></p>
+<blockquote>
+<p>在计算过程中，可见要用到一个向量y对另一个向量x的偏导数，此处用雅各比矩阵表示。矩阵的行数为y的维度，列数为x的维度。如下：</p>
+<p><img src="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190919110753.png" alt></p>
+</blockquote>
+<p>所以接下来依次计算计算图中每一条边上的偏导数，详见参考的文章。</p>
+<p><strong>3.问题</strong></p>
+<p>（1）计算图仅仅需要后向传播来计算偏导数吗？</p>
+<p><img src="https://raw.githubusercontent.com/CallMeNumber1/FigureBed/windows/img/20190919110905.png" alt></p>
+<blockquote>
+<p>图中的具体的a值还是需要前向传播来计算的</p>
+</blockquote>
+<p>（2）计算图计算偏导数的结果和传统bp算法上的结果是相同的。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">computional graph</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/09/18/计算图/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-知识图谱业界前沿" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -807,181 +1020,6 @@ p(x;\mu,\sigma^2)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}</s
 
 
   
-    <article id="post-循环神经网络" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/29/循环神经网络/">循环神经网络</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/29/循环神经网络/" class="archive-article-date">
-  	<time datetime="2019-08-29T09:24:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="一、绪论"><a href="#一、绪论" class="headerlink" title="一、绪论"></a>一、绪论</h4><p><strong>基本应用</strong></p>
-<p>语音问答、机器翻译、股票预测、作词机、作诗、模仿写论文、模仿写代码</p>
-<p>图像理解</p>
-<p>视觉问答</p>
-<p><strong>循环神经网络 vs. 卷积神经网络</strong></p>
-<p>循环神经网络所做的任务有什么特点呢？</p>
-<p>​    核心问题：上下文关系（时序）</p>
-<p>​    目标：考虑更多的上下文</p>
-<p>传统神经网络，卷积神经网络，输入和输出之间是相互独立的。</p>
-<p>RNN可以更好地处理具有时序关系的任务</p>
-<p>RNN通过其循环结构引入“记忆”的概念</p>
-<p>​    输出不仅依赖于输入，还依赖“记忆”</p>
-<p>​    将同一个结构循环利用</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">RNN</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/29/循环神经网络/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-卷积神经网络" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/29/卷积神经网络/">卷积神经网络</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/29/卷积神经网络/" class="archive-article-date">
-  	<time datetime="2019-08-29T01:43:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="一、绪论"><a href="#一、绪论" class="headerlink" title="一、绪论"></a>一、绪论</h4><p><strong>1、卷积神经网络的应用</strong></p>
-<p>基本应用：分类、检索、检测、分割</p>
-<p>人脸识别、人脸表情识别、图像生成（Image to  Image; Text to Image）、图像风格转化</p>
-<p>自动驾驶</p>
-<p><strong>2、传统神经网络 vs. 卷积神经网络</strong></p>
-<p>深度学习三部曲</p>
-<ol>
-<li><p>搭建神经网络结构：提取特征的过程</p>
-</li>
-<li><p>找到一个合适的损失函数：评估这个表示与真实值之间的差异</p>
-<p>交叉熵损失，均方误差</p>
-</li>
-<li><p>找到一个合适的优化函数，更新参数</p>
-<p>反向传播（BP），随机梯度下降（SGD）更新网络的参数</p>
-</li>
-</ol>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">deep learning</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/29/卷积神经网络/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1096,11 +1134,15 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">machine learning</a>
+                <a href="javascript:void(0)" class="js-tag color5">nerual network</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">machine learning</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1112,6 +1154,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">RNN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">interview</a>
               </li>
              
@@ -1120,15 +1166,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RNN</a>
+                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">summarization</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1148,11 +1190,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Greedy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
+                <a href="javascript:void(0)" class="js-tag color3">computional graph</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1160,11 +1198,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">deep learning</a>
+                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Graph</a>
+                <a href="javascript:void(0)" class="js-tag color2">Greedy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">deep learning</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1172,7 +1214,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mathematics basics</a>
+                <a href="javascript:void(0)" class="js-tag color1">Graph</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1185,6 +1227,10 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mathematics basics</a>
               </li>
              
               <li class="article-tag-list-item">
