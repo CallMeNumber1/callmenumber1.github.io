@@ -146,6 +146,95 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-ML-异常检测" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/29/ML-异常检测/">ML-异常检测</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/29/ML-异常检测/" class="archive-article-date">
+  	<time datetime="2019-08-29T12:52:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-29</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="异常检测"><a href="#异常检测" class="headerlink" title="异常检测"></a>异常检测</h4><p><strong>Anomaly detection</strong></p>
+<p>例子：欺诈检测（异常用户检测）；计算机集群中检测大量计算机可能发生的异常</p>
+<p>给定无标签的训练集，我们将对数据建模即$p(x)$，（对x的分布概率建模）；当我们建立了x的概率模型后，就有，对于新的$x_{test}$，若$p(x_{test}) &lt; \epsilon$，则认为是异常的。</p>
+<p><strong>高斯分布</strong></p>
+<script type="math/tex; mode=display">
+p(x;\mu,\sigma^2)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}</script><p>分号后面，代表以这两个为参数</p>
+<ul>
+<li><p>高斯分布两个参数：$\mu,\ \sigma^2$</p>
+<p>$\mu$即高斯分布中心的位置</p>
+<p>$\sigma$决定了高斯分布密度曲线的宽度</p>
+</li>
+<li><p>参数估计问题：给定数据集，希望找到能够估算出$\mu,\sigma^2$的值</p>
+<p>估计的标准公式：</p>
+<p>$\mu = \frac{1}{m}\sum_{i=1}^mx^{(i)}, \ \sigma^2=\frac{1}{m}\sum_{i=1}^m(x^{(i)}-\mu)^2$</p>
+</li>
+</ul>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">machine learning</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/29/ML-异常检测/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-循环神经网络" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -1011,88 +1100,6 @@
 
 
   
-    <article id="post-知识图谱-赵军ppt" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/03/知识图谱-赵军ppt/">知识图谱-赵军ppt</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/03/知识图谱-赵军ppt/" class="archive-article-date">
-  	<time datetime="2019-08-03T02:58:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>人工智能的三种研究方法</strong></p>
-<p>1、符号主义</p>
-<p>2、联结主义的表示学习</p>
-<p>3、行为主义的人工智能方法</p>
-<p><strong>本体</strong></p>
-<p>形式化的，对于共享概念体系的明确而又详细的说明。</p>
-<p>本体提供的是一种共享词表，也就是特定领域之中那些存在着的对象类型或概念及其属性和相互关系。</p>
-<p>或者说，本体就是一种特殊类型的术语集，具有结构化的特点，且更加适合于在<code>计算机系统之中</code>使用。</p>
-<p>本体一般可以用来针对该领域的属性进行推理，亦可用于定义该领域（也就是对该领域进行建模）</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">ai</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/03/知识图谱-赵军ppt/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
@@ -1227,10 +1234,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RNN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">interview</a>
               </li>
              
@@ -1239,11 +1242,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">RNN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">summarization</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">neural network</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1263,7 +1274,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">computional graph</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Greedy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1271,11 +1290,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Greedy</a>
+                <a href="javascript:void(0)" class="js-tag color1">Graph</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1284,10 +1299,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">object detection</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Graph</a>
               </li>
              
               <li class="article-tag-list-item">

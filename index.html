@@ -146,6 +146,93 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-神经网络训练相关概念" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/01/神经网络训练相关概念/">神经网络训练相关概念</a>
+    </h1>
+  
+
+        
+        <a href="/2019/10/01/神经网络训练相关概念/" class="archive-article-date">
+  	<time datetime="2019-10-01T15:21:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>step, batch size, iteration, epoch</strong></p>
+<ul>
+<li><p>batch size：批尺寸，计算梯度所需的样本数量。太小会导致效率低下，无法收敛。太大会导致内存撑不住，Batch Size增大到一定程度后，其下降方向变化很小了，所以Batch Size是一个很重要的参数。</p>
+<p>注意与the number of batches的区别</p>
+</li>
+<li><p>Epoch（回合）：代表样本集内所有的数据经过了一次训练。</p>
+</li>
+<li><p>iteration（迭代）：迭代是batch需要完成一个epoch的次数。在一个epoch中，batch数和迭代数是相等的。</p>
+<p>比如对于一个有 2000 个训练样本的数据集。将 2000 个样本分成大小为 500 的 batch，那么完成一个 epoch 需要 4 个 iteration。</p>
+</li>
+</ul>
+<p>换算关系：</p>
+<script type="math/tex; mode=display">
+number\  of \ batches = \frac{training\ set\ size}{batch\ size}</script><p>实际上，梯度下降的几种方式的根本区别就在于上面公式中的batch size不同。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">neural network</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/01/神经网络训练相关概念/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-DL（一）神经网络和深度学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -545,6 +632,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h4 id="线性代数"><a href="#线性代数" class="headerlink" title="线性代数"></a>线性代数</h4><hr>
+<p><strong>仿射变换</strong></p>
+<p>又称仿射映射，是指在几何中，一个向量空间进行一次线性变换并接上一个平移，变换为另一向量空间。</p>
 <p><strong>张量</strong></p>
 <p>几何代数中定义的张量是基于向量和矩阵的推广，通俗理解，我们可以将标量视为零阶张量，矢量视为一阶张量，那么矩阵就是二阶张量。</p>
 <p>例如，可以将任意一张彩色图片表示成一个三阶张量，三个维度分别是图片的高度、宽度和色彩数据。将这张图用张量表示出来，就是下方的表格：</p>
@@ -931,95 +1020,6 @@
 
 
   
-    <article id="post-ML-异常检测" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/08/29/ML-异常检测/">ML-异常检测</a>
-    </h1>
-  
-
-        
-        <a href="/2019/08/29/ML-异常检测/" class="archive-article-date">
-  	<time datetime="2019-08-29T12:52:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-29</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="异常检测"><a href="#异常检测" class="headerlink" title="异常检测"></a>异常检测</h4><p><strong>Anomaly detection</strong></p>
-<p>例子：欺诈检测（异常用户检测）；计算机集群中检测大量计算机可能发生的异常</p>
-<p>给定无标签的训练集，我们将对数据建模即$p(x)$，（对x的分布概率建模）；当我们建立了x的概率模型后，就有，对于新的$x_{test}$，若$p(x_{test}) &lt; \epsilon$，则认为是异常的。</p>
-<p><strong>高斯分布</strong></p>
-<script type="math/tex; mode=display">
-p(x;\mu,\sigma^2)=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}</script><p>分号后面，代表以这两个为参数</p>
-<ul>
-<li><p>高斯分布两个参数：$\mu,\ \sigma^2$</p>
-<p>$\mu$即高斯分布中心的位置</p>
-<p>$\sigma$决定了高斯分布密度曲线的宽度</p>
-</li>
-<li><p>参数估计问题：给定数据集，希望找到能够估算出$\mu,\sigma^2$的值</p>
-<p>估计的标准公式：</p>
-<p>$\mu = \frac{1}{m}\sum_{i=1}^mx^{(i)}, \ \sigma^2=\frac{1}{m}\sum_{i=1}^m(x^{(i)}-\mu)^2$</p>
-</li>
-</ul>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">machine learning</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/08/29/ML-异常检测/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1154,10 +1154,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">RNN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">interview</a>
               </li>
              
@@ -1166,11 +1162,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">RNN</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">pytorch</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">summarization</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">neural network</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1190,7 +1194,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">computional graph</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Greedy</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1198,11 +1210,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">algorithm</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Greedy</a>
+                <a href="javascript:void(0)" class="js-tag color1">Graph</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1211,10 +1219,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">object detection</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Graph</a>
               </li>
              
               <li class="article-tag-list-item">
