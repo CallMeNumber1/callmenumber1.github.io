@@ -24,7 +24,7 @@
 <meta property="og:image" content="d:/Blog/public/img/dropout.png">
 <meta property="og:image" content="d:/Blog/public/img/残差.png">
 <meta property="og:image" content="d:/Blog/public/img/神经网络偏置项.png">
-<meta property="og:updated_time" content="2019-09-05T12:44:15.784Z">
+<meta property="og:updated_time" content="2019-10-03T06:50:39.810Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="卷积神经网络">
 <meta name="twitter:description" content="一、绪论1、卷积神经网络的应用 基本应用：分类、检索、检测、分割 人脸识别、人脸表情识别、图像生成（Image to  Image; Text to Image）、图像风格转化 自动驾驶 2、传统神经网络 vs. 卷积神经网络 深度学习三部曲  搭建神经网络结构：提取特征的过程  找到一个合适的损失函数：评估这个表示与真实值之间的差异 交叉熵损失，均方误差  找到一个合适的优化函数，更新参数 反向">
@@ -393,6 +393,12 @@
 <p>先在X的前面加个1，作为偏置项的基底（此时X由n维变为n+1维向量），然后让每个分类器去训练自己的偏置项权重，所以每个分类器的权重也变成了n+1维$[w_0,w_1,…]$。$w_0$就是偏置项的权重（即截距）。这样，就让截距b这个看似与W不同的参数，都统一到一个框架下，使得模型在训练的过程中不断调整参数$w_0$，从而达到调整b的目的。</p>
 </blockquote>
 <p>参考：<a href="https://blog.csdn.net/Uwr44UOuQcNsUQb60zk2/article/details/81074408" target="_blank" rel="noopener">神经网络中的偏置项到底是什么？</a></p>
+<p>10-03日更新：</p>
+<blockquote>
+<p>关于卷积层的输入输出通道数问题</p>
+</blockquote>
+<p>原始图像黑白时为1通道输入，表示为w<em>h</em>1,为彩色图像为3通道输入，表示为w<em>h</em>3，对此进行卷积时，我们设计的卷积核通道数需要和它对应。当 输入黑白图像时，卷积核设计应为1<em>1</em>1或者3<em>3</em>1或者5<em>5</em>1，彩色图像时应为1<em>1</em>3，3<em>3</em>3，5<em>5</em>3。这里的第三个数，1或者3为in_channel。 只设计了1个卷积核时，计算完后输出map为n_w <em> n_h </em> 1，这里n_w,n_h为卷积计算后的输出map的w，h。当设计了2个卷积核时，计算完后输出map为2组 n_w <em> n_h </em> 1。设计n个卷积核，就有n组n_w <em> n_h </em> 1，一组n_w <em> n_h </em> 1对应1个channel。有设计n个卷积核的卷积层输出channel为n。 重点来了，以上map拿到后如果继续做卷积（或者说下一层还是卷积层），那此次的输入数据为上一层中我们取得的n通道map，上边map如果通道数为2，那么这次卷积输入通道in_channel就为2，如果是n就是n个channel，作为本层的in_channel值。在本卷积层，你仍然可以像上边一样，继续设计卷积核的个数，作为这一层的out_channel，同时作为下一层的in_channel。 你提问的卷积层后，得到输出map是否为单通道特征图。这个取决于这个卷积层设计了几个卷积核，1个为1，2个为2，n个为n，对应的是out_channel。而in_channel取决于上一层的通道数。</p>
+<p><a href="https://blog.csdn.net/sscc_learning/article/details/79814146" target="_blank" rel="noopener">理解卷积神经网络中的通道channel</a></p>
 
       
 
